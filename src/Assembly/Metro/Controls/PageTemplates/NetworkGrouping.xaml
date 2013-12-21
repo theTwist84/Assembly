@@ -85,12 +85,15 @@
                 </ScrollViewer>
             </Grid>
         </Grid>
-        <TextBox x:Name="TextBlock1" HorizontalAlignment="Left" Margin="391,115,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" RenderTransformOrigin="-0.358,-1.989" Height="152" Width="494"/>
+        <TextBox x:Name="TextBlock1" HorizontalAlignment="Left" Margin="391,55,0,0" TextWrapping="Wrap" Text="127.0.0.1" VerticalAlignment="Top" RenderTransformOrigin="-0.358,-1.989" Height="152" Width="494"/>
         <Button Content="Start Server" HorizontalAlignment="Left" Margin="406,452,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.057,0.462" Click="StartServer_click"/>
         <Button Content="Start Client" HorizontalAlignment="Left" Margin="708,452,0,0" VerticalAlignment="Top" Width="160" Click="StartClient_click"/>
         <Button Content="Send Test Command" HorizontalAlignment="Left" Margin="708,526,0,0" VerticalAlignment="Top" Width="160" Height="24" Click="SendCommand_click"/>
-        <TextBlock x:Name="TextBlockOutput" HorizontalAlignment="Left" Margin="524,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="361" Foreground="White" FontFamily="{DynamicResource MetroFontSemiLight}" FontSize="20"/>
+        <TextBlock x:Name="TextBlockOutput" HorizontalAlignment="Left" Margin="524,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="361" Foreground="White" FontFamily="{DynamicResource MetroFontSemiLight}" FontSize="20"/>
         <Button Content="Freeze" HorizontalAlignment="Left" Margin="406,526,0,0" VerticalAlignment="Top" Width="75" Click="Freeze_click"/>
         <Button Content="Unfreeze" HorizontalAlignment="Left" Margin="560,526,0,0" VerticalAlignment="Top" Width="75" Click="Unfreeze_click"/>
+        <Button Content="Poke" HorizontalAlignment="Left" Margin="560,452,0,0" VerticalAlignment="Top" Width="75" Click="SendPoke_click"/>
+        <TextBox x:Name="TextBoxOffset" HorizontalAlignment="Left" Height="23" Margin="406,360,0,0" TextWrapping="Wrap" Text="0x8203BB78" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TextBoxData" HorizontalAlignment="Left" Height="23" Margin="748,360,0,0" TextWrapping="Wrap" Text="3F99999A" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </UserControl>

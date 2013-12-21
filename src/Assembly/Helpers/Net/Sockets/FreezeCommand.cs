@@ -7,6 +7,12 @@ namespace Assembly.Helpers.Net.Sockets
     {
         public bool Freeze = true;
 
+        public FreezeCommand() :
+            base(PokeCommandType.Freeze)
+        {
+            
+        }
+
         public FreezeCommand(bool freeze) : 
             base(PokeCommandType.Freeze)
         {

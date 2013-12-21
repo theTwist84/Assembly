@@ -37,7 +37,10 @@ namespace Assembly.Helpers.Net.Sockets
                         command = new TestCommand();
                         break;
                     case PokeCommandType.Freeze:
-                        command = new FreezeCommand(true);
+                        command = new FreezeCommand();
+                        break;
+                    case PokeCommandType.Memory:
+                        command = new MemoryCommand();
                         break;
                     default:
                         throw new NotImplementedException("The suspected Command Type has not been implemented yet.");

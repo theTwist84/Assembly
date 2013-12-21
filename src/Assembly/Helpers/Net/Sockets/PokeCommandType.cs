@@ -9,6 +9,6 @@ namespace Assembly.Helpers.Net.Sockets
     {
         Test,
         Freeze,
-        Bar
+        Memory
     }
 }

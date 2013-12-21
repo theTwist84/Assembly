@@ -24,14 +24,18 @@ namespace Assembly.Helpers.Net.Sockets
 
             // Begin accepting incoming connections
             listener.BeginAccept(ConnectClient, listener);
+
+
             
         }
 
         private void ConnectClient(IAsyncResult result)
         {
+
             var listener = (Socket) result.AsyncState;
             var client = listener.EndAccept(result);
             listener.BeginAccept(ConnectClient, listener);
+
             lock (_clients)
             {
                 _clients.Add(client);
@@ -62,7 +66,10 @@ namespace Assembly.Helpers.Net.Sockets
                             command = new TestCommand();
                             break;
                         case PokeCommandType.Freeze:
-                            command = new FreezeCommand(true);
+                            command = new FreezeCommand();
+                            break;
+                        case PokeCommandType.Memory:
+                            command = new MemoryCommand();
                             break;
                         default:
                             continue;

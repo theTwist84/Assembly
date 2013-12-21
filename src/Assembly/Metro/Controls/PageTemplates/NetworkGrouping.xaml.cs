@@ -133,6 +133,11 @@ namespace Assembly.Metro.Controls.PageTemplates
                 Debug.WriteLine("Console Unfroze");
 	    }
 
+	    public void HandleMemoryCommand(MemoryCommand memory)
+	    {
+	        Debug.WriteLine("Poked '{0}' to offset {1:X}", memory.DataModel.Data, memory.DataModel.Offset);
+	    }
+
 	    private void Unfreeze_click(object sender, RoutedEventArgs e)
         {
             _client.SendCommand(new FreezeCommand(false));
@@ -141,6 +146,15 @@ namespace Assembly.Metro.Controls.PageTemplates
         private void Freeze_click(object sender, RoutedEventArgs e)
         {
             _client.SendCommand(new FreezeCommand(true));
+        }
+
+        private void SendPoke_click(object sender, RoutedEventArgs e)
+        {
+            var offset = TextBoxOffset.Text.StartsWith("0x")
+                ? UInt32.Parse(TextBoxOffset.Text.Replace("0x", ""), System.Globalization.NumberStyles.HexNumber)
+                : UInt32.Parse(TextBoxOffset.Text);
+            var data = VariousFunctions.StringToByteArray(TextBoxData.Text);
+            _client.SendCommand(new MemoryCommand(offset, data));
         }
 
 
