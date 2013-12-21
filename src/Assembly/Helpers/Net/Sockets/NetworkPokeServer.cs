@@ -15,7 +15,7 @@ namespace Assembly.Helpers.Net.Sockets
         public NetworkPokeServer()
         {
             var hostIp = IPAddress.Any;
-            var hostEndpoint = new IPEndPoint(hostIp, 12345);
+            var hostEndpoint = new IPEndPoint(hostIp, 19002);
             var listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             
             // Bind to our local endpoint

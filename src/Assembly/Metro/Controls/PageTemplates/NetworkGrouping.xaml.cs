@@ -94,9 +94,7 @@ namespace Assembly.Metro.Controls.PageTemplates
             _server = new NetworkPokeServer();
             var thread = new Thread(new ThreadStart(delegate
             {
-                int i = 2;
-                int i2 = 2;
-                while (i == i2)
+                while (true)
                 {
                     _server.ReceiveCommand(this);
                 }
@@ -116,7 +114,7 @@ namespace Assembly.Metro.Controls.PageTemplates
 
 	    public void HandleTestCommand(TestCommand test)
 	    {
-	        Debug.WriteLine(test.Message);
+	        Dispatcher.Invoke(new Action(delegate { TextBlockOutput.Text = test.Message; }));
 	    }
 	}
 }

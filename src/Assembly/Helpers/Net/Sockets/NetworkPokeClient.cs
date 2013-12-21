@@ -13,7 +13,7 @@ namespace Assembly.Helpers.Net.Sockets
 
         public NetworkPokeClient(IPAddress address)
         {
-            var endpoint = new IPEndPoint(address, 12345);
+            var endpoint = new IPEndPoint(address, 19002);
             _socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             _socket.Connect(endpoint);
         }

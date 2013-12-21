@@ -89,6 +89,6 @@
         <Button Content="Start Server" HorizontalAlignment="Left" Margin="480,452,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.057,0.462" Click="StartServer_click"/>
         <Button Content="Start Client" HorizontalAlignment="Left" Margin="708,452,0,0" VerticalAlignment="Top" Width="160" Click="StartClient_click"/>
         <Button Content="Send Test Command" HorizontalAlignment="Left" Margin="708,526,0,0" VerticalAlignment="Top" Width="160" Height="24" Click="SendCommand_click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="524,272,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
+        <TextBlock x:Name="TextBlockOutput" HorizontalAlignment="Left" Margin="524,272,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="41" Width="361" Foreground="White" FontFamily="{DynamicResource MetroFontSemiLight}" FontSize="20"/>
     </Grid>
 </UserControl>
