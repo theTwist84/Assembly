@@ -171,6 +171,7 @@
     <Compile Include="Helpers\Net\HttpExtensions.cs" />
     <Compile Include="Helpers\Net\HttpRequests.cs" />
     <Compile Include="Helpers\Net\SignIn.cs" />
+    <Compile Include="Helpers\Net\Sockets\FreezeCommand.cs" />
     <Compile Include="Helpers\Net\Sockets\IPokeCommandHandler.cs" />
     <Compile Include="Helpers\Net\Sockets\PokeCommand.cs" />
     <Compile Include="Helpers\Net\Sockets\NetworkPokeClient.cs" />

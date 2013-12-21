@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
 
 namespace Assembly.Helpers.Net.Sockets
 {
@@ -28,6 +25,26 @@ namespace Assembly.Helpers.Net.Sockets
             }
         }
 
-
+        public void ReceiveCommand(IPokeCommandHandler handler)
+        {
+            using (var stream = new NetworkStream(_socket, false))
+            {
+                var commandType = (PokeCommandType) stream.ReadByte();
+                PokeCommand command;
+                switch (commandType)
+                {
+                    case PokeCommandType.Test:
+                        command = new TestCommand();
+                        break;
+                    case PokeCommandType.Freeze:
+                        command = new FreezeCommand(true);
+                        break;
+                    default:
+                        throw new NotImplementedException("The suspected Command Type has not been implemented yet.");
+                }
+                command.Deserialize(stream);
+                command.Handle(handler);
+            }
+        }
     }
 }

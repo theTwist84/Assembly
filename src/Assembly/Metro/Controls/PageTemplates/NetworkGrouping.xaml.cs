@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using Assembly.Helpers;
 using Assembly.Helpers.Net;
 using Assembly.Helpers.Net.Sockets;
 using Assembly.Helpers.UIX;
@@ -104,7 +105,14 @@ namespace Assembly.Metro.Controls.PageTemplates
 
         private void StartClient_click(object sender, RoutedEventArgs e)
         {
-            _client = new NetworkPokeClient(IPAddress.Parse(TextBlock1.Text));
+            try
+            {
+                _client = new NetworkPokeClient(IPAddress.Parse(TextBlock1.Text));
+            }
+            catch (FormatException formatException)
+            {
+                MetroMessageBox.Show("Invalid IP", "The specified IP address was not valid.");
+            }
         }
 
         private void SendCommand_click(object sender, RoutedEventArgs e)
@@ -116,5 +124,25 @@ namespace Assembly.Metro.Controls.PageTemplates
 	    {
 	        Dispatcher.Invoke(new Action(delegate { TextBlockOutput.Text = test.Message; }));
 	    }
+
+	    public void HandleFreezeCommand(FreezeCommand freeze)
+	    {
+            if (freeze.Freeze)
+	            Debug.WriteLine("Console Froze");
+            else
+                Debug.WriteLine("Console Unfroze");
+	    }
+
+	    private void Unfreeze_click(object sender, RoutedEventArgs e)
+        {
+            _client.SendCommand(new FreezeCommand(false));
+        }
+
+        private void Freeze_click(object sender, RoutedEventArgs e)
+        {
+            _client.SendCommand(new FreezeCommand(true));
+        }
+
+
 	}
 }

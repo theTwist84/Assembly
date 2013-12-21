@@ -8,5 +8,6 @@ namespace Assembly.Helpers.Net.Sockets
     public interface IPokeCommandHandler
     {
         void HandleTestCommand(TestCommand test);
+        void HandleFreezeCommand(FreezeCommand freeze);
     }
 }

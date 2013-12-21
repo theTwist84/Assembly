@@ -61,11 +61,30 @@ namespace Assembly.Helpers.Net.Sockets
                         case PokeCommandType.Test:
                             command = new TestCommand();
                             break;
+                        case PokeCommandType.Freeze:
+                            command = new FreezeCommand(true);
+                            break;
                         default:
                             continue;
                     }
                     command.Deserialize(stream);
                     command.Handle(handler);
+                }
+            }
+        }
+
+        public void SendCommand(PokeCommand command)
+        {
+            lock (_clients)
+            {
+                foreach (var socket in _clients)
+                {
+                    using (var stream = new NetworkStream(socket, false))
+                    {
+                        var type = (byte) command.Type;
+                        stream.WriteByte(type);
+                        command.Serialize(stream);
+                    }
                 }
             }
         }
