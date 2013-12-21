@@ -850,5 +850,10 @@ namespace Assembly.Windows
 
 		#endregion
 
+        private void menuNetworkPoking_click(object sender, RoutedEventArgs e)
+        {
+            AddTabModule(TabGenre.NetworkPoking, true);
+        }
+
 	}
 }

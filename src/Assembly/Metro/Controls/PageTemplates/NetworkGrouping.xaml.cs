@@ -1,19 +1,27 @@
 ﻿using System;
+using System.Diagnostics;
+using System.Net;
+using System.Text;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using Assembly.Helpers.Net;
+using Assembly.Helpers.Net.Sockets;
 using Assembly.Helpers.UIX;
 using Assembly.Metro.Dialogs;
+
 
 namespace Assembly.Metro.Controls.PageTemplates
 {
 	/// <summary>
 	///     Interaction logic for NetworkGrouping.xaml
 	/// </summary>
-	public partial class NetworkGrouping : UserControl
+	public partial class NetworkGrouping :  IPokeCommandHandler
 	{
-		public NetworkGrouping()
+	    private NetworkPokeClient _client;
+	    private NetworkPokeServer _server;
+
+	    public NetworkGrouping()
 		{
 			InitializeComponent();
 
@@ -80,5 +88,35 @@ namespace Assembly.Metro.Controls.PageTemplates
 			public string Username { get; set; }
 			public string Password { get; set; }
 		}
+
+        private void StartServer_click(object sender, RoutedEventArgs e)
+        {
+            _server = new NetworkPokeServer();
+            var thread = new Thread(new ThreadStart(delegate
+            {
+                int i = 2;
+                int i2 = 2;
+                while (i == i2)
+                {
+                    _server.ReceiveCommand(this);
+                }
+            }));
+            thread.Start();
+        }
+
+        private void StartClient_click(object sender, RoutedEventArgs e)
+        {
+            _client = new NetworkPokeClient(IPAddress.Parse(TextBlock1.Text));
+        }
+
+        private void SendCommand_click(object sender, RoutedEventArgs e)
+        {
+            _client.SendCommand(new TestCommand(TextBlock1.Text));
+        }
+
+	    public void HandleTestCommand(TestCommand test)
+	    {
+	        Debug.WriteLine(test.Message);
+	    }
 	}
 }
