@@ -109,7 +109,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			AddWidth(_asciiControl.Width);
 		}
 
-		public void VisitStringID(StringIDData field)
+		public void VisitStringId(StringIDData field)
 		{
 			AddWidth(_stringIDControl.Width);
 		}

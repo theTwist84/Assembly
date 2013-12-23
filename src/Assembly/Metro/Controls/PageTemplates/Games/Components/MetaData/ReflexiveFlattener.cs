@@ -344,7 +344,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 		{
 		}
 
-		public void VisitStringID(StringIDData field)
+		public void VisitStringId(StringIDData field)
 		{
 		}
 

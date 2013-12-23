@@ -249,6 +249,16 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 				LoadTags();
 				LoadLocales();
 				LoadScripts();
+                Dispatcher.Invoke(new Action(() => contentTabs.Items.Add(new CloseableTabItem
+                {
+                    Header = new ContentControl
+                    {
+                        Content = "Network Setup",
+                        ContextMenu = BaseContextMenu
+                    },
+                    Content = new NetworkControl(this)
+                })));
+
 			}
 		}
 
@@ -1293,6 +1303,11 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 			_tagOpenMode = (Settings.TagOpenMode) cbTabOpenMode.SelectedIndex;
 			App.AssemblyStorage.AssemblySettings.HalomapTagOpenMode = _tagOpenMode;
 		}
+
+	    public void StartNetworkPoke(IRTEProvider networkProvider)
+	    {
+	        _rteProvider = networkProvider;
+	    }
 
 		#endregion
 

@@ -128,7 +128,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 				FilterString(field, field.Value);
 		}
 
-		public void VisitStringID(StringIDData field)
+		public void VisitStringId(StringIDData field)
 		{
 			// TODO: Filter StringIDs by value
 			FilterString(field, field.Name);

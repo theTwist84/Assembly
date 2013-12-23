@@ -36,7 +36,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 
 		public override void Accept(IMetaFieldVisitor visitor)
 		{
-			visitor.VisitStringID(this);
+			visitor.VisitStringId(this);
 		}
 
 		public override MetaField CloneValue()

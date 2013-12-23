@@ -108,6 +108,15 @@ namespace Assembly.Metro.Controls.PageTemplates
             try
             {
                 _client = new NetworkPokeClient(IPAddress.Parse(TextBlock1.Text));
+                var thread = new Thread(new ThreadStart(delegate
+                {
+                    while (true)
+                    {
+                        _client.ReceiveCommand(this);
+                    }
+                }));
+                thread.Start();
+
             }
             catch (FormatException formatException)
             {

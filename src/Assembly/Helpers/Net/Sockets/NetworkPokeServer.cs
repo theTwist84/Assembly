@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Sockets;
-using System.Text;
-using System.Windows.Forms;
+using Mono.Nat;
 
 namespace Assembly.Helpers.Net.Sockets
 {
@@ -22,11 +21,22 @@ namespace Assembly.Helpers.Net.Sockets
             listener.Bind(hostEndpoint);
             listener.Listen(128); // Listen with a pending connection queue size of 128
 
+            NatUtility.DeviceFound += DeviceFound;
+            NatUtility.StartDiscovery();
+
+
             // Begin accepting incoming connections
             listener.BeginAccept(ConnectClient, listener);
 
+        }
 
-            
+        private void DeviceFound(object sender, DeviceEventArgs e)
+        {
+            var device = e.Device;
+            Debug.WriteLine(device.GetExternalIP().ToString());
+            var map = new Mapping(Protocol.Tcp, 19002, 19002);
+            map.Description = "Assembly Network Poking";
+            device.CreatePortMap(map);
         }
 
         private void ConnectClient(IAsyncResult result)
@@ -75,7 +85,7 @@ namespace Assembly.Helpers.Net.Sockets
                             continue;
                     }
                     command.Deserialize(stream);
-                    command.Handle(handler);
+                    SendCommand(command);
                 }
             }
         }

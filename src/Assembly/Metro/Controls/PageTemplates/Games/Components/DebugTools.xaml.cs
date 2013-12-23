@@ -15,7 +15,6 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 		public DebugTools(ICacheFile cache)
 		{
 			InitializeComponent();
-
 			_cache = cache;
 		}
 

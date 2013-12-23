@@ -182,7 +182,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			}
 		}
 
-		public void VisitStringID(StringIDData field)
+		public void VisitStringId(StringIDData field)
 		{
 			SeekToOffset(field.Offset);
 			field.Value = _cache.StringIDs.GetString(new StringID(_reader.ReadUInt32()));

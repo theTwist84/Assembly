@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
+using System.Windows.Documents;
 
 namespace Assembly.Helpers.Net.Sockets
 {

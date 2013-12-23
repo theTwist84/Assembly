@@ -15,7 +15,7 @@
 		void VisitReflexive(ReflexiveData field);
 		void VisitReflexiveEntry(WrappedReflexiveEntry field);
 		void VisitString(StringData field);
-		void VisitStringID(StringIDData field);
+		void VisitStringId(StringIDData field);
 		void VisitRawData(RawData field);
 		void VisitDataRef(DataRef field);
 		void VisitTagRef(TagRefData field);
