@@ -17,7 +17,6 @@ namespace Assembly.Helpers.Net.Sockets
 
         public override void Flush()
         {
-            throw new NotImplementedException();
         }
 
         public override long Seek(long offset, SeekOrigin origin)
@@ -37,22 +36,25 @@ namespace Assembly.Helpers.Net.Sockets
 					break;
 			}
 			return Position;
-			
         }
 
         public override void SetLength(long value)
         {
-            throw new NotImplementedException();
         }
 
         public override int Read(byte[] buffer, int offset, int count)
         {
-            throw new NotImplementedException();
+			return 0;
         }
 
         public override void Write(byte[] buffer, int offset, int count)
         {
-            var memory = new MemoryCommand((uint)Position + (uint) offset, buffer);
+			// Create a new byte array to write
+			var writeBuffer = new byte[count];
+			Buffer.BlockCopy(buffer, offset, writeBuffer, 0, count);
+
+			// Send a MemoryCommand to the server
+            var memory = new MemoryCommand((uint)Position, writeBuffer);
             _client.SendCommand(memory);
         }
 

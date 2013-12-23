@@ -30,16 +30,19 @@ namespace Blamite.IO
 		private readonly byte[] _buffer = new byte[8];
 		private readonly Stream _stream;
 		private bool _bigEndian;
+		private bool _closeOnDispose;
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="EndianWriter" /> class.
 		/// </summary>
 		/// <param name="stream">The stream to write to.</param>
 		/// <param name="endianness">The initial endianness to use when writing to the stream.</param>
-		public EndianWriter(Stream stream, Endian endianness)
+		/// <param name="closeOnDispose">If <c>true</c>, the underlying stream will be closed when this is disposed.</param>
+		public EndianWriter(Stream stream, Endian endianness, bool closeOnDispose = true)
 		{
 			_stream = stream;
 			_bigEndian = (endianness == Endian.BigEndian);
+			_closeOnDispose = closeOnDispose;
 		}
 
 		/// <summary>
@@ -280,7 +283,8 @@ namespace Blamite.IO
 		/// </summary>
 		public void Dispose()
 		{
-			_stream.Dispose();
+			if (_closeOnDispose)
+				Close();
 		}
 
 		/// <summary>

@@ -33,16 +33,19 @@ namespace Blamite.IO
 		private readonly StringBuilder _currentString = new StringBuilder();
 		private readonly Stream _stream;
 		private bool _bigEndian;
+		private bool _closeOnDispose;
 
 		/// <summary>
 		///     Initializes a new instance of the <see cref="EndianReader" /> class.
 		/// </summary>
 		/// <param name="stream">The stream to read from.</param>
 		/// <param name="endianness">The initial endianness to use when reading from the stream.</param>
-		public EndianReader(Stream stream, Endian endianness)
+		/// <param name="closeOnDispose">If <c>true</c>, the underlying stream will be closed when this is disposed.</param>
+		public EndianReader(Stream stream, Endian endianness, bool closeOnDispose = true)
 		{
 			_stream = stream;
 			_bigEndian = (endianness == Endian.BigEndian);
+			_closeOnDispose = closeOnDispose;
 		}
 
 		/// <summary>
@@ -50,7 +53,8 @@ namespace Blamite.IO
 		/// </summary>
 		public void Dispose()
 		{
-			Close();
+			if (_closeOnDispose)
+				Close();
 		}
 
 		/// <summary>
@@ -78,7 +82,7 @@ namespace Blamite.IO
 		/// </returns>
 		public byte ReadByte()
 		{
-			_stream.Read(_buffer, 0, 1);
+			Buffer(1);
 			return _buffer[0];
 		}
 
@@ -101,7 +105,7 @@ namespace Blamite.IO
 		/// </returns>
 		public ushort ReadUInt16()
 		{
-			_stream.Read(_buffer, 0, 2);
+			Buffer(2);
 			if (_bigEndian)
 				return (ushort) ((_buffer[0] << 8) | _buffer[1]);
 			return (ushort) ((_buffer[1] << 8) | _buffer[0]);
@@ -126,7 +130,7 @@ namespace Blamite.IO
 		/// </returns>
 		public uint ReadUInt32()
 		{
-			_stream.Read(_buffer, 0, 4);
+			Buffer(4);
 			if (_bigEndian)
 				return (uint) ((_buffer[0] << 24) | (_buffer[1] << 16) | (_buffer[2] << 8) | _buffer[3]);
 			return (uint) ((_buffer[3] << 24) | (_buffer[2] << 16) | (_buffer[1] << 8) | _buffer[0]);
@@ -183,7 +187,7 @@ namespace Blamite.IO
 		/// </returns>
 		public float ReadFloat()
 		{
-			_stream.Read(_buffer, 0, 4);
+			Buffer(4);
 			if (BitConverter.IsLittleEndian == _bigEndian)
 			{
 				// Flip the bytes
@@ -255,7 +259,7 @@ namespace Blamite.IO
 			string result;
 			fixed (sbyte* str = chars)
 			{
-				_stream.Read((byte[]) (Array) chars, 0, size);
+				ReadBlock((byte[]) (Array) chars, 0, size);
 				result = new string(str);
 			}
 			return result;
@@ -297,7 +301,7 @@ namespace Blamite.IO
 			string result;
 			fixed (sbyte* str = chars)
 			{
-				_stream.Read((byte[]) (Array) chars, 0, size);
+				ReadBlock((byte[]) (Array) chars, 0, size);
 				result = new string(str, 0, size, Encoding.UTF8);
 			}
 			return result;
@@ -355,7 +359,7 @@ namespace Blamite.IO
 		public byte[] ReadBlock(int size)
 		{
 			var result = new byte[size];
-			_stream.Read(result, 0, size);
+			ReadBlock(result, 0, size);
 			return result;
 		}
 
@@ -370,7 +374,17 @@ namespace Blamite.IO
 		/// </returns>
 		public int ReadBlock(byte[] output, int offset, int size)
 		{
-			return _stream.Read(output, offset, size);
+			var totalRead = 0;
+			while (totalRead < size)
+			{
+				var read = _stream.Read(output, offset, size - totalRead);
+				if (read <= 0)
+					return totalRead;
+
+				totalRead += read;
+				offset += read;
+			}
+			return totalRead;
 		}
 
 		/// <summary>
@@ -403,6 +417,15 @@ namespace Blamite.IO
 		public Stream BaseStream
 		{
 			get { return _stream; }
+		}
+
+		/// <summary>
+		/// Reads a number of bytes into the internal buffer.
+		/// </summary>
+		/// <param name="count">The number of bytes to read.</param>
+		private void Buffer(int count)
+		{
+			ReadBlock(_buffer, 0, count);
 		}
 	}
 }

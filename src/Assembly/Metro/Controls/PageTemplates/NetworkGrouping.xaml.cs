@@ -136,15 +136,10 @@ namespace Assembly.Metro.Controls.PageTemplates
 
 	    public void HandleFreezeCommand(FreezeCommand freeze)
 	    {
-            if (freeze.Freeze)
-	            Debug.WriteLine("Console Froze");
-            else
-                Debug.WriteLine("Console Unfroze");
 	    }
 
 	    public void HandleMemoryCommand(MemoryCommand memory)
 	    {
-	        Debug.WriteLine("Poked '{0}' to offset {1:X}", memory.DataModel.Data, memory.DataModel.Offset);
 	    }
 
 	    private void Unfreeze_click(object sender, RoutedEventArgs e)

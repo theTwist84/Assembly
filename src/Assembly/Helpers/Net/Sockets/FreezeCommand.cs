@@ -31,11 +31,6 @@ namespace Assembly.Helpers.Net.Sockets
 
         public override void Handle(IPokeCommandHandler handle)
         {
-	        var xbdm = App.AssemblyStorage.AssemblySettings.Xbdm;
-            if(Freeze)
-                xbdm.Freeze();
-            if(!Freeze)
-                xbdm.Unfreeze();
             handle.HandleFreezeCommand(this);
         }
     }

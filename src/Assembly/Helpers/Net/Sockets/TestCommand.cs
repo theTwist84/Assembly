@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using Blamite.IO;
 
 namespace Assembly.Helpers.Net.Sockets
 {
@@ -22,25 +23,20 @@ namespace Assembly.Helpers.Net.Sockets
 
         public override void Deserialize(Stream stream)
         {
-            var length = stream.ReadByte();
-            var builder = new StringBuilder();
-            var byteArray = new byte[0x1000];
-            while (length > 0)
-            {
-                var read = stream.Read(byteArray, 0, length);
-                length -= read;
-                var str = Encoding.ASCII.GetString(byteArray, 0, read);
-                builder.Append(str);
-            }
-            Message = builder.ToString();
-
+			using (var reader = new EndianReader(stream, Endian.BigEndian, false))
+			{
+				var length = reader.ReadInt32();
+				Message = reader.ReadAscii(length + 1);
+			}
         }
 
         public override void Serialize(Stream stream)
         {
-            stream.WriteByte((byte)Message.Length);
-            var stringBytes = Encoding.ASCII.GetBytes(Message);
-            stream.Write(stringBytes,0,stringBytes.Length);
+			using (var writer = new EndianWriter(stream, Endian.BigEndian, false))
+			{
+				writer.WriteInt32(Message.Length);
+				writer.WriteAscii(Message);
+			}
         }
 
         public override void Handle(IPokeCommandHandler handle)

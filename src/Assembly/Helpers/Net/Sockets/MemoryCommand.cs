@@ -1,14 +1,15 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using Blamite.IO;
 using Newtonsoft.Json;
-
 
 namespace Assembly.Helpers.Net.Sockets
 {
     public class MemoryCommand : PokeCommand
     {
-        public Model DataModel { get; private set; }
+		public uint Offset { get; set; }
+		public byte[] Data { get; set; }
 
         public MemoryCommand()
             : base(PokeCommandType.Memory)
@@ -19,47 +20,33 @@ namespace Assembly.Helpers.Net.Sockets
         public MemoryCommand(uint offset, byte[] data) 
             : base(PokeCommandType.Memory)
         {
-            DataModel = new Model {Data = data, Offset = offset};
+			Offset = offset;
+			Data = data;
         }
 
         public override void Deserialize(Stream stream)
         {
-            var lengthData = new byte[4];
-            stream.Read(lengthData, 0, 4);
-            var length = BitConverter.ToInt32(lengthData, 0);
-            var buffer = new byte[length];
-            while (length > 0)
-            {
-                var read = stream.Read(buffer, 0, length);
-                length -= read;
-            }
-            var jsonString = Encoding.ASCII.GetString(buffer);
-            DataModel = JsonConvert.DeserializeObject<Model>(jsonString);
+			using (var reader = new EndianReader(stream, Endian.BigEndian, false))
+			{
+				Offset = reader.ReadUInt32();
+				var size = reader.ReadInt32();
+				Data = reader.ReadBlock(size);
+			}
         }
 
         public override void Serialize(Stream stream)
         {
-            var jsonData = Encoding.ASCII.GetBytes(JsonConvert.SerializeObject(DataModel));
-            var dataLength = jsonData.Length;
-            stream.Write(BitConverter.GetBytes(dataLength), 0, 4);
-            stream.Write(jsonData, 0, jsonData.Length);
+			using (var writer = new EndianWriter(stream, Endian.BigEndian, false))
+			{
+				writer.WriteUInt32(Offset);
+				writer.WriteInt32(Data.Length);
+				writer.WriteBlock(Data);
+			}
         }
 
         public override void Handle(IPokeCommandHandler handle)
         {
-            var xbdm = App.AssemblyStorage.AssemblySettings.Xbdm;
-            if (xbdm != null)
-            {
-                xbdm.MemoryStream.Seek(DataModel.Offset, SeekOrigin.Begin);
-                xbdm.MemoryStream.Write(DataModel.Data, 0, DataModel.Data.Length);
-            }
             handle.HandleMemoryCommand(this);
-        }
-
-        public class Model
-        {
-            public uint Offset { get; set; }
-            public byte[] Data { get; set; }
         }
     }
 }

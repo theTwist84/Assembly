@@ -35,15 +35,16 @@ namespace Blamite.IO
 		/// </summary>
 		/// <param name="stream">The stream to read from and write to.</param>
 		/// <param name="endianness">The initial endianness to use when operating on the stream.</param>
+		/// <param name="closeOnDispose">If <c>true</c>, the underlying stream will be closed when this is disposed.</param>
 		/// <exception cref="System.ArgumentException">Thrown if <paramref name="stream" /> is not both readable and writable.</exception>
-		public EndianStream(Stream stream, Endian endianness)
+		public EndianStream(Stream stream, Endian endianness, bool closeOnDispose = true)
 		{
 			if (!stream.CanRead || !stream.CanWrite)
 				throw new ArgumentException("The input stream must be both readable and writable.");
 
 			_stream = stream;
-			_reader = new EndianReader(stream, endianness);
-			_writer = new EndianWriter(stream, endianness);
+			_reader = new EndianReader(stream, endianness, closeOnDispose);
+			_writer = new EndianWriter(stream, endianness, closeOnDispose);
 		}
 
 		/// <summary>
@@ -51,7 +52,8 @@ namespace Blamite.IO
 		/// </summary>
 		public void Dispose()
 		{
-			Close();
+			_reader.Dispose();
+			_writer.Dispose();
 		}
 
 		/// <summary>

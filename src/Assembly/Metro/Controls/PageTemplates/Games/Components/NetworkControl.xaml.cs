@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -85,6 +86,12 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 
         public void HandleFreezeCommand(FreezeCommand freeze)
         {
+			var xbdm = App.AssemblyStorage.AssemblySettings.Xbdm;
+			if (freeze.Freeze)
+				xbdm.Freeze();
+			else
+				xbdm.Unfreeze();
+
             if (freeze.Freeze)
                 Debug.WriteLine("Console Froze");
             else
@@ -93,7 +100,14 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 
         public void HandleMemoryCommand(MemoryCommand memory)
         {
-            Debug.WriteLine("Poked '{0}' to offset {1:X}", memory.DataModel.Data, memory.DataModel.Offset);
+			var xbdm = App.AssemblyStorage.AssemblySettings.Xbdm;
+			if (xbdm != null)
+			{
+				xbdm.MemoryStream.Seek(memory.Offset, SeekOrigin.Begin);
+				xbdm.MemoryStream.Write(memory.Data, 0, memory.Data.Length);
+			}
+
+            Debug.WriteLine("Poked '{0}' to offset 0x{1:X8}", memory.Data, memory.Offset);
         }
 
         private void Unfreeze_click(object sender, RoutedEventArgs e)
