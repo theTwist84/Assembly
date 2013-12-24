@@ -25,10 +25,9 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
     /// <summary>
     /// Interaction logic for NetworkControl.xaml
     /// </summary>
-    public partial class NetworkControl : UserControl, IPokeCommandHandler
+    public partial class NetworkControl : UserControl
     {
-        private NetworkPokeClient _client;
-        private NetworkPokeServer _server;
+        private IPokeCommandHandler _handler;
         private IRTEProvider _rteProvider;
         private HaloMap _map;
 
@@ -40,33 +39,18 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 
         private void StartServer_click(object sender, RoutedEventArgs e)
         {
-            _server = new NetworkPokeServer();
-            var thread = new Thread(new ThreadStart(delegate
-            {
-                while (true)
-                {
-                    _server.ReceiveCommand(this);
-                }
-            }));
-            thread.Start();
+			_handler = new ServerCommandHandler();
+			_rteProvider = new SocketRTEProvider(_handler, RTEConnectionType.ConsoleX360);
+			_map.StartNetworkPoke(_rteProvider);
         }
 
         private void StartClient_click(object sender, RoutedEventArgs e)
         {
             try
             {
-                _client = new NetworkPokeClient(IPAddress.Parse(TextBlock1.Text));
-                var thread = new Thread(new ThreadStart(delegate
-                {
-                    while (true)
-                    {
-                        _client.ReceiveCommand(this);
-                    }
-                }));
-                thread.Start();
-                _rteProvider = new SocketRTEProvider(_client, RTEConnectionType.ConsoleX360);
-                _map.StartNetworkPoke(_rteProvider);
-                
+                _handler = new ClientCommandHandler(TextBlock1.Text);
+                _rteProvider = new SocketRTEProvider(_handler, RTEConnectionType.ConsoleX360);
+                _map.StartNetworkPoke(_rteProvider);     
             }
             catch (FormatException formatException)
             {
@@ -76,48 +60,17 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 
         private void SendCommand_click(object sender, RoutedEventArgs e)
         {
-            _client.SendCommand(new TestCommand(TextBlock1.Text));
-        }
-
-        public void HandleTestCommand(TestCommand test)
-        {
-            Dispatcher.Invoke(new Action(delegate { TextBlockOutput.Text = test.Message; }));
-        }
-
-        public void HandleFreezeCommand(FreezeCommand freeze)
-        {
-			var xbdm = App.AssemblyStorage.AssemblySettings.Xbdm;
-			if (freeze.Freeze)
-				xbdm.Freeze();
-			else
-				xbdm.Unfreeze();
-
-            if (freeze.Freeze)
-                Debug.WriteLine("Console Froze");
-            else
-                Debug.WriteLine("Console Unfroze");
-        }
-
-        public void HandleMemoryCommand(MemoryCommand memory)
-        {
-			var xbdm = App.AssemblyStorage.AssemblySettings.Xbdm;
-			if (xbdm != null)
-			{
-				xbdm.MemoryStream.Seek(memory.Offset, SeekOrigin.Begin);
-				xbdm.MemoryStream.Write(memory.Data, 0, memory.Data.Length);
-			}
-
-            Debug.WriteLine("Poked '{0}' to offset 0x{1:X8}", memory.Data, memory.Offset);
+            _handler.StartTestCommand(new TestCommand(TextBlock1.Text));
         }
 
         private void Unfreeze_click(object sender, RoutedEventArgs e)
         {
-            _client.SendCommand(new FreezeCommand(false));
+            _handler.StartFreezeCommand(new FreezeCommand(false));
         }
 
         private void Freeze_click(object sender, RoutedEventArgs e)
         {
-            _client.SendCommand(new FreezeCommand(true));
+            _handler.StartFreezeCommand(new FreezeCommand(true));
         }
 
         private void SendPoke_click(object sender, RoutedEventArgs e)
@@ -126,7 +79,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
                 ? UInt32.Parse(TextBoxOffset.Text.Replace("0x", ""), System.Globalization.NumberStyles.HexNumber)
                 : UInt32.Parse(TextBoxOffset.Text);
             var data = VariousFunctions.StringToByteArray(TextBoxData.Text);
-            _client.SendCommand(new MemoryCommand(offset, data));
+            _handler.StartMemoryCommand(new MemoryCommand(offset, data));
         }
     }
 }

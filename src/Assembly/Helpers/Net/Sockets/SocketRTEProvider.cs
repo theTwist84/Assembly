@@ -6,11 +6,11 @@ namespace Assembly.Helpers.Net.Sockets
 {
     public class SocketRTEProvider : IRTEProvider
     {
-        private NetworkPokeClient _client;
+        private IPokeCommandHandler _handler;
 
-        public SocketRTEProvider(NetworkPokeClient client, RTEConnectionType type)
+        public SocketRTEProvider(IPokeCommandHandler handler, RTEConnectionType type)
         {
-            _client = client;
+            _handler = handler;
             ConnectionType = type;
         }
 
@@ -18,7 +18,7 @@ namespace Assembly.Helpers.Net.Sockets
 
         public IStream GetMetaStream(ICacheFile cacheFile)
         {
-            return new EndianStream(new SocketStream(_client), Endian.BigEndian);
+            return new EndianStream(new SocketStream(_handler), Endian.BigEndian);
         }
     }
 }

@@ -638,10 +638,10 @@ namespace Assembly.Windows
 					tab.Title = "Settings";
 					tab.Content = new SettingsPage();
 					break;
-				case TabGenre.NetworkPoking:
-					tab.Title = "Network Poking";
-					tab.Content = new NetworkGrouping();
-					break;
+				//case TabGenre.NetworkPoking:
+				//	tab.Title = "Network Poking";
+				//	tab.Content = new NetworkGrouping();
+				//	break;
 				case TabGenre.PluginGenerator:
 					tab.Title = "Plugin Generator";
 					tab.Content = new HaloPluginGenerator();
@@ -650,7 +650,7 @@ namespace Assembly.Windows
 					tab.Title = "Plugin Converter";
 					tab.Content = new HaloPluginConverter();
 					break;
-
+				
 
 				case TabGenre.MemoryManager:
 					tab.Title = "Memory Manager";

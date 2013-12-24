@@ -10,5 +10,9 @@ namespace Assembly.Helpers.Net.Sockets
         void HandleTestCommand(TestCommand test);
         void HandleFreezeCommand(FreezeCommand freeze);
         void HandleMemoryCommand(MemoryCommand memory);
+
+        void StartTestCommand(TestCommand test);
+        void StartFreezeCommand(FreezeCommand freeze);
+        void StartMemoryCommand(MemoryCommand memory);
     }
 }

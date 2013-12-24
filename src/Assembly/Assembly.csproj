@@ -174,14 +174,17 @@
     <Compile Include="Helpers\Net\HttpExtensions.cs" />
     <Compile Include="Helpers\Net\HttpRequests.cs" />
     <Compile Include="Helpers\Net\SignIn.cs" />
+    <Compile Include="Helpers\Net\Sockets\ClientCommandHandler.cs" />
     <Compile Include="Helpers\Net\Sockets\CommandSerialization.cs" />
     <Compile Include="Helpers\Net\Sockets\FreezeCommand.cs" />
+    <Compile Include="Helpers\Net\Sockets\HandlerFunctions.cs" />
     <Compile Include="Helpers\Net\Sockets\IPokeCommandHandler.cs" />
     <Compile Include="Helpers\Net\Sockets\MemoryCommand.cs" />
     <Compile Include="Helpers\Net\Sockets\PokeCommand.cs" />
     <Compile Include="Helpers\Net\Sockets\NetworkPokeClient.cs" />
     <Compile Include="Helpers\Net\Sockets\PokeCommandType.cs" />
     <Compile Include="Helpers\Net\Sockets\NetworkPokeServer.cs" />
+    <Compile Include="Helpers\Net\Sockets\ServerCommandHandler.cs" />
     <Compile Include="Helpers\Net\Sockets\SocketRTEProvider.cs" />
     <Compile Include="Helpers\Net\Sockets\SocketStream.cs" />
     <Compile Include="Helpers\Net\Sockets\TestCommand.cs" />
@@ -462,9 +465,6 @@
     </Compile>
     <Compile Include="Metro\Controls\PageTemplates\Games\HaloMap.xaml.cs">
       <DependentUpon>HaloMap.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Metro\Controls\PageTemplates\NetworkGrouping.xaml.cs">
-      <DependentUpon>NetworkGrouping.xaml</DependentUpon>
     </Compile>
     <Compile Include="Metro\Controls\PageTemplates\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
@@ -834,10 +834,6 @@
     <Page Include="Metro\Controls\PageTemplates\MemoryManager.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Metro\Controls\PageTemplates\NetworkGrouping.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Metro\Controls\PageTemplates\PatchControl.xaml">
       <SubType>Designer</SubType>

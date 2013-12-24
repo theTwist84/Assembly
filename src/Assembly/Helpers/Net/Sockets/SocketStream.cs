@@ -8,11 +8,11 @@ namespace Assembly.Helpers.Net.Sockets
 {
     public class SocketStream : Stream
     {
-        private NetworkPokeClient _client;
+        private IPokeCommandHandler _handler;
 
-        public SocketStream(NetworkPokeClient client)
+        public SocketStream(IPokeCommandHandler handler)
         {
-            _client = client;
+            _handler = handler;
         }
 
         public override void Flush()
@@ -55,7 +55,7 @@ namespace Assembly.Helpers.Net.Sockets
 
 			// Send a MemoryCommand to the server
             var memory = new MemoryCommand((uint)Position, writeBuffer);
-            _client.SendCommand(memory);
+            _handler.StartMemoryCommand(memory);
         }
 
         public override bool CanRead
