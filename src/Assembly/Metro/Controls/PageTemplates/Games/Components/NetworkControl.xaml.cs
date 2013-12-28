@@ -46,7 +46,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 			{
 				while (true)
 				{
-					if (_handler != null)
+					if (_handler != null && _handler.GetClientIpList() != null)
 						_viewModel.Clients = new ObservableCollection<string>(_handler.GetClientIpList());
 					Thread.Sleep(5000);
 				}

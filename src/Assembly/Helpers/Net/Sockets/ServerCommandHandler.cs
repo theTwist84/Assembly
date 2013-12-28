@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
@@ -55,13 +56,19 @@ namespace Assembly.Helpers.Net.Sockets
 
 		public List<string> GetClientIpList()
 		{
-			_server.SendCommandToAll(new ClientListCommand(GetClientList()));
+			_clientList = new List<string>();
+			var ipString = Dns.GetHostEntry(Dns.GetHostName()).AddressList.First(ip => ip.AddressFamily == AddressFamily.InterNetwork).ToString();
+			_clientList.Add(ipString);
+			foreach (var client in GetClientList())
+			{
+				_clientList.Add(client.RemoteEndPoint.ToString());
+			}
 			return _clientList;
 		}
 
 		public void HandleClientListCommand(ClientListCommand clientListCommand)
 		{
-			_clientList = clientListCommand.Clients;
+			
 		}
 	}
 }
