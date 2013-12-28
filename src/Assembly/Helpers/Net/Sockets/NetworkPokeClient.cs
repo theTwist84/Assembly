@@ -50,6 +50,7 @@ namespace Assembly.Helpers.Net.Sockets
 			}
 			catch (IOException)
 			{
+				_socket.Close();
 				return false;
 			}
         }

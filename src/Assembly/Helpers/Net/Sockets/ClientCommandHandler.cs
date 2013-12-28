@@ -50,7 +50,7 @@ namespace Assembly.Helpers.Net.Sockets
             if (!succeeded)
             {
                 App.AssemblyStorage.AssemblySettings.HomeWindow.Dispatcher.Invoke(
-                    new Action(delegate { MetroMessageBox.Show("Command Failed", "A freeze command has failed to be sent."); }));
+                    new Action(delegate { MetroMessageBox.Show("Command Failed", "A freeze command has failed to be sent.  Closing connection!"); }));
             }
         }
 
@@ -60,7 +60,7 @@ namespace Assembly.Helpers.Net.Sockets
 			if (!succeeded)
 			{
 				App.AssemblyStorage.AssemblySettings.HomeWindow.Dispatcher.Invoke(
-					new Action(delegate { MetroMessageBox.Show("Command Failed", "A poke has failed to be sent to the server."); }));
+					new Action(delegate { MetroMessageBox.Show("Command Failed", "A poke has failed to be sent to the server.  Closing connection!"); }));
 			}
         }
 
