@@ -21,14 +21,14 @@ namespace Assembly.Helpers.Net.Sockets
 			PokeCommand command;
 			switch (commandType)
 			{
-				case PokeCommandType.Test:
-					command = new TestCommand();
-					break;
 				case PokeCommandType.Freeze:
 					command = new FreezeCommand();
 					break;
 				case PokeCommandType.Memory:
 					command = new MemoryCommand();
+					break;
+				case PokeCommandType.ClientList:
+					command = new ClientListCommand();
 					break;
 				default:
 					throw new NotImplementedException("The suspected command type has not been implemented yet.");

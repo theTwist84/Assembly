@@ -1304,7 +1304,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 			App.AssemblyStorage.AssemblySettings.HalomapTagOpenMode = _tagOpenMode;
 		}
 
-	    public void StartNetworkPoke(IRTEProvider networkProvider)
+	    public void setRTEProvider(IRTEProvider networkProvider)
 	    {
 	        _rteProvider = networkProvider;
 	    }

@@ -7,7 +7,7 @@ namespace Assembly.Helpers.Net.Sockets
 {
     public enum PokeCommandType
     {
-        Test,
+        ClientList,
         Freeze,
         Memory
     }

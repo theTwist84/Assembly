@@ -2,7 +2,6 @@
 using System.IO;
 using System.Text;
 using Blamite.IO;
-using Newtonsoft.Json;
 
 namespace Assembly.Helpers.Net.Sockets
 {

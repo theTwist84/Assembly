@@ -175,6 +175,7 @@
     <Compile Include="Helpers\Net\HttpRequests.cs" />
     <Compile Include="Helpers\Net\SignIn.cs" />
     <Compile Include="Helpers\Net\Sockets\ClientCommandHandler.cs" />
+    <Compile Include="Helpers\Net\Sockets\ClientListCommand.cs" />
     <Compile Include="Helpers\Net\Sockets\CommandSerialization.cs" />
     <Compile Include="Helpers\Net\Sockets\FreezeCommand.cs" />
     <Compile Include="Helpers\Net\Sockets\HandlerFunctions.cs" />
@@ -187,7 +188,6 @@
     <Compile Include="Helpers\Net\Sockets\ServerCommandHandler.cs" />
     <Compile Include="Helpers\Net\Sockets\SocketRTEProvider.cs" />
     <Compile Include="Helpers\Net\Sockets\SocketStream.cs" />
-    <Compile Include="Helpers\Net\Sockets\TestCommand.cs" />
     <Compile Include="Helpers\Plugins\ThirdGenPluginVisitor.cs" />
     <Compile Include="Helpers\Net\AssemblyServer.cs" />
     <Compile Include="Helpers\Net\Imgur.cs" />

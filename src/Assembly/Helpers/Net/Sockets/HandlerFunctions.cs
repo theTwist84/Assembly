@@ -31,8 +31,6 @@ namespace Assembly.Helpers.Net.Sockets
                 xbdm.MemoryStream.Seek(memory.Offset, SeekOrigin.Begin);
                 xbdm.MemoryStream.Write(memory.Data, 0, memory.Data.Length);
             }
-
-            Debug.WriteLine("Poked '{0}' to offset 0x{1:X8}", memory.Data, memory.Offset);
         }
     }
 }
