@@ -1,20 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Assembly.Helpers;
 using Assembly.Helpers.Net.Sockets;
 using Assembly.Metro.Dialogs;
@@ -22,7 +10,6 @@ using Blamite.RTE;
 using XBDMCommunicator;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
-using System.Net.Sockets;
 
 namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 {
@@ -85,13 +72,9 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 			_handler.StartFreezeCommand(new FreezeCommand(true));
 		}
 
-		private void SendPoke_click(object sender, RoutedEventArgs e)
+		private void SendName_Click(object sender, RoutedEventArgs e)
 		{
-			var offset = TextBoxOffset.Text.StartsWith("0x")
-				? UInt32.Parse(TextBoxOffset.Text.Replace("0x", ""), System.Globalization.NumberStyles.HexNumber)
-				: UInt32.Parse(TextBoxOffset.Text);
-			var data = VariousFunctions.StringToByteArray(TextBoxData.Text);
-			_handler.StartMemoryCommand(new MemoryCommand(offset, data));
+			_handler.StartNameChangeCommand(new ChangeNameCommand(TextBlock1.Text));
 		}
 
 		private void Disconnect_click(object sender, RoutedEventArgs e)

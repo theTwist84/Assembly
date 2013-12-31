@@ -56,6 +56,11 @@ namespace Assembly.Helpers.Net.Sockets
 			HandleMemoryCommand(memory);
 		}
 
+		public void StartNameChangeCommand(ChangeNameCommand changeNameCommand)
+		{
+			_name = changeNameCommand.Name;
+		}
+
 		public List<ClientModel> GetClientList()
 		{
 			return _server.GetClients();

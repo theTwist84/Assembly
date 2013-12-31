@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Net;
 using System.Net.Sockets;
 using Mono.Nat;
@@ -58,11 +59,11 @@ namespace Assembly.Helpers.Net.Sockets
 				}
 
 				// The listener socket is "readable" when a client is ready to be accepted
-				readyClients.Add(new ClientModel(_listener.RemoteEndPoint.ToString(), _listener));
+				readyClients.Add(new ClientModel(null, _listener));
 
 				// Wait for either a command to become available in a client,
 				// or a client to be ready to connect
-				Socket.Select(readyClients, null, null, -1);
+				Socket.Select(readyClients.Select(client => client.ClientSocket).ToList(), null, null, -1);
 				var failedClients = new List<ClientModel>();
 				foreach (var client in readyClients)
 				{

@@ -66,7 +66,12 @@ namespace Assembly.Helpers.Net.Sockets
 			}
         }
 
-		public List<string> GetClientIpList()
+	    public void StartNameChangeCommand(ChangeNameCommand changeNameCommand)
+	    {
+		    _client.SendCommand(changeNameCommand);
+	    }
+
+	    public List<string> GetClientIpList()
 		{
 			return _clientList;
 		}

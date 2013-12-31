@@ -14,9 +14,7 @@
 		<TextBlock x:Name="TextBlockOutput" HorizontalAlignment="Left" Margin="141,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="41" Width="361" Foreground="White" FontFamily="{DynamicResource MetroFontSemiLight}" FontSize="20"/>
 		<Button Content="Freeze" HorizontalAlignment="Left" Margin="382,202,0,0" VerticalAlignment="Top" Width="120" Click="Freeze_click"/>
 		<Button Content="Unfreeze" HorizontalAlignment="Left" Margin="382,318,0,0" VerticalAlignment="Top" Width="120" Click="Unfreeze_click"/>
-		<Button Content="Poke" HorizontalAlignment="Left" Margin="223,318,0,0" VerticalAlignment="Top" Width="75" Click="SendPoke_click"/>
-		<TextBox x:Name="TextBoxOffset" HorizontalAlignment="Left" Height="23" Margin="20,131,0,0" TextWrapping="Wrap" Text="0x8203BB78" VerticalAlignment="Top" Width="120"/>
-		<TextBox x:Name="TextBoxData" HorizontalAlignment="Left" Height="23" Margin="382,131,0,0" TextWrapping="Wrap" Text="3F99999A" VerticalAlignment="Top" Width="120"/>
+		<Button Content="Set Name" HorizontalAlignment="Left" Margin="223,318,0,0" VerticalAlignment="Top" Width="75" Click="SendName_Click"/>
 		<TextBlock HorizontalAlignment="Left" Margin="152,10,0,0" TextWrapping="Wrap" Text="Enter Client IP Address then hit Start Client" VerticalAlignment="Top"/>
 		<ListBox ItemsSource="{Binding Path=Clients, Mode=OneWay}" HorizontalAlignment="Left" Height="307" Margin="555,33,0,0" VerticalAlignment="Top" Width="209"/>
 
