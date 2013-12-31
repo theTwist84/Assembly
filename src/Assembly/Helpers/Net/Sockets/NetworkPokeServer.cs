@@ -14,7 +14,7 @@ namespace Assembly.Helpers.Net.Sockets
 	public class NetworkPokeServer
 	{
 		private Socket _listener;
-		private readonly List<Socket> _clients = new List<Socket>();
+		private readonly List<ClientModel> _clients = new List<ClientModel>();
 
 		// TODO: Should we make it possible to set the port number somehow?
 		private static int Port = 19002;
@@ -51,49 +51,50 @@ namespace Assembly.Helpers.Net.Sockets
 			while (true)
 			{
 				// Duplicate our clients list for use with Socket.Select()
-				List<Socket> readyClients;
+				List<ClientModel> readyClients;
 				lock (_clients)
 				{
-					readyClients = new List<Socket>(_clients);
+					readyClients = new List<ClientModel>(_clients);
 				}
 
 				// The listener socket is "readable" when a client is ready to be accepted
-				readyClients.Add(_listener);
+				readyClients.Add(new ClientModel(_listener.RemoteEndPoint.ToString(), _listener));
 
 				// Wait for either a command to become available in a client,
 				// or a client to be ready to connect
 				Socket.Select(readyClients, null, null, -1);
-				var failedClients = new List<Socket>();
-				foreach (var socket in readyClients)
+				var failedClients = new List<ClientModel>();
+				foreach (var client in readyClients)
 				{
 
-					if (socket != _listener)
+					if (client.ClientSocket != _listener)
 					{
 						try
 						{
 							// Command available
-							using (var stream = new NetworkStream(socket, false))
+							using (var stream = new NetworkStream(client.ClientSocket, false))
 							{
 								var command = CommandSerialization.DeserializeCommand(stream);
+								command.Source = client;
 								command.Handle(handler);
 							}
 						}
 						catch (IOException)
 						{
-							socket.Close();
-							failedClients.Add(socket);
+							client.ClientSocket.Close();
+							failedClients.Add(client);
 						}
 						break; // Only process one command at a time
 					}
 					else
 					{
 						// Client ready to connect
-						var client = _listener.Accept();
-						ConnectClient(client);
+						var newClient = _listener.Accept();
+						ConnectClient(newClient);
 					}
 				}
-				foreach (var socket in failedClients)
-					_clients.Remove(socket);
+				foreach (var client in failedClients)
+					_clients.Remove(client);
 			}
 		}
 
@@ -105,22 +106,22 @@ namespace Assembly.Helpers.Net.Sockets
 		{
 			lock (_clients)
 			{
-				var failedClients = new List<Socket>();
-				foreach (var socket in _clients)
+				var failedClients = new List<ClientModel>();
+				foreach (var client in _clients)
 				{
 					try
 					{
-						using (var stream = new NetworkStream(socket, false))
+						using (var stream = new NetworkStream(client.ClientSocket, false))
 							CommandSerialization.SerializeCommand(command, stream);
 					}
 					catch (IOException)
 					{
-						socket.Close();
-						failedClients.Add(socket);
+						client.ClientSocket.Close();
+						failedClients.Add(client);
 					}
 				}
-				foreach (var socket in failedClients)
-					_clients.Remove(socket);
+				foreach (var client in failedClients)
+					_clients.Remove(client);
 
 			}
 		}
@@ -133,7 +134,7 @@ namespace Assembly.Helpers.Net.Sockets
 		{
 			lock (_clients)
 			{
-				_clients.Add(client);
+				_clients.Add(new ClientModel(client.RemoteEndPoint.ToString(), _listener));
 			}
 			SendCommandToAll(new ClientListCommand(_clients));
 		}
@@ -156,7 +157,7 @@ namespace Assembly.Helpers.Net.Sockets
 #endif
 		}
 
-		public List<Socket> GetClients()
+		public List<ClientModel> GetClients()
 		{
 			return _clients;
 		}

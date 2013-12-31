@@ -20,5 +20,7 @@ namespace Assembly.Helpers.Net.Sockets
         public abstract void Handle(IPokeCommandHandler handle);
 
         public PokeCommandType Type { get; private set; }
+
+		public ClientModel Source { get; set; }
     }
 }

@@ -60,7 +60,6 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 		private readonly Settings.TagSort _tagSorting;
 		private TagHierarchy _allTags = new TagHierarchy();
 		private EngineDescription _buildInfo;
-		private ICacheFile _cacheFile;
 		private Settings.MapInfoDockSide _dockSide;
 		private ObservableCollection<HeaderValue> _headerDetails = new ObservableCollection<HeaderValue>();
 		private IStreamManager _mapManager;
@@ -149,7 +148,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 				var reader = new EndianReader(fileStream, Endian.BigEndian);
 				try
 				{
-					_cacheFile = CacheFileLoader.LoadCacheFile(reader, App.AssemblyStorage.AssemblySettings.DefaultDatabase,
+					CacheFile = CacheFileLoader.LoadCacheFile(reader, App.AssemblyStorage.AssemblySettings.DefaultDatabase,
 						out _buildInfo);
 
 #if DEBUG
@@ -160,7 +159,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 							Content = "Debug Tools",
 							ContextMenu = BaseContextMenu
 						},
-						Content = new DebugTools(_cacheFile)
+						Content = new DebugTools(CacheFile)
 					})));
 #endif
 				}
@@ -187,8 +186,8 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 
 				// Build SID trie
 				_stringIdTrie = new Trie();
-				if (_cacheFile.StringIDs != null)
-					_stringIdTrie.AddRange(_cacheFile.StringIDs);
+				if (CacheFile.StringIDs != null)
+					_stringIdTrie.AddRange(CacheFile.StringIDs);
 
 				Dispatcher.Invoke(new Action(delegate
 				{
@@ -197,7 +196,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 				}));
 
 				// Set up RTE
-				switch (_cacheFile.Engine)
+				switch (CacheFile.Engine)
 				{
 					case EngineType.SecondGeneration:
 						_rteProvider = new H2VistaRTEProvider("halo2.exe");
@@ -218,16 +217,16 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 					StatusUpdater.Update("Added To Recents");
 				}));
 
-				/*ITag dice = _cacheFile.Tags[0x0102];
-				IRenderModel diceModel = _cacheFile.ResourceMetaLoader.LoadRenderModelMeta(dice, reader);
-				var resourceTable = _cacheFile.Resources.LoadResourceTable(reader);
+				/*ITag dice = CacheFile.Tags[0x0102];
+				IRenderModel diceModel = CacheFile.ResourceMetaLoader.LoadRenderModelMeta(dice, reader);
+				var resourceTable = CacheFile.Resources.LoadResourceTable(reader);
 				Resource diceResource = resourceTable.Resources[diceModel.ModelResourceIndex.Index];
-				ICacheFile resourceFile = _cacheFile;
+				ICacheFile resourceFile = CacheFile;
 				Stream resourceStream = fileStream;
 				if (diceResource.Location.PrimaryPage.FilePath != null)
 				{
 					resourceStream = File.OpenRead(Path.Combine(Path.GetDirectoryName(_cacheLocation), Path.GetFileName(diceResource.Location.PrimaryPage.FilePath)));
-					resourceFile = new ThirdGenCacheFile(new EndianReader(resourceStream, Endian.BigEndian), _buildInfo, _cacheFile.BuildString);
+					resourceFile = new ThirdGenCacheFile(new EndianReader(resourceStream, Endian.BigEndian), _buildInfo, CacheFile.BuildString);
 				}
 				ResourcePageExtractor extractor = new ResourcePageExtractor(resourceFile);
 				string path = Path.GetTempFileName();
@@ -269,7 +268,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 				var fi = new FileInfo(_cacheLocation);
 				_tab.Title = fi.Name;
 				App.AssemblyStorage.AssemblySettings.HomeWindow.UpdateTitleText(fi.Name.Replace(fi.Extension, ""));
-				lblMapName.Text = _cacheFile.InternalName;
+				lblMapName.Text = CacheFile.InternalName;
 
 				lblMapHeader.Text = "Map Header;";
 				lblDblClick.Visibility = Visibility.Visible;
@@ -278,53 +277,53 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 				HeaderDetails.Add(new HeaderValue
 				{
 					Title = "Build:",
-					Data = _cacheFile.BuildString.ToString(CultureInfo.InvariantCulture)
+					Data = CacheFile.BuildString.ToString(CultureInfo.InvariantCulture)
 				});
-				HeaderDetails.Add(new HeaderValue {Title = "Type:", Data = _cacheFile.Type.ToString()});
-				HeaderDetails.Add(new HeaderValue {Title = "Internal Name:", Data = _cacheFile.InternalName});
-				HeaderDetails.Add(new HeaderValue {Title = "Scenario Name:", Data = _cacheFile.ScenarioName});
-				if (_cacheFile.MetaArea != null)
+				HeaderDetails.Add(new HeaderValue {Title = "Type:", Data = CacheFile.Type.ToString()});
+				HeaderDetails.Add(new HeaderValue {Title = "Internal Name:", Data = CacheFile.InternalName});
+				HeaderDetails.Add(new HeaderValue {Title = "Scenario Name:", Data = CacheFile.ScenarioName});
+				if (CacheFile.MetaArea != null)
 				{
 					HeaderDetails.Add(new HeaderValue
 					{
 						Title = "Meta Base:",
-						Data = "0x" + _cacheFile.MetaArea.BasePointer.ToString("X8")
+						Data = "0x" + CacheFile.MetaArea.BasePointer.ToString("X8")
 					});
-					HeaderDetails.Add(new HeaderValue {Title = "Meta Size:", Data = "0x" + _cacheFile.MetaArea.Size.ToString("X")});
+					HeaderDetails.Add(new HeaderValue {Title = "Meta Size:", Data = "0x" + CacheFile.MetaArea.Size.ToString("X")});
 					HeaderDetails.Add(new HeaderValue
 					{
 						Title = "Map Magic:",
-						Data = "0x" + _cacheFile.MetaArea.OffsetToPointer(0).ToString("X8")
+						Data = "0x" + CacheFile.MetaArea.OffsetToPointer(0).ToString("X8")
 					});
 					HeaderDetails.Add(new HeaderValue
 					{
 						Title = "Index Header Pointer:",
-						Data = "0x" + _cacheFile.IndexHeaderLocation.AsPointer().ToString("X8")
+						Data = "0x" + CacheFile.IndexHeaderLocation.AsPointer().ToString("X8")
 					});
 				}
 
-				if (_cacheFile.XDKVersion > 0)
+				if (CacheFile.XDKVersion > 0)
 					HeaderDetails.Add(new HeaderValue
 					{
 						Title = "SDK Version:",
-						Data = _cacheFile.XDKVersion.ToString(CultureInfo.InvariantCulture)
+						Data = CacheFile.XDKVersion.ToString(CultureInfo.InvariantCulture)
 					});
 
-				if (_cacheFile.RawTable != null)
+				if (CacheFile.RawTable != null)
 				{
 					HeaderDetails.Add(new HeaderValue
 					{
 						Title = "Raw Table Offset:",
-						Data = "0x" + _cacheFile.RawTable.Offset.ToString("X8")
+						Data = "0x" + CacheFile.RawTable.Offset.ToString("X8")
 					});
-					HeaderDetails.Add(new HeaderValue {Title = "Raw Table Size:", Data = "0x" + _cacheFile.RawTable.Size.ToString("X")});
+					HeaderDetails.Add(new HeaderValue {Title = "Raw Table Size:", Data = "0x" + CacheFile.RawTable.Size.ToString("X")});
 				}
 
-				if (_cacheFile.LocaleArea != null)
+				if (CacheFile.LocaleArea != null)
 					HeaderDetails.Add(new HeaderValue
 					{
 						Title = "Index Offset Magic:",
-						Data = "0x" + ((uint) -_cacheFile.LocaleArea.PointerMask).ToString("X8")
+						Data = "0x" + ((uint) -CacheFile.LocaleArea.PointerMask).ToString("X8")
 					});
 
 				Dispatcher.Invoke(new Action(() => panelHeaderItems.DataContext = HeaderDetails));
@@ -335,14 +334,14 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 
 		private void LoadTags()
 		{
-			if (_cacheFile.TagClasses == null || _cacheFile.Tags == null)
+			if (CacheFile.TagClasses == null || CacheFile.Tags == null)
 				return;
 
 			// Only allow tag importing if resource data is available
-			if (_cacheFile.Resources == null)
+			if (CacheFile.Resources == null)
 				Dispatcher.Invoke(new Action(() => btnImport.IsEnabled = false));
 
-			_tagEntries = _cacheFile.Tags.Select(WrapTag).ToList();
+			_tagEntries = CacheFile.Tags.Select(WrapTag).ToList();
 			_allTags = BuildTagHierarchy(
 				c => c.Children.Count > 0,
 				t => true);
@@ -354,10 +353,10 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 		{
 			// Build a dictionary of tag classes
 			var classWrappers = new Dictionary<ITagClass, TagClass>();
-			foreach (ITagClass tagClass in _cacheFile.TagClasses)
+			foreach (ITagClass tagClass in CacheFile.TagClasses)
 			{
 				string name = CharConstant.ToString(tagClass.Magic);
-				string description = _cacheFile.StringIDs.GetString(tagClass.Description) ?? "unknown";
+				string description = CacheFile.StringIDs.GetString(tagClass.Description) ?? "unknown";
 				var wrapper = new TagClass(tagClass, name, description);
 				classWrappers[tagClass] = wrapper;
 			}
@@ -427,13 +426,13 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 
 		private void LoadScripts()
 		{
-			if (_buildInfo.ScriptInfo == null || _cacheFile.ScriptFiles.Length == 0)
+			if (_buildInfo.ScriptInfo == null || CacheFile.ScriptFiles.Length == 0)
 				return;
 
 			Dispatcher.Invoke(new Action(delegate
 			{
 				tabScripts.Visibility = Visibility.Visible;
-				lbScripts.ItemsSource = _cacheFile.ScriptFiles;
+				lbScripts.ItemsSource = CacheFile.ScriptFiles;
 				StatusUpdater.Update("Initialized Scripts");
 			}
 				));
@@ -447,7 +446,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 
 		private void AddLanguage(string name, GameLanguage lang)
 		{
-			if (!_cacheFile.Languages.AvailableLanguages.Contains(lang))
+			if (!CacheFile.Languages.AvailableLanguages.Contains(lang))
 				return;
 
 			_languages.Add(new LanguageEntry(name, lang));
@@ -551,7 +550,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 						Content = tabName,
 						ContextMenu = BaseContextMenu
 					},
-					Content = new LocaleEditor(language.Language, _cacheFile, _mapManager, _stringIdTrie, _buildInfo.LocaleSymbols)
+					Content = new LocaleEditor(language.Language, CacheFile, _mapManager, _stringIdTrie, _buildInfo.LocaleSymbols)
 				};
 
 				contentTabs.Items.Add(tab);
@@ -612,11 +611,11 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 			// Dump all of the tags that belong to the class
 			using (var writer = new StreamWriter(sfd.FileName))
 			{
-				foreach (ITag tag in _cacheFile.Tags)
+				foreach (ITag tag in CacheFile.Tags)
 				{
 					if (tag == null || tag.Class != tagClass.RawClass) continue;
 
-					string name = _cacheFile.FileNames.GetTagName(tag);
+					string name = CacheFile.FileNames.GetTagName(tag);
 					if (name != null)
 						writer.WriteLine("{0}={1}", tag.Index, name);
 				}
@@ -711,7 +710,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 						_buildInfo.Settings.GetSetting<string>("plugins"), className);
 
 					// Extract dem data blocks
-					var blockBuilder = new DataBlockBuilder(reader, currentTag.MetaLocation, _cacheFile, _buildInfo);
+					var blockBuilder = new DataBlockBuilder(reader, currentTag.MetaLocation, CacheFile, _buildInfo);
 					using (XmlReader pluginReader = XmlReader.Create(pluginPath))
 						AssemblyPluginLoader.LoadPlugin(pluginReader, blockBuilder);
 
@@ -719,7 +718,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 						container.AddDataBlock(block);
 
 					// Add data for the tag that was extracted
-					string tagName = _cacheFile.FileNames.GetTagName(currentTag) ?? currentTag.Index.ToString();
+					string tagName = CacheFile.FileNames.GetTagName(currentTag) ?? currentTag.Index.ToString();
 					var extractedTag = new ExtractedTag(currentTag.Index, currentTag.MetaLocation.AsPointer(), currentTag.Class.Magic,
 						tagName);
 					container.AddTag(extractedTag);
@@ -727,14 +726,14 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 					// Mark the tag as processed and then enqueue all of its child tags and resources
 					tagsProcessed.Add(currentTag);
 					foreach (DatumIndex tagRef in blockBuilder.ReferencedTags)
-						tagsToProcess.Enqueue(_cacheFile.Tags[tagRef]);
+						tagsToProcess.Enqueue(CacheFile.Tags[tagRef]);
 					foreach (DatumIndex resource in blockBuilder.ReferencedResources)
 						resourcesToProcess.Enqueue(resource);
 				}
 
 				// Load the resource table in if necessary
 				if (resourcesToProcess.Count > 0)
-					resources = _cacheFile.Resources.LoadResourceTable(reader);
+					resources = CacheFile.Resources.LoadResourceTable(reader);
 			}
 
 			// Extract resource info
@@ -791,7 +790,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 			using (var reader = new EndianReader(File.OpenRead(ofd.FileName), Endian.BigEndian))
 				container = TagContainerReader.ReadTagContainer(reader);
 
-			var injector = new TagContainerInjector(_cacheFile, container);
+			var injector = new TagContainerInjector(CacheFile, container);
 			using (IStream stream = _mapManager.OpenReadWrite())
 			{
 				foreach (ExtractedTag tag in container.Tags)
@@ -802,7 +801,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 
 			// Fix the SID trie
 			foreach (StringID sid in injector.InjectedStringIDs)
-				_stringIdTrie.Add(_cacheFile.StringIDs.GetString(sid));
+				_stringIdTrie.Add(CacheFile.StringIDs.GetString(sid));
 
 			LoadTags();
 			MetroMessageBox.Show("Import Successful",
@@ -816,11 +815,11 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 		{
 			// Store the names back to the cache file
 			foreach (TagEntry tag in _allTags.Entries.Where(t => t != null))
-				_cacheFile.FileNames.SetTagName(tag.RawTag, tag.TagFileName);
+				CacheFile.FileNames.SetTagName(tag.RawTag, tag.TagFileName);
 
 			// Save it
 			using (IStream stream = _mapManager.OpenReadWrite())
-				_cacheFile.SaveChanges(stream);
+				CacheFile.SaveChanges(stream);
 
 			MetroMessageBox.Show("Success!", "Tag names saved successfully.");
 		}
@@ -1094,7 +1093,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 		//		var tab = new CloseableTabItem
 		//					  {
 		//						  Header = "StringID Viewer", 
-		//						  Content = new Components.Editors.StringEditor(_cacheFile)
+		//						  Content = new Components.Editors.StringEditor(CacheFile)
 		//					  };
 
 		//		contentTabs.Items.Add(tab);
@@ -1228,7 +1227,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 					},
 					Tag = tag,
 					Content =
-						new MetaContainer(_buildInfo, tag, _allTags, _cacheFile, _mapManager, _rteProvider,
+						new MetaContainer(_buildInfo, tag, _allTags, CacheFile, _mapManager, _rteProvider,
 							_stringIdTrie)
 				});
 			}
@@ -1315,7 +1314,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 
 		private void UpdateTagFilter()
 		{
-			if (_cacheFile == null)
+			if (CacheFile == null)
 				return;
 
 			string filter = "";
@@ -1334,7 +1333,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 				return null;
 
 			string className = CharConstant.ToString(tag.Class.Magic);
-			string name = _cacheFile.FileNames.GetTagName(tag);
+			string name = CacheFile.FileNames.GetTagName(tag);
 			if (string.IsNullOrWhiteSpace(name))
 				name = tag.Index.ToString();
 
@@ -1380,5 +1379,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 			public string Title { get; set; }
 			public object Data { get; set; }
 		}
+
+        public ICacheFile CacheFile { get; private set; }
 	}
 }

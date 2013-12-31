@@ -30,6 +30,9 @@ namespace Assembly.Helpers.Net.Sockets
 				case PokeCommandType.ClientList:
 					command = new ClientListCommand();
 					break;
+				case PokeCommandType.ChangeName:
+					command = new ChangeNameCommand();
+					break;
 				default:
 					throw new NotImplementedException("The suspected command type has not been implemented yet.");
 			}

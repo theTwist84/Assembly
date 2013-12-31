@@ -18,15 +18,14 @@ namespace Assembly.Helpers.Net.Sockets
 			Clients = new List<string>();
 		}
 
-		public ClientListCommand(List<Socket> clients)
+		public ClientListCommand(List<ClientModel> clients)
 			: base(PokeCommandType.ClientList)
 		{
 			Clients = new List<string>();
-			var ipString = Dns.GetHostEntry(Dns.GetHostName()).AddressList.First(ip => ip.AddressFamily == AddressFamily.InterNetwork).ToString();
-			Clients.Add(ipString);
+			Clients.Add("Server");
 			foreach (var client in clients)
 			{
-				Clients.Add(client.RemoteEndPoint.ToString());
+				Clients.Add(client.Name);
 			}
 		}
 

@@ -8,15 +8,22 @@ namespace Assembly.Helpers.Net.Sockets
 {
     public class SocketStream : Stream
     {
+
         private IPokeCommandHandler _handler;
+        private List<DataModel> _models;
+
 
         public SocketStream(IPokeCommandHandler handler)
         {
+
             _handler = handler;
+            _models = new List<DataModel>();
+
         }
 
         public override void Flush()
         {
+            _handler.StartMemoryCommand(new MemoryCommand(_models));
         }
 
         public override long Seek(long offset, SeekOrigin origin)
@@ -53,9 +60,10 @@ namespace Assembly.Helpers.Net.Sockets
 			var writeBuffer = new byte[count];
 			Buffer.BlockCopy(buffer, offset, writeBuffer, 0, count);
 
-			// Send a MemoryCommand to the server
-            var memory = new MemoryCommand((uint)Position, writeBuffer);
-            _handler.StartMemoryCommand(memory);
+            _models.Add(new DataModel((uint)Position, writeBuffer));
+
+
+
         }
 
         public override bool CanRead
@@ -79,5 +87,18 @@ namespace Assembly.Helpers.Net.Sockets
         }
 
         public override long Position { get; set; }
+
+        public class DataModel
+        {
+            public DataModel(uint position, byte[] writeBuffer)
+            {
+                Position = position;
+                Buffer = writeBuffer;
+            }
+
+            public byte[] Buffer { get; set; }
+
+            public uint Position { get; set; }
+        }
     }
 }

@@ -77,7 +77,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 			//else
 			//{
 			//	tabSound.Visibility = Visibility.Collapsed;
-			//	if (App.AssemblyStorage.AssemblySettings.halomapLastSelectedMetaEditor == App.AssemblyStorage.AssemblySettings.LastMetaEditorType.Model)
+			//	if (App.AssemblyStorage.AssemblySettings.halomapLastSelectedMetaEditor == App.AssemblyStorage.AssemblySettings.LastMetaEditorType.Source)
 			//		tbMetaEditors.SelectedIndex = (int)App.AssemblyStorage.AssemblySettings.LastMetaEditorType.MetaEditor;
 			//}
 

@@ -190,7 +190,7 @@
 								<CheckBox Content="Lighing Edits" IsChecked="{Binding LighingEdits}" Margin="20" Width="120" />
 								<CheckBox Content="Jmad Edits" IsChecked="{Binding JmadEdits}" Margin="20" Width="120" />
 								<CheckBox Content="Effect Edits" IsChecked="{Binding EffectEdits}" Margin="20" Width="120" />
-								<CheckBox Content="Model Edits" IsChecked="{Binding ModelEdits}" Margin="20" Width="120" />
+								<CheckBox Content="Source Edits" IsChecked="{Binding ModelEdits}" Margin="20" Width="120" />
 								<CheckBox Content="Physics Edits" IsChecked="{Binding PhysicsEdits}" Margin="20" Width="120" />
 								<CheckBox Content="Barrier Edits" IsChecked="{Binding BarrierEdits}" Margin="20" Width="120" />
 								<CheckBox Content="AI Edits" IsChecked="{Binding AiEdits}" Margin="20" Width="120" />

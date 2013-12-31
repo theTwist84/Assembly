@@ -55,7 +55,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 
 		private void StartServer_click(object sender, RoutedEventArgs e)
 		{
-			_handler = new ServerCommandHandler();
+			_handler = new ServerCommandHandler(_map);
 			_rteProvider = new SocketRTEProvider(_handler, RTEConnectionType.ConsoleX360);
 			_map.setRTEProvider(_rteProvider);
 		}
@@ -64,7 +64,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 		{
 			try
 			{
-				_handler = new ClientCommandHandler(TextBlock1.Text);
+				_handler = new ClientCommandHandler(TextBlock1.Text, _map);
 				_rteProvider = new SocketRTEProvider(_handler, RTEConnectionType.ConsoleX360);
 				_map.setRTEProvider(_rteProvider);
 			}

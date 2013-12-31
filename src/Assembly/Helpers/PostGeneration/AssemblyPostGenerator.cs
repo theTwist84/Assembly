@@ -124,7 +124,7 @@ namespace Assembly.Helpers.PostGeneration
 			attributeList +=
 				BBCodeListOption(
 					"[ " + BBCodeBold(PostInfo.ModelEdits ? BBCodeColour("Yes", "009900") : BBCodeColour("No", "FF0000")) +
-					" ] Model Edits", true);
+					" ] Source Edits", true);
 			attributeList +=
 				BBCodeListOption(
 					"[ " + BBCodeBold(PostInfo.PhysicsEdits ? BBCodeColour("Yes", "009900") : BBCodeColour("No", "FF0000")) +

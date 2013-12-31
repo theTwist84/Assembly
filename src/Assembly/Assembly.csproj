@@ -174,8 +174,10 @@
     <Compile Include="Helpers\Net\HttpExtensions.cs" />
     <Compile Include="Helpers\Net\HttpRequests.cs" />
     <Compile Include="Helpers\Net\SignIn.cs" />
+    <Compile Include="Helpers\Net\Sockets\ChangeNameCommand.cs" />
     <Compile Include="Helpers\Net\Sockets\ClientCommandHandler.cs" />
     <Compile Include="Helpers\Net\Sockets\ClientListCommand.cs" />
+    <Compile Include="Helpers\Net\Sockets\ClientModel.cs" />
     <Compile Include="Helpers\Net\Sockets\CommandSerialization.cs" />
     <Compile Include="Helpers\Net\Sockets\FreezeCommand.cs" />
     <Compile Include="Helpers\Net\Sockets\HandlerFunctions.cs" />

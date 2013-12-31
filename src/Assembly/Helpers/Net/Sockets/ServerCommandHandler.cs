@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using Assembly.Metro.Controls.PageTemplates.Games;
 
 namespace Assembly.Helpers.Net.Sockets
 {
@@ -14,14 +15,18 @@ namespace Assembly.Helpers.Net.Sockets
 	{
 		private NetworkPokeServer _server;
 		private List<string> _clientList;
-		public ServerCommandHandler()
+		private string _name = "Server";
+	    private HaloMap _map;
+
+	    public ServerCommandHandler(HaloMap map)
 		{
+		    _map = map;
 			_server = new NetworkPokeServer();
 			var thread = new Thread(new ThreadStart(delegate
 			{
 				while (true)
 				{
-					_server.ReceiveCommand(this);	
+				    _server.ReceiveCommand(this);
 				}
 			}));
 			thread.Start();
@@ -35,8 +40,10 @@ namespace Assembly.Helpers.Net.Sockets
 
 		public void HandleMemoryCommand(MemoryCommand memory)
 		{
-			HandlerFunctions.MemoryCommand(memory);
+			HandleFreezeCommand(new FreezeCommand(true));
+            HandlerFunctions.MemoryCommand(memory, _map);
 			_server.SendCommandToAll(memory);
+            HandleFreezeCommand(new FreezeCommand(false));
 		}
 
 		public void StartFreezeCommand(FreezeCommand freeze)
@@ -49,7 +56,7 @@ namespace Assembly.Helpers.Net.Sockets
 			HandleMemoryCommand(memory);
 		}
 
-		public List<Socket> GetClientList()
+		public List<ClientModel> GetClientList()
 		{
 			return _server.GetClients();
 		} 
@@ -57,13 +64,17 @@ namespace Assembly.Helpers.Net.Sockets
 		public List<string> GetClientIpList()
 		{
 			_clientList = new List<string>();
-			var ipString = Dns.GetHostEntry(Dns.GetHostName()).AddressList.First(ip => ip.AddressFamily == AddressFamily.InterNetwork).ToString();
-			_clientList.Add(ipString);
+			_clientList.Add(_name);
 			foreach (var client in GetClientList())
 			{
-				_clientList.Add(client.RemoteEndPoint.ToString());
+				_clientList.Add(client.Name);
 			}
 			return _clientList;
+		}
+
+		public void HandleChangeNameCommand(ChangeNameCommand changeNameCommand)
+		{
+			changeNameCommand.Source.Name = changeNameCommand.Name;
 		}
 
 		public void HandleClientListCommand(ClientListCommand clientListCommand)

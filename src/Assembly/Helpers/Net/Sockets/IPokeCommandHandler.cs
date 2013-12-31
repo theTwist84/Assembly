@@ -15,5 +15,7 @@ namespace Assembly.Helpers.Net.Sockets
         void StartFreezeCommand(FreezeCommand freeze);
         void StartMemoryCommand(MemoryCommand memory);
 		List<string> GetClientIpList();
+
+		void HandleChangeNameCommand(ChangeNameCommand changeNameCommand);
 	}
 }

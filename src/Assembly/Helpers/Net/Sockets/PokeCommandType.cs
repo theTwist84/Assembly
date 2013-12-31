@@ -5,10 +5,11 @@ using System.Text;
 
 namespace Assembly.Helpers.Net.Sockets
 {
-    public enum PokeCommandType
-    {
-        ClientList,
-        Freeze,
-        Memory
-    }
+	public enum PokeCommandType
+	{
+		ClientList,
+		Freeze,
+		Memory,
+		ChangeName
+	}
 }

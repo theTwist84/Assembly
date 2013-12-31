@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Net;
 using System.Diagnostics;
-
+using Assembly.Metro.Controls.PageTemplates.Games;
 using Assembly.Metro.Dialogs;
 using System.Windows.Threading;
 
@@ -14,10 +14,12 @@ namespace Assembly.Helpers.Net.Sockets
     public class ClientCommandHandler: IPokeCommandHandler
     {
         private NetworkPokeClient _client;
+        private HaloMap _map;
 		private List<string> _clientList = new List<string>();
-        public ClientCommandHandler(string IpAddress)
+        public ClientCommandHandler(string ipAddress, HaloMap map)
         {
-            _client = new NetworkPokeClient(IPAddress.Parse(IpAddress));
+            _client = new NetworkPokeClient(IPAddress.Parse(ipAddress));
+            _map = map;
              var thread = new Thread(new ThreadStart(delegate
              {
                  while (true)
@@ -41,7 +43,7 @@ namespace Assembly.Helpers.Net.Sockets
 
         public void HandleMemoryCommand(MemoryCommand memory)
         {
-            HandlerFunctions.MemoryCommand(memory);
+            HandlerFunctions.MemoryCommand(memory, _map);
         }
 
         public void StartFreezeCommand(FreezeCommand freeze)
@@ -69,8 +71,13 @@ namespace Assembly.Helpers.Net.Sockets
 			return _clientList;
 		}
 
+	    public void HandleChangeNameCommand(ChangeNameCommand changeNameCommand)
+	    {
+		    
+	    }
 
-		public void HandleClientListCommand(ClientListCommand clientListCommand)
+
+	    public void HandleClientListCommand(ClientListCommand clientListCommand)
 		{
 			_clientList = clientListCommand.Clients;
 		}
