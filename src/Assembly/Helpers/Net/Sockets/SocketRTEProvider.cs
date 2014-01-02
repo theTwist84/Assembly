@@ -1,12 +1,14 @@
 ﻿using Blamite.Blam;
 using Blamite.IO;
 using Blamite.RTE;
+using Blamite.RTE.H2Vista;
 
 namespace Assembly.Helpers.Net.Sockets
 {
     public class SocketRTEProvider : IRTEProvider
     {
         private IPokeCommandHandler _handler;
+		public string ExeName { get; set; }
 
         public SocketRTEProvider(IPokeCommandHandler handler, RTEConnectionType type)
         {
@@ -18,7 +20,14 @@ namespace Assembly.Helpers.Net.Sockets
 
         public IStream GetMetaStream(ICacheFile cacheFile)
         {
-            return new EndianStream(new SocketStream(_handler), Endian.BigEndian);
+	        if (cacheFile.Engine == EngineType.ThirdGeneration)
+	        {
+		        return new EndianStream(new SocketStream(_handler), Endian.BigEndian);
+	        }
+	        else
+	        {
+				return new EndianStream(new SocketStream(_handler), Endian.LittleEndian);
+	        }
         }
     }
 }

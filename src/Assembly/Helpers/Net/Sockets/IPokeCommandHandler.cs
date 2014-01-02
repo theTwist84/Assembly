@@ -19,9 +19,5 @@ namespace Assembly.Helpers.Net.Sockets
         void StartMemoryCommand(MemoryCommand memory);
 		void StartNameChangeCommand(ChangeNameCommand changeNameCommand);
 
-		//Helper function to client list command
-		List<string> GetClientIpList();
-
-
 	}
 }

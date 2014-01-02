@@ -10,20 +10,16 @@ namespace Assembly.Helpers.Net.Sockets
     {
 
         private IPokeCommandHandler _handler;
-        private List<DataModel> _models;
-
+	    private List<PokeBuffer> _pokes = new List<PokeBuffer>();
 
         public SocketStream(IPokeCommandHandler handler)
         {
-
             _handler = handler;
-            _models = new List<DataModel>();
-
         }
 
         public override void Flush()
         {
-            _handler.StartMemoryCommand(new MemoryCommand(_models));
+            _handler.StartMemoryCommand(new MemoryCommand(_pokes));
         }
 
         public override long Seek(long offset, SeekOrigin origin)
@@ -60,12 +56,15 @@ namespace Assembly.Helpers.Net.Sockets
 			var writeBuffer = new byte[count];
 			Buffer.BlockCopy(buffer, offset, writeBuffer, 0, count);
 
-            _models.Add(new DataModel((uint)Position, writeBuffer));
-
-
-
+            _pokes.Add(new PokeBuffer((uint)Position, writeBuffer));
         }
 
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+				Flush();
+		}
+		
         public override bool CanRead
         {
             get { return true; }
@@ -88,9 +87,9 @@ namespace Assembly.Helpers.Net.Sockets
 
         public override long Position { get; set; }
 
-        public class DataModel
+        public class PokeBuffer
         {
-            public DataModel(uint position, byte[] writeBuffer)
+            public PokeBuffer(uint position, byte[] writeBuffer)
             {
                 Position = position;
                 Buffer = writeBuffer;

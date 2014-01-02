@@ -18,15 +18,10 @@ namespace Assembly.Helpers.Net.Sockets
 			Clients = new List<string>();
 		}
 
-		public ClientListCommand(List<ClientModel> clients)
+		public ClientListCommand(List<string> clients)
 			: base(PokeCommandType.ClientList)
 		{
-			Clients = new List<string>();
-			Clients.Add("Server");
-			foreach (var client in clients)
-			{
-				Clients.Add(client.Name);
-			}
+			Clients = clients;
 		}
 
 

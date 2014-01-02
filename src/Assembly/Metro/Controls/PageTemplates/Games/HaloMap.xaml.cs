@@ -63,7 +63,6 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 		private Settings.MapInfoDockSide _dockSide;
 		private ObservableCollection<HeaderValue> _headerDetails = new ObservableCollection<HeaderValue>();
 		private IStreamManager _mapManager;
-		private IRTEProvider _rteProvider;
 		private Trie _stringIdTrie;
 		private List<TagEntry> _tagEntries = new List<TagEntry>();
 		private Settings.TagOpenMode _tagOpenMode;
@@ -199,11 +198,11 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 				switch (CacheFile.Engine)
 				{
 					case EngineType.SecondGeneration:
-						_rteProvider = new H2VistaRTEProvider("halo2.exe");
+						RteProvider = new H2VistaRTEProvider("halo2.exe");
 						break;
 
 					case EngineType.ThirdGeneration:
-						_rteProvider = new XBDMRTEProvider(App.AssemblyStorage.AssemblySettings.Xbdm);
+						RteProvider = new XBDMRTEProvider(App.AssemblyStorage.AssemblySettings.Xbdm);
 						break;
 				}
 
@@ -1227,7 +1226,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 					},
 					Tag = tag,
 					Content =
-						new MetaContainer(_buildInfo, tag, _allTags, CacheFile, _mapManager, _rteProvider,
+						new MetaContainer(_buildInfo, tag, _allTags, CacheFile, _mapManager, RteProvider,
 							_stringIdTrie)
 				});
 			}
@@ -1303,11 +1302,6 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 			App.AssemblyStorage.AssemblySettings.HalomapTagOpenMode = _tagOpenMode;
 		}
 
-	    public void setRTEProvider(IRTEProvider networkProvider)
-	    {
-	        _rteProvider = networkProvider;
-	    }
-
 		#endregion
 
 		#region Tag Searching
@@ -1381,5 +1375,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 		}
 
         public ICacheFile CacheFile { get; private set; }
+
+		public IRTEProvider RteProvider { get; set; }
 	}
 }

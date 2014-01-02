@@ -11,15 +11,15 @@ namespace Assembly.Helpers.Net.Sockets
 {
     public class MemoryCommand : PokeCommand
     {
-        public List<SocketStream.DataModel> Models { get; set; }
+        public List<SocketStream.PokeBuffer> Models { get; set; }
 
         public MemoryCommand()
             : base(PokeCommandType.Memory)
         {
-            
+            Models = new List<SocketStream.PokeBuffer>();
         }
 
-        public MemoryCommand(List<SocketStream.DataModel> models) 
+        public MemoryCommand(List<SocketStream.PokeBuffer> models) 
             : base(PokeCommandType.Memory)
         {
             Models = models;
@@ -28,8 +28,8 @@ namespace Assembly.Helpers.Net.Sockets
         public MemoryCommand(uint offset, byte[] buffer)
             : base(PokeCommandType.Memory)
         {
-            Models = new List<SocketStream.DataModel>();
-            Models.Add(new SocketStream.DataModel(offset, buffer));
+            Models = new List<SocketStream.PokeBuffer>();
+            Models.Add(new SocketStream.PokeBuffer(offset, buffer));
         }
 
         public override void Deserialize(Stream stream)
@@ -42,7 +42,7 @@ namespace Assembly.Helpers.Net.Sockets
                     var offset = reader.ReadUInt32();
                     var length = reader.ReadInt32();
                     var buffer = reader.ReadBlock(length);
-                    Models.Add(new SocketStream.DataModel(offset, buffer));
+                    Models.Add(new SocketStream.PokeBuffer(offset, buffer));
                 }
             }
         }

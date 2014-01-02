@@ -30,6 +30,8 @@ namespace Assembly.Helpers.Net.Sockets
 			try
 			{
 				_socket.Connect(endpoint);
+				while (!_socket.Connected) {}
+				SendCommand(new ClientListCommand());
 			}
 			catch (SocketException)
 			{

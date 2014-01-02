@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using Assembly.Helpers;
 using Assembly.Helpers.Net.Sockets;
 using Assembly.Metro.Dialogs;
+using Blamite.Blam;
 using Blamite.RTE;
+using Blamite.RTE.H2Vista;
 using XBDMCommunicator;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
@@ -28,38 +31,35 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 			_map = map;
 			InitializeComponent();
 			DataContext = _viewModel = new ViewModel();
-
-			new Thread(new ThreadStart(delegate
-			{
-				while (true)
-				{
-					if (_handler != null && _handler.GetClientIpList() != null)
-						_viewModel.Clients = new ObservableCollection<string>(_handler.GetClientIpList());
-					Thread.Sleep(5000);
-				}
-			})).Start();
 		}
 
 		private void StartServer_click(object sender, RoutedEventArgs e)
 		{
-			_handler = new ServerCommandHandler(_map);
-			_rteProvider = new SocketRTEProvider(_handler, RTEConnectionType.ConsoleX360);
-			_map.setRTEProvider(_rteProvider);
+			_handler = new ServerCommandHandler(_map, _viewModel);
+			_rteProvider = SelectRteEngine(_map.CacheFile, _handler);
+			_map.RteProvider = _rteProvider;
 		}
 
 		private void StartClient_click(object sender, RoutedEventArgs e)
 		{
 			try
 			{
-				_handler = new ClientCommandHandler(TextBlock1.Text, _map);
-				_rteProvider = new SocketRTEProvider(_handler, RTEConnectionType.ConsoleX360);
-				_map.setRTEProvider(_rteProvider);
+				_handler = new ClientCommandHandler(TextBlock1.Text, _map, _viewModel);
+				_rteProvider = SelectRteEngine(_map.CacheFile, _handler);
+				_map.RteProvider = _rteProvider;
 			}
 			catch (FormatException)
 			{
-
 				MetroMessageBox.Show("Invalid IP", "The specified IP address was not valid.");
 			}
+		}
+
+		private IRTEProvider SelectRteEngine(ICacheFile cache, IPokeCommandHandler handler)
+		{
+			if (_map.CacheFile.Engine == EngineType.ThirdGeneration)
+				return new SocketRTEProvider(_handler, RTEConnectionType.ConsoleX360);
+			else
+				throw new NotImplementedException("No Halo 2 Vista poking allowed yet.");
 		}
 
 		private void Unfreeze_click(object sender, RoutedEventArgs e)
@@ -79,7 +79,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 
 		private void Disconnect_click(object sender, RoutedEventArgs e)
 		{
-			_map.setRTEProvider(new XBDMRTEProvider(App.AssemblyStorage.AssemblySettings.Xbdm));
+			_map.RteProvider = new XBDMRTEProvider(App.AssemblyStorage.AssemblySettings.Xbdm);
 			//TODO:  Make the sockets close
 			_handler = null;
 		}

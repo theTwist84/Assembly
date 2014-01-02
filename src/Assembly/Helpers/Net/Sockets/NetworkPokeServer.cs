@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
 using Mono.Nat;
 using System.IO;
 
@@ -63,7 +64,8 @@ namespace Assembly.Helpers.Net.Sockets
 
 				// Wait for either a command to become available in a client,
 				// or a client to be ready to connect
-				Socket.Select(readyClients.Select(client => client.ClientSocket).ToList(), null, null, -1);
+				List<Socket> sockets = readyClients.Select(client => client.ClientSocket).ToList();
+				Socket.Select(sockets, null, null, -1);
 				var failedClients = new List<ClientModel>();
 				foreach (var client in readyClients)
 				{
@@ -135,9 +137,14 @@ namespace Assembly.Helpers.Net.Sockets
 		{
 			lock (_clients)
 			{
-				_clients.Add(new ClientModel(client.RemoteEndPoint.ToString(), _listener));
+				// wait for client to become connected
+				// seems haxish
+				while (!client.Connected) {}
+				_clients.Add(new ClientModel(client.RemoteEndPoint.ToString(), client));
+				
 			}
-			SendCommandToAll(new ClientListCommand(_clients));
+			var clientStrings = _clients.Select(localClient => localClient.Name).ToList();
+			SendCommandToAll(new ClientListCommand(clientStrings));
 		}
 
 		/// <summary>

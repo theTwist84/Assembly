@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Net;
 using System.Diagnostics;
 using Assembly.Metro.Controls.PageTemplates.Games;
+using Assembly.Metro.Controls.PageTemplates.Games.Components;
 using Assembly.Metro.Dialogs;
 using System.Windows.Threading;
+using Blamite.Blam;
+using Blamite.RTE.H2Vista;
 
 namespace Assembly.Helpers.Net.Sockets
 {
@@ -15,10 +19,11 @@ namespace Assembly.Helpers.Net.Sockets
     {
         private NetworkPokeClient _client;
         private HaloMap _map;
-		private List<string> _clientList = new List<string>();
-        public ClientCommandHandler(string ipAddress, HaloMap map)
+	    private NetworkControl.ViewModel _viewModel;
+        public ClientCommandHandler(string ipAddress, HaloMap map, NetworkControl.ViewModel model)
         {
             _client = new NetworkPokeClient(IPAddress.Parse(ipAddress));
+	        _viewModel = model;
             _map = map;
              var thread = new Thread(new ThreadStart(delegate
              {
@@ -43,7 +48,10 @@ namespace Assembly.Helpers.Net.Sockets
 
         public void HandleMemoryCommand(MemoryCommand memory)
         {
-            HandlerFunctions.MemoryCommand(memory, _map);
+	        if (_map.CacheFile.Engine == EngineType.ThirdGeneration)
+	        {
+		        HandlerFunctions.MemoryCommand(memory, _map);
+	        }
         }
 
         public void StartFreezeCommand(FreezeCommand freeze)
@@ -71,20 +79,14 @@ namespace Assembly.Helpers.Net.Sockets
 		    _client.SendCommand(changeNameCommand);
 	    }
 
-	    public List<string> GetClientIpList()
-		{
-			return _clientList;
-		}
-
 	    public void HandleChangeNameCommand(ChangeNameCommand changeNameCommand)
 	    {
 		    
 	    }
 
-
 	    public void HandleClientListCommand(ClientListCommand clientListCommand)
-		{
-			_clientList = clientListCommand.Clients;
+	    {
+			_viewModel.Clients = new ObservableCollection<string>(clientListCommand.Clients);
 		}
 	}
 }

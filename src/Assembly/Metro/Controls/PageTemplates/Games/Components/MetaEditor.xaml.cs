@@ -239,25 +239,22 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 			{
 				using (IStream metaStream = _rteProvider.GetMetaStream(_cache))
 				{
-					if (metaStream != null)
-					{
-						FieldChangeSet changes = onlyUpdateChanged ? _memoryChanges : null;
-						var metaUpdate = new MetaWriter(metaStream, _tag.RawTag.MetaLocation.AsPointer(), _cache, _buildInfo, type,
-							changes, _stringIdTrie);
-						metaUpdate.WriteFields(_pluginVisitor.Values);
-
-						if (showActionDialog)
-						{
-							if (onlyUpdateChanged)
-								MetroMessageBox.Show("Meta Poked", "All changed metadata has been poked to the game.");
-							else
-								MetroMessageBox.Show("Meta Poked", "The metadata has been poked to the game.");
-						}
-					}
-					else
+					if (metaStream == null)
 					{
 						ShowConnectionError();
+						return;
 					}
+					FieldChangeSet changes = onlyUpdateChanged ? _memoryChanges : null;
+					var metaUpdate = new MetaWriter(metaStream, _tag.RawTag.MetaLocation.AsPointer(), _cache, _buildInfo, type,
+						changes, _stringIdTrie);
+					metaUpdate.WriteFields(_pluginVisitor.Values);
+				}
+				if (showActionDialog)
+				{
+					if (onlyUpdateChanged)
+						MetroMessageBox.Show("Meta Poked", "All changed metadata has been poked to the game.");
+					else
+						MetroMessageBox.Show("Meta Poked", "The metadata has been poked to the game.");
 				}
 			}
 		}

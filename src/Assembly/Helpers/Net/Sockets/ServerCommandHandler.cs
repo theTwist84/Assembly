@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -8,6 +9,9 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using Assembly.Metro.Controls.PageTemplates.Games;
+using Assembly.Metro.Controls.PageTemplates.Games.Components;
+using Blamite.Blam;
+using Blamite.RTE.H2Vista;
 
 namespace Assembly.Helpers.Net.Sockets
 {
@@ -17,11 +21,14 @@ namespace Assembly.Helpers.Net.Sockets
 		private List<string> _clientList;
 		private string _name = "Server";
 	    private HaloMap _map;
+		private NetworkControl.ViewModel _viewModel;
 
-	    public ServerCommandHandler(HaloMap map)
+		public ServerCommandHandler(HaloMap map, NetworkControl.ViewModel viewModel)
 		{
 		    _map = map;
+		    _viewModel = viewModel;
 			_server = new NetworkPokeServer();
+			HandleClientListCommand(new ClientListCommand(GetClientNameList()));
 			var thread = new Thread(new ThreadStart(delegate
 			{
 				while (true)
@@ -41,9 +48,12 @@ namespace Assembly.Helpers.Net.Sockets
 		public void HandleMemoryCommand(MemoryCommand memory)
 		{
 			HandleFreezeCommand(new FreezeCommand(true));
-            HandlerFunctions.MemoryCommand(memory, _map);
 			_server.SendCommandToAll(memory);
-            HandleFreezeCommand(new FreezeCommand(false));
+			if (_map.CacheFile.Engine == EngineType.ThirdGeneration)
+			{
+				HandlerFunctions.MemoryCommand(memory, _map);
+			}
+			HandleFreezeCommand(new FreezeCommand(false));
 		}
 
 		public void StartFreezeCommand(FreezeCommand freeze)
@@ -59,6 +69,8 @@ namespace Assembly.Helpers.Net.Sockets
 		public void StartNameChangeCommand(ChangeNameCommand changeNameCommand)
 		{
 			_name = changeNameCommand.Name;
+
+			HandleClientListCommand(new ClientListCommand(GetClientNameList()));
 		}
 
 		public List<ClientModel> GetClientList()
@@ -66,7 +78,7 @@ namespace Assembly.Helpers.Net.Sockets
 			return _server.GetClients();
 		} 
 
-		public List<string> GetClientIpList()
+		public List<string> GetClientNameList()
 		{
 			_clientList = new List<string>();
 			_clientList.Add(_name);
@@ -74,17 +86,19 @@ namespace Assembly.Helpers.Net.Sockets
 			{
 				_clientList.Add(client.Name);
 			}
+			_viewModel.Clients = new ObservableCollection<string>(_clientList);
 			return _clientList;
 		}
 
 		public void HandleChangeNameCommand(ChangeNameCommand changeNameCommand)
 		{
 			changeNameCommand.Source.Name = changeNameCommand.Name;
+			HandleClientListCommand(new ClientListCommand(GetClientNameList()));
 		}
 
 		public void HandleClientListCommand(ClientListCommand clientListCommand)
 		{
-			
+			_server.SendCommandToAll(new ClientListCommand(GetClientNameList()));
 		}
 	}
 }
