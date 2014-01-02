@@ -6,15 +6,15 @@ using System.Text;
 
 namespace Assembly.Helpers.Net.Sockets
 {
-	public class ClientModel
+	public class ClientName
     {
         
 
-        public ClientModel()
+        public ClientName()
         {       
         }
 
-        public ClientModel(string name, Socket socket)
+        public ClientName(string name, Socket socket)
         {
             Name = name;
 	        ClientSocket = socket;

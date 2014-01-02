@@ -59,7 +59,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 			if (_map.CacheFile.Engine == EngineType.ThirdGeneration)
 				return new SocketRTEProvider(_handler, RTEConnectionType.ConsoleX360);
 			else
-				throw new NotImplementedException("No Halo 2 Vista poking allowed yet.");
+				return new SocketRTEProvider(_handler, RTEConnectionType.LocalProcess);
 		}
 
 		private void Unfreeze_click(object sender, RoutedEventArgs e)

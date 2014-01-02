@@ -16,7 +16,7 @@ namespace Assembly.Helpers.Net.Sockets
 	public class NetworkPokeServer
 	{
 		private Socket _listener;
-		private readonly List<ClientModel> _clients = new List<ClientModel>();
+		private readonly List<ClientName> _clients = new List<ClientName>();
 
 		// TODO: Should we make it possible to set the port number somehow?
 		private static int Port = 19002;
@@ -53,20 +53,20 @@ namespace Assembly.Helpers.Net.Sockets
 			while (true)
 			{
 				// Duplicate our clients list for use with Socket.Select()
-				List<ClientModel> readyClients;
+				List<ClientName> readyClients;
 				lock (_clients)
 				{
-					readyClients = new List<ClientModel>(_clients);
+					readyClients = new List<ClientName>(_clients);
 				}
 
 				// The listener socket is "readable" when a client is ready to be accepted
-				readyClients.Add(new ClientModel(null, _listener));
+				readyClients.Add(new ClientName(null, _listener));
 
 				// Wait for either a command to become available in a client,
 				// or a client to be ready to connect
 				List<Socket> sockets = readyClients.Select(client => client.ClientSocket).ToList();
 				Socket.Select(sockets, null, null, -1);
-				var failedClients = new List<ClientModel>();
+				var failedClients = new List<ClientName>();
 				foreach (var client in readyClients)
 				{
 
@@ -109,7 +109,7 @@ namespace Assembly.Helpers.Net.Sockets
 		{
 			lock (_clients)
 			{
-				var failedClients = new List<ClientModel>();
+				var failedClients = new List<ClientName>();
 				foreach (var client in _clients)
 				{
 					try
@@ -140,7 +140,7 @@ namespace Assembly.Helpers.Net.Sockets
 				// wait for client to become connected
 				// seems haxish
 				while (!client.Connected) {}
-				_clients.Add(new ClientModel(client.RemoteEndPoint.ToString(), client));
+				_clients.Add(new ClientName(client.RemoteEndPoint.ToString(), client));
 				
 			}
 			var clientStrings = _clients.Select(localClient => localClient.Name).ToList();
@@ -165,7 +165,7 @@ namespace Assembly.Helpers.Net.Sockets
 #endif
 		}
 
-		public List<ClientModel> GetClients()
+		public List<ClientName> GetClients()
 		{
 			return _clients;
 		}

@@ -21,6 +21,6 @@ namespace Assembly.Helpers.Net.Sockets
 
         public PokeCommandType Type { get; private set; }
 
-		public ClientModel Source { get; set; }
+		public ClientName Source { get; set; }
     }
 }

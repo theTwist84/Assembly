@@ -11,6 +11,7 @@ using Assembly.Metro.Controls.PageTemplates.Games.Components;
 using Assembly.Metro.Dialogs;
 using System.Windows.Threading;
 using Blamite.Blam;
+using Blamite.RTE;
 using Blamite.RTE.H2Vista;
 
 namespace Assembly.Helpers.Net.Sockets
@@ -19,12 +20,14 @@ namespace Assembly.Helpers.Net.Sockets
     {
         private NetworkPokeClient _client;
         private HaloMap _map;
+	    private IRTEProvider _provider;
 	    private NetworkControl.ViewModel _viewModel;
         public ClientCommandHandler(string ipAddress, HaloMap map, NetworkControl.ViewModel model)
         {
             _client = new NetworkPokeClient(IPAddress.Parse(ipAddress));
 	        _viewModel = model;
             _map = map;
+	        _provider = _map.RteProvider;
              var thread = new Thread(new ThreadStart(delegate
              {
                  while (true)
@@ -48,10 +51,8 @@ namespace Assembly.Helpers.Net.Sockets
 
         public void HandleMemoryCommand(MemoryCommand memory)
         {
-	        if (_map.CacheFile.Engine == EngineType.ThirdGeneration)
-	        {
-		        HandlerFunctions.MemoryCommand(memory, _map);
-	        }
+	        using (var stream = _provider.GetMetaStream((_map.CacheFile)))
+		        HandlerFunctions.MemoryCommand(memory, _map, stream);
         }
 
         public void StartFreezeCommand(FreezeCommand freeze)

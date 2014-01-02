@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using Assembly.Metro.Controls.PageTemplates.Games;
 using Blamite.Blam;
+using Blamite.IO;
 using Blamite.Native;
 
 namespace Assembly.Helpers.Net.Sockets
@@ -26,24 +27,18 @@ namespace Assembly.Helpers.Net.Sockets
                 Debug.WriteLine("Console Unfroze");
         }
 
-        public static void MemoryCommand(MemoryCommand memory, HaloMap map)
-        {
-	        if (map.CacheFile.Engine == EngineType.ThirdGeneration)
-	        {
-		        var xbdm = App.AssemblyStorage.AssemblySettings.Xbdm;
-		        if (xbdm != null)
-		        {
-			        var models = memory.Models;
-			        foreach (var model in models)
-			        {
-				        if (map.CacheFile.MetaArea.ContainsBlockPointer(model.Position, model.Buffer.Length))
-				        {
-					        xbdm.MemoryStream.Seek(model.Position, SeekOrigin.Begin);
-					        xbdm.MemoryStream.Write(model.Buffer, 0, model.Buffer.Length);
-				        }
-			        }
-		        }
-	        }
+	    public static void MemoryCommand(MemoryCommand memory, HaloMap map, IStream stream)
+	    {
+			var buffers = memory.Buffers;
+			foreach (var buffer in buffers)
+			{
+				if (map.CacheFile.MetaArea.ContainsBlockPointer(buffer.Position, buffer.Buffer.Length))
+				{
+					Debug.WriteLine("Memory command addr=0x{0:X8} len=0x{1:X}", buffer.Position, buffer.Buffer.Length);
+					stream.SeekTo(buffer.Position);
+					stream.WriteBlock(buffer.Buffer);
+				}
+			}  
         }
     }
 }

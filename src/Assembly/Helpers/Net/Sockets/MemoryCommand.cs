@@ -11,25 +11,25 @@ namespace Assembly.Helpers.Net.Sockets
 {
     public class MemoryCommand : PokeCommand
     {
-        public List<SocketStream.PokeBuffer> Models { get; set; }
+        public List<NetworkPokeStream.PokeBuffer> Buffers { get; set; }
 
         public MemoryCommand()
             : base(PokeCommandType.Memory)
         {
-            Models = new List<SocketStream.PokeBuffer>();
+            Buffers = new List<NetworkPokeStream.PokeBuffer>();
         }
 
-        public MemoryCommand(List<SocketStream.PokeBuffer> models) 
+        public MemoryCommand(List<NetworkPokeStream.PokeBuffer> buffers) 
             : base(PokeCommandType.Memory)
         {
-            Models = models;
+            Buffers = buffers;
         }
 
         public MemoryCommand(uint offset, byte[] buffer)
             : base(PokeCommandType.Memory)
         {
-            Models = new List<SocketStream.PokeBuffer>();
-            Models.Add(new SocketStream.PokeBuffer(offset, buffer));
+            Buffers = new List<NetworkPokeStream.PokeBuffer>();
+            Buffers.Add(new NetworkPokeStream.PokeBuffer(offset, buffer));
         }
 
         public override void Deserialize(Stream stream)
@@ -42,7 +42,7 @@ namespace Assembly.Helpers.Net.Sockets
                     var offset = reader.ReadUInt32();
                     var length = reader.ReadInt32();
                     var buffer = reader.ReadBlock(length);
-                    Models.Add(new SocketStream.PokeBuffer(offset, buffer));
+                    Buffers.Add(new NetworkPokeStream.PokeBuffer(offset, buffer));
                 }
             }
         }
@@ -51,13 +51,13 @@ namespace Assembly.Helpers.Net.Sockets
         {
 			using (var writer = new EndianWriter(stream, Endian.BigEndian, false))
 			{
-			    var count = Models.Count;
+			    var count = Buffers.Count;
                 writer.WriteInt32(count);
-			    foreach (var model in Models)
+			    foreach (var buffer in Buffers)
 			    {
-			        writer.WriteUInt32(model.Position);
-                    writer.WriteInt32(model.Buffer.Length);
-                    writer.WriteBlock(model.Buffer);
+					writer.WriteUInt32(buffer.Position);
+					writer.WriteInt32(buffer.Buffer.Length);
+					writer.WriteBlock(buffer.Buffer);
 			    }
 			}
         }

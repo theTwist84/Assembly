@@ -6,13 +6,13 @@ using System.Text;
 
 namespace Assembly.Helpers.Net.Sockets
 {
-    public class SocketStream : Stream
+    public class NetworkPokeStream : Stream
     {
 
         private IPokeCommandHandler _handler;
 	    private List<PokeBuffer> _pokes = new List<PokeBuffer>();
 
-        public SocketStream(IPokeCommandHandler handler)
+        public NetworkPokeStream(IPokeCommandHandler handler)
         {
             _handler = handler;
         }
@@ -57,6 +57,8 @@ namespace Assembly.Helpers.Net.Sockets
 			Buffer.BlockCopy(buffer, offset, writeBuffer, 0, count);
 
             _pokes.Add(new PokeBuffer((uint)Position, writeBuffer));
+			// you aren't incrementing the position :P
+	        Position += count;
         }
 
 		protected override void Dispose(bool disposing)

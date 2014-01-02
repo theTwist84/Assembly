@@ -22,11 +22,11 @@ namespace Assembly.Helpers.Net.Sockets
         {
 	        if (cacheFile.Engine == EngineType.ThirdGeneration)
 	        {
-		        return new EndianStream(new SocketStream(_handler), Endian.BigEndian);
+		        return new EndianStream(new NetworkPokeStream(_handler), Endian.BigEndian);
 	        }
 	        else
 	        {
-				return new EndianStream(new SocketStream(_handler), Endian.LittleEndian);
+				return new EndianStream(new NetworkPokeStream(_handler), Endian.LittleEndian);
 	        }
         }
     }

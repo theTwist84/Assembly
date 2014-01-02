@@ -11,7 +11,6 @@ using System.Threading;
 using Assembly.Metro.Controls.PageTemplates.Games;
 using Assembly.Metro.Controls.PageTemplates.Games.Components;
 using Blamite.Blam;
-using Blamite.RTE.H2Vista;
 
 namespace Assembly.Helpers.Net.Sockets
 {
@@ -22,11 +21,13 @@ namespace Assembly.Helpers.Net.Sockets
 		private string _name = "Server";
 	    private HaloMap _map;
 		private NetworkControl.ViewModel _viewModel;
+		private Blamite.RTE.IRTEProvider _provider;
 
 		public ServerCommandHandler(HaloMap map, NetworkControl.ViewModel viewModel)
 		{
 		    _map = map;
 		    _viewModel = viewModel;
+			_provider = _map.RteProvider;
 			_server = new NetworkPokeServer();
 			HandleClientListCommand(new ClientListCommand(GetClientNameList()));
 			var thread = new Thread(new ThreadStart(delegate
@@ -47,13 +48,14 @@ namespace Assembly.Helpers.Net.Sockets
 
 		public void HandleMemoryCommand(MemoryCommand memory)
 		{
-			HandleFreezeCommand(new FreezeCommand(true));
-			_server.SendCommandToAll(memory);
 			if (_map.CacheFile.Engine == EngineType.ThirdGeneration)
-			{
-				HandlerFunctions.MemoryCommand(memory, _map);
-			}
-			HandleFreezeCommand(new FreezeCommand(false));
+				HandleFreezeCommand(new FreezeCommand(true));
+			_server.SendCommandToAll(memory);
+			// Everything gets passed here
+			using (var stream = _provider.GetMetaStream(_map.CacheFile))
+				HandlerFunctions.MemoryCommand(memory, _map, stream);
+			if (_map.CacheFile.Engine == EngineType.ThirdGeneration)
+				HandleFreezeCommand(new FreezeCommand(false));
 		}
 
 		public void StartFreezeCommand(FreezeCommand freeze)
@@ -69,11 +71,10 @@ namespace Assembly.Helpers.Net.Sockets
 		public void StartNameChangeCommand(ChangeNameCommand changeNameCommand)
 		{
 			_name = changeNameCommand.Name;
-
 			HandleClientListCommand(new ClientListCommand(GetClientNameList()));
 		}
 
-		public List<ClientModel> GetClientList()
+		public List<ClientName> GetClientList()
 		{
 			return _server.GetClients();
 		} 
