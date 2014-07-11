@@ -17,6 +17,11 @@ namespace Assembly.Helpers.Net.Sockets
 	{
 		private Socket _listener;
 		private readonly List<ClientName> _clients = new List<ClientName>();
+		public WaitHandle[] WaitHandles = new WaitHandle[]
+				{
+					new AutoResetEvent(false),
+ 					new AutoResetEvent(false) 
+				};
 
 		// TODO: Should we make it possible to set the port number somehow?
 		private static int Port = 19002;
@@ -65,7 +70,16 @@ namespace Assembly.Helpers.Net.Sockets
 				// Wait for either a command to become available in a client,
 				// or a client to be ready to connect
 				List<Socket> sockets = readyClients.Select(client => client.ClientSocket).ToList();
-				Socket.Select(sockets, null, null, -1);
+
+				var socketCallBack = new SocketCallBack(sockets, WaitHandles[0]);
+
+				//Time for threadpool xtreme nonzedding
+				ThreadPool.QueueUserWorkItem(new WaitCallback(SocketSelection), socketCallBack);
+				int result = WaitHandle.WaitAny(WaitHandles);
+
+				if (result == 1)
+					return;
+
 				var failedClients = new List<ClientName>();
 				foreach (var client in readyClients)
 				{
@@ -169,5 +183,32 @@ namespace Assembly.Helpers.Net.Sockets
 		{
 			return _clients;
 		}
+
+		private void SocketSelection(Object sockets)
+		{
+			SocketCallBack socks = (SocketCallBack) sockets;
+			Socket.Select(socks.Sockets, null, null, -1);
+			AutoResetEvent handle = (AutoResetEvent) socks.Handle;
+			handle.Set();
+		}
+
+		public void ResetCallBack()
+		{
+			((AutoResetEvent) WaitHandles[1]).Set();
+		}
+
+		private class SocketCallBack
+		{
+			public List<Socket> Sockets { get; set; }
+ 			public WaitHandle Handle { get; set; }
+
+			public SocketCallBack(List<Socket> sockets, WaitHandle handle)
+			{
+				Sockets = sockets;
+				Handle = handle;
+			}
+		}
+
+		
 	}
 }

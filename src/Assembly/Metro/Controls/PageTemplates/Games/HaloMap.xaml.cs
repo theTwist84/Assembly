@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Xml;
 using Assembly.Helpers;
 using Assembly.Helpers.Net;
+using Assembly.Helpers.Net.Sockets;
 using Assembly.Metro.Controls.PageTemplates.Games.Components;
 using Assembly.Metro.Controls.PageTemplates.Games.Components.Editors;
 using Assembly.Metro.Dialogs;
@@ -51,7 +52,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 	/// <summary>
 	///     Interaction logic for Halo4Map.xaml
 	/// </summary>
-	public partial class HaloMap : INotifyPropertyChanged
+	public partial class HaloMap : INotifyPropertyChanged, ITabItem
 	{
 		private readonly string _cacheLocation;
 		private readonly ObservableCollection<LanguageEntry> _languages = new ObservableCollection<LanguageEntry>();
@@ -78,7 +79,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 		{
 			InitializeComponent();
 			AddHandler(CloseableTabItem.CloseTabEvent, new RoutedEventHandler(CloseTab));
-
+			
 			// Setup Context Menus
 			InitalizeContextMenus();
 
@@ -1377,5 +1378,6 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
         public ICacheFile CacheFile { get; private set; }
 
 		public IRTEProvider RteProvider { get; set; }
+		public IPokeCommandHandler Handler { get; set; }
 	}
 }

@@ -6,6 +6,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows;
+using Assembly.Helpers.Net.Sockets;
 using Assembly.Metro.Dialogs;
 using Assembly.Windows;
 using Blamite.Flexibility;
@@ -20,6 +21,7 @@ namespace Assembly.Helpers
 	public class Storage : INotifyPropertyChanged
 	{
 		private Settings _assemblySettings = new Settings();
+		private IPokeCommandHandler _handler;
 
 		#region Helpers
 
@@ -80,6 +82,16 @@ namespace Assembly.Helpers
 		public Storage()
 		{
 			Load();
+		}
+
+
+		public IPokeCommandHandler Handler
+		{
+			get { return _handler; }
+			set
+			{
+				SetField(ref _handler, value, "Handler");
+			}
 		}
 
 		/// <summary>

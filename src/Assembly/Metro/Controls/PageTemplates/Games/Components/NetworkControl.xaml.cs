@@ -30,12 +30,12 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 		{
 			_map = map;
 			InitializeComponent();
-			DataContext = _viewModel = new ViewModel();
+			//DataContext = _viewModel = new ViewModel();
 		}
 
 		private void StartServer_click(object sender, RoutedEventArgs e)
 		{
-			_handler = new ServerCommandHandler(_map, _viewModel);
+			_handler = new ServerCommandHandler(_map, null);
 			_rteProvider = SelectRteEngine(_map.CacheFile, _handler);
 			_map.RteProvider = _rteProvider;
 		}
@@ -44,7 +44,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 		{
 			try
 			{
-				_handler = new ClientCommandHandler(TextBlock1.Text, _map, _viewModel);
+				_handler = new ClientCommandHandler(TextBlock1.Text, _map, null);
 				_rteProvider = SelectRteEngine(_map.CacheFile, _handler);
 				_map.RteProvider = _rteProvider;
 			}
@@ -54,17 +54,17 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 			}
 		}
 
+		private	void Unfreeze_click(object sender, RoutedEventArgs e)
+		{
+			_handler.StartFreezeCommand(new FreezeCommand(false));
+		}
+
 		private IRTEProvider SelectRteEngine(ICacheFile cache, IPokeCommandHandler handler)
 		{
-			if (_map.CacheFile.Engine == EngineType.ThirdGeneration)
+			if (_map.CacheFile != null && _map.CacheFile.Engine == EngineType.ThirdGeneration)
 				return new SocketRTEProvider(_handler, RTEConnectionType.ConsoleX360);
 			else
 				return new SocketRTEProvider(_handler, RTEConnectionType.LocalProcess);
-		}
-
-		private void Unfreeze_click(object sender, RoutedEventArgs e)
-		{
-			_handler.StartFreezeCommand(new FreezeCommand(false));
 		}
 
 		private void Freeze_click(object sender, RoutedEventArgs e)
@@ -81,10 +81,11 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 		{
 			_map.RteProvider = new XBDMRTEProvider(App.AssemblyStorage.AssemblySettings.Xbdm);
 			//TODO:  Make the sockets close
-			_handler = null;
+			_handler.StartTermination();
 		}
 
 		public class ViewModel : INotifyPropertyChanged
+
 		{
 			public ViewModel()
 			{
@@ -125,6 +126,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 
 			#endregion
 		}
+
 	}
 }
 

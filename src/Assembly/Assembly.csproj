@@ -335,6 +335,7 @@
       <DependentUpon>HaloPluginGenerator.xaml</DependentUpon>
     </Compile>
     <Compile Include="Metro\Controls\PageTemplates\Games\TagHierarchy.cs" />
+    <Compile Include="Metro\Controls\PageTemplates\ITabItem.cs" />
     <Compile Include="Metro\Controls\PageTemplates\MemoryManager.xaml.cs">
       <DependentUpon>MemoryManager.xaml</DependentUpon>
     </Compile>
@@ -350,6 +351,7 @@
     <Compile Include="Metro\Controls\PageTemplates\WelcomePage.xaml.cs">
       <DependentUpon>WelcomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Metro\Controls\Sidebar\SidebarContext.cs" />
     <Compile Include="Metro\Controls\StringIDInput.xaml.cs">
       <DependentUpon>StringIDInput.xaml</DependentUpon>
     </Compile>

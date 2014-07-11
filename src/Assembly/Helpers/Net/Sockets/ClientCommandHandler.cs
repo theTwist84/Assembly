@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -8,6 +9,7 @@ using System.Net;
 using System.Diagnostics;
 using Assembly.Metro.Controls.PageTemplates.Games;
 using Assembly.Metro.Controls.PageTemplates.Games.Components;
+using Assembly.Metro.Controls.Sidebar;
 using Assembly.Metro.Dialogs;
 using System.Windows.Threading;
 using Blamite.Blam;
@@ -80,6 +82,11 @@ namespace Assembly.Helpers.Net.Sockets
 		    _client.SendCommand(changeNameCommand);
 	    }
 
+	    public void SetSidebarContext(SidebarContext context)
+	    {
+		    throw new NotImplementedException();
+	    }
+
 	    public void HandleChangeNameCommand(ChangeNameCommand changeNameCommand)
 	    {
 		    
@@ -89,5 +96,17 @@ namespace Assembly.Helpers.Net.Sockets
 	    {
 			_viewModel.Clients = new ObservableCollection<string>(clientListCommand.Clients);
 		}
-	}
+
+	    public void StartTermination()
+	    {
+		    throw new NotImplementedException();
+	    }
+
+	    public event PropertyChangedEventHandler PropertyChanged;
+
+	    protected virtual void OnPropertyChanged(string propertyName)
+	    {
+		    throw new NotImplementedException();
+	    }
+    }
 }

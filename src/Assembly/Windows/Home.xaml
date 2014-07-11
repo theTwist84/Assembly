@@ -120,7 +120,7 @@
 				</Grid>
 				<Grid x:Name="homeContent" Margin="0, 62, 0, 0">
 					<Grid x:Name="tabContent">
-						<avalonDock:DockingManager Grid.Row="1" x:Name="dockManager"
+						<avalonDock:DockingManager Grid.Row="1" x:Name="dockManager" DocumentClosing="dockManger_DocumentClosing"
 						                           ActiveContentChanged="dockManager_ActiveContentChanged" AllowMixedOrientation="True"
 						                           Background="Transparent">
 							<avalonDock:DockingManager.Theme>
@@ -131,7 +131,7 @@
 									<avalonDock:LayoutDocumentPaneGroup>
 										<avalonDock:LayoutDocumentPane x:Name="documentManager" />
 									</avalonDock:LayoutDocumentPaneGroup>
-									<avalonDock:LayoutAnchorablePaneGroup DockWidth="33">
+									<avalonDock:LayoutAnchorablePaneGroup DockWidth="200">
 										<avalonDock:LayoutAnchorablePane>
 											<avalonDock:LayoutAnchorable ContentId="xbdm" Title="Xbox Memory" CanFloat="True" CanClose="True"
 											                             CanAutoHide="False" CanHide="False">

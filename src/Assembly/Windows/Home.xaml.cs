@@ -66,6 +66,8 @@ namespace Assembly.Windows
 
 			AllowDrop = true;
 			App.AssemblyStorage.AssemblySettings.HomeWindow = this;
+
+			
 		}
 
 		protected override void OnSourceInitialized(EventArgs e)
@@ -854,6 +856,16 @@ namespace Assembly.Windows
         {
             AddTabModule(TabGenre.NetworkPoking, true);
         }
+
+		private void dockManger_DocumentClosing(object sender, AvalonDock.DocumentClosingEventArgs e)
+		{
+			LayoutDocument closingTab = e.Document;
+			if (closingTab.Content != null && closingTab.Content is HaloMap)
+			{
+				var mapCache = (HaloMap) closingTab.Content;
+			}
+
+		}
 
 	}
 }
