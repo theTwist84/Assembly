@@ -178,7 +178,7 @@ namespace Blamite.Plugins
 					visitor.VisitFloat32(name, offset, visible, pluginLine);
 					break;
 				case "vector3":
-					visitor.VisitVector3(name, offset, visible, pluginLine);
+					visitor.VisitVector3(name, offset, visible, ReadVectorLabel(reader), pluginLine);
 					break;
 				case "stringid":
 					visitor.VisitStringID(name, offset, visible, pluginLine);
@@ -465,6 +465,20 @@ namespace Blamite.Plugins
 				value = ParseInt(reader.Value);
 
 			visitor.VisitOption(name, value);
+		}
+
+		private static string ReadVectorLabel(XmlReader reader)
+		{
+			string label = "xyz";
+
+			if (reader.MoveToAttribute("label"))
+				label = reader.Value;
+
+			if (label != "xyz" &&
+				label != "ijk")
+				throw new ArgumentException("Invalid label set. Must be either `xyz`, or `ijk`.");
+
+			return label;
 		}
 
 		private static string ReadColorFormat(XmlReader reader)

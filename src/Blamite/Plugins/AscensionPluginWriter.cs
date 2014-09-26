@@ -98,16 +98,54 @@ namespace Blamite.Plugins
 			WriteBasicValue("undefined", name, offset, visible);
 		}
 
-		public void VisitVector3(string name, uint offset, bool visible, uint pluginLine)
+		public void VisitVector2(string name, uint offset, bool visible, string label, uint pluginLine)
 		{
-			WriteBasicValue("float", name + " X", offset, visible);
-			WriteBasicValue("float", name + " Y", offset + 4, visible);
-			WriteBasicValue("float", name + " Z", offset + 8, visible);
+			if (label == "xyz")
+				WriteBasicValue("float", name + " x", offset, visible);
+				WriteBasicValue("float", name + " y", offset + 4, visible);
+
+			if (label == "ijk")
+				WriteBasicValue("float", name + " i", offset, visible);
+				WriteBasicValue("float", name + " j", offset + 4, visible);
+		}
+
+		public void VisitVector3(string name, uint offset, bool visible, string label, uint pluginLine)
+		{
+			if (label == "xyz")
+				WriteBasicValue("float", name + " x", offset, visible);
+				WriteBasicValue("float", name + " y", offset + 4, visible);
+				WriteBasicValue("float", name + " z", offset + 8, visible);
+
+			if (label == "ijk")
+				WriteBasicValue("float", name + " i", offset, visible);
+				WriteBasicValue("float", name + " j", offset + 4, visible);
+				WriteBasicValue("float", name + " k", offset + 8, visible);
+		}
+
+		public void VisitVector4(string name, uint offset, bool visible, string label, uint pluginLine)
+		{
+			WriteBasicValue("float", name + " i", offset, visible);
+			WriteBasicValue("float", name + " j", offset + 4, visible);
+			WriteBasicValue("float", name + " k", offset + 8, visible);
+			WriteBasicValue("float", name + " w", offset + 12, visible);
 		}
 
 		public void VisitDegree(string name, uint offset, bool visible, uint pluginLine)
 		{
-			WriteBasicValue("degree", name, offset, visible);
+			WriteBasicValue("float", name, offset, visible);
+		}
+
+		public void VisitDegree2(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteBasicValue("float", name + " y", offset, visible);
+			WriteBasicValue("float", name + " p", offset + 4, visible);
+		}
+
+		public void VisitDegree3(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteBasicValue("float", name + " i", offset, visible);
+			WriteBasicValue("float", name + " j", offset + 4, visible);
+			WriteBasicValue("float", name + " k", offset + 8, visible);
 		}
 
 		public void VisitStringID(string name, uint offset, bool visible, uint pluginLine)
@@ -135,11 +173,6 @@ namespace Blamite.Plugins
 			WriteValueStart("bytearray", name, offset, visible);
 			_output.WriteAttributeString("length", size.ToString(CultureInfo.InvariantCulture));
 			_output.WriteEndElement();
-		}
-
-		public void VisitRange(string name, uint offset, bool visible, string type, double min, double max, double smallChange,
-			double largeChange, uint pluginLine)
-		{
 		}
 
 		public void VisitAscii(string name, uint offset, bool visible, int length, uint pluginLine)
@@ -247,6 +280,36 @@ namespace Blamite.Plugins
 		public void VisitShader(string name, uint offset, bool visible, ShaderType type, uint pluginLine)
 		{
 			WriteBasicValue("uint32", name, offset, visible);
+		}
+
+		public void VisitRangeUInt8(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteBasicValue("uint8", name + " min", offset, visible);
+			WriteBasicValue("uint8", name + " max", offset + 4, visible);
+		}
+
+		public void VisitRangeUInt16(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteBasicValue("uint16", name + " min", offset, visible);
+			WriteBasicValue("uint16", name + " max", offset + 4, visible);
+		}
+
+		public void VisitRangeUInt32(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteBasicValue("uint32", name + " min", offset, visible);
+			WriteBasicValue("uint32", name + " max", offset + 4, visible);
+		}
+
+		public void VisitRangeFloat32(string name, uint offset, bool visible, string label, uint pluginLine)
+		{
+			WriteBasicValue("float", name + " min", offset, visible);
+			WriteBasicValue("float", name + " max", offset + 4, visible);
+		}
+
+		public void VisitRangeDegree(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteBasicValue("float", name + " min", offset, visible);
+			WriteBasicValue("float", name + " max", offset + 4, visible);
 		}
 
 		private void WriteValueStart(string element, string name, uint offset, bool visible)

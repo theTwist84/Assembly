@@ -360,7 +360,15 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 		{
 		}
 
-		public void VisitVector(VectorData field)
+		public void VisitVector2(Vector2Data field)
+		{
+		}
+
+		public void VisitVector3(Vector3Data field)
+		{
+		}
+
+		public void VisitVector4(Vector4Data field)
 		{
 		}
 
@@ -368,9 +376,38 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 		{
 		}
 
+		public void VisitDegree2(Degree2Data field)
+		{
+		}
+
+		public void VisitDegree3(Degree3Data field)
+		{
+		}
+
 		public void VisitShaderRef(ShaderRef field)
 		{
 		}
+
+		public void VisitRangeUint8(RangeUint8Data field)
+		{
+		}
+
+		public void VisitRangeUint16(RangeUint16Data field)
+		{
+		}
+
+		public void VisitRangeUint32(RangeUint32Data field)
+		{
+		}
+
+		public void VisitRangeFloat32(RangeFloat32Data field)
+		{
+		}
+
+		public void VisitRangeDegree(RangeDegreeData field)
+		{
+		}
+
 
 		public void Flatten(ObservableCollection<MetaField> fields)
 		{

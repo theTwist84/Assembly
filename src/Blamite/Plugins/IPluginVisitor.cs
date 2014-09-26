@@ -54,11 +54,21 @@ namespace Blamite.Plugins
 		void VisitFloat32(string name, uint offset, bool visible, uint pluginLine);
 		void VisitUndefined(string name, uint offset, bool visible, uint pluginLine);
 
-		void VisitVector3(string name, uint offset, bool visible, uint pluginLine);
+		void VisitVector2(string name, uint offset, bool visible, string label, uint pluginLine);
+		void VisitVector3(string name, uint offset, bool visible, string label, uint pluginLine);
+		void VisitVector4(string name, uint offset, bool visible, string label, uint pluginLine);
 		void VisitDegree(string name, uint offset, bool visible, uint pluginLine);
+		void VisitDegree2(string name, uint offset, bool visible, uint pluginLine);
+		void VisitDegree3(string name, uint offset, bool visible, uint pluginLine);
 		void VisitStringID(string name, uint offset, bool visible, uint pluginLine);
 		void VisitTagReference(string name, uint offset, bool visible, bool withClass, bool showJumpTo, uint pluginLine);
 		void VisitDataReference(string name, uint offset, string format, bool visible, int align, uint pluginLine);
+
+		void VisitRangeUInt8(string name, uint offset, bool visible,  uint pluginLine);
+		void VisitRangeUInt16(string name, uint offset, bool visible, uint pluginLine);
+		void VisitRangeUInt32(string name, uint offset, bool visible, uint pluginLine);
+		void VisitRangeFloat32(string name, uint offset, bool visible, string label, uint pluginLine);
+		void VisitRangeDegree(string name, uint offset, bool visible, uint pluginLine);
 
 		/// <summary>
 		///     Called when a raw data block is encountered in the plugin.
@@ -69,21 +79,6 @@ namespace Blamite.Plugins
 		/// <param name="size">The size of the block.</param>
 		/// <param name="pluginLine">The line in the plugin this entry is found.</param>
 		void VisitRawData(string name, uint offset, bool visible, int size, uint pluginLine);
-
-		/// <summary>
-		///     Called when a ranged value is encountered in the plugin.
-		/// </summary>
-		/// <param name="name">The value's name.</param>
-		/// <param name="offset">The value's offset.</param>
-		/// <param name="visible">True if the value is visible.</param>
-		/// <param name="type">The base type of the value.</param>
-		/// <param name="min">The minimum possible value.</param>
-		/// <param name="max">The maximum possible value.</param>
-		/// <param name="smallChange">The amount to change the value between small tick marks.</param>
-		/// <param name="largeChange">The amount to change the value between large tick marks.</param>
-		/// <param name="pluginLine">The line in the plugin this entry is found.</param>
-		void VisitRange(string name, uint offset, bool visible, string type, double min, double max,
-			double smallChange, double largeChange, uint pluginLine);
 
 		/// <summary>
 		///     Called when an ASCII string is encountered in the plugin.

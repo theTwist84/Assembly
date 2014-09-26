@@ -3,11 +3,11 @@
 namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaComponents
 {
 	/// <summary>
-	///     Interaction logic for VectorValue.xaml
+	///     Interaction logic for MultiValue.xaml
 	/// </summary>
-	public partial class VectorValue : UserControl
+	public partial class MultiValue : UserControl
 	{
-		public VectorValue()
+		public MultiValue()
 		{
 			InitializeComponent();
 		}

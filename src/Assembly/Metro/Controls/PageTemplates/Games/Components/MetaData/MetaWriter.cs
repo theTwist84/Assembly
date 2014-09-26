@@ -307,12 +307,28 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			}
 		}
 
-		public void VisitVector(VectorData field)
+		public void VisitVector2(Vector2Data field)
 		{
 			SeekToOffset(field.Offset);
-			_writer.WriteFloat(field.X);
-			_writer.WriteFloat(field.Y);
-			_writer.WriteFloat(field.Z);
+			_writer.WriteFloat(field.A);
+			_writer.WriteFloat(field.B);
+		}
+
+		public void VisitVector3(Vector3Data field)
+		{
+			SeekToOffset(field.Offset);
+			_writer.WriteFloat(field.A);
+			_writer.WriteFloat(field.B);
+			_writer.WriteFloat(field.C);
+		}
+
+		public void VisitVector4(Vector4Data field)
+		{
+			SeekToOffset(field.Offset);
+			_writer.WriteFloat(field.A);
+			_writer.WriteFloat(field.B);
+			_writer.WriteFloat(field.C);
+			_writer.WriteFloat(field.D);
 		}
 
 		public void VisitDegree(DegreeData field)
@@ -321,9 +337,59 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			_writer.WriteFloat(field.Radian);
 		}
 
+		public void VisitDegree2(Degree2Data field)
+		{
+			SeekToOffset(field.Offset);
+			_writer.WriteFloat(field.RadianA);
+			_writer.WriteFloat(field.RadianB);
+		}
+
+		public void VisitDegree3(Degree3Data field)
+		{
+			SeekToOffset(field.Offset);
+			_writer.WriteFloat(field.RadianA);
+			_writer.WriteFloat(field.RadianB);
+			_writer.WriteFloat(field.RadianC);
+		}
+
 		public void VisitShaderRef(ShaderRef field)
 		{
 			// Don't do anything
+		}
+
+		public void VisitRangeUint8(RangeUint8Data field)
+		{
+			SeekToOffset(field.Offset);
+			_writer.WriteByte(field.A);
+			_writer.WriteByte(field.B);
+		}
+
+		public void VisitRangeUint16(RangeUint16Data field)
+		{
+			SeekToOffset(field.Offset);
+			_writer.WriteUInt16(field.A);
+			_writer.WriteUInt16(field.B);
+		}
+
+		public void VisitRangeUint32(RangeUint32Data field)
+		{
+			SeekToOffset(field.Offset);
+			_writer.WriteUInt32(field.A);
+			_writer.WriteUInt32(field.B);
+		}
+
+		public void VisitRangeFloat32(RangeFloat32Data field)
+		{
+			SeekToOffset(field.Offset);
+			_writer.WriteFloat(field.A);
+			_writer.WriteFloat(field.B);
+		}
+
+		public void VisitRangeDegree(RangeDegreeData field)
+		{
+			SeekToOffset(field.Offset);
+			_writer.WriteFloat(field.RadianA);
+			_writer.WriteFloat(field.RadianB);
 		}
 
 		public void WriteFields(IList<MetaField> fields)

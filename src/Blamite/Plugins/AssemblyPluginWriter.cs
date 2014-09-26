@@ -99,14 +99,38 @@ namespace Blamite.Plugins
 			WriteBasicValue("undefined", name, offset, visible);
 		}
 
-		public void VisitVector3(string name, uint offset, bool visible, uint pluginLine)
+		public void VisitVector2(string name, uint offset, bool visible, string label, uint pluginLine)
 		{
-			WriteBasicValue("vector3", name, offset, visible);
+			WriteValueStart("vector2", name, offset, visible);
+			if (label == "ijk")
+				_output.WriteAttributeString("label", "ijk");
+		}
+
+		public void VisitVector3(string name, uint offset, bool visible, string label, uint pluginLine)
+		{
+			WriteValueStart("vector3", name, offset, visible);
+			if (label == "ijk")
+				_output.WriteAttributeString("label", "ijk");
+		}
+
+		public void VisitVector4(string name, uint offset, bool visible, string label, uint pluginLine)
+		{
+			WriteBasicValue("vector4", name, offset, visible);
 		}
 
 		public void VisitDegree(string name, uint offset, bool visible, uint pluginLine)
 		{
 			WriteBasicValue("degree", name, offset, visible);
+		}
+
+		public void VisitDegree2(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteBasicValue("degree2", name, offset, visible);
+		}
+
+		public void VisitDegree3(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteBasicValue("degree3", name, offset, visible);
 		}
 
 		public void VisitStringID(string name, uint offset, bool visible, uint pluginLine)
@@ -261,26 +285,36 @@ namespace Blamite.Plugins
 			_output.WriteEndElement();
 		}
 
-		public void VisitRange(string name, uint offset, bool visible, string type, double min, double max, double smallChange,
-			double largeChange, uint pluginLine)
-		{
-			//throw new FakUExcepetion("accually is dolan");
-			// I just found this, fucking genius.
-
-			WriteValueStart("range", name, offset, visible);
-			_output.WriteAttributeString("type", type);
-			_output.WriteAttributeString("min", min.ToString(CultureInfo.InvariantCulture));
-			_output.WriteAttributeString("max", max.ToString(CultureInfo.InvariantCulture));
-			_output.WriteAttributeString("smallChange", smallChange.ToString(CultureInfo.InvariantCulture));
-			_output.WriteAttributeString("largeChange", largeChange.ToString(CultureInfo.InvariantCulture));
-			_output.WriteEndElement();
-		}
-
 		public void VisitShader(string name, uint offset, bool visible, ShaderType type, uint pluginLine)
 		{
 			WriteValueStart("shader", name, offset, visible);
 			_output.WriteAttributeString("type", (type == ShaderType.Pixel) ? "pixel" : "vertex");
 			_output.WriteEndElement();
+		}
+
+		public void VisitRangeUInt8(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteBasicValue("range8", name, offset, visible);
+		}
+
+		public void VisitRangeUInt16(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteBasicValue("range16", name, offset, visible);
+		}
+
+		public void VisitRangeUInt32(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteBasicValue("range32", name, offset, visible);
+		}
+
+		public void VisitRangeFloat32(string name, uint offset, bool visible, string label, uint pluginLine)
+		{
+			WriteBasicValue("rangefloat", name, offset, visible);
+		}
+
+		public void VisitRangeDegree(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteBasicValue("rangedegree", name, offset, visible);
 		}
 
 		private void WriteValueStart(string element, string name, uint offset, bool visible)

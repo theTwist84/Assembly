@@ -279,18 +279,49 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			field.Value = _reader.ReadFloat();
 		}
 
-		public void VisitVector(VectorData field)
+		public void VisitVector2(Vector2Data field)
 		{
 			SeekToOffset(field.Offset);
-			field.X = _reader.ReadFloat();
-			field.Y = _reader.ReadFloat();
-			field.Z = _reader.ReadFloat();
+			field.A = _reader.ReadFloat();
+			field.B = _reader.ReadFloat();
+		}
+
+		public void VisitVector3(Vector3Data field)
+		{
+			SeekToOffset(field.Offset);
+			field.A = _reader.ReadFloat();
+			field.B = _reader.ReadFloat();
+			field.C = _reader.ReadFloat();
+		}
+
+		public void VisitVector4(Vector4Data field)
+		{
+			SeekToOffset(field.Offset);
+			field.A = _reader.ReadFloat();
+			field.B = _reader.ReadFloat();
+			field.C = _reader.ReadFloat();
+			field.D = _reader.ReadFloat();
 		}
 
 		public void VisitDegree(DegreeData field)
 		{
 			SeekToOffset(field.Offset);
 			field.Radian = _reader.ReadFloat();
+		}
+
+		public void VisitDegree2(Degree2Data field)
+		{
+			SeekToOffset(field.Offset);
+			field.RadianA = _reader.ReadFloat();
+			field.RadianB = _reader.ReadFloat();
+		}
+
+		public void VisitDegree3(Degree3Data field)
+		{
+			SeekToOffset(field.Offset);
+			field.RadianA = _reader.ReadFloat();
+			field.RadianB = _reader.ReadFloat();
+			field.RadianC = _reader.ReadFloat();
 		}
 
 		public void VisitReflexive(ReflexiveData field)
@@ -317,6 +348,41 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			SeekToOffset(field.Offset);
 			if (_cache.ShaderStreamer != null)
 				field.Shader = _cache.ShaderStreamer.ReadShader(_reader, field.Type);
+		}
+
+		public void VisitRangeUint8(RangeUint8Data field)
+		{
+			SeekToOffset(field.Offset);
+			field.A = _reader.ReadByte();
+			field.B = _reader.ReadByte();
+		}
+
+		public void VisitRangeUint16(RangeUint16Data field)
+		{
+			SeekToOffset(field.Offset);
+			field.A = _reader.ReadUInt16();
+			field.B = _reader.ReadUInt16();
+		}
+
+		public void VisitRangeUint32(RangeUint32Data field)
+		{
+			SeekToOffset(field.Offset);
+			field.A = _reader.ReadUInt32();
+			field.B = _reader.ReadUInt32();
+		}
+
+		public void VisitRangeFloat32(RangeFloat32Data field)
+		{
+			SeekToOffset(field.Offset);
+			field.A = _reader.ReadFloat();
+			field.B = _reader.ReadFloat();
+		}
+
+		public void VisitRangeDegree(RangeDegreeData field)
+		{
+			SeekToOffset(field.Offset);
+			field.RadianA = _reader.ReadFloat();
+			field.RadianB = _reader.ReadFloat();
 		}
 
 		public void VisitReflexiveEntry(WrappedReflexiveEntry field)

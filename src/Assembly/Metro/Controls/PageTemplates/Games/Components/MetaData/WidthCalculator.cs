@@ -25,8 +25,12 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 		private static readonly rawBlock _rawBlock = new rawBlock();
 		//private static MetaChunk _chunkControl = new MetaChunk();
 		private static readonly tagValue _tagControl = new tagValue();
-		private static readonly VectorValue _vectorControl = new VectorValue();
+		private static readonly MultiValue _vector2Control = new MultiValue();
+		private static readonly MultiValue _vector3Control = new MultiValue();
+		private static readonly MultiValue _vector4Control = new MultiValue();
 		private static readonly DegreeValue _degreeControl = new DegreeValue();
+		private static readonly MultiValue _degree2Control = new MultiValue();
+		private static readonly MultiValue _degree3Control = new MultiValue();
 		private static readonly ColourValue _colourValue = new ColourValue();
 		private static readonly Shader _shader = new Shader();
 		private double _totalWidth;
@@ -129,14 +133,34 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			AddWidth(_tagControl.Width);
 		}
 
-		public void VisitVector(VectorData field)
+		public void VisitVector2(Vector2Data field)
 		{
-			AddWidth(_vectorControl.Width);
+			AddWidth(525);
+		}
+
+		public void VisitVector3(Vector3Data field)
+		{
+			AddWidth(650);
+		}
+
+		public void VisitVector4(Vector4Data field)
+		{
+			AddWidth(775);
 		}
 
 		public void VisitDegree(DegreeData field)
 		{
 			AddWidth(_degreeControl.Width);
+		}
+
+		public void VisitDegree2(Degree2Data field)
+		{
+			AddWidth(525);
+		}
+
+		public void VisitDegree3(Degree3Data field)
+		{
+			AddWidth(650);
 		}
 
 		public void VisitColourInt(ColourData field)
@@ -152,6 +176,31 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 		public void VisitShaderRef(ShaderRef field)
 		{
 			AddWidth(_shader.Width);
+		}
+
+		public void VisitRangeUint8(RangeUint8Data field)
+		{
+			AddWidth(525);
+		}
+
+		public void VisitRangeUint16(RangeUint16Data field)
+		{
+			AddWidth(525);
+		}
+
+		public void VisitRangeUint32(RangeUint32Data field)
+		{
+			AddWidth(525);
+		}
+
+		public void VisitRangeFloat32(RangeFloat32Data field)
+		{
+			AddWidth(525);
+		}
+
+		public void VisitRangeDegree(RangeDegreeData field)
+		{
+			AddWidth(525);
 		}
 
 		public void Add(MetaField field)

@@ -79,9 +79,19 @@ namespace Blamite.Plugins
 			PrintBasicValue("Undefined", name, offset, visible);
 		}
 
-		public void VisitVector3(string name, uint offset, bool visible, uint pluginLine)
+		public void VisitVector2(string name, uint offset, bool visible, string label, uint pluginLine)
+		{
+			PrintBasicValue("Vector2", name, offset, visible);
+		}
+
+		public void VisitVector3(string name, uint offset, bool visible, string label, uint pluginLine)
 		{
 			PrintBasicValue("Vector3", name, offset, visible);
+		}
+
+		public void VisitVector4(string name, uint offset, bool visible, string label, uint pluginLine)
+		{
+			PrintBasicValue("Vector4", name, offset, visible);
 		}
 
 		public void VisitDegree(string name, uint offset, bool visible, uint pluginLine)
@@ -89,25 +99,14 @@ namespace Blamite.Plugins
 			PrintBasicValue("Degree", name, offset, visible);
 		}
 
-		public void VisitRange(string name, uint offset, bool visible, string type, double minval, double maxval,
-			double smallchange, double largechange, uint pluginLine)
+		public void VisitDegree2(string name, uint offset, bool visible, uint pluginLine)
 		{
-			var yolo = new object[]
-			{
-				#region objectarray
-				name,
-				offset,
-				visible,
-				minval,
-				maxval,
-				largechange,
-				smallchange
-				#endregion
-			};
+			PrintBasicValue("Degree2", name, offset, visible);
+		}
 
-			Debug.WriteLine(
-				"Range \"{0}\" at position {1}, visible = {2} Minimium Value = {3}, Maxamium Value = {4}. Large Change = {5}, Small Change = {6}.",
-				yolo);
+		public void VisitDegree3(string name, uint offset, bool visible, uint pluginLine)
+		{
+			PrintBasicValue("Degree3", name, offset, visible);
 		}
 
 		public void VisitStringID(string name, uint offset, bool visible, uint pluginLine)
@@ -232,6 +231,31 @@ namespace Blamite.Plugins
 		public void VisitShader(string name, uint offset, bool visible, ShaderType type, uint pluginLine)
 		{
 			Debug.WriteLine("Shader \"{0}\" at {1}, visible = {2}, type = {3}", name, offset, visible, type);
+		}
+
+		public void VisitRangeUInt8(string name, uint offset, bool visible, uint pluginLine)
+		{
+			PrintBasicValue("Range8", name, offset, visible);
+		}
+
+		public void VisitRangeUInt16(string name, uint offset, bool visible, uint pluginLine)
+		{
+			PrintBasicValue("Range16", name, offset, visible);
+		}
+
+		public void VisitRangeUInt32(string name, uint offset, bool visible, uint pluginLine)
+		{
+			PrintBasicValue("Range32", name, offset, visible);
+		}
+
+		public void VisitRangeFloat32(string name, uint offset, bool visible, string label, uint pluginLine)
+		{
+			PrintBasicValue("RangeFloat", name, offset, visible);
+		}
+
+		public void VisitRangeDegree(string name, uint offset, bool visible, uint pluginLine)
+		{
+			PrintBasicValue("RangeDegree", name, offset, visible);
 		}
 	}
 }

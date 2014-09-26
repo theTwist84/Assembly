@@ -65,10 +65,22 @@ namespace Assembly.Helpers.Plugins
 				AddValue(new CommentData(title, text, pluginLine));
 		}
 
-		public void VisitVector3(string name, uint offset, bool visible, uint pluginLine)
+		public void VisitVector2(string name, uint offset, bool visible, string label, uint pluginLine)
 		{
 			if (visible || _showInvisibles)
-				AddValue(new VectorData(name, offset, 0, 0, 0, 0, pluginLine));
+				AddValue(new Vector2Data(name, offset, 0, "vector2", 0, 0, label, pluginLine));
+		}
+
+		public void VisitVector3(string name, uint offset, bool visible, string label, uint pluginLine)
+		{
+			if (visible || _showInvisibles)
+				AddValue(new Vector3Data(name, offset, 0, "vector3", 0, 0, 0, label, pluginLine));
+		}
+
+		public void VisitVector4(string name, uint offset, bool visible, string label, uint pluginLine)
+		{
+			if (visible || _showInvisibles)
+				AddValue(new Vector4Data(name, offset, 0, "quaternion", 0, 0, 0, 0, "ijk", pluginLine));
 		}
 
 		public void VisitDegree(string name, uint offset, bool visible, uint pluginLine)
@@ -77,13 +89,16 @@ namespace Assembly.Helpers.Plugins
 				AddValue(new DegreeData(name, offset, 0, 0, pluginLine));
 		}
 
-		public void VisitRange(string name, uint offset, bool visible, string type, double minval, double maxval,
-			double smallchange, double largechange, uint pluginLine)
+		public void VisitDegree2(string name, uint offset, bool visible, uint pluginLine)
 		{
-			/*TrackBar metaComponents = new TrackBar();
-            metaComponents.LoadValues(name, type, minval, maxval, smallchange, largechange);
+			if (visible || _showInvisibles)
+				AddValue(new Degree2Data(name, offset, 0, "degree2", 0, 0, pluginLine));
+		}
 
-            AddUIElement(metaComponents, visible);*/
+		public void VisitDegree3(string name, uint offset, bool visible, uint pluginLine)
+		{
+			if (visible || _showInvisibles)
+				AddValue(new Degree3Data(name, offset, 0, "degree3", 0, 0, 0, pluginLine));
 		}
 
 		public void VisitColorInt(string name, uint offset, bool visible, string format, uint pluginLine)
@@ -144,6 +159,40 @@ namespace Assembly.Helpers.Plugins
 			if (visible || _showInvisibles)
 				AddValue(new ShaderRef(name, offset, 0, type, null, pluginLine));
 		}
+
+		# region Range
+
+		public void VisitRangeUInt8(string name, uint offset, bool visible, uint pluginLine)
+		{
+			if (visible || _showInvisibles)
+				AddValue(new RangeUint8Data(name, offset, 0, "range8", 0, 0, pluginLine));
+		}
+
+		public void VisitRangeUInt16(string name, uint offset, bool visible, uint pluginLine)
+		{
+			if (visible || _showInvisibles)
+				AddValue(new RangeUint16Data(name, offset, 0, "range16", 0, 0, pluginLine));
+		}
+
+		public void VisitRangeUInt32(string name, uint offset, bool visible, uint pluginLine)
+		{
+			if (visible || _showInvisibles)
+				AddValue(new RangeUint32Data(name, offset, 0, "range32", 0, 0, pluginLine));
+		}
+
+		public void VisitRangeFloat32(string name, uint offset, bool visible, string label, uint pluginLine)
+		{
+			if (visible || _showInvisibles)
+				AddValue(new RangeFloat32Data(name, offset, 0, "rangeF", 0, 0, null, pluginLine));
+		}
+
+		public void VisitRangeDegree(string name, uint offset, bool visible, uint pluginLine)
+		{
+			if (visible || _showInvisibles)
+				AddValue(new RangeDegreeData(name, offset, 0, "rangeD", 0, 0, pluginLine));
+		}
+
+		# endregion
 
 		#region Bitfield
 
