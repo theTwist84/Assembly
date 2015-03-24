@@ -159,6 +159,29 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			}
 		}
 
+		public void VisitPoint2(Vector2Data field)
+		{
+			if (!FilterString(field, field.Name))
+			{
+				if (!FilterNumber(field, field.A))
+				{
+					FilterNumber(field, field.B);
+				}
+			}
+		}
+
+		public void VisitPoint3(Vector3Data field)
+		{
+			if (!FilterString(field, field.Name))
+			{
+				if (!FilterNumber(field, field.A))
+				{
+					if (!FilterNumber(field, field.B))
+						FilterNumber(field, field.C);
+				}
+			}
+		}
+
 		public void VisitVector2(Vector2Data field)
 		{
 			if (!FilterString(field, field.Name))
@@ -229,35 +252,38 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			}
 		}
 
+		public void VisitPlane2(Vector3Data field)
+		{
+			if (!FilterString(field, field.Name))
+			{
+				if (!FilterNumber(field, field.A))
+				{
+					if (!FilterNumber(field, field.B))
+						FilterNumber(field, field.C);
+				}
+			}
+		}
+
+		public void VisitPlane3(Vector4Data field)
+		{
+			if (!FilterString(field, field.Name))
+			{
+				if (!FilterNumber(field, field.A))
+				{
+					if (!FilterNumber(field, field.B))
+						if (!FilterNumber(field, field.C))
+							FilterNumber(field, field.D);
+				}
+			}
+		}
+
 		public void VisitShaderRef(ShaderRef field)
 		{
 			if (!FilterString(field, field.Name))
 				FilterString(field, field.DatabasePath);
 		}
 
-		public void VisitRangeUint8(RangeUint8Data field)
-		{
-			if (!FilterString(field, field.Name))
-			{
-				if (!FilterNumber(field, field.A))
-				{
-					FilterNumber(field, field.B);
-				}
-			}
-		}
-
 		public void VisitRangeUint16(RangeUint16Data field)
-		{
-			if (!FilterString(field, field.Name))
-			{
-				if (!FilterNumber(field, field.A))
-				{
-					FilterNumber(field, field.B);
-				}
-			}
-		}
-
-		public void VisitRangeUint32(RangeUint32Data field)
 		{
 			if (!FilterString(field, field.Name))
 			{

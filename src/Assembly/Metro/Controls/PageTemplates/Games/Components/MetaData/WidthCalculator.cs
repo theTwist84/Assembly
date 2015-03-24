@@ -133,6 +133,16 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			AddWidth(_tagControl.Width);
 		}
 
+		public void VisitPoint2(Vector2Data field)
+		{
+			AddWidth(525);
+		}
+
+		public void VisitPoint3(Vector3Data field)
+		{
+			AddWidth(650);
+		}
+
 		public void VisitVector2(Vector2Data field)
 		{
 			AddWidth(525);
@@ -163,6 +173,16 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			AddWidth(650);
 		}
 
+		public void VisitPlane2(Vector3Data field)
+		{
+			AddWidth(650);
+		}
+
+		public void VisitPlane3(Vector4Data field)
+		{
+			AddWidth(775);
+		}
+
 		public void VisitColourInt(ColourData field)
 		{
 			AddWidth(_colourValue.Width);
@@ -178,17 +198,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			AddWidth(_shader.Width);
 		}
 
-		public void VisitRangeUint8(RangeUint8Data field)
-		{
-			AddWidth(525);
-		}
-
 		public void VisitRangeUint16(RangeUint16Data field)
-		{
-			AddWidth(525);
-		}
-
-		public void VisitRangeUint32(RangeUint32Data field)
 		{
 			AddWidth(525);
 		}

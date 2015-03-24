@@ -279,6 +279,21 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			field.Value = _reader.ReadFloat();
 		}
 
+		public void VisitPoint2(Vector2Data field)
+		{
+			SeekToOffset(field.Offset);
+			field.A = _reader.ReadFloat();
+			field.B = _reader.ReadFloat();
+		}
+
+		public void VisitPoint3(Vector3Data field)
+		{
+			SeekToOffset(field.Offset);
+			field.A = _reader.ReadFloat();
+			field.B = _reader.ReadFloat();
+			field.C = _reader.ReadFloat();
+		}
+
 		public void VisitVector2(Vector2Data field)
 		{
 			SeekToOffset(field.Offset);
@@ -324,6 +339,23 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			field.RadianC = _reader.ReadFloat();
 		}
 
+		public void VisitPlane2(Vector3Data field)
+		{
+			SeekToOffset(field.Offset);
+			field.A = _reader.ReadFloat();
+			field.B = _reader.ReadFloat();
+			field.C = _reader.ReadFloat();
+		}
+
+		public void VisitPlane3(Vector4Data field)
+		{
+			SeekToOffset(field.Offset);
+			field.A = _reader.ReadFloat();
+			field.B = _reader.ReadFloat();
+			field.C = _reader.ReadFloat();
+			field.D = _reader.ReadFloat();
+		}
+
 		public void VisitReflexive(ReflexiveData field)
 		{
 			SeekToOffset(field.Offset);
@@ -350,25 +382,11 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 				field.Shader = _cache.ShaderStreamer.ReadShader(_reader, field.Type);
 		}
 
-		public void VisitRangeUint8(RangeUint8Data field)
-		{
-			SeekToOffset(field.Offset);
-			field.A = _reader.ReadByte();
-			field.B = _reader.ReadByte();
-		}
-
 		public void VisitRangeUint16(RangeUint16Data field)
 		{
 			SeekToOffset(field.Offset);
 			field.A = _reader.ReadUInt16();
 			field.B = _reader.ReadUInt16();
-		}
-
-		public void VisitRangeUint32(RangeUint32Data field)
-		{
-			SeekToOffset(field.Offset);
-			field.A = _reader.ReadUInt32();
-			field.B = _reader.ReadUInt32();
 		}
 
 		public void VisitRangeFloat32(RangeFloat32Data field)

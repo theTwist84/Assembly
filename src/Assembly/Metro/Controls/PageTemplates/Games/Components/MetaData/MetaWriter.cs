@@ -307,6 +307,21 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			}
 		}
 
+		public void VisitPoint2(Vector2Data field)
+		{
+			SeekToOffset(field.Offset);
+			_writer.WriteFloat(field.A);
+			_writer.WriteFloat(field.B);
+		}
+
+		public void VisitPoint3(Vector3Data field)
+		{
+			SeekToOffset(field.Offset);
+			_writer.WriteFloat(field.A);
+			_writer.WriteFloat(field.B);
+			_writer.WriteFloat(field.C);
+		}
+
 		public void VisitVector2(Vector2Data field)
 		{
 			SeekToOffset(field.Offset);
@@ -352,16 +367,26 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			_writer.WriteFloat(field.RadianC);
 		}
 
+		public void VisitPlane2(Vector3Data field)
+		{
+			SeekToOffset(field.Offset);
+			_writer.WriteFloat(field.A);
+			_writer.WriteFloat(field.B);
+			_writer.WriteFloat(field.C);
+		}
+
+		public void VisitPlane3(Vector4Data field)
+		{
+			SeekToOffset(field.Offset);
+			_writer.WriteFloat(field.A);
+			_writer.WriteFloat(field.B);
+			_writer.WriteFloat(field.C);
+			_writer.WriteFloat(field.D);
+		}
+
 		public void VisitShaderRef(ShaderRef field)
 		{
 			// Don't do anything
-		}
-
-		public void VisitRangeUint8(RangeUint8Data field)
-		{
-			SeekToOffset(field.Offset);
-			_writer.WriteByte(field.A);
-			_writer.WriteByte(field.B);
 		}
 
 		public void VisitRangeUint16(RangeUint16Data field)
@@ -369,13 +394,6 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			SeekToOffset(field.Offset);
 			_writer.WriteUInt16(field.A);
 			_writer.WriteUInt16(field.B);
-		}
-
-		public void VisitRangeUint32(RangeUint32Data field)
-		{
-			SeekToOffset(field.Offset);
-			_writer.WriteUInt32(field.A);
-			_writer.WriteUInt32(field.B);
 		}
 
 		public void VisitRangeFloat32(RangeFloat32Data field)

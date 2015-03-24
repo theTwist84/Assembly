@@ -78,13 +78,7 @@
 		<MetaComps:Shader Opacity="{Binding Opacity}" />
 	</DataTemplate>
 
-	<DataTemplate DataType="{x:Type types:RangeUint8Data}">
-		<MetaComps:MultiValue Opacity="{Binding Opacity}" />
-	</DataTemplate>
 	<DataTemplate DataType="{x:Type types:RangeUint16Data}">
-		<MetaComps:MultiValue Opacity="{Binding Opacity}" />
-	</DataTemplate>
-	<DataTemplate DataType="{x:Type types:RangeUint32Data}">
 		<MetaComps:MultiValue Opacity="{Binding Opacity}" />
 	</DataTemplate>
 	<DataTemplate DataType="{x:Type types:RangeFloat32Data}">

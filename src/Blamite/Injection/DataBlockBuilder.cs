@@ -151,15 +151,23 @@ namespace Blamite.Injection
 		{
 		}
 
-		public void VisitVector2(string name, uint offset, bool visible, string label, uint pluginLine)
+		public void VisitPoint2(string name, uint offset, bool visible, uint pluginLine)
 		{
 		}
 
-		public void VisitVector3(string name, uint offset, bool visible, string label, uint pluginLine)
+		public void VisitPoint3(string name, uint offset, bool visible, uint pluginLine)
 		{
 		}
 
-		public void VisitVector4(string name, uint offset, bool visible, string label, uint pluginLine)
+		public void VisitVector2(string name, uint offset, bool visible, uint pluginLine)
+		{
+		}
+
+		public void VisitVector3(string name, uint offset, bool visible, uint pluginLine)
+		{
+		}
+
+		public void VisitVector4(string name, uint offset, bool visible, uint pluginLine)
 		{
 		}
 
@@ -172,6 +180,14 @@ namespace Blamite.Injection
 		}
 
 		public void VisitDegree3(string name, uint offset, bool visible, uint pluginLine)
+		{
+		}
+
+		public void VisitPlane2(string name, uint offset, bool visible, uint pluginLine)
+		{
+		}
+
+		public void VisitPlane3(string name, uint offset, bool visible, uint pluginLine)
 		{
 		}
 
@@ -279,19 +295,11 @@ namespace Blamite.Injection
 			ReadReferences(offset, (b, o) => ReadShader(b, o, type));
 		}
 
-		public void VisitRangeUInt8(string name, uint offset, bool visible, uint pluginLine)
-		{
-		}
-
 		public void VisitRangeUInt16(string name, uint offset, bool visible, uint pluginLine)
 		{
 		}
 
-		public void VisitRangeUInt32(string name, uint offset, bool visible, uint pluginLine)
-		{
-		}
-
-		public void VisitRangeFloat32(string name, uint offset, bool visible, string label, uint pluginLine)
+		public void VisitRangeFloat32(string name, uint offset, bool visible, uint pluginLine)
 		{
 		}
 

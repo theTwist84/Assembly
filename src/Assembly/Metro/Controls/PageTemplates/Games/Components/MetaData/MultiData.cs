@@ -26,11 +26,6 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			}
 		}
 
-		public string Label // only here so the control doesn't complain
-		{
-			get { return "ijk"; }
-		}
-
 		public float A
 		{
 			get { return (float)(_a * (180 / Math.PI)); }
@@ -141,9 +136,9 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 	public abstract class VectorData : ValueField
 	{
 		private float _a, _b, _c, _d;
-		private string _type, _label;
+		private string _type;
 
-		public VectorData(string name, uint offset, uint address, string type, float a, float b, float c, float d, string label, uint pluginLine)
+		public VectorData(string name, uint offset, uint address, string type, float a, float b, float c, float d, uint pluginLine)
 			: base(name, offset, address, pluginLine)
 		{
 			_a = a;
@@ -151,7 +146,6 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			_c = c;
 			_d = d;
 			_type = type;
-			_label = label;
 		}
 
 		public string Type
@@ -161,16 +155,6 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			{
 				_type = value;
 				NotifyPropertyChanged("Type");
-			}
-		}
-
-		public string Label
-		{
-			get { return _label; }
-			set
-			{
-				_label = value;
-				NotifyPropertyChanged("Label");
 			}
 		}
 
@@ -218,8 +202,8 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 
 	public class Vector2Data : VectorData
 	{
-		public Vector2Data(string name, uint offset, uint address, string type, float a, float b, string label, uint pluginLine, float c = 0, float d = 0)
-			: base(name, offset, address, type, a, b, c, d, label, pluginLine)
+		public Vector2Data(string name, uint offset, uint address, string type, float a, float b, uint pluginLine, float c = 0, float d = 0)
+			: base(name, offset, address, type, a, b, c, d, pluginLine)
 		{
 		}
 
@@ -230,14 +214,14 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 
 		public override MetaField CloneValue()
 		{
-			return new Vector2Data(Name, Offset, FieldAddress, Type, A, B, Label, base.PluginLine);
+			return new Vector2Data(Name, Offset, FieldAddress, Type, A, B, base.PluginLine);
 		}
 	}
 
 	public class Vector3Data : VectorData
 	{
-		public Vector3Data(string name, uint offset, uint address, string type, float a, float b, float c,  string label, uint pluginLine, float d = 0)
-			: base(name, offset, address, type, a, b, c, d, label, pluginLine)
+		public Vector3Data(string name, uint offset, uint address, string type, float a, float b, float c, uint pluginLine, float d = 0)
+			: base(name, offset, address, type, a, b, c, d, pluginLine)
 		{
 		}
 
@@ -248,14 +232,14 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 
 		public override MetaField CloneValue()
 		{
-			return new Vector3Data(Name, Offset, FieldAddress, Type, A, B, C, Label, base.PluginLine);
+			return new Vector3Data(Name, Offset, FieldAddress, Type, A, B, C, base.PluginLine);
 		}
 	}
 
 	public class Vector4Data : VectorData //needs to be split off with quaternion math someday
 	{
-		public Vector4Data(string name, uint offset, uint address, string type, float a, float b, float c, float d, string label, uint pluginLine)
-			: base(name, offset, address, type, a, b, c, d, label, pluginLine)
+		public Vector4Data(string name, uint offset, uint address, string type, float a, float b, float c, float d, uint pluginLine)
+			: base(name, offset, address, type, a, b, c, d, pluginLine)
 		{
 		}
 
@@ -266,7 +250,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 
 		public override MetaField CloneValue()
 		{
-			return new Vector4Data(Name, Offset, FieldAddress, Type, A, B, C, D, Label, base.PluginLine);
+			return new Vector4Data(Name, Offset, FieldAddress, Type, A, B, C, D, base.PluginLine);
 		}
 	}
 }

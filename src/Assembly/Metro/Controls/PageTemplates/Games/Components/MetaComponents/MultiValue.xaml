@@ -10,20 +10,21 @@
 				<Setter Property="Text" Value="i" />
 				<Setter Property="ToolTip" Value="Yaw Value" />
 				<Style.Triggers>
-					<DataTrigger Binding="{Binding Type}" Value="degree2">
-						<Setter Property="Text" Value="y" />
-					</DataTrigger>
-					<DataTrigger Binding="{Binding Label}" Value="xyz">
+					<DataTrigger Binding="{Binding Type}" Value="point2">
 						<Setter Property="Text" Value="x" />
 						<Setter Property="ToolTip" Value="X Value" />
 					</DataTrigger>
-					<DataTrigger Binding="{Binding Type}" Value="range8">
-						<Setter Property="Visibility" Value="Hidden" />
+					<DataTrigger Binding="{Binding Type}" Value="point3">
+						<Setter Property="Text" Value="x" />
+						<Setter Property="ToolTip" Value="X Value" />
+					</DataTrigger>
+					<DataTrigger Binding="{Binding Type}" Value="degree2">
+						<Setter Property="Text" Value="y" />
+					</DataTrigger>
+					<DataTrigger Binding="{Binding Type}" Value="degree3">
+						<Setter Property="Text" Value="y" />
 					</DataTrigger>
 					<DataTrigger Binding="{Binding Type}" Value="range16">
-						<Setter Property="Visibility" Value="Hidden" />
-					</DataTrigger>
-					<DataTrigger Binding="{Binding Type}" Value="range32">
 						<Setter Property="Visibility" Value="Hidden" />
 					</DataTrigger>
 					<DataTrigger Binding="{Binding Type}" Value="rangeF">
@@ -40,24 +41,21 @@
 				<Setter Property="Width" Value="10" />
 				<Setter Property="Margin" Value="15,0,0,0" />
 				<Style.Triggers>
-					<DataTrigger Binding="{Binding Type}" Value="degree2">
-						<Setter Property="Text" Value="p" />
-					</DataTrigger>
-					<DataTrigger Binding="{Binding Label}" Value="xyz">
+					<DataTrigger Binding="{Binding Type}" Value="point2">
 						<Setter Property="Text" Value="y" />
 						<Setter Property="ToolTip" Value="Y Value" />
 					</DataTrigger>
-					<DataTrigger Binding="{Binding Type}" Value="range8">
-						<Setter Property="Text" Value="To" />
-						<Setter Property="Width" Value="14" />
-						<Setter Property="Margin" Value="11,0,0,0" />
+					<DataTrigger Binding="{Binding Type}" Value="point3">
+						<Setter Property="Text" Value="y" />
+						<Setter Property="ToolTip" Value="Y Value" />
+					</DataTrigger>
+					<DataTrigger Binding="{Binding Type}" Value="degree2">
+						<Setter Property="Text" Value="p" />
+					</DataTrigger>
+					<DataTrigger Binding="{Binding Type}" Value="degree3">
+						<Setter Property="Text" Value="p" />
 					</DataTrigger>
 					<DataTrigger Binding="{Binding Type}" Value="range16">
-						<Setter Property="Text" Value="To" />
-						<Setter Property="Width" Value="14" />
-						<Setter Property="Margin" Value="11,0,0,0" />
-					</DataTrigger>
-					<DataTrigger Binding="{Binding Type}" Value="range32">
 						<Setter Property="Text" Value="To" />
 						<Setter Property="Width" Value="14" />
 						<Setter Property="Margin" Value="11,0,0,0" />
@@ -78,16 +76,37 @@
 				<Setter Property="Text" Value="k" />
 				<Setter Property="ToolTip" Value="Roll Value" />
 				<Style.Triggers>
-					<DataTrigger Binding="{Binding Label}" Value="xyz">
+					<DataTrigger Binding="{Binding Type}" Value="point2">
 						<Setter Property="Text" Value="z" />
 						<Setter Property="ToolTip" Value="Z Value" />
+					</DataTrigger>
+					<DataTrigger Binding="{Binding Type}" Value="point3">
+						<Setter Property="Text" Value="z" />
+						<Setter Property="ToolTip" Value="Z Value" />
+					</DataTrigger>
+					<DataTrigger Binding="{Binding Type}" Value="degree3">
+						<Setter Property="Text" Value="r" />
+					</DataTrigger>
+					<DataTrigger Binding="{Binding Type}" Value="plane2">
+						<Setter Property="Text" Value="d" />
+						<Setter Property="ToolTip" Value="D Value" />
+					</DataTrigger>
+				</Style.Triggers>
+			</Style>
+			<Style x:Key="dLabel" TargetType="TextBlock" BasedOn="{StaticResource GenericTextblock}">
+				<Setter Property="Text" Value="w" />
+				<Setter Property="ToolTip" Value="W Value" />
+				<Style.Triggers>
+					<DataTrigger Binding="{Binding Type}" Value="plane3">
+						<Setter Property="Text" Value="d" />
+						<Setter Property="ToolTip" Value="D Value" />
 					</DataTrigger>
 				</Style.Triggers>
 			</Style>
 			<Style x:Key="cToggle" TargetType="StackPanel">
 				<Setter Property="Visibility" Value="Collapsed" />
 				<Style.Triggers>
-					<DataTrigger Binding="{Binding Type}" Value="degree3">
+					<DataTrigger Binding="{Binding Type}" Value="point3">
 						<Setter Property="Visibility" Value="Visible" />
 					</DataTrigger>
 					<DataTrigger Binding="{Binding Type}" Value="vector3">
@@ -96,12 +115,24 @@
 					<DataTrigger Binding="{Binding Type}" Value="quaternion">
 						<Setter Property="Visibility" Value="Visible" />
 					</DataTrigger>
+					<DataTrigger Binding="{Binding Type}" Value="degree3">
+						<Setter Property="Visibility" Value="Visible" />
+					</DataTrigger>
+					<DataTrigger Binding="{Binding Type}" Value="plane2">
+						<Setter Property="Visibility" Value="Visible" />
+					</DataTrigger>
+					<DataTrigger Binding="{Binding Type}" Value="plane3">
+						<Setter Property="Visibility" Value="Visible" />
+					</DataTrigger>
 				</Style.Triggers>
 			</Style>
 			<Style x:Key="dToggle" TargetType="StackPanel">
 				<Setter Property="Visibility" Value="Collapsed" />
 				<Style.Triggers>
 					<DataTrigger Binding="{Binding Type}" Value="quaternion">
+						<Setter Property="Visibility" Value="Visible" />
+					</DataTrigger>
+					<DataTrigger Binding="{Binding Type}" Value="plane3">
 						<Setter Property="Visibility" Value="Visible" />
 					</DataTrigger>
 				</Style.Triggers>
@@ -128,7 +159,7 @@
 					         Margin="0,0,0,0" />
 				</StackPanel>
 				<StackPanel Orientation="Horizontal" Margin="0,0,0,0" Style="{DynamicResource dToggle}">
-					<TextBlock x:Name="lblDValueName" Text="w" ToolTip="W Value" Style="{DynamicResource GenericTextblock}" Width="10"
+					<TextBlock x:Name="lblDValueName" Style="{DynamicResource dLabel}" Width="10"
 					           VerticalAlignment="Center" Margin="15,0,0,0" />
 					<TextBox x:Name="txtDValue" Text="{Binding D}" VerticalAlignment="Center" Width="100" Padding="0,0,0,0"
 					         Margin="0,0,0,0" />

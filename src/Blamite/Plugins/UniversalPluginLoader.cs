@@ -177,8 +177,32 @@ namespace Blamite.Plugins
 				case "degree":
 					visitor.VisitFloat32(name, offset, visible, pluginLine);
 					break;
+				case "point2":
+					visitor.VisitPoint2(name, offset, visible, pluginLine);
+					break;
+				case "point3":
+					visitor.VisitPoint3(name, offset, visible, pluginLine);
+					break;
+				case "vector2":
+					visitor.VisitVector2(name, offset, visible, pluginLine);
+					break;
 				case "vector3":
-					visitor.VisitVector3(name, offset, visible, ReadVectorLabel(reader), pluginLine);
+					visitor.VisitVector3(name, offset, visible, pluginLine);
+					break;
+				case "vector4":
+					visitor.VisitVector4(name, offset, visible, pluginLine);
+					break;
+				case "degree2":
+					visitor.VisitDegree2(name, offset, visible, pluginLine);
+					break;
+				case "degree3":
+					visitor.VisitDegree3(name, offset, visible, pluginLine);
+					break;
+				case "plane2":
+					visitor.VisitPlane2(name, offset, visible, pluginLine);
+					break;
+				case "plane3":
+					visitor.VisitPlane3(name, offset, visible, pluginLine);
 					break;
 				case "stringid":
 					visitor.VisitStringID(name, offset, visible, pluginLine);
@@ -465,20 +489,6 @@ namespace Blamite.Plugins
 				value = ParseInt(reader.Value);
 
 			visitor.VisitOption(name, value);
-		}
-
-		private static string ReadVectorLabel(XmlReader reader)
-		{
-			string label = "xyz";
-
-			if (reader.MoveToAttribute("label"))
-				label = reader.Value;
-
-			if (label != "xyz" &&
-				label != "ijk")
-				throw new ArgumentException("Invalid label set. Must be either `xyz`, or `ijk`.");
-
-			return label;
 		}
 
 		private static string ReadColorFormat(XmlReader reader)

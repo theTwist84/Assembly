@@ -64,27 +64,6 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 	}
 
 	/// <summary>
-	///     Unsigned byte.
-	/// </summary>
-	public class RangeUint8Data : RangeNumberData<byte>
-	{
-		public RangeUint8Data(string name, uint offset, uint address, string type, byte a, byte b, uint pluginLine)
-			: base(name, offset, address, type, a, b, pluginLine)
-		{
-		}
-
-		public override void Accept(IMetaFieldVisitor visitor)
-		{
-			visitor.VisitRangeUint8(this);
-		}
-
-		public override MetaField CloneValue()
-		{
-			return new RangeUint8Data(Name, Offset, FieldAddress, Type, A, B, base.PluginLine);
-		}
-	}
-
-	/// <summary>
 	///     Unsigned 16-bit integer.
 	/// </summary>
 	public class RangeUint16Data : RangeNumberData<ushort>
@@ -106,33 +85,12 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 	}
 
 	/// <summary>
-	///     Unsigned 32-bit integer.
-	/// </summary>
-	public class RangeUint32Data : RangeNumberData<uint>
-	{
-		public RangeUint32Data(string name, uint offset, uint address, string type, uint a, uint b, uint pluginLine)
-			: base(name, offset, address, type, a, b, pluginLine)
-		{
-		}
-
-		public override void Accept(IMetaFieldVisitor visitor)
-		{
-			visitor.VisitRangeUint32(this);
-		}
-
-		public override MetaField CloneValue()
-		{
-			return new RangeUint32Data(Name, Offset, FieldAddress, Type, A, B, base.PluginLine);
-		}
-	}
-
-	/// <summary>
 	///     32-bit floating-point number.
 	/// </summary>
 	public class RangeFloat32Data : VectorData
 	{
-		public RangeFloat32Data(string name, uint offset, uint address, string type, float a, float b, string label, uint pluginLine, float c = 0, float d = 0)
-			: base(name, offset, address, type, a, b, c, d, label, pluginLine)
+		public RangeFloat32Data(string name, uint offset, uint address, string type, float a, float b, uint pluginLine, float c = 0, float d = 0)
+			: base(name, offset, address, type, a, b, c, d, pluginLine)
 		{
 		}
 
@@ -143,7 +101,7 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 
 		public override MetaField CloneValue()
 		{
-			return new RangeFloat32Data(Name, Offset, FieldAddress, Type, A, B, Label, base.PluginLine);
+			return new RangeFloat32Data(Name, Offset, FieldAddress, Type, A, B, base.PluginLine);
 		}
 	}
 

@@ -360,6 +360,14 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 		{
 		}
 
+		public void VisitPoint2(Vector2Data field)
+		{
+		}
+
+		public void VisitPoint3(Vector3Data field)
+		{
+		}
+
 		public void VisitVector2(Vector2Data field)
 		{
 		}
@@ -384,19 +392,19 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 		{
 		}
 
+		public void VisitPlane2(Vector3Data field)
+		{
+		}
+
+		public void VisitPlane3(Vector4Data field)
+		{
+		}
+
 		public void VisitShaderRef(ShaderRef field)
 		{
 		}
 
-		public void VisitRangeUint8(RangeUint8Data field)
-		{
-		}
-
 		public void VisitRangeUint16(RangeUint16Data field)
-		{
-		}
-
-		public void VisitRangeUint32(RangeUint32Data field)
 		{
 		}
 

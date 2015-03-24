@@ -128,25 +128,23 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components
 			RegisterMetaTag("enum8", "8-bit enumeration value");
 			RegisterMetaTag("enum16", "8-bit enumeration value");
 			RegisterMetaTag("enum32", "8-bit enumeration value");
-			RegisterMetaTag("range8", "Range of two 8-bit values");
 			RegisterMetaTag("range16", "Range of two 16-bit values");
-			RegisterMetaTag("range32", "Range of two 32-bit values");
 			RegisterMetaTag("rangeF", "Range of two 32-bit floating point values");
 			RegisterMetaTag("rangeD", "Range of two radian values converted to/from degrees");
-			
-			CompletableXMLTag vector2 = RegisterMetaTag("vector2", "2D vector of 32-bit floating point values");
-			CompletableXMLTag vector3 = RegisterMetaTag("vector3", "3D vector of 32-bit floating point values");
-			var label = new CompletableXMLAttribute("label",
-				"Determines the unit labels on this vector. (optional, default=xyz)");
-			label.RegisterValue(new CompletableXMLValue("xyz", "The vector will be identified as points X, Y, Z (default)"));
-			label.RegisterValue(new CompletableXMLValue("ijk", "The vector will be identified as angle I, J, K"));
-			vector2.RegisterAttribute(label);
-			vector3.RegisterAttribute(label);
 
+			RegisterMetaTag("point2", "2D point of 32-bit floating point values");
+			RegisterMetaTag("point3", "3D point of 32-bit floating point values");
+
+			RegisterMetaTag("vector2", "2D vector of 32-bit floating point values");
+			RegisterMetaTag("vector3", "3D vector of 32-bit floating point values");
 			RegisterMetaTag("vector4", "Quaternion of 32-bit floating point values");
+			
 			RegisterMetaTag("degree", "Radian value that should be converted to/from degrees");
-			RegisterMetaTag("degree2", "2D radian vector that should be converted to/from degrees");
-			RegisterMetaTag("degree3", "3D radian vector that should be converted to/from degrees");
+			RegisterMetaTag("degree2", "2D radian angles that should be converted to/from degrees");
+			RegisterMetaTag("degree3", "3D radian angles that should be converted to/from degrees");
+
+			RegisterMetaTag("plane2", "2D plane of 3 32-bit floating point values");
+			RegisterMetaTag("plane3", "3D plane of 4 of 32-bit floating point values");
 
 			CompletableXMLTag color = RegisterMetaTag("color", "Integer color value");
 			CompletableXMLTag colorf = RegisterMetaTag("colorf", "Floating-point color value");

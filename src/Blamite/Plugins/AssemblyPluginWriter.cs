@@ -99,21 +99,27 @@ namespace Blamite.Plugins
 			WriteBasicValue("undefined", name, offset, visible);
 		}
 
-		public void VisitVector2(string name, uint offset, bool visible, string label, uint pluginLine)
+		public void VisitPoint2(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteValueStart("point2", name, offset, visible);
+		}
+
+		public void VisitPoint3(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteValueStart("point3", name, offset, visible);
+		}
+
+		public void VisitVector2(string name, uint offset, bool visible, uint pluginLine)
 		{
 			WriteValueStart("vector2", name, offset, visible);
-			if (label == "ijk")
-				_output.WriteAttributeString("label", "ijk");
 		}
 
-		public void VisitVector3(string name, uint offset, bool visible, string label, uint pluginLine)
+		public void VisitVector3(string name, uint offset, bool visible, uint pluginLine)
 		{
 			WriteValueStart("vector3", name, offset, visible);
-			if (label == "ijk")
-				_output.WriteAttributeString("label", "ijk");
 		}
 
-		public void VisitVector4(string name, uint offset, bool visible, string label, uint pluginLine)
+		public void VisitVector4(string name, uint offset, bool visible, uint pluginLine)
 		{
 			WriteBasicValue("vector4", name, offset, visible);
 		}
@@ -131,6 +137,16 @@ namespace Blamite.Plugins
 		public void VisitDegree3(string name, uint offset, bool visible, uint pluginLine)
 		{
 			WriteBasicValue("degree3", name, offset, visible);
+		}
+
+		public void VisitPlane2(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteValueStart("plane2", name, offset, visible);
+		}
+
+		public void VisitPlane3(string name, uint offset, bool visible, uint pluginLine)
+		{
+			WriteBasicValue("plane3", name, offset, visible);
 		}
 
 		public void VisitStringID(string name, uint offset, bool visible, uint pluginLine)
@@ -292,29 +308,19 @@ namespace Blamite.Plugins
 			_output.WriteEndElement();
 		}
 
-		public void VisitRangeUInt8(string name, uint offset, bool visible, uint pluginLine)
-		{
-			WriteBasicValue("range8", name, offset, visible);
-		}
-
 		public void VisitRangeUInt16(string name, uint offset, bool visible, uint pluginLine)
 		{
 			WriteBasicValue("range16", name, offset, visible);
 		}
 
-		public void VisitRangeUInt32(string name, uint offset, bool visible, uint pluginLine)
+		public void VisitRangeFloat32(string name, uint offset, bool visible, uint pluginLine)
 		{
-			WriteBasicValue("range32", name, offset, visible);
-		}
-
-		public void VisitRangeFloat32(string name, uint offset, bool visible, string label, uint pluginLine)
-		{
-			WriteBasicValue("rangefloat", name, offset, visible);
+			WriteBasicValue("rangeF", name, offset, visible);
 		}
 
 		public void VisitRangeDegree(string name, uint offset, bool visible, uint pluginLine)
 		{
-			WriteBasicValue("rangedegree", name, offset, visible);
+			WriteBasicValue("rangeD", name, offset, visible);
 		}
 
 		private void WriteValueStart(string element, string name, uint offset, bool visible)
