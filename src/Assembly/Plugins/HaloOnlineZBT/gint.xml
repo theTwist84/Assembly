@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin game="HaloOnlineZBT" baseSize="0x404">
+<plugin game="HaloOnlineZBT" baseSize="0x410">
 	<!-- Automatically generated plugin -->
 	<revisions>
 		<revision author="Lord Zedd" version="1">ye</revision>
@@ -784,13 +784,13 @@
 	<tagref name="Detach Damage" offset="0x3C8" visible="true" />
 	<tagref name="Detached Weapon" offset="0x3D8" visible="true" />
 	<comment title="GIANT" />
-	<undefined name="Unknown" offset="0x3DC" visible="true" />
-	<float32 name="Unknown" offset="0x3E0" visible="true" />
-	<float32 name="Unknown" offset="0x3E4" visible="true" />
-	<float32 name="Animation Speed" offset="0x3E8" visible="true" />
-	<float32 name="Vertical Force" offset="0x3EC" visible="true" />
-	<float32 name="Leg Attach Radius" offset="0x3F0" visible="true" />
-	<reflexive name="Buckling Parameters" offset="0x3F4" visible="true" entrySize="0x5C">
+	<undefined name="Unknown" offset="0x3E8" visible="true" />
+	<float32 name="Unknown" offset="0x3EC" visible="true" />
+	<float32 name="Unknown" offset="0x3F0" visible="true" />
+	<float32 name="Animation Speed" offset="0x3F4" visible="true" />
+	<float32 name="Vertical Force" offset="0x3F8" visible="true" />
+	<float32 name="Leg Attach Radius" offset="0x3FC" visible="true" />
+	<reflexive name="Buckling Parameters" offset="0x400" visible="true" entrySize="0x5C">
 		<float32 name="Unknown" offset="0x0" visible="true" />
 		<int32 name="Unknown" offset="0x4" visible="true" />
 		<float32 name="Unknown" offset="0x8" visible="true" />
@@ -815,5 +815,5 @@
 		<float32 name="Unknown" offset="0x54" visible="true" />
 		<float32 name="Unknown" offset="0x58" visible="true" />
 	</reflexive>
-	<float32 name="Toe Joint Extended Fraction" offset="0x400" visible="true" />
+	<float32 name="Toe Joint Extended Fraction" offset="0x40C" visible="true" />
 </plugin>
