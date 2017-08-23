@@ -219,7 +219,7 @@
 			<Colorf name="Color Upper Bound" offset="0x10" format="rgb" visible="true" />
 			<stringId name="Variant Name" offset="0x1C" visible="true" />
 		</reflexive>
-		<reflexive name="Functions" offset="0xC" visible="true" entrySize="0x20">
+		<reflexive name="Functions" offset="0xC" visible="true" entrySize="0x24">
 			<bitfield32 name="Scale Flags" offset="0x0" visible="true">
 				<bit name="Blend In HSV" index="0" />
 				<bit name="...More Colors" index="1" />

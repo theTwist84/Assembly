@@ -218,7 +218,7 @@
 			<Colorf name="Color Upper Bound" offset="0x10" format="rgb" visible="true" />
 			<stringId name="Variant Name" offset="0x1C" visible="true" />
 		</reflexive>
-		<reflexive name="Functions" offset="0xC" visible="true" entrySize="0x20">
+		<reflexive name="Functions" offset="0xC" visible="true" entrySize="0x24">
 			<bitfield32 name="Scale Flags" offset="0x0" visible="true">
 				<bit name="Blend In HSV" index="0" />
 				<bit name="...More Colors" index="1" />
@@ -609,11 +609,11 @@
 		<tagref name="Unknown" offset="0x3C" visible="true" />
 	</reflexive>
 	<reflexive name="Bomb Run" offset="0x2B8" visible="true" entrySize="0x34">
-		<int32 name="Unknown" offset="0x0" visible="false" />
-		<float32 name="Unknown" offset="0x4" visible="false" />
-		<float32 name="Unknown" offset="0x8" visible="false" />
-		<float32 name="Unknown" offset="0xC" visible="false" />
-		<float32 name="Unknown" offset="0x10" visible="false" />
+		<int32 name="Grenade Count" offset="0x0" visible="true" />
+		<float32 name="Velocity Bounds A" offset="0x4" visible="true" />
+		<float32 name="Velocity Bounds B" offset="0x8" visible="true" />
+		<float32 name="Horizontal Randomness" offset="0xC" visible="true" />
+		<float32 name="Vertical Randomness" offset="0x10" visible="true" />
 		<tagRef name="Projectile" offset="0x14" visible="true" />
 		<tagRef name="Throw Sound" offset="0x24" visible="true" />
 	</reflexive>

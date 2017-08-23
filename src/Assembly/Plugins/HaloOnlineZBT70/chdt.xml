@@ -395,8 +395,8 @@
 				<bit name="Selected Fire Grenades" index="5" />
 				<bit name="Bit 6" index="6" />
 				<bit name="Vision Warning" index="7" />
-				<bit name="Bit 8" index="8" />
-				<bit name="Bit 9" index="9" />
+				<bit name="First Person Camera" index="8" />
+				<bit name="Third Person Camera" index="9" />
 				<bit name="Bit 10" index="10" />
 				<bit name="Bit 11" index="11" />
 				<bit name="Has 1x Overshield" index="12" />
@@ -1809,8 +1809,8 @@
 					<bit name="Selected Fire Grenades" index="5" />
 					<bit name="Bit 6" index="6" />
 					<bit name="Vision Warning" index="7" />
-					<bit name="Bit 8" index="8" />
-					<bit name="Bit 9" index="9" />
+					<bit name="First Person Camera" index="8" />
+					<bit name="Third Person Camera" index="9" />
 					<bit name="Bit 10" index="10" />
 					<bit name="Bit 11" index="11" />
 					<bit name="Has 1x Overshield" index="12" />
@@ -2840,15 +2840,15 @@
 				<bit name="Stretch Edges" index="2" />
 				<bit name="Enable Texture Cam" index="3" />
 				<bit name="Looping" index="4" />
-				<bit name="Bit 5" index="5" />
-				<bit name="Player 1 Emblem" index="6" />
-				<bit name="Player 2 Emblem" index="7" />
-				<bit name="Player 3 Emblem" index="8" />
-				<bit name="Player 4 Emblem" index="9" />
-				<bit name="Bit 10" index="10" />
-				<bit name="Bit 11" index="11" />
-				<bit name="Bit 12" index="12" />
-				<bit name="Bit 13" index="13" />
+				<bit name="Offset Sprite Index By Biped Type" index="5" />
+				<bit name="Offset Sprite Index By Survival ???" index="6" /><!--x14 short in survival mode globals memory-->
+				<bit name="Offset Sprite Index By Input" index="7" />
+				<bit name="Offset Sprite Index By Range Input" index="8" />
+				<bit name="Player 1 Emblem" index="9" />
+				<bit name="Player 2 Emblem" index="10" />
+				<bit name="Player 3 Emblem" index="11" />
+				<bit name="Player 4 Emblem" index="12" />
+				<bit name="Unknown Alpha Modifier" index="13" />
 				<bit name="Input Controls Sprite Index (Consumable)" index="14" />
 				<bit name="Input Controls Sprite Index (Weapon)" index="15" />
 			</bitfield16>
@@ -3248,8 +3248,8 @@
 					<bit name="Selected Fire Grenades" index="5" />
 					<bit name="Bit 6" index="6" />
 					<bit name="Vision Warning" index="7" />
-					<bit name="Bit 8" index="8" />
-					<bit name="Bit 9" index="9" />
+					<bit name="First Person Camera" index="8" />
+					<bit name="Third Person Camera" index="9" />
 					<bit name="Bit 10" index="10" />
 					<bit name="Bit 11" index="11" />
 					<bit name="Has 1x Overshield" index="12" />

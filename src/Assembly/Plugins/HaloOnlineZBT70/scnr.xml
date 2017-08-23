@@ -3,11 +3,18 @@
 	<revisions>
 		<revision author="Lord Zedd" version="1">Booty.</revision>
 	</revisions>
-	<enum16 name="Map Type" offset="0x0" visible="true">
-		<option name="Single Player" value="0x0" />
-		<option name="Multiplayer" value="0x1" />
-		<option name="Main Menu" value="0x2" />
-	</enum16>
+    <enum8 name="Map Type" offset="0x0" visible="true">
+        <option name="Single Player" value="0x0" />
+        <option name="Multiplayer" value="0x1" />
+        <option name="Main Menu" value="0x2" />
+    </enum8>
+    <enum8 name="Map Sub Type" offset="0x1" visible="true">
+        <option name="None" value="0x0" />
+        <option name="Hub" value="0x1" />
+        <option name="Level" value="0x2" />
+        <option name="Scene" value="0x3" />
+        <option name="Cinematic" value="0x4" />
+    </enum8>
 	<bitfield16 name="Flags" offset="0x2" visible="true">
 		<bit name="Bit 0" index="0" />
 		<bit name="Bit 1" index="1" />
@@ -4174,12 +4181,34 @@ DO NOT USE THE BLOCK REALLOCATOR ON THE [READABLE] BLOCKS!</comment>
 		<int16 name="Kill Volume" offset="0x78" visible="true" />
 		<int16 name="Editor Folder Index" offset="0x7A" visible="true" />
 	</reflexive>
-	<undefined name="Unknown" offset="0x290" visible="false" />
-	<undefined name="Unknown" offset="0x294" visible="false" />
-	<undefined name="Unknown" offset="0x298" visible="false" />
-	<undefined name="Unknown" offset="0x29C" visible="false" />
-	<undefined name="Unknown" offset="0x2A0" visible="false" />
-	<undefined name="Unknown" offset="0x2A4" visible="false" />
+	<reflexive name="Recorded Animations" offset="0x290" visible="false" entrySize="0x3C">
+		<undefined name="Unknown" offset="0x0" visible="false" />
+		<undefined name="Unknown" offset="0x4" visible="false" />
+		<undefined name="Unknown" offset="0x8" visible="false" />
+		<undefined name="Unknown" offset="0xC" visible="false" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+		<undefined name="Unknown" offset="0x14" visible="false" />
+		<undefined name="Unknown" offset="0x18" visible="false" />
+		<undefined name="Unknown" offset="0x1C" visible="false" />
+		<int8 name="Unknown" offset="0x20" visible="false" />
+		<int8 name="Unknown" offset="0x21" visible="false" />
+		<int8 name="Unknown" offset="0x22" visible="false" />
+		<int8 name="Unknown" offset="0x23" visible="false" />
+		<int16 name="Frame Count" offset="0x24" visible="true" />
+		<int16 name="Unknown" offset="0x26" visible="false" />
+		<undefined name="Unknown" offset="0x28" visible="false" />
+		<undefined name="Unknown" offset="0x2C" visible="false" />
+		<undefined name="Unknown" offset="0x30" visible="false" />
+		<undefined name="Unknown" offset="0x34" visible="false" />
+		<int32 name="Unknown" offset="0x38" visible="false" />
+	</reflexive>
+	<reflexive name="Unknown" offset="0x29C" visible="false" entrySize="0xC">
+		<int16 name="Unknown" offset="0x0" visible="false" />
+		<int16 name="Zoneset Group Index" offset="0x2" visible="false" />
+		<int16 name="Trigger Volume Index" offset="0x4" visible="false" />
+		<int16 name="Zoneset Group Index 2" offset="0x6" visible="false" />
+		<undefined name="Unknown" offset="0x8" visible="false" />
+	</reflexive>
 	<reflexive name="Multiplayer Constants Override" offset="0x2A8" visible="true" entrySize="0x14">
 		<float name="Unknown" offset="0x0" visible="true" />
 		<float name="Unknown" offset="0x4" visible="true" />
@@ -4187,15 +4216,27 @@ DO NOT USE THE BLOCK REALLOCATOR ON THE [READABLE] BLOCKS!</comment>
 		<float name="Unknown" offset="0xC" visible="true" />
 		<float name="Unknown" offset="0x10" visible="true" />
 	</reflexive>
-	<undefined name="Unknown" offset="0x2B4" visible="false" />
-	<undefined name="Unknown" offset="0x2B8" visible="false" />
-	<undefined name="Unknown" offset="0x2BC" visible="false" />
-	<undefined name="Unknown" offset="0x2C0" visible="false" />
-	<undefined name="Unknown" offset="0x2C4" visible="false" />
-	<undefined name="Unknown" offset="0x2C8" visible="false" />
-	<undefined name="Unknown" offset="0x2CC" visible="false" />
-	<undefined name="Unknown" offset="0x2D0" visible="false" />
-	<undefined name="Unknown" offset="0x2D4" visible="false" />
+	<reflexive name="Unknown" offset="0x2B4" visible="false" entrySize="0x14">
+		<undefined name="Unknown" offset="0x0" visible="false" />
+		<undefined name="Unknown" offset="0x4" visible="false" />
+		<undefined name="Unknown" offset="0x8" visible="false" />
+		<undefined name="Unknown" offset="0xC" visible="false" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+	</reflexive>
+	<reflexive name="Unknown" offset="0x2C0" visible="false" entrySize="0x14">
+		<undefined name="Unknown" offset="0x0" visible="false" />
+		<undefined name="Unknown" offset="0x4" visible="false" />
+		<undefined name="Unknown" offset="0x8" visible="false" />
+		<undefined name="Unknown" offset="0xC" visible="false" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+	</reflexive>
+	<reflexive name="Unknown" offset="0x2CC" visible="false" entrySize="0x14">
+		<undefined name="Unknown" offset="0x0" visible="false" />
+		<undefined name="Unknown" offset="0x4" visible="false" />
+		<undefined name="Unknown" offset="0x8" visible="false" />
+		<undefined name="Unknown" offset="0xC" visible="false" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+	</reflexive>
 	<reflexive name="Unknown" offset="0x2D8" visible="false" entrySize="0x14">
 		<undefined name="Unknown" offset="0x0" visible="false" />
 		<undefined name="Unknown" offset="0x4" visible="false" />
@@ -4203,42 +4244,86 @@ DO NOT USE THE BLOCK REALLOCATOR ON THE [READABLE] BLOCKS!</comment>
 		<undefined name="Unknown" offset="0xC" visible="false" />
 		<undefined name="Unknown" offset="0x10" visible="false" />
 	</reflexive>
-	<undefined name="Unknown" offset="0x2E4" visible="false" />
-	<undefined name="Unknown" offset="0x2E8" visible="false" />
-	<undefined name="Unknown" offset="0x2EC" visible="false" />
-	<undefined name="Unknown" offset="0x2F0" visible="false" />
-	<undefined name="Unknown" offset="0x2F4" visible="false" />
-	<undefined name="Unknown" offset="0x2F8" visible="false" />
-	<undefined name="Unknown" offset="0x2FC" visible="false" />
-	<undefined name="Unknown" offset="0x300" visible="false" />
-	<undefined name="Unknown" offset="0x304" visible="false" />
-	<undefined name="Unknown" offset="0x308" visible="false" />
-	<undefined name="Unknown" offset="0x30C" visible="false" />
-	<undefined name="Unknown" offset="0x310" visible="false" />
-	<undefined name="Unknown" offset="0x314" visible="false" />
-	<undefined name="Unknown" offset="0x318" visible="false" />
-	<undefined name="Unknown" offset="0x31C" visible="false" />
-	<undefined name="Unknown" offset="0x320" visible="false" />
-	<undefined name="Unknown" offset="0x324" visible="false" />
-	<undefined name="Unknown" offset="0x328" visible="false" />
-	<undefined name="Unknown" offset="0x32C" visible="false" />
-	<undefined name="Unknown" offset="0x330" visible="false" />
-	<undefined name="Unknown" offset="0x334" visible="false" />
-	<undefined name="Unknown" offset="0x338" visible="false" />
-	<undefined name="Unknown" offset="0x33C" visible="false" />
-	<undefined name="Unknown" offset="0x340" visible="false" />
-	<undefined name="Unknown" offset="0x344" visible="false" />
-	<undefined name="Unknown" offset="0x348" visible="false" />
-	<undefined name="Unknown" offset="0x34C" visible="false" />
-	<undefined name="Unknown" offset="0x350" visible="false" />
-	<undefined name="Unknown" offset="0x354" visible="false" />
-	<undefined name="Unknown" offset="0x358" visible="false" />
-	<undefined name="Unknown" offset="0x35C" visible="false" />
-	<undefined name="Unknown" offset="0x360" visible="false" />
-	<undefined name="Unknown" offset="0x364" visible="false" />
-	<undefined name="Unknown" offset="0x368" visible="false" />
-	<undefined name="Unknown" offset="0x36C" visible="false" />
-	<undefined name="Unknown" offset="0x370" visible="false" />
+	<reflexive name="Unknown" offset="0x2E4" visible="false" entrySize="0x20">
+		<tagRef name="Unknown Object" offset="0x0" visible="true" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+		<undefined name="Unknown" offset="0x14" visible="false" />
+		<undefined name="Unknown" offset="0x18" visible="false" />
+		<undefined name="Unknown" offset="0x1C" visible="false" />
+	</reflexive>
+	<reflexive name="Unknown" offset="0x2F0" visible="false" entrySize="0x20">
+		<tagRef name="Unknown Object" offset="0x0" visible="true" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+		<undefined name="Unknown" offset="0x14" visible="false" />
+		<undefined name="Unknown" offset="0x18" visible="false" />
+		<undefined name="Unknown" offset="0x1C" visible="false" />
+	</reflexive>
+	<reflexive name="Unknown" offset="0x2FC" visible="false" entrySize="0x1C">
+		<tagRef name="Unknown Object" offset="0x0" visible="true" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+		<undefined name="Unknown" offset="0x14" visible="false" />
+		<undefined name="Unknown" offset="0x18" visible="false" />
+	</reflexive>
+	<reflexive name="Unknown" offset="0x308" visible="false" entrySize="0x14">
+		<tagRef name="Unknown Object" offset="0x0" visible="true" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+	</reflexive>
+	<reflexive name="Unknown" offset="0x314" visible="false" entrySize="0x14">
+		<undefined name="Unknown" offset="0x0" visible="false" />
+		<undefined name="Unknown" offset="0x4" visible="false" />
+		<undefined name="Unknown" offset="0x8" visible="false" />
+		<undefined name="Unknown" offset="0xC" visible="false" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+	</reflexive>
+	<reflexive name="Unknown" offset="0x320" visible="false" entrySize="0x14">
+		<undefined name="Unknown" offset="0x0" visible="false" />
+		<undefined name="Unknown" offset="0x4" visible="false" />
+		<undefined name="Unknown" offset="0x8" visible="false" />
+		<undefined name="Unknown" offset="0xC" visible="false" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+	</reflexive>
+	<reflexive name="Unknown" offset="0x32C" visible="false" entrySize="0x14">
+		<undefined name="Unknown" offset="0x0" visible="false" />
+		<undefined name="Unknown" offset="0x4" visible="false" />
+		<undefined name="Unknown" offset="0x8" visible="false" />
+		<undefined name="Unknown" offset="0xC" visible="false" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+	</reflexive>
+	<reflexive name="Unknown" offset="0x338" visible="false" entrySize="0x14">
+		<undefined name="Unknown" offset="0x0" visible="false" />
+		<undefined name="Unknown" offset="0x4" visible="false" />
+		<undefined name="Unknown" offset="0x8" visible="false" />
+		<undefined name="Unknown" offset="0xC" visible="false" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+	</reflexive>
+	<reflexive name="Unknown" offset="0x344" visible="false" entrySize="0x14">
+		<undefined name="Unknown" offset="0x0" visible="false" />
+		<undefined name="Unknown" offset="0x4" visible="false" />
+		<undefined name="Unknown" offset="0x8" visible="false" />
+		<undefined name="Unknown" offset="0xC" visible="false" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+	</reflexive>
+	<reflexive name="Unknown" offset="0x350" visible="false" entrySize="0x14">
+		<undefined name="Unknown" offset="0x0" visible="false" />
+		<undefined name="Unknown" offset="0x4" visible="false" />
+		<undefined name="Unknown" offset="0x8" visible="false" />
+		<undefined name="Unknown" offset="0xC" visible="false" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+	</reflexive>
+	<reflexive name="Unknown" offset="0x35C" visible="false" entrySize="0x14">
+		<undefined name="Unknown" offset="0x0" visible="false" />
+		<undefined name="Unknown" offset="0x4" visible="false" />
+		<undefined name="Unknown" offset="0x8" visible="false" />
+		<undefined name="Unknown" offset="0xC" visible="false" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+	</reflexive>
+	<reflexive name="Unknown" offset="0x368" visible="false" entrySize="0x14">
+		<undefined name="Unknown" offset="0x0" visible="false" />
+		<undefined name="Unknown" offset="0x4" visible="false" />
+		<undefined name="Unknown" offset="0x8" visible="false" />
+		<undefined name="Unknown" offset="0xC" visible="false" />
+		<undefined name="Unknown" offset="0x10" visible="false" />
+	</reflexive>
 	<reflexive name="Decals" offset="0x374" visible="true" entrySize="0x24">
 		<int16 name="Palette Index" offset="0x0" visible="true" />
 		<int8 name="Yaw" offset="0x2" visible="true" />
@@ -6250,7 +6335,7 @@ DO NOT USE THE BLOCK REALLOCATOR ON THE [READABLE] BLOCKS!</comment>
 	</reflexive>
 	<tagRef name="Default Camera FX" offset="0x6F0" visible="true" />
 	<tagref name="Default Screen FX" offset="0x700" visible="true" />
-	<tagref name="Unknown" offset="0x710" visible="true" />
+	<tagref name="Unknown Screen FX" offset="0x710" visible="true" />
 	<tagRef name="Sky Parameters" offset="0x720" visible="true" />
 	<tagRef name="Global Lighing" offset="0x730" visible="true" />
 	<tagRef name="Lightmap" offset="0x740" visible="true" />
