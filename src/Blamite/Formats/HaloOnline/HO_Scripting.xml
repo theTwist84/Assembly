@@ -252,9 +252,9 @@
 		<function opcode="0x008" name="-" returnType="real" flags="200" group="Arithmetic" />
 		<function opcode="0x009" name="*" returnType="real" flags="200" group="Arithmetic" />
 		<function opcode="0x00A" name="/" returnType="real" flags="200" group="Arithmetic" />
-		<function opcode="0x00B" name="" returnType="real" flags="200" group="Arithmetic" /><!-- eldorado -->
-		<function opcode="0x00C" name="" returnType="real" flags="200" group="Arithmetic" />
-		<function opcode="0x00D" name="" returnType="real" flags="200" group="Arithmetic" />
+		<function opcode="0x00B" name="inc?" returnType="real" flags="200" group="Arithmetic" /><!-- eldorado -->
+		<function opcode="0x00C" name="min" returnType="real" flags="200" group="Arithmetic" />
+		<function opcode="0x00D" name="max" returnType="real" flags="200" group="Arithmetic" />
 		<function opcode="0x00E" name="=" returnType="boolean" flags="200" group="Equality" />
 		<function opcode="0x00F" name="!=" returnType="boolean" flags="200" group="Equality" />
 		<function opcode="0x010" name="&gt;" returnType="boolean" flags="200" group="Inequality" />
@@ -805,7 +805,7 @@
 		<function opcode="0x0B9" name="texture_camera_set_aspect_ratio" returnType="void" argc="1">
 			<arg type="real" />
 		</function>
-		<function opcode="0x0BA" name="" returnType="void" argc="2">
+		<function opcode="0x0BA" name="texture_camera_set_resolution" returnType="void" argc="2">
 			<arg type="long" />
 			<arg type="long" />
 		</function>
@@ -821,7 +821,7 @@
 		<function opcode="0x0BE" name="" returnType="void" argc="1">
 			<arg type="real" />
 		</function>
-		<function opcode="0x0BF" name="" returnType="void" argc="1">
+		<function opcode="0x0BF" name="texture_camera_enable_dynamic_lights" returnType="void" argc="1">
 			<arg type="boolean" />
 		</function>
 		<function opcode="0x0C0" name="" returnType="void" argc="1">
@@ -3023,16 +3023,15 @@
 		<function opcode="0x2F3" name="player_camera_control" returnType="boolean" argc="1">
 			<arg type="boolean" />
 		</function>
-		<!-- todo: double check these action tests -->
 		<function opcode="0x2F4" name="player_action_test_reset" returnType="void" argc="0" />
-		<function opcode="0x2F5" name="" returnType="boolean" argc="0" />
+		<function opcode="0x2F5" name="player_action_test_jump" returnType="boolean" argc="0" />
 		<function opcode="0x2F6" name="player_action_test_primary_trigger" returnType="boolean" argc="0" />
 		<function opcode="0x2F7" name="player_action_test_grenade_trigger" returnType="boolean" argc="0" />
-		<function opcode="0x2F8" name="player_action_test_vision_trigger" returnType="boolean" argc="0" />
+		<function opcode="0x2F8" name="player_action_test_zoom" returnType="boolean" argc="0" />
 		<function opcode="0x2F9" name="player_action_test_rotate_weapons" returnType="boolean" argc="0" />
 		<function opcode="0x2FA" name="player_action_test_rotate_grenades" returnType="boolean" argc="0" />
 		<function opcode="0x2FB" name="player_action_test_melee" returnType="boolean" argc="0" />
-		<function opcode="0x2FC" name="player_action_test_action*" returnType="boolean" argc="0" />
+		<function opcode="0x2FC" name="player_action_test_action" returnType="boolean" argc="0" />
 		<function opcode="0x2FD" name="player_action_test_accept" returnType="boolean" argc="0" />
 		<function opcode="0x2FE" name="player_action_test_cancel" returnType="boolean" argc="0" />
 		<function opcode="0x2FF" name="player_action_test_look_relative_up" returnType="boolean" argc="0" />
@@ -3056,7 +3055,7 @@
 		<function opcode="0x30F" name="unit_action_test_reset" returnType="void" argc="1">
 			<arg type="unit" />
 		</function>
-		<function opcode="0x310" name="unit_action_test_primary_trigger" returnType="boolean" argc="1">
+		<function opcode="0x310" name="unit_action_test_grenade_trigger" returnType="boolean" argc="1">
 			<arg type="unit" />
 		</function>
 		<function opcode="0x311" name="unit_action_test_vision_trigger" returnType="boolean" argc="1">
@@ -3143,8 +3142,8 @@
 			<arg type="real" />
 			<arg type="long" />
 		</function>
-		<function opcode="0x32D" name="" returnType="boolean" argc="0" />
-		<function opcode="0x32E" name="" returnType="boolean" argc="0" />
+		<function opcode="0x32D" name="player_action_test_1?" returnType="boolean" argc="0" />
+		<function opcode="0x32E" name="player_action_test_2?" returnType="boolean" argc="0" />
 		<function opcode="0x32F" name="debug_teleport_player" returnType="void" argc="2">
 			<arg type="long" />
 			<arg type="long" />
@@ -4414,10 +4413,10 @@
 		<function opcode="0x4B1" name="" returnType="void" argc="1">
 			<arg type="long" />
 		</function>
-		<function opcode="0x4B2" name="" returnType="void" argc="1">
+		<function opcode="0x4B2" name="objectives_primary_unavailable" returnType="void" argc="1">
 			<arg type="long" />
 		</function>
-		<function opcode="0x4B3" name="" returnType="void" argc="1">
+		<function opcode="0x4B3" name="objectives_secondary_unavailable" returnType="void" argc="1">
 			<arg type="long" />
 		</function>
 		<function opcode="0x4B4" name="" returnType="void" argc="1">
@@ -4944,7 +4943,7 @@
 		<function opcode="0x55E" name="render_depth_of_field_enable" returnType="void" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x55F" name="" returnType="void" argc="4">
+		<function opcode="0x55F" name="render_depth_of_field" returnType="void" argc="4">
 			<arg type="real" />
 			<arg type="real" />
 			<arg type="real" />
@@ -5676,11 +5675,11 @@
 		<function opcode="0x65B" name="" returnType="void" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x65C" name="" returnType="void" argc="2">
+		<function opcode="0x65C" name="player_set_look_training_hack" returnType="void" argc="2">
 			<arg type="unit" />
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x65D" name="" returnType="boolean" argc="3">
+		<function opcode="0x65D" name="device_arg_has_been_touched_by_unit" returnType="boolean" argc="3">
 			<arg type="device" />
 			<arg type="unit" />
 			<arg type="long" />
@@ -5754,34 +5753,34 @@
 		<function opcode="0x672" name="chud_bonus_round_set_target_score" returnType="void" argc="1">
 			<arg type="long" />
 		</function>
-		<function opcode="0x673" name="" returnType="void" argc="0" /><!-- eldorado from here on -->
-		<function opcode="0x674" name="" returnType="void" argc="3">
+		<function opcode="0x673" name="" returnType="void" null="true" argc="0" /><!-- eldorado from here on -->
+		<function opcode="0x674" name="" returnType="void" null="true" argc="3">
 			<arg type="short" />
 			<arg type="short" />
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x675" name="" returnType="void" argc="4">
+		<function opcode="0x675" name="" returnType="void" null="true" argc="4">
 			<arg type="short" />
 			<arg type="short" />
 			<arg type="short" />
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x676" name="" returnType="void" argc="0" />
-		<function opcode="0x677" name="" returnType="void" argc="1">
+		<function opcode="0x676" name="" returnType="void" null="true" argc="0" />
+		<function opcode="0x677" name="" returnType="void" null="true" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x678" name="" returnType="void" argc="0" />
-		<function opcode="0x679" name="" returnType="void" argc="0" />
-		<function opcode="0x67A" name="" returnType="void" argc="1">
+		<function opcode="0x678" name="" returnType="void" null="true" argc="0" />
+		<function opcode="0x679" name="" returnType="void" null="true" argc="0" />
+		<function opcode="0x67A" name="" returnType="void" null="true" argc="1">
 			<arg type="boolean" />
 		</function>
 		<function opcode="0x67B" name="" returnType="void" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x67C" name="" returnType="void" argc="0" />
+		<function opcode="0x67C" name="" returnType="void" null="true" argc="0" />
 		<function opcode="0x67D" name="ui_get_player_model_id" returnType="long" argc="0" />
 		<function opcode="0x67E" name="ui_get_music_id" returnType="long" argc="0" />
-		<function opcode="0x67F" name="" returnType="void" argc="2">
+		<function opcode="0x67F" name="" returnType="void" null="true" argc="2">
 			<arg type="long" />
 			<arg type="long" />
 		</function>
@@ -5816,7 +5815,7 @@
 		<function opcode="0x689" name="" returnType="void" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x68A" name="" returnType="void" argc="2">
+		<function opcode="0x68A" name="" returnType="void" null="true" argc="2">
 			<arg type="short" />
 			<arg type="string_id" />
 		</function>
@@ -5854,15 +5853,15 @@
 		<function opcode="0x696" name="" returnType="void" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x697" name="" returnType="void" argc="3">
+		<function opcode="0x697" name="" returnType="void" null="true" argc="3">
 			<arg type="long" />
 			<arg type="string" />
 			<arg type="string" />
 		</function>
-		<function opcode="0x698" name="" returnType="void" argc="0" />
+		<function opcode="0x698" name="" returnType="void" null="true" argc="0" />
 		<function opcode="0x699" name="" returnType="void" argc="0" />
 		<function opcode="0x69A" name="" returnType="long" argc="0" />
-		<function opcode="0x69B" name="" returnType="void" argc="7">
+		<function opcode="0x69B" name="" returnType="void" null="true" argc="7">
 			<arg type="real" />
 			<arg type="real" />
 			<arg type="real" />
@@ -5871,21 +5870,21 @@
 			<arg type="real" />
 			<arg type="real" />
 		</function>
-		<function opcode="0x69C" name="" returnType="void" argc="2">
+		<function opcode="0x69C" name="" returnType="void" null="true" argc="2">
 			<arg type="short" />
 			<arg type="long" />
 		</function>
-		<function opcode="0x69D" name="" returnType="void" argc="0" />
-		<function opcode="0x69E" name="" returnType="void" argc="4">
+		<function opcode="0x69D" name="" returnType="void" null="true" argc="0" />
+		<function opcode="0x69E" name="" returnType="void" null="true" argc="4">
 			<arg type="long" />
 			<arg type="real" />
 			<arg type="real" />
 			<arg type="real" />
 		</function>
-		<function opcode="0x69F" name="" returnType="void" argc="1">
+		<function opcode="0x69F" name="" returnType="void" null="true" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x6A0" name="" returnType="void" argc="0" />
+		<function opcode="0x6A0" name="" returnType="void" null="true" argc="0" />
 	</functions>
 	<globals>
 		<global opcode="0x000" null="true" type="boolean" />
