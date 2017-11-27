@@ -5,6 +5,7 @@ using Blamite.Blam;
 using Blamite.Serialization;
 using Blamite.IO;
 using Blamite.Util;
+using Assembly.Metro.Dialogs;
 
 namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 {
@@ -326,10 +327,18 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 			uint pointer = values.GetInteger("pointer");
 
 			// Make sure the pointer looks valid
-			if (length < 0)
+			if (length < 0 || ( _cache.Engine != EngineType.FourthGeneration && !_cache.MetaArea.ContainsBlockPointer(pointer, (int)(length * field.EntrySize)))
+				|| (_cache.Engine == EngineType.FourthGeneration && (pointer < 0x40000000 || pointer > 0x50000000)))
 			{
+				if (length != 0 && pointer != 0)
+				{
+					//field.Opacity = 0.5f;
+					MetroMessageBox.Show("Bad Block!", "Block \"" + field.Name + "\", plugin line " + field.PluginLine + " appears to be invalid. The block has been ignored to prevent crashing.");
+				}
+					
 				length = 0;
 				pointer = 0;
+				
 			}
 
 			field.Length = length;
