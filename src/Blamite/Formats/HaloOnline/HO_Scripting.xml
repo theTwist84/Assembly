@@ -1152,7 +1152,7 @@
 		</function>
 		<function opcode="0x111" name="" returnType="void" argc="2">
 			<arg type="unit" />
-			<arg type="any tag" />
+			<arg type="any_tag" />
 		</function>
 		<function opcode="0x112" name="unit_enable_vision_mode" returnType="void" argc="2">
 			<arg type="unit" />
@@ -1390,7 +1390,7 @@
 		</function>
 		<function opcode="0x151" name="cheats_load" returnType="void" null="true" />
 		<function opcode="0x152" name="" returnType="void" null="true" argc="1">
-			<arg type="any tag" />
+			<arg type="any_tag" />
 		</function>
 		<function opcode="0x153" name="drop" returnType="void" null="true" argc="1">
 			<arg type="string" />
@@ -1870,7 +1870,7 @@
 		</function>
 		<function opcode="0x1D8" name="" returnType="boolean" argc="2">
 			<arg type="string_id" />
-			<arg type="any tag" />
+			<arg type="any_tag" />
 		</function>
 		<function opcode="0x1D9" name="" returnType="void" argc="1">
 			<arg type="string_id" />
@@ -1920,11 +1920,11 @@
 		</function>
 		<function opcode="0x1E5" name="campaign_metagame_award_primary_skull" returnType="void" argc="2">
 			<arg type="object" />
-			<arg type="primary skull" />
+			<arg type="primary_skull" />
 		</function>
 		<function opcode="0x1E6" name="campaign_metagame_award_secondary_skull" returnType="void" argc="2">
 			<arg type="object" />
-			<arg type="secondary skull" />
+			<arg type="secondary_skull" />
 		</function>
 		<function opcode="0x1E7" name="campaign_metagame_award_event" returnType="void" argc="2"><!-- first sub-block in metagame globals in globals -->
 			<arg type="object" />
@@ -2937,7 +2937,7 @@
 		</function>
 		<function opcode="0x2D3" name="camera_set_cinematic" returnType="void" />
 		<function opcode="0x2D4" name="camera_set_cinematic_scene" returnType="void" argc="3">
-			<arg type="cinematic scene definition" />
+			<arg type="cinematic_scene_definition" />
 			<arg type="long" />
 			<arg type="cutscene_flag" />
 		</function>
@@ -3352,10 +3352,10 @@
 			<arg type="real" />
 		</function>
 		<function opcode="0x37D" name="cinematic_set" returnType="void" argc="1">
-			<arg type="cinematic definition" />
+			<arg type="cinematic_definition" />
 		</function>
 		<function opcode="0x37E" name="cinematic_set_shot" returnType="void" argc="2">
-			<arg type="cinematic scene definition" />
+			<arg type="cinematic_scene_definition" />
 			<arg type="long" />
 		</function>
 		<function opcode="0x37F" name="" returnType="void" />
@@ -3420,10 +3420,10 @@
 		<function opcode="0x393" name="camera_set_briefing" returnType="void" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x394" name="cinematic_tag_reference_get_cinematic" returnType="cinematic definition" argc="1">
+		<function opcode="0x394" name="cinematic_tag_reference_get_cinematic" returnType="cinematic_definition" argc="1">
 			<arg type="long" />
 		</function>
-		<function opcode="0x395" name="cinematic_tag_reference_get_scene" returnType="cinematic scene definition" argc="2">
+		<function opcode="0x395" name="cinematic_tag_reference_get_scene" returnType="cinematic_scene_definition" argc="2">
 			<arg type="long" />
 			<arg type="long" />
 		</function>
@@ -4121,11 +4121,11 @@
 		</function>
 		<function opcode="0x464" name="" returnType="void" null="true" argc="2">
 			<arg type="controller" />
-			<arg type="button preset" />
+			<arg type="button_preset" />
 		</function>
 		<function opcode="0x465" name="" returnType="void" null="true" argc="2">
 			<arg type="controller" />
-			<arg type="joystick preset" />
+			<arg type="joystick_preset" />
 		</function>
 		<function opcode="0x466" name="" returnType="void" null="true" argc="2">
 			<arg type="controller" />
@@ -4158,7 +4158,7 @@
 		</function>
 		<function opcode="0x46E" name="" returnType="void" null="true" argc="2">
 			<arg type="controller" />
-			<arg type="player character type" />
+			<arg type="player_character_type" />
 		</function>
 		<function opcode="0x46F" name="" returnType="void" null="true" argc="5">
 			<arg type="controller" />
@@ -4169,15 +4169,15 @@
 		</function>
 		<function opcode="0x470" name="" returnType="void" null="true" argc="2">
 			<arg type="controller" />
-			<arg type="voice output setting" />
+			<arg type="voice_output_setting" />
 		</function>
 		<function opcode="0x471" name="" returnType="void" null="true" argc="2">
 			<arg type="controller" />
-			<arg type="voice mask" />
+			<arg type="voice_mask" />
 		</function>
 		<function opcode="0x472" name="" returnType="void" null="true" argc="2">
 			<arg type="controller" />
-			<arg type="subtitle setting" />
+			<arg type="subtitle_setting" />
 		</function>
 		<function opcode="0x473" name="" returnType="void" null="true" argc="3">
 			<arg type="controller" />
@@ -4560,7 +4560,7 @@
 			<arg type="string" />
 		</function>
 		<function opcode="0x4E6" name="" returnType="void" argc="1">
-			<arg type="bink definition" />
+			<arg type="bink_definition" />
 		</function>
 		<function opcode="0x4E7" name="" returnType="void" />
 		<function opcode="0x4E8" name="" returnType="long" />
@@ -5103,7 +5103,7 @@
 			<arg type="string" />
 		</function>
 		<function opcode="0x595" name="" returnType="void" argc="1">
-			<arg type="bink definition" />
+			<arg type="bink_definition" />
 		</function>
 		<function opcode="0x596" name="" returnType="void" null="true" />
 		<function opcode="0x597" name="" returnType="void" argc="2">
@@ -5202,7 +5202,7 @@
 			<arg type="long" />
 		</function>
 		<function opcode="0x5BD" name="" returnType="boolean" argc="1">
-			<arg type="any tag not resolving" />
+			<arg type="any_tag_not_resolving" />
 		</function>
 		<function opcode="0x5BE" name="" returnType="void" null="true" argc="1">
 			<arg type="boolean" />
@@ -5333,10 +5333,10 @@
 			<arg type="long" />
 		</function>
 		<function opcode="0x5E7" name="" returnType="void" null="true" argc="1">
-			<arg type="any tag" />
+			<arg type="any_tag" />
 		</function>
 		<function opcode="0x5E8" name="" returnType="void" null="true" argc="1">
-			<arg type="any tag" />
+			<arg type="any_tag" />
 		</function>
 		<function opcode="0x5E9" name="" returnType="long" />
 		<function opcode="0x5EA" name="unit_limit_lipsync_to_mouth_only" returnType="void" argc="2">
@@ -5345,7 +5345,7 @@
 		</function>
 		<function opcode="0x5EB" name="" returnType="void" null="true" />
 		<function opcode="0x5EC" name="" returnType="void" null="true" argc="1">
-			<arg type="any tag" />
+			<arg type="any_tag" />
 		</function>
 		<function opcode="0x5ED" name="" returnType="void" null="true" argc="1">
 			<arg type="boolean" />
@@ -5402,7 +5402,7 @@
 			<arg type="boolean" />
 		</function>
 		<function opcode="0x5FD" name="" returnType="void" null="true" />
-		<function opcode="0x5FE" name="" returnType="bink definition" argc="1">
+		<function opcode="0x5FE" name="" returnType="bink_definition" argc="1">
 			<arg type="long" />
 		</function>
 		<function opcode="0x5FF" name="" returnType="void" null="true" argc="4">
@@ -5428,7 +5428,7 @@
 		<function opcode="0x603" name="film_manager_set_reproduction_mode" returnType="void" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x604" name="" returnType="cinematic scene definition" argc="1">
+		<function opcode="0x604" name="" returnType="cinematic_scene_definition" argc="1">
 			<arg type="long" />
 		</function>
 		<function opcode="0x605" name="" returnType="void" null="true" argc="2">
@@ -5459,11 +5459,11 @@
 		</function>
 		<function opcode="0x60E" name="" returnType="void" null="true" />
 		<function opcode="0x60F" name="" returnType="animation_graph" argc="1">
-			<arg type="animation budget reference" />
+			<arg type="animation_budget_reference" />
 		</function>
 		<function opcode="0x610" name="game_award_level_complete_achievements" returnType="void" />
 		<function opcode="0x611" name="" returnType="looping_sound" argc="1">
-			<arg type="looping sound budget reference" />
+			<arg type="looping_sound_budget_reference" />
 		</function>
 		<function opcode="0x612" name="game_safe_to_respawn" returnType="void" argc="1">
 			<arg type="boolean" />
@@ -5498,7 +5498,7 @@
 		<function opcode="0x61D" name="stop_bink_movie" returnType="void" />
 		<function opcode="0x61E" name="play_credits_unskippable" returnType="void" />
 		<function opcode="0x61F" name="" returnType="sound" argc="1">
-			<arg type="sound budget reference" />
+			<arg type="sound_budget_reference" />
 		</function>
 		<function opcode="0x620" name="" returnType="void" null="true" argc="3">
 			<arg type="controller" />
@@ -5606,11 +5606,11 @@
 			<arg type="long" />
 		</function>
 		<function opcode="0x63E" name="skull_primary_enable" returnType="void" argc="2">
-			<arg type="primary skull" />
+			<arg type="primary_skull" />
 			<arg type="boolean" />
 		</function>
 		<function opcode="0x63F" name="skull_secondary_enable" returnType="void" argc="2">
-			<arg type="secondary skull" />
+			<arg type="secondary_skull" />
 			<arg type="boolean" />
 		</function>
 		<function opcode="0x640" name="" returnType="void" null="true" argc="2">
