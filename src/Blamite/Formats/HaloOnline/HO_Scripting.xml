@@ -241,32 +241,32 @@
 	</definition>
 
 	<functions>
-		<function opcode="0x000" name="begin" returnType="passthrough" flags="200" group="Begin" />
-		<function opcode="0x001" name="begin_random" returnType="passthrough" flags="200" group="Begin" />
-		<function opcode="0x002" name="if" returnType="passthrough" flags="200" group="If" />
-		<function opcode="0x003" name="cond" returnType="passthrough" flags="200" group="Cond" />
-		<function opcode="0x004" name="set" returnType="passthrough" flags="200" group="Set" />
-		<function opcode="0x005" name="and" returnType="boolean" flags="200" group="Logical" />
-		<function opcode="0x006" name="or" returnType="boolean" flags="200" group="Logical" />
-		<function opcode="0x007" name="+" returnType="real" flags="200" group="Arithmetic" />
-		<function opcode="0x008" name="-" returnType="real" flags="200" group="Arithmetic" />
-		<function opcode="0x009" name="*" returnType="real" flags="200" group="Arithmetic" />
-		<function opcode="0x00A" name="/" returnType="real" flags="200" group="Arithmetic" />
-		<function opcode="0x00B" name="inc?" returnType="real" flags="200" group="Arithmetic" /><!-- eldorado -->
-		<function opcode="0x00C" name="min" returnType="real" flags="200" group="Arithmetic" />
-		<function opcode="0x00D" name="max" returnType="real" flags="200" group="Arithmetic" />
-		<function opcode="0x00E" name="=" returnType="boolean" flags="200" group="Equality" />
-		<function opcode="0x00F" name="!=" returnType="boolean" flags="200" group="Equality" />
-		<function opcode="0x010" name="&gt;" returnType="boolean" flags="200" group="Inequality" />
-		<function opcode="0x011" name="&lt;" returnType="boolean" flags="200" group="Inequality" />
-		<function opcode="0x012" name="&gt;=" returnType="boolean" flags="200" group="Inequality" />
-		<function opcode="0x013" name="&lt;=" returnType="boolean" flags="200" group="Inequality" />
-		<function opcode="0x014" name="sleep" returnType="void" flags="200" group="Sleep" />
-		<function opcode="0x015" name="sleep_forever" returnType="void" flags="200" group="SleepForever" />
-		<function opcode="0x016" name="sleep_until" returnType="boolean" flags="200" group="SleepUntil" />
-		<function opcode="0x017" name="wake" returnType="void" flags="200" group="Wake" />
-		<function opcode="0x018" name="inspect" returnType="void" flags="200" group="Inspect" />
-		<function opcode="0x019" name="unit" returnType="unit" flags="200" group="ObjectCast" />
+		<function opcode="0x000" name="begin" returnType="passthrough" flags="2" group="Begin" />
+		<function opcode="0x001" name="begin_random" returnType="passthrough" flags="2" group="Begin" />
+		<function opcode="0x002" name="if" returnType="passthrough" flags="2" group="If" />
+		<function opcode="0x003" name="cond" returnType="passthrough" flags="2" group="Cond" />
+		<function opcode="0x004" name="set" returnType="passthrough" flags="2" group="Set" />
+		<function opcode="0x005" name="and" returnType="boolean" flags="2" group="Logical" />
+		<function opcode="0x006" name="or" returnType="boolean" flags="2" group="Logical" />
+		<function opcode="0x007" name="+" returnType="real" flags="2" group="Arithmetic" />
+		<function opcode="0x008" name="-" returnType="real" flags="2" group="Arithmetic" />
+		<function opcode="0x009" name="*" returnType="real" flags="2" group="Arithmetic" />
+		<function opcode="0x00A" name="/" returnType="real" flags="2" group="Arithmetic" />
+		<function opcode="0x00B" name="inc?" returnType="real" flags="2" group="Arithmetic" /><!-- eldorado -->
+		<function opcode="0x00C" name="min" returnType="real" flags="2" group="Arithmetic" />
+		<function opcode="0x00D" name="max" returnType="real" flags="2" group="Arithmetic" />
+		<function opcode="0x00E" name="=" returnType="boolean" flags="2" group="Equality" />
+		<function opcode="0x00F" name="!=" returnType="boolean" flags="2" group="Equality" />
+		<function opcode="0x010" name="&gt;" returnType="boolean" flags="2" group="Inequality" />
+		<function opcode="0x011" name="&lt;" returnType="boolean" flags="2" group="Inequality" />
+		<function opcode="0x012" name="&gt;=" returnType="boolean" flags="2" group="Inequality" />
+		<function opcode="0x013" name="&lt;=" returnType="boolean" flags="2" group="Inequality" />
+		<function opcode="0x014" name="sleep" returnType="void" flags="2" group="Sleep" />
+		<function opcode="0x015" name="sleep_forever" returnType="void" flags="2" group="SleepForever" />
+		<function opcode="0x016" name="sleep_until" returnType="boolean" flags="2" group="SleepUntil" />
+		<function opcode="0x017" name="wake" returnType="void" flags="2" group="Wake" />
+		<function opcode="0x018" name="inspect" returnType="void" flags="2" group="Inspect" />
+		<function opcode="0x019" name="unit" returnType="unit" flags="2" group="ObjectCast" />
 		<function opcode="0x01A" name="evaluate" returnType="void" argc="1">
 			<arg type="script" />
 		</function>
