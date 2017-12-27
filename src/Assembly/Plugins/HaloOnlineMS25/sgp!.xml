@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x50">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<tagref name="Underwater Environment" visible="true" offset="0x0"/>
+	<tagref name="Underwater Loop" visible="true" offset="0x10"/>
+	<uint32 name="Unknown" visible="true" offset="0x20"/>
+	<uint32 name="Unknown2" visible="true" offset="0x24"/>
+	<tagref name="Enter Underater" visible="true" offset="0x28"/>
+	<tagref name="Exit Underwater" visible="true" offset="0x38"/>
+	<uint8 name="Unused Padding 0" visible="false" offset="0x48"/>
+	<uint8 name="Unused Padding 1" visible="false" offset="0x49"/>
+	<uint8 name="Unused Padding 2" visible="false" offset="0x4A"/>
+	<uint8 name="Unused Padding 3" visible="false" offset="0x4B"/>
+	<uint8 name="Unused Padding 4" visible="false" offset="0x4C"/>
+	<uint8 name="Unused Padding 5" visible="false" offset="0x4D"/>
+	<uint8 name="Unused Padding 6" visible="false" offset="0x4E"/>
+	<uint8 name="Unused Padding 7" visible="false" offset="0x4F"/>
+</plugin>

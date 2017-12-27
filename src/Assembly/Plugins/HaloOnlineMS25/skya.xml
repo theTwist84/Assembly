@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x4C">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<int32 name="Unknown1" visible="true" offset="0x0"/>
+	<tagref name="Fog Bitmap" visible="true" offset="0x4"/>
+	<float32 name="Unknown2" visible="true" offset="0x14"/>
+	<float32 name="Unknown3" visible="true" offset="0x18"/>
+	<float32 name="Unknown4" visible="true" offset="0x1C"/>
+	<float32 name="Unknown5" visible="true" offset="0x20"/>
+	<float32 name="Unknown6" visible="true" offset="0x24"/>
+	<float32 name="Unknown7" visible="true" offset="0x28"/>
+	<float32 name="Unknown8" visible="true" offset="0x2C"/>
+	<int32 name="Unknown9" visible="true" offset="0x30"/>
+	<reflexive name="Atmosphere Properties" visible="true" offset="0x34" entrySize="0x9B">
+		<int16 name="Unknown1" visible="true" offset="0x0"/>
+		<int16 name="Unknown2" visible="true" offset="0x2"/>
+		<stringId name="Name" visible="true" offset="0x4"/>
+		<float32 name="Light Source Y" visible="true" offset="0x8"/>
+		<float32 name="Light Source X" visible="true" offset="0xC"/>
+		<color24 name="Fog Color" visible="true" offset="0x10"/>
+		<float32 name="Brightness" visible="true" offset="0x13"/>
+		<float32 name="Fog Gradient Threshold" visible="true" offset="0x17"/>
+		<float32 name="Light Intensity" visible="true" offset="0x1B"/>
+		<float32 name="Sky Invisiblility Through Fog" visible="true" offset="0x1F"/>
+		<float32 name="Unknown3" visible="true" offset="0x23"/>
+		<float32 name="Unknown4" visible="true" offset="0x27"/>
+		<float32 name="Light Source Spread" visible="true" offset="0x2B"/>
+		<uint32 name="Unknown5" visible="true" offset="0x2F"/>
+		<float32 name="Fog Intensity" visible="true" offset="0x33"/>
+		<float32 name="Unknown6" visible="true" offset="0x37"/>
+		<float32 name="Tint Cyan" visible="true" offset="0x3B"/>
+		<float32 name="Tint Magenta" visible="true" offset="0x3F"/>
+		<float32 name="Tint Yellow" visible="true" offset="0x43"/>
+		<float32 name="Fog Intensity Cyan" visible="true" offset="0x47"/>
+		<float32 name="Fog Intensity Magenta" visible="true" offset="0x4B"/>
+		<float32 name="Fog Intensity Yellow" visible="true" offset="0x4F"/>
+		<float32 name="Background Color Red" visible="true" offset="0x53"/>
+		<float32 name="Background Color Green" visible="true" offset="0x57"/>
+		<float32 name="Background Color Blue" visible="true" offset="0x5B"/>
+		<float32 name="Tint Red" visible="true" offset="0x5F"/>
+		<float32 name="Tint2 Green" visible="true" offset="0x63"/>
+		<float32 name="Tint2 Blue" visible="true" offset="0x67"/>
+		<float32 name="Fog Intensity2" visible="true" offset="0x6B"/>
+		<float32 name="Start Distance" visible="true" offset="0x6F"/>
+		<float32 name="End Distance" visible="true" offset="0x73"/>
+		<float32 name="Fog Velocity X" visible="true" offset="0x77"/>
+		<float32 name="Fog Velocity Y" visible="true" offset="0x7B"/>
+		<float32 name="Fog Velocity Z" visible="true" offset="0x7F"/>
+		<tagref name="Weather Effect" visible="true" offset="0x83"/>
+		<uint32 name="Unknown7" visible="true" offset="0x93"/>
+		<uint32 name="Unknown8" visible="true" offset="0x97"/>
+	</reflexive>
+	<reflexive name="Underwater" visible="true" offset="0x40" entrySize="0x14">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<colorf name="Color" visible="true" format="argb" offset="0x4"/>
+	</reflexive>
+</plugin>

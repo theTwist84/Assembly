@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x44">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<int32 name="Unknown" visible="true" offset="0x0"/>
+	<reflexive name="Design Mopp Codes" visible="true" offset="0x4" entrySize="0x40">
+		<int32 name="Unused1" visible="true" offset="0x0"/>
+		<int16 name="Size" visible="true" offset="0x4"/>
+		<int16 name="Count" visible="true" offset="0x6"/>
+		<int32 name="Address" visible="true" offset="0x8"/>
+		<int32 name="Unused2" visible="true" offset="0xC"/>
+		<float name="Offset I" visible="true" offset="0x10"/>
+		<float name="Offset J" visible="true" offset="0x14"/>
+		<float name="Offset K" visible="true" offset="0x18"/>
+		<float name="Offset W" visible="true" offset="0x1C"/>
+		<int32 name="Unused3" visible="true" offset="0x20"/>
+		<int32 name="Data Size" visible="true" offset="0x24"/>
+		<int32 name="Data Capacity And Flags" visible="true" offset="0x28"/>
+		<int8 name="Data Build Type" visible="true" offset="0x2C"/>
+		<int8 name="Unused4" visible="true" offset="0x2D"/>
+		<int16 name="Unused5" visible="true" offset="0x2E"/>
+		<reflexive name="Data" visible="true" offset="0x30" entrySize="0x1">
+			<uint8 name="uint8" visible="true" offset="0x0"/>
+		</reflexive>
+		<int8 name="Mopp Build Type" visible="true" offset="0x3C"/>
+		<uint8 name="Unused6" visible="true" offset="0x3D"/>
+		<int16 name="Unused7" visible="true" offset="0x3E"/>
+	</reflexive>
+	<reflexive name="Design Shapes2" visible="true" offset="0x10" entrySize="0x14">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<int16 name="Unknown" visible="true" offset="0x4"/>
+		<int16 name="Unknown2" visible="true" offset="0x6"/>
+		<reflexive name="Unknown2_2" visible="true" offset="0x8" entrySize="0x44">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+			<uint32 name="Unknown6" visible="true" offset="0x14"/>
+			<uint32 name="Unknown7" visible="true" offset="0x18"/>
+			<uint32 name="Unknown8" visible="true" offset="0x1C"/>
+			<uint32 name="Unknown9" visible="true" offset="0x20"/>
+			<uint32 name="Unknown10" visible="true" offset="0x24"/>
+			<uint32 name="Unknown11" visible="true" offset="0x28"/>
+			<uint32 name="Unknown12" visible="true" offset="0x2C"/>
+			<uint32 name="Unknown13" visible="true" offset="0x30"/>
+			<uint32 name="Unknown14" visible="true" offset="0x34"/>
+			<uint32 name="Unknown15" visible="true" offset="0x38"/>
+			<uint32 name="Unknown16" visible="true" offset="0x3C"/>
+			<uint32 name="Unknown17" visible="true" offset="0x40"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Water Mopp Codes" visible="true" offset="0x1C" entrySize="0x40">
+		<int32 name="Unused1" visible="true" offset="0x0"/>
+		<int16 name="Size" visible="true" offset="0x4"/>
+		<int16 name="Count" visible="true" offset="0x6"/>
+		<int32 name="Address" visible="true" offset="0x8"/>
+		<int32 name="Unused2" visible="true" offset="0xC"/>
+		<float name="Offset I" visible="true" offset="0x10"/>
+		<float name="Offset J" visible="true" offset="0x14"/>
+		<float name="Offset K" visible="true" offset="0x18"/>
+		<float name="Offset W" visible="true" offset="0x1C"/>
+		<int32 name="Unused3" visible="true" offset="0x20"/>
+		<int32 name="Data Size" visible="true" offset="0x24"/>
+		<int32 name="Data Capacity And Flags" visible="true" offset="0x28"/>
+		<int8 name="Data Build Type" visible="true" offset="0x2C"/>
+		<int8 name="Unused4" visible="true" offset="0x2D"/>
+		<int16 name="Unused5" visible="true" offset="0x2E"/>
+		<reflexive name="Data_ HO" visible="true" offset="0x30" entrySize="0x2">
+			<uint16 name="uint16" visible="true" offset="0x0"/>
+		</reflexive>
+		<int8 name="Mopp Build Type" visible="true" offset="0x3C"/>
+		<uint8 name="Unused6" visible="true" offset="0x3D"/>
+		<int16 name="Unused7" visible="true" offset="0x3E"/>
+	</reflexive>
+	<reflexive name="Water Names" visible="true" offset="0x28" entrySize="0x4">
+		<stringId name="Name" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Underwater Definitions" visible="true" offset="0x34" entrySize="0x2C">
+		<int16 name="Water Name Index" visible="true" offset="0x0"/>
+		<int16 name="Unknown" visible="true" offset="0x2"/>
+		<float32 name="Flow Force X" visible="true" offset="0x4"/>
+		<float32 name="Flow Force Y" visible="true" offset="0x8"/>
+		<float32 name="Flow Force Z" visible="true" offset="0xC"/>
+		<float32 name="Flow Force Z2" visible="true" offset="0x10"/>
+		<reflexive name="Unknown2" visible="true" offset="0x14" entrySize="0x10">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+		</reflexive>
+		<reflexive name="Triangles" visible="true" offset="0x20" entrySize="0x24">
+			<float32 name="_1 X" visible="true" offset="0x0"/>
+			<float32 name="_1 Y" visible="true" offset="0x4"/>
+			<float32 name="_1 Z" visible="true" offset="0x8"/>
+			<float32 name="_2 X" visible="true" offset="0xC"/>
+			<float32 name="_2 Y" visible="true" offset="0x10"/>
+			<float32 name="_2 Z" visible="true" offset="0x14"/>
+			<float32 name="_3 X" visible="true" offset="0x18"/>
+			<float32 name="_3 Y" visible="true" offset="0x1C"/>
+			<float32 name="_3 Z" visible="true" offset="0x20"/>
+		</reflexive>
+	</reflexive>
+	<uint32 name="Unknown2" visible="true" offset="0x40"/>
+</plugin>

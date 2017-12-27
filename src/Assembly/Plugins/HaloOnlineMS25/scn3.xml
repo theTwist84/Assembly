@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0xA8">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<uint32 name="Flags" visible="true" offset="0x0"/>
+	<stringId name="Name" visible="true" offset="0x4"/>
+	<int16 name="Unknown" visible="true" offset="0x8"/>
+	<int16 name="Layer" visible="true" offset="0xA"/>
+	<int16 name="Widescreen YBounds Min" visible="true" offset="0xC"/>
+	<int16 name="Widescreen XBounds Min" visible="true" offset="0xE"/>
+	<int16 name="Widescreen YBounds Max" visible="true" offset="0x10"/>
+	<int16 name="Widescreen XBounds Max" visible="true" offset="0x12"/>
+	<int16 name="Standard YBounds Min" visible="true" offset="0x14"/>
+	<int16 name="Standard XBounds Min" visible="true" offset="0x16"/>
+	<int16 name="Standard YBounds Max" visible="true" offset="0x18"/>
+	<int16 name="Standard XBounds Max" visible="true" offset="0x1A"/>
+	<tagref name="Animation" visible="true" offset="0x1C"/>
+	<tagref name="Strings" visible="true" offset="0x2C"/>
+	<tagref name="Parent" visible="true" offset="0x3C"/>
+	<stringId name="Default Key Legend String" visible="true" offset="0x4C"/>
+	<reflexive name="Data Sources" visible="true" offset="0x50" entrySize="0x10">
+		<tagref name="Data Source2" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Group Widgets" visible="true" offset="0x5C" entrySize="0x6C">
+		<tagref name="Parent" visible="true" offset="0x0"/>
+		<uint32 name="Flags" visible="true" offset="0x10"/>
+		<stringId name="Name" visible="true" offset="0x14"/>
+		<int16 name="Unknown" visible="true" offset="0x18"/>
+		<int16 name="Layer" visible="true" offset="0x1A"/>
+		<int16 name="Widescreen YOffset" visible="true" offset="0x1C"/>
+		<int16 name="Widescreen XOffset" visible="true" offset="0x1E"/>
+		<int16 name="Widescreen YUnknown" visible="true" offset="0x20"/>
+		<int16 name="Widescreen XUnknown" visible="true" offset="0x22"/>
+		<int16 name="Standard YOffset" visible="true" offset="0x24"/>
+		<int16 name="Standard XOffset" visible="true" offset="0x26"/>
+		<int16 name="Standard YUnknown" visible="true" offset="0x28"/>
+		<int16 name="Standard XUnknown" visible="true" offset="0x2A"/>
+		<tagref name="Animation" visible="true" offset="0x2C"/>
+		<reflexive name="List Widgets" visible="true" offset="0x3C" entrySize="0x80">
+			<tagref name="Parent" visible="true" offset="0x0"/>
+			<uint32 name="Flags" visible="true" offset="0x10"/>
+			<stringId name="Name" visible="true" offset="0x14"/>
+			<int16 name="Unknown" visible="true" offset="0x18"/>
+			<int16 name="Layer" visible="true" offset="0x1A"/>
+			<int16 name="Widescreen YOffset" visible="true" offset="0x1C"/>
+			<int16 name="Widescreen XOffset" visible="true" offset="0x1E"/>
+			<int16 name="Widescreen YUnknown" visible="true" offset="0x20"/>
+			<int16 name="Widescreen XUnknown" visible="true" offset="0x22"/>
+			<int16 name="Standard YOffset" visible="true" offset="0x24"/>
+			<int16 name="Standard XOffset" visible="true" offset="0x26"/>
+			<int16 name="Standard YUnknown" visible="true" offset="0x28"/>
+			<int16 name="Standard XUnknown" visible="true" offset="0x2A"/>
+			<tagref name="Animation" visible="true" offset="0x2C"/>
+			<stringId name="Data Source Name" visible="true" offset="0x3C"/>
+			<tagref name="Skin" visible="true" offset="0x40"/>
+			<int32 name="Unknown2" visible="true" offset="0x50"/>
+			<reflexive name="List Widget Items" visible="true" offset="0x54" entrySize="0x30">
+				<uint32 name="Flags" visible="true" offset="0x0"/>
+				<stringId name="Name" visible="true" offset="0x4"/>
+				<int16 name="Unknown" visible="true" offset="0x8"/>
+				<int16 name="Layer" visible="true" offset="0xA"/>
+				<int16 name="Widescreen YOffset" visible="true" offset="0xC"/>
+				<int16 name="Widescreen XOffset" visible="true" offset="0xE"/>
+				<int16 name="Widescreen YUnknown" visible="true" offset="0x10"/>
+				<int16 name="Widescreen XUnknown" visible="true" offset="0x12"/>
+				<int16 name="Standard YOffset" visible="true" offset="0x14"/>
+				<int16 name="Standard XOffset" visible="true" offset="0x16"/>
+				<int16 name="Standard YUnknown" visible="true" offset="0x18"/>
+				<int16 name="Standard XUnknown" visible="true" offset="0x1A"/>
+				<tagref name="Animation" visible="true" offset="0x1C"/>
+				<stringId name="Target" visible="true" offset="0x2C"/>
+			</reflexive>
+			<tagref name="Up Arrow Bitmap" visible="true" offset="0x60"/>
+			<tagref name="Down Arrow Bitmap" visible="true" offset="0x70"/>
+		</reflexive>
+		<reflexive name="Text Widgets" visible="true" offset="0x48" entrySize="0x4C">
+			<tagref name="Parent" visible="true" offset="0x0"/>
+			<uint32 name="Flags" visible="true" offset="0x10"/>
+			<stringId name="Name" visible="true" offset="0x14"/>
+			<int16 name="Unknown" visible="true" offset="0x18"/>
+			<int16 name="Layer" visible="true" offset="0x1A"/>
+			<int16 name="Widescreen YBounds Min" visible="true" offset="0x1C"/>
+			<int16 name="Widescreen XBounds Min" visible="true" offset="0x1E"/>
+			<int16 name="Widescreen YBounds Max" visible="true" offset="0x20"/>
+			<int16 name="Widescreen XBounds Max" visible="true" offset="0x22"/>
+			<int16 name="Standard YBounds Min" visible="true" offset="0x24"/>
+			<int16 name="Standard XBounds Min" visible="true" offset="0x26"/>
+			<int16 name="Standard YBounds Max" visible="true" offset="0x28"/>
+			<int16 name="Standard XBounds Max" visible="true" offset="0x2A"/>
+			<tagref name="Animation" visible="true" offset="0x2C"/>
+			<stringId name="Data Source Name" visible="true" offset="0x3C"/>
+			<stringId name="Text String" visible="true" offset="0x40"/>
+			<stringId name="Text Color" visible="true" offset="0x44"/>
+			<int16 name="Text Font" visible="true" offset="0x48"/>
+			<int16 name="Unknown2" visible="true" offset="0x4A"/>
+		</reflexive>
+		<reflexive name="Bitmap Widgets" visible="true" offset="0x54" entrySize="0x6C">
+			<tagref name="Parent" visible="true" offset="0x0"/>
+			<uint32 name="Flags" visible="true" offset="0x10"/>
+			<stringId name="Name" visible="true" offset="0x14"/>
+			<int16 name="Unknown" visible="true" offset="0x18"/>
+			<int16 name="Layer" visible="true" offset="0x1A"/>
+			<int16 name="Widescreen YBounds Min" visible="true" offset="0x1C"/>
+			<int16 name="Widescreen XBounds Min" visible="true" offset="0x1E"/>
+			<int16 name="Widescreen YBounds Max" visible="true" offset="0x20"/>
+			<int16 name="Widescreen XBounds Max" visible="true" offset="0x22"/>
+			<int16 name="Standard YBounds Min" visible="true" offset="0x24"/>
+			<int16 name="Standard XBounds Min" visible="true" offset="0x26"/>
+			<int16 name="Standard YBounds Max" visible="true" offset="0x28"/>
+			<int16 name="Standard XBounds Max" visible="true" offset="0x2A"/>
+			<tagref name="Animation" visible="true" offset="0x2C"/>
+			<tagref name="Bitmap" visible="true" offset="0x3C"/>
+			<tagref name="Unknown2" visible="true" offset="0x4C"/>
+			<enum16 name="Blend Method" visible="true" offset="0x5C">
+				<option name="Standard" value="0x0"/>
+				<option name="Unknown" value="0x1"/>
+				<option name="Unknown2" value="0x2"/>
+				<option name="Alpha" value="0x3"/>
+				<option name="Overlay" value="0x4"/>
+				<option name="Unknown3" value="0x5"/>
+				<option name="Lighter Color" value="0x6"/>
+				<option name="Unknown4" value="0x7"/>
+				<option name="Unknown5" value="0x8"/>
+				<option name="Unknown6" value="0x9"/>
+				<option name="Inverted Alpha" value="0xA"/>
+				<option name="Unknown7" value="0xB"/>
+				<option name="Unknown8" value="0xC"/>
+				<option name="Unknown9" value="0xD"/>
+			</enum16>
+			<int16 name="Unknown3" visible="true" offset="0x5E"/>
+			<int16 name="Sprite Index" visible="true" offset="0x60"/>
+			<int16 name="Unknown4" visible="true" offset="0x62"/>
+			<stringId name="Data Source Name" visible="true" offset="0x64"/>
+			<stringId name="Sprite Data Source Name" visible="true" offset="0x68"/>
+		</reflexive>
+		<reflexive name="Model Widgets" visible="true" offset="0x60" entrySize="0x94">
+			<tagref name="Parent" visible="true" offset="0x0"/>
+			<uint32 name="Flags" visible="true" offset="0x10"/>
+			<stringId name="Name" visible="true" offset="0x14"/>
+			<int16 name="Unknown" visible="true" offset="0x18"/>
+			<int16 name="Unknown2" visible="true" offset="0x1A"/>
+			<int16 name="Widescreen YBounds Min" visible="true" offset="0x1C"/>
+			<int16 name="Widescreen XBounds Min" visible="true" offset="0x1E"/>
+			<int16 name="Widescreen YBounds Max" visible="true" offset="0x20"/>
+			<int16 name="Widescreen XBounds Max" visible="true" offset="0x22"/>
+			<int16 name="Standard YBounds Min" visible="true" offset="0x24"/>
+			<int16 name="Standard XBounds Min" visible="true" offset="0x26"/>
+			<int16 name="Standard YBounds Max" visible="true" offset="0x28"/>
+			<int16 name="Standard XBounds Max" visible="true" offset="0x2A"/>
+			<tagref name="Animation" visible="true" offset="0x2C"/>
+			<reflexive name="Unknown3" visible="true" offset="0x3C" entrySize="0xA0">
+				<stringId name="Biped" visible="true" offset="0x0"/>
+				<uint32 name="Unknown" visible="true" offset="0x4"/>
+				<uint32 name="Unknown2" visible="true" offset="0x8"/>
+				<uint32 name="Unknown3" visible="true" offset="0xC"/>
+				<uint32 name="Unknown4" visible="true" offset="0x10"/>
+				<uint32 name="Unknown5" visible="true" offset="0x14"/>
+				<uint32 name="Unknown6" visible="true" offset="0x18"/>
+				<uint32 name="Unknown7" visible="true" offset="0x1C"/>
+				<uint32 name="Unknown8" visible="true" offset="0x20"/>
+				<uint32 name="Unknown9" visible="true" offset="0x24"/>
+				<uint32 name="Unknown10" visible="true" offset="0x28"/>
+				<uint32 name="Unknown11" visible="true" offset="0x2C"/>
+				<uint32 name="Unknown12" visible="true" offset="0x30"/>
+				<uint32 name="Unknown13" visible="true" offset="0x34"/>
+				<uint32 name="Unknown14" visible="true" offset="0x38"/>
+				<uint32 name="Unknown15" visible="true" offset="0x3C"/>
+				<uint32 name="Unknown16" visible="true" offset="0x40"/>
+				<uint32 name="Unknown17" visible="true" offset="0x44"/>
+				<uint32 name="Unknown18" visible="true" offset="0x48"/>
+				<uint32 name="Unknown19" visible="true" offset="0x4C"/>
+				<uint32 name="Unknown20" visible="true" offset="0x50"/>
+				<uint32 name="Unknown21" visible="true" offset="0x54"/>
+				<uint32 name="Unknown22" visible="true" offset="0x58"/>
+				<uint32 name="Unknown23" visible="true" offset="0x5C"/>
+				<uint32 name="Unknown24" visible="true" offset="0x60"/>
+				<reflexive name="Unknown25" visible="true" offset="0x64" entrySize="0x14">
+					<dataRef name="Unknown" visible="true" offset="0x0"/>
+				</reflexive>
+				<uint32 name="Unknown26" visible="true" offset="0x70"/>
+				<uint32 name="Unknown27" visible="true" offset="0x74"/>
+				<degree name="Unknown28" visible="true" offset="0x78"/>
+				<uint32 name="Unknown29" visible="true" offset="0x7C"/>
+				<degree name="Unknown30" visible="true" offset="0x80"/>
+				<uint32 name="Unknown31" visible="true" offset="0x84"/>
+				<uint32 name="Unknown32" visible="true" offset="0x88"/>
+				<tagref name="Unknown33" visible="true" offset="0x8C"/>
+				<uint32 name="Unknown34" visible="true" offset="0x9C"/>
+			</reflexive>
+			<uint32 name="Unknown4" visible="true" offset="0x48"/>
+			<uint32 name="Unknown5" visible="true" offset="0x4C"/>
+			<uint32 name="Unknown6" visible="true" offset="0x50"/>
+			<uint32 name="Unknown7" visible="true" offset="0x54"/>
+			<uint32 name="Unknown8" visible="true" offset="0x58"/>
+			<uint32 name="Unknown9" visible="true" offset="0x5C"/>
+			<uint32 name="Unknown10" visible="true" offset="0x60"/>
+			<reflexive name="Unknown11" visible="true" offset="0x64" entrySize="0x14">
+				<dataRef name="Unknown" visible="true" offset="0x0"/>
+			</reflexive>
+			<int16 name="Unknown12" visible="true" offset="0x70"/>
+			<int16 name="Unknown13" visible="true" offset="0x72"/>
+			<int16 name="Unknown14" visible="true" offset="0x74"/>
+			<int16 name="Unknown15" visible="true" offset="0x76"/>
+			<int16 name="Unknown16" visible="true" offset="0x78"/>
+			<int16 name="Unknown17" visible="true" offset="0x7A"/>
+			<int16 name="Unknown18" visible="true" offset="0x7C"/>
+			<int16 name="Unknown19" visible="true" offset="0x7E"/>
+			<int16 name="Unknown20" visible="true" offset="0x80"/>
+			<int16 name="Unknown21" visible="true" offset="0x82"/>
+			<int16 name="Unknown22" visible="true" offset="0x84"/>
+			<int16 name="Unknown23" visible="true" offset="0x86"/>
+			<reflexive name="Unknown24" visible="true" offset="0x88" entrySize="0x14">
+				<stringId name="Unknown" visible="true" offset="0x0"/>
+				<uint32 name="Unknown2" visible="true" offset="0x4"/>
+				<uint32 name="Unknown3" visible="true" offset="0x8"/>
+				<uint32 name="Unknown4" visible="true" offset="0xC"/>
+				<uint32 name="Unknown5" visible="true" offset="0x10"/>
+			</reflexive>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Button Key Legends" visible="true" offset="0x68" entrySize="0x10">
+		<tagref name="Legend" visible="true" offset="0x0"/>
+	</reflexive>
+	<tagref name="Ui Sounds" visible="true" offset="0x74"/>
+	<ascii name="Script Title" visible="true" length="0x20" offset="0x84"/>
+	<int16 name="Script Index" visible="true" offset="0xA4"/>
+	<int16 name="Unknown2" visible="true" offset="0xA6"/>
+</plugin>

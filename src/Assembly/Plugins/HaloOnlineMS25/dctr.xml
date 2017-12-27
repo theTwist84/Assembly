@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x77">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<tagref name="Model" visible="true" offset="0x0"/>
+	<uint32 name="Unknown" visible="true" offset="0x10"/>
+	<uint32 name="Unknown2" visible="true" offset="0x14"/>
+	<uint32 name="Unknown3" visible="true" offset="0x18"/>
+	<int32 name="Unknown4" visible="true" offset="0x1C"/>
+	<tagref name="Texture" visible="true" offset="0x20"/>
+	<uint8 name="Affects Visibility" visible="true" offset="0x30"/>
+	<uint8 name="Unknown Byte" visible="true" offset="0x31"/>
+	<int16 name="Unknown5" visible="true" offset="0x32"/>
+	<color24 name="Color" visible="true" offset="0x34"/>
+	<uint32 name="Unknown6" visible="true" offset="0x37"/>
+	<uint32 name="Unknown7" visible="true" offset="0x3B"/>
+	<uint32 name="Unknown8" visible="true" offset="0x3F"/>
+	<uint32 name="Unknown9" visible="true" offset="0x43"/>
+	<uint32 name="Unknown10" visible="true" offset="0x47"/>
+	<float32 name="Brightness Base" visible="true" offset="0x4B"/>
+	<float32 name="Brightness Shadow" visible="true" offset="0x4F"/>
+	<uint32 name="Unknown11" visible="true" offset="0x53"/>
+	<uint32 name="Unknown12" visible="true" offset="0x57"/>
+	<float32 name="Unknown13" visible="true" offset="0x5B"/>
+	<float32 name="Unknown14" visible="true" offset="0x5F"/>
+	<float32 name="Unknown15" visible="true" offset="0x63"/>
+	<float32 name="Unknown16" visible="true" offset="0x67"/>
+	<uint32 name="Unknown17" visible="true" offset="0x6B"/>
+	<uint32 name="Unknown18" visible="true" offset="0x6F"/>
+	<uint32 name="Unknown19" visible="true" offset="0x73"/>
+</plugin>

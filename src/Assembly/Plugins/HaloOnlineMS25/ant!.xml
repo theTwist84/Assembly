@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x50">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<stringId name="Attachment Marker Name" visible="true" offset="0x0"/>
+	<tagref name="Bitmaps" visible="true" offset="0x4"/>
+	<tagref name="Physics" visible="true" offset="0x14"/>
+	<float32 name="Spring Strength Coefficient" visible="true" offset="0x24"/>
+	<float32 name="Falloff Pixels" visible="true" offset="0x28"/>
+	<float32 name="Cutoff Pixels" visible="true" offset="0x2C"/>
+	<float32 name="Point Of Bend" visible="true" offset="0x30"/>
+	<float32 name="Starting Bend" visible="true" offset="0x34"/>
+	<float32 name="Ending Bend" visible="true" offset="0x38"/>
+	<float32 name="Runtime Total Length" visible="true" offset="0x3C"/>
+	<reflexive name="Vertices" visible="true" offset="0x40" entrySize="0x40">
+		<float name="Angles Yaw" visible="true" offset="0x0"/>
+		<float name="Angles Pitch" visible="true" offset="0x4"/>
+		<float32 name="Length" visible="true" offset="0x8"/>
+		<int16 name="Sequence Index" visible="true" offset="0xC"/>
+		<uint8 name="Unused Padding 0" visible="false" offset="0xE"/>
+		<uint8 name="Unused Padding 1" visible="false" offset="0xF"/>
+		<colorf name="Color" visible="true" format="argb" offset="0x10"/>
+		<colorf name="Lod Color" visible="true" format="argb" offset="0x20"/>
+		<float32 name="Hermite T" visible="true" offset="0x30"/>
+		<float name="Vector To Next I" visible="true" offset="0x34"/>
+		<float name="Vector To Next J" visible="true" offset="0x38"/>
+		<float name="Vector To Next K" visible="true" offset="0x3C"/>
+	</reflexive>
+	<uint8 name="Unused Padding 0" visible="false" offset="0x4C"/>
+	<uint8 name="Unused Padding 1" visible="false" offset="0x4D"/>
+	<uint8 name="Unused Padding 2" visible="false" offset="0x4E"/>
+	<uint8 name="Unused Padding 3" visible="false" offset="0x4F"/>
+</plugin>

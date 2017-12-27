@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x14">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<reflexive name="Effects" visible="true" offset="0x0" entrySize="0x24">
+		<reflexive name="Old Materials" visible="true" offset="0x0" entrySize="0x2C">
+			<tagref name="Effect" visible="true" offset="0x0"/>
+			<tagref name="Sound" visible="true" offset="0x10"/>
+			<stringId name="Material Name" visible="true" offset="0x20"/>
+			<int16 name="Global Material Index" visible="true" offset="0x24"/>
+			<enum8 name="Sweetener Mode" visible="true" offset="0x26">
+				<option name="Sweetener Default" value="0x0"/>
+				<option name="Sweetener Enabled" value="0x1"/>
+				<option name="Sweetener Disabled" value="0x2"/>
+			</enum8>
+			<uint8 name="Unused Padding 0" visible="false" offset="0x27"/>
+			<float32 name="Max Visibility Distance" visible="true" offset="0x28"/>
+		</reflexive>
+		<reflexive name="Sounds" visible="true" offset="0xC" entrySize="0x2C">
+			<tagref name="Effect" visible="true" offset="0x0"/>
+			<tagref name="Sound" visible="true" offset="0x10"/>
+			<stringId name="Material Name" visible="true" offset="0x20"/>
+			<int16 name="Global Material Index" visible="true" offset="0x24"/>
+			<enum8 name="Sweetener Mode" visible="true" offset="0x26">
+				<option name="Sweetener Default" value="0x0"/>
+				<option name="Sweetener Enabled" value="0x1"/>
+				<option name="Sweetener Disabled" value="0x2"/>
+			</enum8>
+			<uint8 name="Unused Padding 0" visible="false" offset="0x27"/>
+			<float32 name="Max Visibility Distance" visible="true" offset="0x28"/>
+		</reflexive>
+		<reflexive name="Effects" visible="true" offset="0x18" entrySize="0x2C">
+			<tagref name="Effect" visible="true" offset="0x0"/>
+			<tagref name="Sound" visible="true" offset="0x10"/>
+			<stringId name="Material Name" visible="true" offset="0x20"/>
+			<int16 name="Global Material Index" visible="true" offset="0x24"/>
+			<enum8 name="Sweetener Mode" visible="true" offset="0x26">
+				<option name="Sweetener Default" value="0x0"/>
+				<option name="Sweetener Enabled" value="0x1"/>
+				<option name="Sweetener Disabled" value="0x2"/>
+			</enum8>
+			<uint8 name="Unused Padding 0" visible="false" offset="0x27"/>
+			<float32 name="Max Visibility Distance" visible="true" offset="0x28"/>
+		</reflexive>
+	</reflexive>
+	<uint8 name="Unused Padding 0" visible="false" offset="0xC"/>
+	<uint8 name="Unused Padding 1" visible="false" offset="0xD"/>
+	<uint8 name="Unused Padding 2" visible="false" offset="0xE"/>
+	<uint8 name="Unused Padding 3" visible="false" offset="0xF"/>
+	<uint8 name="Unused Padding 4" visible="false" offset="0x10"/>
+	<uint8 name="Unused Padding 5" visible="false" offset="0x11"/>
+	<uint8 name="Unused Padding 6" visible="false" offset="0x12"/>
+	<uint8 name="Unused Padding 7" visible="false" offset="0x13"/>
+</plugin>

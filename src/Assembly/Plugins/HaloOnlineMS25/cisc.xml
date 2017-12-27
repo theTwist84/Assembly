@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x78">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<stringId name="Name" visible="true" offset="0x0"/>
+	<ascii name="Anchor Name" visible="true" length="0x20" offset="0x4"/>
+	<uint32 name="Unknown1" visible="true" offset="0x24"/>
+	<dataRef name="Import Script1" visible="true" offset="0x28"/>
+	<reflexive name="Puppets" visible="true" offset="0x3C" entrySize="0x74">
+		<ascii name="Import Name" visible="true" length="0x20" offset="0x0"/>
+		<stringId name="Name" visible="true" offset="0x20"/>
+		<stringId name="Variant" visible="true" offset="0x24"/>
+		<tagref name="Puppet Animation" visible="true" offset="0x28"/>
+		<tagref name="Puppet Object" visible="true" offset="0x38"/>
+		<uint32 name="Unknown1" visible="true" offset="0x48"/>
+		<uint8 name="Unknown2" visible="true" offset="0x4C"/>
+		<uint8 name="Unknown3" visible="true" offset="0x4D"/>
+		<uint8 name="Unknown4" visible="true" offset="0x4E"/>
+		<uint8 name="Unknown5" visible="true" offset="0x4F"/>
+		<int32 name="Unknown6" visible="true" offset="0x50"/>
+		<dataRef name="Import Script" visible="true" offset="0x54"/>
+		<reflexive name="Unknown7" visible="true" offset="0x68" entrySize="0x38">
+			<uint32 name="Unknown1" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+			<uint32 name="Unknown6" visible="true" offset="0x14"/>
+			<uint32 name="Unknown7" visible="true" offset="0x18"/>
+			<uint32 name="Unknown8" visible="true" offset="0x1C"/>
+			<uint32 name="Unknown9" visible="true" offset="0x20"/>
+			<uint32 name="Unknown10" visible="true" offset="0x24"/>
+			<tagref name="Unknown11" visible="true" offset="0x28"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Shots" visible="true" offset="0x48" entrySize="0xBC">
+		<dataRef name="Opening Import Scripts" visible="true" offset="0x0"/>
+		<int32 name="Unknown1" visible="true" offset="0x14"/>
+		<uint32 name="Unknown2" visible="true" offset="0x18"/>
+		<float32 name="Unknown3" visible="true" offset="0x1C"/>
+		<reflexive name="Lightning" visible="true" offset="0x20" entrySize="0x1C">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<tagref name="Cinematic Light" visible="true" offset="0x4"/>
+			<int32 name="Owner Puppet Index" visible="true" offset="0x14"/>
+			<stringId name="Marker" visible="true" offset="0x18"/>
+		</reflexive>
+		<reflexive name="Unknown4" visible="true" offset="0x2C" entrySize="0x2C">
+			<uint32 name="Unknown1" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+			<uint32 name="Unknown6" visible="true" offset="0x14"/>
+			<uint32 name="Unknown7" visible="true" offset="0x18"/>
+			<uint32 name="Unknown8" visible="true" offset="0x1C"/>
+			<reflexive name="Unknown9" visible="true" offset="0x20" entrySize="0x4">
+				<uint32 name="Unknown" visible="true" offset="0x0"/>
+			</reflexive>
+		</reflexive>
+		<reflexive name="Sounds" visible="true" offset="0x38" entrySize="0x24">
+			<tagref name="Sound" visible="true" offset="0x0"/>
+			<int32 name="Frame" visible="true" offset="0x10"/>
+			<float32 name="Unknown1" visible="true" offset="0x14"/>
+			<stringId name="Unknown2" visible="true" offset="0x18"/>
+			<uint32 name="Unknown3" visible="true" offset="0x1C"/>
+			<stringId name="Unknown4" visible="true" offset="0x20"/>
+		</reflexive>
+		<reflexive name="Background Sounds" visible="true" offset="0x44" entrySize="0x18">
+			<uint32 name="Unknown1" visible="true" offset="0x0"/>
+			<tagref name="Sound" visible="true" offset="0x4"/>
+			<int32 name="Frame" visible="true" offset="0x14"/>
+		</reflexive>
+		<reflexive name="Effects" visible="true" offset="0x50" entrySize="0x1C">
+			<tagref name="Effect" visible="true" offset="0x0"/>
+			<int32 name="Frame" visible="true" offset="0x10"/>
+			<stringId name="Marker" visible="true" offset="0x14"/>
+			<int32 name="Owner Puppet Index" visible="true" offset="0x18"/>
+		</reflexive>
+		<reflexive name="Functions" visible="true" offset="0x5C" entrySize="0x14">
+			<int32 name="Owner Puppet Index" visible="true" offset="0x0"/>
+			<stringId name="Target Function Name" visible="true" offset="0x4"/>
+			<reflexive name="Unknown" visible="true" offset="0x8" entrySize="0x10">
+				<uint32 name="Unknown1" visible="true" offset="0x0"/>
+				<int32 name="Unknown2" visible="true" offset="0x4"/>
+				<float32 name="Unknown3" visible="true" offset="0x8"/>
+				<float32 name="Unknown4" visible="true" offset="0xC"/>
+			</reflexive>
+		</reflexive>
+		<reflexive name="Screen Effects" visible="true" offset="0x68" entrySize="0x18">
+			<tagref name="Effect" visible="true" offset="0x0"/>
+			<int32 name="Start Frame" visible="true" offset="0x10"/>
+			<int32 name="End Frame" visible="true" offset="0x14"/>
+		</reflexive>
+		<reflexive name="Cortana Effects" visible="true" offset="0x74" entrySize="0x14">
+			<tagref name="Effect" visible="true" offset="0x0"/>
+			<uint32 name="Unknown" visible="true" offset="0x10"/>
+		</reflexive>
+		<reflexive name="Import Scripts" visible="true" offset="0x80" entrySize="0x18">
+			<int32 name="Frame" visible="true" offset="0x0"/>
+			<dataRef name="Import Script" visible="true" offset="0x4"/>
+		</reflexive>
+		<uint32 name="Unknown5" visible="true" offset="0x8C"/>
+		<uint32 name="Unknown6" visible="true" offset="0x90"/>
+		<uint32 name="Unknown7" visible="true" offset="0x94"/>
+		<dataRef name="Import Script1" visible="true" offset="0x98"/>
+		<int32 name="Loaded Frame Count" visible="true" offset="0xAC"/>
+		<reflexive name="Frames" visible="true" offset="0xB0" entrySize="0x44">
+			<vector3 name="Position" visible="true" offset="0x0"/>
+			<float32 name="Unknown1" visible="true" offset="0xC"/>
+			<float32 name="Unknown2" visible="true" offset="0x10"/>
+			<float32 name="Unknown3" visible="true" offset="0x14"/>
+			<float32 name="Unknown4" visible="true" offset="0x18"/>
+			<float32 name="Unknown5" visible="true" offset="0x1C"/>
+			<float32 name="Unknown6" visible="true" offset="0x20"/>
+			<float32 name="Unknown7" visible="true" offset="0x24"/>
+			<float32 name="Unknown8" visible="true" offset="0x28"/>
+			<float32 name="FOV" visible="true" offset="0x2C"/>
+			<int32 name="Flags" visible="true" offset="0x30"/>
+			<float32 name="Near Plane" visible="true" offset="0x34"/>
+			<float32 name="Far Plane" visible="true" offset="0x38"/>
+			<float32 name="Focal Depth" visible="true" offset="0x3C"/>
+			<float32 name="Blur Amount" visible="true" offset="0x40"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Texture Cameras" visible="true" offset="0x54" entrySize="0x14">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<stringId name="Unknown" visible="true" offset="0x4"/>
+		<reflexive name="Shots" visible="true" offset="0x8" entrySize="0xC">
+			<reflexive name="Frames" visible="true" offset="0x0" entrySize="0x48">
+				<uint32 name="Unknown Index" visible="true" offset="0x0"/>
+				<vector3 name="Position" visible="true" offset="0x4"/>
+				<float32 name="Unknown1" visible="true" offset="0x10"/>
+				<float32 name="Unknown2" visible="true" offset="0x14"/>
+				<float32 name="Unknown3" visible="true" offset="0x18"/>
+				<float32 name="Unknown4" visible="true" offset="0x1C"/>
+				<float32 name="Unknown5" visible="true" offset="0x20"/>
+				<float32 name="Unknown6" visible="true" offset="0x24"/>
+				<float32 name="Unknown7" visible="true" offset="0x28"/>
+				<float32 name="Unknown8" visible="true" offset="0x2C"/>
+				<float32 name="FOV" visible="true" offset="0x30"/>
+				<int32 name="Flags" visible="true" offset="0x34"/>
+				<float32 name="Near Plane" visible="true" offset="0x38"/>
+				<float32 name="Far Plane" visible="true" offset="0x3C"/>
+				<float32 name="Focal Depth" visible="true" offset="0x40"/>
+				<float32 name="Blur Amount" visible="true" offset="0x44"/>
+			</reflexive>
+		</reflexive>
+	</reflexive>
+	<dataRef name="import Script2" visible="true" offset="0x60"/>
+	<uint32 name="Unknown3" visible="true" offset="0x74"/>
+</plugin>

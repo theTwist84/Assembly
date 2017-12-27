@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x80">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<stringId name="Scenario Name" visible="true" offset="0x0"/>
+	<int32 name="Unknown1" visible="true" offset="0x4"/>
+	<uint32 name="Unknown2" visible="true" offset="0x8"/>
+	<uint32 name="Unknown3" visible="true" offset="0xC"/>
+	<uint32 name="Unknown4" visible="true" offset="0x10"/>
+	<dataRef name="Data1" visible="true" offset="0x14"/>
+	<dataRef name="Data2" visible="true" offset="0x28"/>
+	<tagref name="Cinematic Scene" visible="true" offset="0x3C"/>
+	<stringId name="Name" visible="true" offset="0x4C"/>
+	<reflexive name="Unknown5" visible="true" offset="0x50" entrySize="0x18">
+		<reflexive name="Unknown1" visible="true" offset="0x0" entrySize="0x20">
+			<uint32 name="Unknown1" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+			<uint32 name="Unknown6" visible="true" offset="0x14"/>
+			<uint32 name="Unknown7" visible="true" offset="0x18"/>
+			<uint32 name="Unknown8" visible="true" offset="0x1C"/>
+		</reflexive>
+		<reflexive name="Unknown2" visible="true" offset="0xC" entrySize="0x28">
+			<uint32 name="Unknown1" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+			<uint32 name="Unknown6" visible="true" offset="0x14"/>
+			<uint32 name="Unknown7" visible="true" offset="0x18"/>
+			<reflexive name="Unknown8" visible="true" offset="0x1C" entrySize="0x20">
+				<reflexive name="Unknown1" visible="true" offset="0x0" entrySize="0x10">
+					<uint32 name="Unknown1" visible="true" offset="0x0"/>
+					<uint32 name="Unknown2" visible="true" offset="0x4"/>
+					<uint32 name="Unknown3" visible="true" offset="0x8"/>
+					<uint32 name="Unknown4" visible="true" offset="0xC"/>
+				</reflexive>
+				<dataRef name="Unknown2" visible="true" offset="0xC"/>
+			</reflexive>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Unknown6" visible="true" offset="0x5C" entrySize="0x30">
+		<reflexive name="Unknown1" visible="true" offset="0x0" entrySize="0x34">
+			<uint32 name="Unknown1" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+			<uint32 name="Unknown6" visible="true" offset="0x14"/>
+			<uint32 name="Unknown7" visible="true" offset="0x18"/>
+			<reflexive name="Unknown8" visible="true" offset="0x1C" entrySize="0x20">
+				<reflexive name="Unknown1" visible="true" offset="0x0" entrySize="0x10">
+					<uint32 name="Unknown1" visible="true" offset="0x0"/>
+					<uint32 name="Unknown2" visible="true" offset="0x4"/>
+					<uint32 name="Unknown3" visible="true" offset="0x8"/>
+					<uint32 name="Unknown4" visible="true" offset="0xC"/>
+				</reflexive>
+				<dataRef name="Unknown2" visible="true" offset="0xC"/>
+			</reflexive>
+			<uint32 name="Unknown9" visible="true" offset="0x28"/>
+			<uint32 name="Unknown10" visible="true" offset="0x2C"/>
+			<uint32 name="Unknown11" visible="true" offset="0x30"/>
+		</reflexive>
+		<reflexive name="Unknown2" visible="true" offset="0xC" entrySize="0x34">
+			<uint32 name="Unknown1" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+			<uint32 name="Unknown6" visible="true" offset="0x14"/>
+			<uint32 name="Unknown7" visible="true" offset="0x18"/>
+			<uint32 name="Unknown8" visible="true" offset="0x1C"/>
+			<uint32 name="Unknown9" visible="true" offset="0x20"/>
+			<uint32 name="Unknown10" visible="true" offset="0x24"/>
+			<uint32 name="Unknown11" visible="true" offset="0x28"/>
+			<uint32 name="Unknown12" visible="true" offset="0x2C"/>
+			<uint32 name="Unknown13" visible="true" offset="0x30"/>
+		</reflexive>
+		<reflexive name="Unknown3" visible="true" offset="0x18" entrySize="0x30">
+			<uint32 name="Unknown1" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+			<uint32 name="Unknown6" visible="true" offset="0x14"/>
+			<reflexive name="Unknown7" visible="true" offset="0x18" entrySize="0x20">
+				<reflexive name="Unknown1" visible="true" offset="0x0" entrySize="0xC">
+					<uint32 name="Unknown1" visible="true" offset="0x0"/>
+					<uint32 name="Unknown2" visible="true" offset="0x4"/>
+					<uint32 name="Unknown3" visible="true" offset="0x8"/>
+				</reflexive>
+				<dataRef name="Unknown2" visible="true" offset="0xC"/>
+			</reflexive>
+			<uint32 name="Unknown8" visible="true" offset="0x24"/>
+			<uint32 name="Unknown9" visible="true" offset="0x28"/>
+			<uint32 name="Unknown10" visible="true" offset="0x2C"/>
+		</reflexive>
+		<reflexive name="Unknown4" visible="true" offset="0x24" entrySize="0x34">
+			<uint32 name="Unknown1" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+			<uint32 name="Unknown6" visible="true" offset="0x14"/>
+			<uint32 name="Unknown7" visible="true" offset="0x18"/>
+			<reflexive name="Unknown8" visible="true" offset="0x1C" entrySize="0x20">
+				<reflexive name="Unknown1" visible="true" offset="0x0" entrySize="0x10">
+					<uint32 name="Unknown1" visible="true" offset="0x0"/>
+					<uint32 name="Unknown2" visible="true" offset="0x4"/>
+					<uint32 name="Unknown3" visible="true" offset="0x8"/>
+					<uint32 name="Unknown4" visible="true" offset="0xC"/>
+				</reflexive>
+				<dataRef name="Unknown2" visible="true" offset="0xC"/>
+			</reflexive>
+			<uint32 name="Unknown9" visible="true" offset="0x28"/>
+			<uint32 name="Unknown10" visible="true" offset="0x2C"/>
+			<uint32 name="Unknown11" visible="true" offset="0x30"/>
+		</reflexive>
+	</reflexive>
+	<uint32 name="Unknown9" visible="true" offset="0x68"/>
+	<uint32 name="Unknown10" visible="true" offset="0x6C"/>
+	<uint32 name="Unknown11" visible="true" offset="0x70"/>
+	<reflexive name="Unknown7" visible="true" offset="0x74" entrySize="0x24">
+		<reflexive name="Unknown1" visible="true" offset="0x0" entrySize="0x30">
+			<uint32 name="Unknown1" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+			<uint32 name="Unknown6" visible="true" offset="0x14"/>
+			<uint32 name="Unknown7" visible="true" offset="0x18"/>
+			<uint32 name="Unknown8" visible="true" offset="0x1C"/>
+			<uint32 name="Unknown9" visible="true" offset="0x20"/>
+			<uint32 name="Unknown10" visible="true" offset="0x24"/>
+			<uint32 name="Unknown11" visible="true" offset="0x28"/>
+			<uint32 name="Unknown12" visible="true" offset="0x2C"/>
+		</reflexive>
+		<reflexive name="Unknown2" visible="true" offset="0xC" entrySize="0x34">
+			<uint32 name="Unknown1" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+			<uint32 name="Unknown6" visible="true" offset="0x14"/>
+			<uint32 name="Unknown7" visible="true" offset="0x18"/>
+			<reflexive name="Unknown8" visible="true" offset="0x1C" entrySize="0x20">
+				<reflexive name="Unknown1" visible="true" offset="0x0" entrySize="0x10">
+					<uint32 name="Unknown1" visible="true" offset="0x0"/>
+					<uint32 name="Unknown2" visible="true" offset="0x4"/>
+					<uint32 name="Unknown3" visible="true" offset="0x8"/>
+					<uint32 name="Unknown4" visible="true" offset="0xC"/>
+				</reflexive>
+				<dataRef name="Unknown2" visible="true" offset="0xC"/>
+			</reflexive>
+			<uint32 name="Unknown9" visible="true" offset="0x28"/>
+			<uint32 name="Unknown10" visible="true" offset="0x2C"/>
+			<uint32 name="Unknown11" visible="true" offset="0x30"/>
+		</reflexive>
+		<reflexive name="Unknown3" visible="true" offset="0x18" entrySize="0xC">
+			<uint32 name="Unknown1" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+		</reflexive>
+	</reflexive>
+</plugin>

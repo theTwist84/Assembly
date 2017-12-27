@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x50">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<int32 name="Unknown Flags" visible="true" offset="0x0"/>
+	<float32 name="Unknown1" visible="true" offset="0x4"/>
+	<float32 name="Unknown2" visible="true" offset="0x8"/>
+	<float32 name="Unknown3" visible="true" offset="0xC"/>
+	<float32 name="Unknown4" visible="true" offset="0x10"/>
+	<float32 name="Unknown5" visible="true" offset="0x14"/>
+	<float32 name="Unknown6" visible="true" offset="0x18"/>
+	<float32 name="Unknown7" visible="true" offset="0x1C"/>
+	<float32 name="Unknown8" visible="true" offset="0x20"/>
+	<float32 name="Unknown9" visible="true" offset="0x24"/>
+	<int16 name="Unknown Flags2" visible="true" offset="0x28"/>
+	<int16 name="Unknown10" visible="true" offset="0x2A"/>
+	<float32 name="Unknown11" visible="true" offset="0x2C"/>
+	<float32 name="Unknown12" visible="true" offset="0x30"/>
+	<float32 name="Unknown13" visible="true" offset="0x34"/>
+	<float32 name="Unknown14" visible="true" offset="0x38"/>
+	<int16 name="Unknown15" visible="true" offset="0x3C"/>
+	<int16 name="Unknown16" visible="true" offset="0x3E"/>
+	<float32 name="Unknown17" visible="true" offset="0x40"/>
+	<float32 name="Unknown18" visible="true" offset="0x44"/>
+	<float32 name="Unknown19" visible="true" offset="0x48"/>
+	<int16 name="Unknown20" visible="true" offset="0x4C"/>
+	<int16 name="Unknown21" visible="true" offset="0x4E"/>
+</plugin>

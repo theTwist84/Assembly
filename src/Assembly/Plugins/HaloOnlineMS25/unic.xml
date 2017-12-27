@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x5C">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<reflexive name="Strings" visible="true" offset="0x0" entrySize="0x54">
+		<stringId name="String ID" visible="true" offset="0x0"/>
+		<ascii name="String IDStr" visible="true" length="0x20" offset="0x4"/>
+		<int32 name="Offsets 0" visible="true" offset="0x24"/>
+		<int32 name="Offsets 1" visible="true" offset="0x28"/>
+		<int32 name="Offsets 2" visible="true" offset="0x2C"/>
+		<int32 name="Offsets 3" visible="true" offset="0x30"/>
+		<int32 name="Offsets 4" visible="true" offset="0x34"/>
+		<int32 name="Offsets 5" visible="true" offset="0x38"/>
+		<int32 name="Offsets 6" visible="true" offset="0x3C"/>
+		<int32 name="Offsets 7" visible="true" offset="0x40"/>
+		<int32 name="Offsets 8" visible="true" offset="0x44"/>
+		<int32 name="Offsets 9" visible="true" offset="0x48"/>
+		<int32 name="Offsets 10" visible="true" offset="0x4C"/>
+		<int32 name="Offsets 11" visible="true" offset="0x50"/>
+	</reflexive>
+	<dataRef name="Data" visible="true" offset="0xC"/>
+	<uint16 name="Offset Counts 0" visible="true" offset="0x20"/>
+	<uint16 name="Offset Counts 1" visible="true" offset="0x22"/>
+	<uint16 name="Offset Counts 2" visible="true" offset="0x24"/>
+	<uint16 name="Offset Counts 3" visible="true" offset="0x26"/>
+	<uint16 name="Offset Counts 4" visible="true" offset="0x28"/>
+	<uint16 name="Offset Counts 5" visible="true" offset="0x2A"/>
+	<uint16 name="Offset Counts 6" visible="true" offset="0x2C"/>
+	<uint16 name="Offset Counts 7" visible="true" offset="0x2E"/>
+	<uint16 name="Offset Counts 8" visible="true" offset="0x30"/>
+	<uint16 name="Offset Counts 9" visible="true" offset="0x32"/>
+	<uint16 name="Offset Counts 10" visible="true" offset="0x34"/>
+	<uint16 name="Offset Counts 11" visible="true" offset="0x36"/>
+	<uint16 name="Offset Counts 12" visible="true" offset="0x38"/>
+	<uint16 name="Offset Counts 13" visible="true" offset="0x3A"/>
+	<uint16 name="Offset Counts 14" visible="true" offset="0x3C"/>
+	<uint16 name="Offset Counts 15" visible="true" offset="0x3E"/>
+	<uint16 name="Offset Counts 16" visible="true" offset="0x40"/>
+	<uint16 name="Offset Counts 17" visible="true" offset="0x42"/>
+	<uint16 name="Offset Counts 18" visible="true" offset="0x44"/>
+	<uint16 name="Offset Counts 19" visible="true" offset="0x46"/>
+	<uint16 name="Offset Counts 20" visible="true" offset="0x48"/>
+	<uint16 name="Offset Counts 21" visible="true" offset="0x4A"/>
+	<uint16 name="Offset Counts 22" visible="true" offset="0x4C"/>
+	<uint16 name="Offset Counts 23" visible="true" offset="0x4E"/>
+	<uint8 name="Unused Padding 0" visible="false" offset="0x50"/>
+	<uint8 name="Unused Padding 1" visible="false" offset="0x51"/>
+	<uint8 name="Unused Padding 2" visible="false" offset="0x52"/>
+	<uint8 name="Unused Padding 3" visible="false" offset="0x53"/>
+	<uint8 name="Unused Padding 4" visible="false" offset="0x54"/>
+	<uint8 name="Unused Padding 5" visible="false" offset="0x55"/>
+	<uint8 name="Unused Padding 6" visible="false" offset="0x56"/>
+	<uint8 name="Unused Padding 7" visible="false" offset="0x57"/>
+	<uint8 name="Unused Padding 8" visible="false" offset="0x58"/>
+	<uint8 name="Unused Padding 9" visible="false" offset="0x59"/>
+	<uint8 name="Unused Padding 10" visible="false" offset="0x5A"/>
+	<uint8 name="Unused Padding 11" visible="false" offset="0x5B"/>
+</plugin>

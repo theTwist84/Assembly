@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0xAC">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<int32 name="Usage" visible="true" offset="0x0"/>
+	<bitfield32 name="Flags" visible="true" offset="0x4">
+		<bit name="Bitmap Is Tiled" index="0"/>
+		<bit name="Use Less Blurry Bump Map" index="1"/>
+		<bit name="Dither When Compressing" index="2"/>
+		<bit name="Generate Random Sprites" index="3"/>
+		<bit name="Using Tag Interop And Tag Resource" index="4"/>
+		<bit name="Ignore Alpha Channel" index="5"/>
+		<bit name="Alpha Channel Stores Transparency" index="6"/>
+		<bit name="Preserve Alpha Channel In Mipmaps For Alpha Test" index="7"/>
+		<bit name="Only Use On Demand" index="8"/>
+		<bit name="Generate Tight Bounds" index="9"/>
+		<bit name="Tight Bounds From Alpha Channel" index="10"/>
+		<bit name="Do Not Generate Required Section" index="11"/>
+		<bit name="Apply Max Resolution After Slicing" index="12"/>
+		<bit name="Generate Black Point Tight Bounds" index="13"/>
+		<bit name="Pre Filter Cubemaps" index="14"/>
+	</bitfield32>
+	<int16 name="Sprite Spacing" visible="true" offset="0x8"/>
+	<uint8 name="Unused Padding 0" visible="false" offset="0xA"/>
+	<uint8 name="Unused Padding 1" visible="false" offset="0xB"/>
+	<float32 name="Unknown10" visible="true" offset="0xC"/>
+	<float32 name="Unknown14" visible="true" offset="0x10"/>
+	<int16 name="Atlas Index" visible="true" offset="0x14"/>
+	<int16 name="Force Bitmap Format Enum" visible="true" offset="0x16"/>
+	<reflexive name="Tight Bounds" visible="true" offset="0x18" entrySize="0x8">
+		<float name="UVX" visible="true" offset="0x0"/>
+		<float name="UVY" visible="true" offset="0x4"/>
+	</reflexive>
+	<reflexive name="Usage Overrides" visible="true" offset="0x24" entrySize="0x28">
+		<float32 name="Source Gamma" visible="true" offset="0x0"/>
+		<int32 name="Bitmap Curve Enum" visible="true" offset="0x4"/>
+		<int32 name="Unknown8" visible="true" offset="0x8"/>
+		<int32 name="Unknown C" visible="true" offset="0xC"/>
+		<int32 name="Unknown10" visible="true" offset="0x10"/>
+		<int32 name="Unknown14" visible="true" offset="0x14"/>
+		<int32 name="Unknown18" visible="true" offset="0x18"/>
+		<int32 name="Unknown1 C" visible="true" offset="0x1C"/>
+		<int32 name="Unknown20" visible="true" offset="0x20"/>
+		<int32 name="Unknown24" visible="true" offset="0x24"/>
+	</reflexive>
+	<reflexive name="Manual Sequences" visible="true" offset="0x30" entrySize="0x40">
+		<ascii name="Name" visible="true" length="0x20" offset="0x0"/>
+		<int16 name="First Bitmap Index" visible="true" offset="0x20"/>
+		<int16 name="Bitmap Count" visible="true" offset="0x22"/>
+		<uint8 name="Unused Padding 0" visible="false" offset="0x24"/>
+		<uint8 name="Unused Padding 1" visible="false" offset="0x25"/>
+		<uint8 name="Unused Padding 2" visible="false" offset="0x26"/>
+		<uint8 name="Unused Padding 3" visible="false" offset="0x27"/>
+		<uint8 name="Unused Padding 4" visible="false" offset="0x28"/>
+		<uint8 name="Unused Padding 5" visible="false" offset="0x29"/>
+		<uint8 name="Unused Padding 6" visible="false" offset="0x2A"/>
+		<uint8 name="Unused Padding 7" visible="false" offset="0x2B"/>
+		<uint8 name="Unused Padding 8" visible="false" offset="0x2C"/>
+		<uint8 name="Unused Padding 9" visible="false" offset="0x2D"/>
+		<uint8 name="Unused Padding 10" visible="false" offset="0x2E"/>
+		<uint8 name="Unused Padding 11" visible="false" offset="0x2F"/>
+		<uint8 name="Unused Padding 12" visible="false" offset="0x30"/>
+		<uint8 name="Unused Padding 13" visible="false" offset="0x31"/>
+		<uint8 name="Unused Padding 14" visible="false" offset="0x32"/>
+		<uint8 name="Unused Padding 15" visible="false" offset="0x33"/>
+		<reflexive name="Sprites" visible="true" offset="0x34" entrySize="0x20">
+			<int16 name="Bitmap Index" visible="true" offset="0x0"/>
+			<uint8 name="Unused1 Padding 0" visible="false" offset="0x2"/>
+			<uint8 name="Unused1 Padding 1" visible="false" offset="0x3"/>
+			<uint8 name="Unused2 Padding 0" visible="false" offset="0x4"/>
+			<uint8 name="Unused2 Padding 1" visible="false" offset="0x5"/>
+			<uint8 name="Unused2 Padding 2" visible="false" offset="0x6"/>
+			<uint8 name="Unused2 Padding 3" visible="false" offset="0x7"/>
+			<float32 name="Left" visible="true" offset="0x8"/>
+			<float32 name="Right" visible="true" offset="0xC"/>
+			<float32 name="Top" visible="true" offset="0x10"/>
+			<float32 name="Bottom" visible="true" offset="0x14"/>
+			<float name="Registration Point X" visible="true" offset="0x18"/>
+			<float name="Registration Point Y" visible="true" offset="0x1C"/>
+		</reflexive>
+	</reflexive>
+	<dataRef name="Source Data" visible="true" offset="0x3C"/>
+	<dataRef name="Processed Pixel Data" visible="true" offset="0x50"/>
+	<reflexive name="Sequences" visible="true" offset="0x64" entrySize="0x40">
+		<ascii name="Name" visible="true" length="0x20" offset="0x0"/>
+		<int16 name="First Bitmap Index" visible="true" offset="0x20"/>
+		<int16 name="Bitmap Count" visible="true" offset="0x22"/>
+		<uint8 name="Unused Padding 0" visible="false" offset="0x24"/>
+		<uint8 name="Unused Padding 1" visible="false" offset="0x25"/>
+		<uint8 name="Unused Padding 2" visible="false" offset="0x26"/>
+		<uint8 name="Unused Padding 3" visible="false" offset="0x27"/>
+		<uint8 name="Unused Padding 4" visible="false" offset="0x28"/>
+		<uint8 name="Unused Padding 5" visible="false" offset="0x29"/>
+		<uint8 name="Unused Padding 6" visible="false" offset="0x2A"/>
+		<uint8 name="Unused Padding 7" visible="false" offset="0x2B"/>
+		<uint8 name="Unused Padding 8" visible="false" offset="0x2C"/>
+		<uint8 name="Unused Padding 9" visible="false" offset="0x2D"/>
+		<uint8 name="Unused Padding 10" visible="false" offset="0x2E"/>
+		<uint8 name="Unused Padding 11" visible="false" offset="0x2F"/>
+		<uint8 name="Unused Padding 12" visible="false" offset="0x30"/>
+		<uint8 name="Unused Padding 13" visible="false" offset="0x31"/>
+		<uint8 name="Unused Padding 14" visible="false" offset="0x32"/>
+		<uint8 name="Unused Padding 15" visible="false" offset="0x33"/>
+		<reflexive name="Sprites" visible="true" offset="0x34" entrySize="0x20">
+			<int16 name="Bitmap Index" visible="true" offset="0x0"/>
+			<uint8 name="Unused1 Padding 0" visible="false" offset="0x2"/>
+			<uint8 name="Unused1 Padding 1" visible="false" offset="0x3"/>
+			<uint8 name="Unused2 Padding 0" visible="false" offset="0x4"/>
+			<uint8 name="Unused2 Padding 1" visible="false" offset="0x5"/>
+			<uint8 name="Unused2 Padding 2" visible="false" offset="0x6"/>
+			<uint8 name="Unused2 Padding 3" visible="false" offset="0x7"/>
+			<float32 name="Left" visible="true" offset="0x8"/>
+			<float32 name="Right" visible="true" offset="0xC"/>
+			<float32 name="Top" visible="true" offset="0x10"/>
+			<float32 name="Bottom" visible="true" offset="0x14"/>
+			<float name="Registration Point X" visible="true" offset="0x18"/>
+			<float name="Registration Point Y" visible="true" offset="0x1C"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Images" visible="true" offset="0x70" entrySize="0x34">
+		<ascii name="Signature" visible="true" length="0x4" offset="0x0"/>
+		<int16 name="Width" visible="true" offset="0x4"/>
+		<int16 name="Height" visible="true" offset="0x6"/>
+		<int8 name="Depth" visible="true" offset="0x8"/>
+		<bitfield8 name="Xbox Flags" visible="true" offset="0x9">
+			<bit name="Medium Resolution Offset Is Valid" index="0"/>
+			<bit name="Xbox360 Memory Spacing" index="1"/>
+			<bit name="Xbox360 Byte Order" index="2"/>
+			<bit name="Tiled Texture" index="3"/>
+			<bit name="Created Correctly" index="4"/>
+			<bit name="High Resolution Offset Is Valid" index="5"/>
+			<bit name="Use Interleaved Textures" index="6"/>
+			<bit name="Use On Demand Only" index="7"/>
+		</bitfield8>
+		<enum8 name="Type" visible="true" offset="0xA">
+			<option name="Texture2 D" value="0x0"/>
+			<option name="Texture3 D" value="0x1"/>
+			<option name="Cube Map" value="0x2"/>
+			<option name="Array" value="0x3"/>
+		</enum8>
+		<uint8 name="Four Times Log2 Size" visible="true" offset="0xB"/>
+		<enum8 name="Format" visible="true" offset="0xC">
+			<option name="A8" value="0x0"/>
+			<option name="Y8" value="0x1"/>
+			<option name="AY8" value="0x2"/>
+			<option name="A8 Y8" value="0x3"/>
+			<option name="Unused4" value="0x4"/>
+			<option name="Unused5" value="0x5"/>
+			<option name="R5 G6 B5" value="0x6"/>
+			<option name="Unused7" value="0x7"/>
+			<option name="A1 R5 G5 B5" value="0x8"/>
+			<option name="A4 R4 G4 B4" value="0x9"/>
+			<option name="X8 R8 G8 B8" value="0xA"/>
+			<option name="A8 R8 G8 B8" value="0xB"/>
+			<option name="Unused C" value="0xC"/>
+			<option name="Unused D" value="0xD"/>
+			<option name="Dxt1" value="0xE"/>
+			<option name="Dxt3" value="0xF"/>
+			<option name="Dxt5" value="0x10"/>
+			<option name="A4 R4 G4 B4 Font" value="0x11"/>
+			<option name="P8" value="0x12"/>
+			<option name="ARGBFP32" value="0x13"/>
+			<option name="RGBFP32" value="0x14"/>
+			<option name="RGBFP16" value="0x15"/>
+			<option name="V8 U8" value="0x16"/>
+			<option name="Unused17" value="0x17"/>
+			<option name="A32 B32 G32 R32 F" value="0x18"/>
+			<option name="A16 B16 G16 R16 F" value="0x19"/>
+			<option name="Q8 W8 V8 U8" value="0x1A"/>
+			<option name="A2 R10 G10 B10" value="0x1B"/>
+			<option name="A16 B16 G16 R16" value="0x1C"/>
+			<option name="V16 U16" value="0x1D"/>
+			<option name="Unused1 E" value="0x1E"/>
+			<option name="Dxt5a" value="0x1F"/>
+			<option name="Unused20" value="0x20"/>
+			<option name="Dxn" value="0x21"/>
+			<option name="Ctx1" value="0x22"/>
+			<option name="Dxt3a Alpha" value="0x23"/>
+			<option name="Dxt3a Mono" value="0x24"/>
+			<option name="Dxt5a Alpha" value="0x25"/>
+			<option name="Dxt5a Mono" value="0x26"/>
+			<option name="Dxn Mono Alpha" value="0x27"/>
+			<option name="Reach Dxt3a Mono" value="0x28"/>
+			<option name="Reach Dxt3a Alpha" value="0x29"/>
+			<option name="Reach Dxt5a Mono" value="0x2A"/>
+			<option name="Reach Dxt5a Alpha" value="0x2B"/>
+			<option name="Reach Dxn Mono Alpha" value="0x2C"/>
+		</enum8>
+		<uint8 name="Unused2_2 Padding 0" visible="false" offset="0xD"/>
+		<bitfield16 name="Flags" visible="true" offset="0xE">
+			<bit name="Power Of Two Dimensions" index="0"/>
+			<bit name="Compressed" index="1"/>
+			<bit name="Unknown2" index="2"/>
+			<bit name="Unknown3" index="3"/>
+			<bit name="Unknown4" index="4"/>
+			<bit name="Unknown5" index="5"/>
+			<bit name="Unknown6" index="6"/>
+			<bit name="Prefer Low Detail" index="7"/>
+			<bit name="Unknown8" index="8"/>
+			<bit name="Unknown9" index="9"/>
+			<bit name="Unknown10" index="10"/>
+			<bit name="Unknown11" index="11"/>
+			<bit name="Unknown12" index="12"/>
+			<bit name="Unknown13" index="13"/>
+			<bit name="Unknown14" index="14"/>
+			<bit name="Unknown15" index="15"/>
+		</bitfield16>
+		<float name="Registration Point X" visible="true" offset="0x10"/>
+		<float name="Registration Point Y" visible="true" offset="0x14"/>
+		<int8 name="Mipmap Count" visible="true" offset="0x18"/>
+		<enum8 name="Curve" visible="true" offset="0x19">
+			<option name="Unknown" value="0x0"/>
+			<option name="x RGB" value="0x1"/>
+			<option name="Gamma2" value="0x2"/>
+			<option name="Linear" value="0x3"/>
+			<option name="Offset Log" value="0x4"/>
+			<option name="s RGB" value="0x5"/>
+			<option name="Rec709" value="0x6"/>
+		</enum8>
+		<uint8 name="Interleaved Texture Index1" visible="true" offset="0x1A"/>
+		<uint8 name="Interleaved Texture Index2" visible="true" offset="0x1B"/>
+		<int32 name="Data Offset" visible="true" offset="0x1C"/>
+		<int32 name="Data Size" visible="true" offset="0x20"/>
+		<float32 name="Unknown20" visible="true" offset="0x24"/>
+		<int8 name="Unknown24" visible="true" offset="0x28"/>
+		<int8 name="Unknown25" visible="true" offset="0x29"/>
+		<int8 name="Unknown26" visible="true" offset="0x2A"/>
+		<int8 name="Unknown27" visible="true" offset="0x2B"/>
+		<int32 name="Unknown28" visible="true" offset="0x2C"/>
+		<int32 name="Unknown2 C" visible="true" offset="0x30"/>
+	</reflexive>
+	<dataRef name="Xenon Processed Pixel Data" visible="true" offset="0x7C"/>
+	<reflexive name="Xenon Images" visible="true" offset="0x90" entrySize="0x34">
+		<ascii name="Signature" visible="true" length="0x4" offset="0x0"/>
+		<int16 name="Width" visible="true" offset="0x4"/>
+		<int16 name="Height" visible="true" offset="0x6"/>
+		<int8 name="Depth" visible="true" offset="0x8"/>
+		<bitfield8 name="Xbox Flags" visible="true" offset="0x9">
+			<bit name="Medium Resolution Offset Is Valid" index="0"/>
+			<bit name="Xbox360 Memory Spacing" index="1"/>
+			<bit name="Xbox360 Byte Order" index="2"/>
+			<bit name="Tiled Texture" index="3"/>
+			<bit name="Created Correctly" index="4"/>
+			<bit name="High Resolution Offset Is Valid" index="5"/>
+			<bit name="Use Interleaved Textures" index="6"/>
+			<bit name="Use On Demand Only" index="7"/>
+		</bitfield8>
+		<enum8 name="Type" visible="true" offset="0xA">
+			<option name="Texture2 D" value="0x0"/>
+			<option name="Texture3 D" value="0x1"/>
+			<option name="Cube Map" value="0x2"/>
+			<option name="Array" value="0x3"/>
+		</enum8>
+		<uint8 name="Four Times Log2 Size" visible="true" offset="0xB"/>
+		<enum8 name="Format" visible="true" offset="0xC">
+			<option name="A8" value="0x0"/>
+			<option name="Y8" value="0x1"/>
+			<option name="AY8" value="0x2"/>
+			<option name="A8 Y8" value="0x3"/>
+			<option name="Unused4" value="0x4"/>
+			<option name="Unused5" value="0x5"/>
+			<option name="R5 G6 B5" value="0x6"/>
+			<option name="Unused7" value="0x7"/>
+			<option name="A1 R5 G5 B5" value="0x8"/>
+			<option name="A4 R4 G4 B4" value="0x9"/>
+			<option name="X8 R8 G8 B8" value="0xA"/>
+			<option name="A8 R8 G8 B8" value="0xB"/>
+			<option name="Unused C" value="0xC"/>
+			<option name="Unused D" value="0xD"/>
+			<option name="Dxt1" value="0xE"/>
+			<option name="Dxt3" value="0xF"/>
+			<option name="Dxt5" value="0x10"/>
+			<option name="A4 R4 G4 B4 Font" value="0x11"/>
+			<option name="P8" value="0x12"/>
+			<option name="ARGBFP32" value="0x13"/>
+			<option name="RGBFP32" value="0x14"/>
+			<option name="RGBFP16" value="0x15"/>
+			<option name="V8 U8" value="0x16"/>
+			<option name="Unused17" value="0x17"/>
+			<option name="A32 B32 G32 R32 F" value="0x18"/>
+			<option name="A16 B16 G16 R16 F" value="0x19"/>
+			<option name="Q8 W8 V8 U8" value="0x1A"/>
+			<option name="A2 R10 G10 B10" value="0x1B"/>
+			<option name="A16 B16 G16 R16" value="0x1C"/>
+			<option name="V16 U16" value="0x1D"/>
+			<option name="Unused1 E" value="0x1E"/>
+			<option name="Dxt5a" value="0x1F"/>
+			<option name="Unused20" value="0x20"/>
+			<option name="Dxn" value="0x21"/>
+			<option name="Ctx1" value="0x22"/>
+			<option name="Dxt3a Alpha" value="0x23"/>
+			<option name="Dxt3a Mono" value="0x24"/>
+			<option name="Dxt5a Alpha" value="0x25"/>
+			<option name="Dxt5a Mono" value="0x26"/>
+			<option name="Dxn Mono Alpha" value="0x27"/>
+			<option name="Reach Dxt3a Mono" value="0x28"/>
+			<option name="Reach Dxt3a Alpha" value="0x29"/>
+			<option name="Reach Dxt5a Mono" value="0x2A"/>
+			<option name="Reach Dxt5a Alpha" value="0x2B"/>
+			<option name="Reach Dxn Mono Alpha" value="0x2C"/>
+		</enum8>
+		<uint8 name="Unused2_2 Padding 0" visible="false" offset="0xD"/>
+		<bitfield16 name="Flags" visible="true" offset="0xE">
+			<bit name="Power Of Two Dimensions" index="0"/>
+			<bit name="Compressed" index="1"/>
+			<bit name="Unknown2" index="2"/>
+			<bit name="Unknown3" index="3"/>
+			<bit name="Unknown4" index="4"/>
+			<bit name="Unknown5" index="5"/>
+			<bit name="Unknown6" index="6"/>
+			<bit name="Prefer Low Detail" index="7"/>
+			<bit name="Unknown8" index="8"/>
+			<bit name="Unknown9" index="9"/>
+			<bit name="Unknown10" index="10"/>
+			<bit name="Unknown11" index="11"/>
+			<bit name="Unknown12" index="12"/>
+			<bit name="Unknown13" index="13"/>
+			<bit name="Unknown14" index="14"/>
+			<bit name="Unknown15" index="15"/>
+		</bitfield16>
+		<float name="Registration Point X" visible="true" offset="0x10"/>
+		<float name="Registration Point Y" visible="true" offset="0x14"/>
+		<int8 name="Mipmap Count" visible="true" offset="0x18"/>
+		<enum8 name="Curve" visible="true" offset="0x19">
+			<option name="Unknown" value="0x0"/>
+			<option name="x RGB" value="0x1"/>
+			<option name="Gamma2" value="0x2"/>
+			<option name="Linear" value="0x3"/>
+			<option name="Offset Log" value="0x4"/>
+			<option name="s RGB" value="0x5"/>
+			<option name="Rec709" value="0x6"/>
+		</enum8>
+		<uint8 name="Interleaved Texture Index1" visible="true" offset="0x1A"/>
+		<uint8 name="Interleaved Texture Index2" visible="true" offset="0x1B"/>
+		<int32 name="Data Offset" visible="true" offset="0x1C"/>
+		<int32 name="Data Size" visible="true" offset="0x20"/>
+		<float32 name="Unknown20" visible="true" offset="0x24"/>
+		<int8 name="Unknown24" visible="true" offset="0x28"/>
+		<int8 name="Unknown25" visible="true" offset="0x29"/>
+		<int8 name="Unknown26" visible="true" offset="0x2A"/>
+		<int8 name="Unknown27" visible="true" offset="0x2B"/>
+		<int32 name="Unknown28" visible="true" offset="0x2C"/>
+		<int32 name="Unknown2 C" visible="true" offset="0x30"/>
+	</reflexive>
+	<reflexive name="Resources" visible="true" offset="0x9C" entrySize="0x8">
+		<uint32 name="Resource" visible="true" offset="0x0"/>
+		<int32 name="Unknown4" visible="true" offset="0x4"/>
+	</reflexive>
+	<int32 name="Unknown B4" visible="true" offset="0xA8"/>
+</plugin>

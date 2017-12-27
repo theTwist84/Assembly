@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x40">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<uint32 name="Flags" visible="true" offset="0x0"/>
+	<float32 name="Marty SMusic Time" visible="true" offset="0x4"/>
+	<float32 name="Unknown1" visible="true" offset="0x8"/>
+	<float32 name="Unknown2" visible="true" offset="0xC"/>
+	<float32 name="Unknown3" visible="true" offset="0x10"/>
+	<tagref name="Unused" visible="true" offset="0x14"/>
+	<bitfield16 name="Sound Class" visible="true" offset="0x24">
+		<bit name="Projectile Detonation" index="0"/>
+		<bit name="Projectile Flyby" index="1"/>
+		<bit name="Projectile Detonation Lod" index="2"/>
+		<bit name="Weapon Fire" index="3"/>
+		<bit name="Weapon Ready" index="4"/>
+		<bit name="Weapon Reload" index="5"/>
+		<bit name="Weapon Empty" index="6"/>
+		<bit name="Weapon Charge" index="7"/>
+		<bit name="Weapon Overheat" index="8"/>
+		<bit name="Weapon Idle" index="9"/>
+		<bit name="Weapon Melee" index="10"/>
+		<bit name="Weapon Animation" index="11"/>
+		<bit name="Object Impacts" index="12"/>
+		<bit name="Particle Impacts" index="13"/>
+		<bit name="Weapon Fire Lod" index="14"/>
+		<bit name="Weapon Fire Lod Far" index="15"/>
+		<bit name="Unused2 Impacts" index="16"/>
+		<bit name="Unit Footsteps" index="17"/>
+		<bit name="Unit Dialog" index="18"/>
+		<bit name="Unit Animation" index="19"/>
+		<bit name="Unit Unused" index="20"/>
+		<bit name="Vehicle Collision" index="21"/>
+		<bit name="Vehicle Engine" index="22"/>
+		<bit name="Vehicle Animation" index="23"/>
+		<bit name="Vehicle Engine Lod" index="24"/>
+		<bit name="Device Door" index="25"/>
+		<bit name="Device Unused0" index="26"/>
+		<bit name="Device Machinery" index="27"/>
+		<bit name="Device Stationary" index="28"/>
+		<bit name="Device Unused1" index="29"/>
+		<bit name="Device Unused2" index="30"/>
+		<bit name="Music" index="31"/>
+		<bit name="Ambient Nature" index="32"/>
+		<bit name="Ambient Machinery" index="33"/>
+		<bit name="Ambient Stationary" index="34"/>
+		<bit name="Huge Ass" index="35"/>
+		<bit name="Object Looping" index="36"/>
+		<bit name="Cinematic Music" index="37"/>
+		<bit name="Player Armor" index="38"/>
+		<bit name="Unknown Unused1" index="39"/>
+		<bit name="Ambient Flock" index="40"/>
+		<bit name="No Pad" index="41"/>
+		<bit name="No Pad Stationary" index="42"/>
+		<bit name="Arg" index="43"/>
+		<bit name="Cortana Mission" index="44"/>
+		<bit name="Cortana Gravemind Channel" index="45"/>
+		<bit name="Mission Dialog" index="46"/>
+		<bit name="Cinematic Dialog" index="47"/>
+		<bit name="Scripted Cinematic Foley" index="48"/>
+		<bit name="Hud" index="49"/>
+		<bit name="Game Event" index="50"/>
+		<bit name="Ui" index="51"/>
+		<bit name="Test" index="52"/>
+		<bit name="Multilingual Test" index="53"/>
+		<bit name="Ambient Nature Details" index="54"/>
+		<bit name="Ambient Machinery Details" index="55"/>
+		<bit name="Inside Surround Tail" index="56"/>
+		<bit name="Outside Surround Tail" index="57"/>
+		<bit name="Vehicle Detonation" index="58"/>
+		<bit name="Ambient Detonation" index="59"/>
+		<bit name="First Person Inside" index="60"/>
+		<bit name="First Person Outside" index="61"/>
+		<bit name="First Person Anywhere" index="62"/>
+		<bit name="Ui Pda" index="63"/>
+	</bitfield16>
+	<int16 name="Unknown4" visible="true" offset="0x26"/>
+	<reflexive name="Tracks" visible="true" offset="0x28" entrySize="0xA0">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<uint32 name="Flags" visible="true" offset="0x4"/>
+		<float32 name="Gain" visible="true" offset="0x8"/>
+		<float32 name="Fade In Duration" visible="true" offset="0xC"/>
+		<uint32 name="Unknown1" visible="true" offset="0x10"/>
+		<float32 name="Fade Out Duration" visible="true" offset="0x14"/>
+		<int16 name="Unknown2" visible="true" offset="0x18"/>
+		<int16 name="Unknown3" visible="true" offset="0x1A"/>
+		<tagref name="In" visible="true" offset="0x1C"/>
+		<tagref name="Loop" visible="true" offset="0x2C"/>
+		<tagref name="Out" visible="true" offset="0x3C"/>
+		<tagref name="Alternate Loop" visible="true" offset="0x4C"/>
+		<tagref name="Alternate Out" visible="true" offset="0x5C"/>
+		<enum16 name="Output Effect" visible="true" offset="0x6C">
+			<option name="None" value="0x0"/>
+			<option name="Output Front Speakers" value="0x1"/>
+			<option name="Output Rear Speakers" value="0x2"/>
+			<option name="Output Center Speakers" value="0x3"/>
+		</enum16>
+		<int16 name="Unknown4" visible="true" offset="0x6E"/>
+		<tagref name="Alternate Transition In" visible="true" offset="0x70"/>
+		<tagref name="Alternate Transition Out" visible="true" offset="0x80"/>
+		<float32 name="Alternate Crossfade Duration" visible="true" offset="0x90"/>
+		<float32 name="Unknown5" visible="true" offset="0x94"/>
+		<float32 name="Alternate Fade Out Duration" visible="true" offset="0x98"/>
+		<float32 name="Unknown6" visible="true" offset="0x9C"/>
+	</reflexive>
+	<reflexive name="Detail Sounds" visible="true" offset="0x34" entrySize="0x3C">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<tagref name="Sound" visible="true" offset="0x4"/>
+		<float32 name="Random Period Bounds Min" visible="true" offset="0x14"/>
+		<float32 name="Random Period Bounds Max" visible="true" offset="0x18"/>
+		<float32 name="Unknown" visible="true" offset="0x1C"/>
+		<uint32 name="Flags" visible="true" offset="0x20"/>
+		<degree name="Yaw Bounds Min" visible="true" offset="0x24"/>
+		<degree name="Yaw Bounds Max" visible="true" offset="0x28"/>
+		<degree name="Pitch Bounds Min" visible="true" offset="0x2C"/>
+		<degree name="Pitch Bounds Max" visible="true" offset="0x30"/>
+		<float32 name="Distance Bounds Min" visible="true" offset="0x34"/>
+		<float32 name="Distance Bounds Max" visible="true" offset="0x38"/>
+	</reflexive>
+</plugin>

@@ -1,0 +1,1167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x3AC">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<int32 name="Bsp Checksum" visible="true" offset="0x0"/>
+	<bitfield16 name="Flags" visible="true" offset="0x4">
+		<bit name="Has Instance Groups" index="0"/>
+		<bit name="Surface To Triangle Mapping Remapped" index="1"/>
+		<bit name="External References Converted To Io" index="2"/>
+		<bit name="Structure Mopp Needs Rebuilt" index="3"/>
+		<bit name="Structure Prefab Materials Need Postprocessing" index="4"/>
+		<bit name="Serialized Havok Data Converted To Target Platform" index="5"/>
+	</bitfield16>
+	<bitfield16 name="Content Policy Flags" visible="true" offset="0x6">
+		<bit name="Has Working Pathfinding" index="0"/>
+		<bit name="Convex Decomposition Enabled" index="1"/>
+	</bitfield16>
+	<bitfield16 name="Failed Content Policy Flags" visible="true" offset="0x8">
+		<bit name="Has Working Pathfinding" index="0"/>
+		<bit name="Convex Decomposition Enabled" index="1"/>
+	</bitfield16>
+	<uint8 name="Unused1 Padding 0" visible="false" offset="0xA"/>
+	<uint8 name="Unused1 Padding 1" visible="false" offset="0xB"/>
+	<uint32 name="Unknown3" visible="true" offset="0xC"/>
+	<reflexive name="Seam Identifiers" visible="true" offset="0x10" entrySize="0x28">
+		<int32 name="Seam IDs 0" visible="true" offset="0x0"/>
+		<int32 name="Seam IDs 1" visible="true" offset="0x4"/>
+		<int32 name="Seam IDs 2" visible="true" offset="0x8"/>
+		<int32 name="Seam IDs 3" visible="true" offset="0xC"/>
+		<reflexive name="Edge Mapping" visible="true" offset="0x10" entrySize="0x4">
+			<int32 name="Structure Edge Index" visible="true" offset="0x0"/>
+		</reflexive>
+		<reflexive name="Cluster Mapping" visible="true" offset="0x1C" entrySize="0x10">
+			<int32 name="Cluster Index" visible="true" offset="0x0"/>
+			<vector3 name="Cluster Center" visible="true" offset="0x4"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Unknown Raw7ths" visible="true" offset="0x1C" entrySize="0x4">
+		<int32 name="Seam Index" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Collision Materials" visible="true" offset="0x28" entrySize="0x18">
+		<tagref name="Render Method" visible="true" offset="0x0"/>
+		<int16 name="Runtime Global Material Index" visible="true" offset="0x10"/>
+		<int16 name="Conveyor Surface Index" visible="true" offset="0x12"/>
+		<int16 name="Seam Mapping Index" visible="true" offset="0x14"/>
+		<bitfield16 name="Flags" visible="true" offset="0x16">
+			<bit name="Is Seam" index="0"/>
+		</bitfield16>
+	</reflexive>
+	<reflexive name="Leaves" visible="true" offset="0x34" entrySize="0x1">
+		<uint8 name="Cluster" visible="true" offset="0x0"/>
+	</reflexive>
+	<float32 name="World Bounds XMin" visible="true" offset="0x40"/>
+	<float32 name="World Bounds XMax" visible="true" offset="0x44"/>
+	<float32 name="World Bounds YMin" visible="true" offset="0x48"/>
+	<float32 name="World Bounds YMax" visible="true" offset="0x4C"/>
+	<float32 name="World Bounds ZMin" visible="true" offset="0x50"/>
+	<float32 name="World Bounds ZMax" visible="true" offset="0x54"/>
+	<reflexive name="Unknown Raw6ths" visible="true" offset="0x58" entrySize="0x8">
+		<int32 name="Unknown1 Start Index" visible="true" offset="0x0"/>
+		<int32 name="Unknown1 Entry Count" visible="true" offset="0x4"/>
+	</reflexive>
+	<reflexive name="Unknown Raw1sts" visible="true" offset="0x64" entrySize="0x4">
+		<int16 name="Cluster Index" visible="true" offset="0x0"/>
+		<int16 name="Unknown" visible="true" offset="0x2"/>
+	</reflexive>
+	<uint8 name="Unknown Unused1 Padding 0" visible="false" offset="0x70"/>
+	<uint8 name="Unknown Unused1 Padding 1" visible="false" offset="0x71"/>
+	<uint8 name="Unknown Unused1 Padding 2" visible="false" offset="0x72"/>
+	<uint8 name="Unknown Unused1 Padding 3" visible="false" offset="0x73"/>
+	<uint8 name="Unknown Unused1 Padding 4" visible="false" offset="0x74"/>
+	<uint8 name="Unknown Unused1 Padding 5" visible="false" offset="0x75"/>
+	<uint8 name="Unknown Unused1 Padding 6" visible="false" offset="0x76"/>
+	<uint8 name="Unknown Unused1 Padding 7" visible="false" offset="0x77"/>
+	<uint8 name="Unknown Unused1 Padding 8" visible="false" offset="0x78"/>
+	<uint8 name="Unknown Unused1 Padding 9" visible="false" offset="0x79"/>
+	<uint8 name="Unknown Unused1 Padding 10" visible="false" offset="0x7A"/>
+	<uint8 name="Unknown Unused1 Padding 11" visible="false" offset="0x7B"/>
+	<reflexive name="Cluster Portals" visible="true" offset="0x7C" entrySize="0x28">
+		<int16 name="Back Cluster" visible="true" offset="0x0"/>
+		<int16 name="Front Cluster" visible="true" offset="0x2"/>
+		<int32 name="Plane Index" visible="true" offset="0x4"/>
+		<vector3 name="Centroid" visible="true" offset="0x8"/>
+		<float32 name="Bounding Radius" visible="true" offset="0x14"/>
+		<enum32 name="Flags" visible="true" offset="0x18">
+			<option name="None" value="0x0"/>
+			<option name="Ai Cant Hear Through This Shit" value="0x1"/>
+			<option name="One Way" value="0x2"/>
+			<option name="Door" value="0x4"/>
+			<option name="No Way" value="0x8"/>
+			<option name="One Way Reversed" value="0x10"/>
+			<option name="No One Can Hear Through This" value="0x20"/>
+		</enum32>
+		<reflexive name="Vertices" visible="true" offset="0x1C" entrySize="0xC">
+			<vector3 name="vector3" visible="true" offset="0x0"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Unknown14" visible="true" offset="0x88" entrySize="0x78">
+		<ascii name="Name" visible="true" length="0x20" offset="0x0"/>
+		<uint32 name="Unknown" visible="true" offset="0x20"/>
+		<uint32 name="Unknown2" visible="true" offset="0x24"/>
+		<uint32 name="Unknown3" visible="true" offset="0x28"/>
+		<uint32 name="Unknown4" visible="true" offset="0x2C"/>
+		<uint32 name="Unknown5" visible="true" offset="0x30"/>
+		<uint32 name="Unknown6" visible="true" offset="0x34"/>
+		<uint32 name="Unknown7" visible="true" offset="0x38"/>
+		<uint32 name="Unknown8" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown9" visible="true" offset="0x40"/>
+		<uint32 name="Unknown10" visible="true" offset="0x44"/>
+		<uint32 name="Unknown11" visible="true" offset="0x48"/>
+		<uint32 name="Unknown12" visible="true" offset="0x4C"/>
+		<uint32 name="Unknown13" visible="true" offset="0x50"/>
+		<uint32 name="Unknown14" visible="true" offset="0x54"/>
+		<uint32 name="Unknown15" visible="true" offset="0x58"/>
+		<uint32 name="Unknown16" visible="true" offset="0x5C"/>
+		<uint32 name="Unknown17" visible="true" offset="0x60"/>
+		<uint32 name="Unknown18" visible="true" offset="0x64"/>
+		<uint32 name="Unknown19" visible="true" offset="0x68"/>
+		<uint32 name="Unknown20" visible="true" offset="0x6C"/>
+		<uint32 name="Unknown21" visible="true" offset="0x70"/>
+		<uint32 name="Unknown22" visible="true" offset="0x74"/>
+	</reflexive>
+	<reflexive name="Fog" visible="true" offset="0x94" entrySize="0x8">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<int16 name="Unknown" visible="true" offset="0x4"/>
+		<int16 name="Unknown2" visible="true" offset="0x6"/>
+	</reflexive>
+	<reflexive name="Camera Effects" visible="true" offset="0xA0" entrySize="0x30">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<tagref name="Effect" visible="true" offset="0x4"/>
+		<int8 name="Unknown" visible="true" offset="0x14"/>
+		<int8 name="Unknown2" visible="true" offset="0x15"/>
+		<int8 name="Unknown3" visible="true" offset="0x16"/>
+		<int8 name="Unknown4" visible="true" offset="0x17"/>
+		<uint32 name="Unknown5" visible="true" offset="0x18"/>
+		<uint32 name="Unknown6" visible="true" offset="0x1C"/>
+		<uint32 name="Unknown7" visible="true" offset="0x20"/>
+		<uint32 name="Unknown8" visible="true" offset="0x24"/>
+		<uint32 name="Unknown9" visible="true" offset="0x28"/>
+		<uint32 name="Unknown10" visible="true" offset="0x2C"/>
+	</reflexive>
+	<uint32 name="Unknown18" visible="true" offset="0xAC"/>
+	<uint32 name="Unknown19" visible="true" offset="0xB0"/>
+	<uint32 name="Unknown20" visible="true" offset="0xB4"/>
+	<reflexive name="Detail Objects" visible="true" offset="0xB8" entrySize="0x34">
+		<uint32 name="Unknown" visible="true" offset="0x0"/>
+		<uint32 name="Unknown2" visible="true" offset="0x4"/>
+		<uint32 name="Unknown3" visible="true" offset="0x8"/>
+		<uint32 name="Unknown4" visible="true" offset="0xC"/>
+		<uint32 name="Unknown5" visible="true" offset="0x10"/>
+		<uint32 name="Unknown6" visible="true" offset="0x14"/>
+		<uint32 name="Unknown7" visible="true" offset="0x18"/>
+		<reflexive name="Unknown8" visible="true" offset="0x1C" entrySize="0x20">
+			<reflexive name="Unknown" visible="true" offset="0x0" entrySize="0x10">
+				<uint32 name="Unknown" visible="true" offset="0x0"/>
+				<uint32 name="Unknown2" visible="true" offset="0x4"/>
+				<uint32 name="Unknown3" visible="true" offset="0x8"/>
+				<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			</reflexive>
+			<dataRef name="Unknown2" visible="true" offset="0xC"/>
+		</reflexive>
+		<uint32 name="Unknown9" visible="true" offset="0x28"/>
+		<uint32 name="Unknown10" visible="true" offset="0x2C"/>
+		<uint32 name="Unknown11" visible="true" offset="0x30"/>
+	</reflexive>
+	<reflexive name="Clusters" visible="true" offset="0xC4" entrySize="0xDC">
+		<float32 name="Bounds XMin" visible="true" offset="0x0"/>
+		<float32 name="Bounds XMax" visible="true" offset="0x4"/>
+		<float32 name="Bounds YMin" visible="true" offset="0x8"/>
+		<float32 name="Bounds YMax" visible="true" offset="0xC"/>
+		<float32 name="Bounds ZMin" visible="true" offset="0x10"/>
+		<float32 name="Bounds ZMax" visible="true" offset="0x14"/>
+		<int8 name="Unknown" visible="true" offset="0x18"/>
+		<int8 name="Scenario Sky Index" visible="true" offset="0x19"/>
+		<int8 name="Camera Effect Index" visible="true" offset="0x1A"/>
+		<int8 name="Unknown2" visible="true" offset="0x1B"/>
+		<int16 name="Background Sound Environment Index" visible="true" offset="0x1C"/>
+		<int16 name="Sound Clusters AIndex" visible="true" offset="0x1E"/>
+		<int16 name="Unknown3" visible="true" offset="0x20"/>
+		<int16 name="Unknown4" visible="true" offset="0x22"/>
+		<int16 name="Unknown5" visible="true" offset="0x24"/>
+		<int16 name="Unknown6" visible="true" offset="0x26"/>
+		<int16 name="Unknown7" visible="true" offset="0x28"/>
+		<int16 name="Runtime Decal Start Index" visible="true" offset="0x2A"/>
+		<int16 name="Runtime Decal Entry Count" visible="true" offset="0x2C"/>
+		<int16 name="Flags" visible="true" offset="0x2E"/>
+		<uint32 name="Unknown8" visible="true" offset="0x30"/>
+		<uint32 name="Unknown9" visible="true" offset="0x34"/>
+		<uint32 name="Unknown10" visible="true" offset="0x38"/>
+		<reflexive name="Portals" visible="true" offset="0x3C" entrySize="0x2">
+			<int16 name="Portal Index" visible="true" offset="0x0"/>
+		</reflexive>
+		<int32 name="Unknown11" visible="true" offset="0x48"/>
+		<int16 name="Size" visible="true" offset="0x4C"/>
+		<int16 name="Count" visible="true" offset="0x4E"/>
+		<int32 name="Offset" visible="true" offset="0x50"/>
+		<int32 name="Unknown12" visible="true" offset="0x54"/>
+		<uint32 name="Unknown13" visible="true" offset="0x58"/>
+		<uint32 name="Unknown14" visible="true" offset="0x5C"/>
+		<tagref name="Bsp" visible="true" offset="0x60"/>
+		<int32 name="Cluster Index" visible="true" offset="0x70"/>
+		<int32 name="Unknown15" visible="true" offset="0x74"/>
+		<int16 name="Size2" visible="true" offset="0x78"/>
+		<int16 name="Count2" visible="true" offset="0x7A"/>
+		<int32 name="Offset2" visible="true" offset="0x7C"/>
+		<int32 name="Unknown16" visible="true" offset="0x80"/>
+		<uint32 name="Unknown17" visible="true" offset="0x84"/>
+		<uint32 name="Unknown18" visible="true" offset="0x88"/>
+		<uint32 name="Unknown19" visible="true" offset="0x8C"/>
+		<reflexive name="Collision Mopp Codes" visible="true" offset="0x90" entrySize="0x40">
+			<int32 name="Unused1" visible="true" offset="0x0"/>
+			<int16 name="Size" visible="true" offset="0x4"/>
+			<int16 name="Count" visible="true" offset="0x6"/>
+			<int32 name="Address" visible="true" offset="0x8"/>
+			<int32 name="Unused2" visible="true" offset="0xC"/>
+			<float name="Offset I" visible="true" offset="0x10"/>
+			<float name="Offset J" visible="true" offset="0x14"/>
+			<float name="Offset K" visible="true" offset="0x18"/>
+			<float name="Offset W" visible="true" offset="0x1C"/>
+			<int32 name="Unused3" visible="true" offset="0x20"/>
+			<int32 name="Data Size" visible="true" offset="0x24"/>
+			<int32 name="Data Capacity And Flags" visible="true" offset="0x28"/>
+			<int8 name="Data Build Type" visible="true" offset="0x2C"/>
+			<int8 name="Unused4" visible="true" offset="0x2D"/>
+			<int16 name="Unused5" visible="true" offset="0x2E"/>
+			<reflexive name="Data" visible="true" offset="0x30" entrySize="0x1">
+				<uint8 name="uint8" visible="true" offset="0x0"/>
+			</reflexive>
+			<int8 name="Mopp Build Type" visible="true" offset="0x3C"/>
+			<uint8 name="Unused6" visible="true" offset="0x3D"/>
+			<int16 name="Unused7" visible="true" offset="0x3E"/>
+		</reflexive>
+		<int16 name="Mesh Index" visible="true" offset="0x9C"/>
+		<int16 name="Unknown20" visible="true" offset="0x9E"/>
+		<reflexive name="Seams" visible="true" offset="0xA0" entrySize="0x1">
+			<int8 name="Seam Index" visible="true" offset="0x0"/>
+		</reflexive>
+		<reflexive name="Decorator Grids" visible="true" offset="0xAC" entrySize="0x34">
+			<int16 name="Amount" visible="true" offset="0x0"/>
+			<int16 name="Decorator Index_ HO" visible="true" offset="0x2"/>
+			<int16 name="Decorator Index Scattering_ HO" visible="true" offset="0x4"/>
+			<uint8 name="Unused Padding 0" visible="false" offset="0x6"/>
+			<uint8 name="Unused Padding 1" visible="false" offset="0x7"/>
+			<int32 name="Unknown3" visible="true" offset="0x8"/>
+			<vector3 name="Position" visible="true" offset="0xC"/>
+			<float32 name="Radius" visible="true" offset="0x18"/>
+			<vector3 name="Grid Size" visible="true" offset="0x1C"/>
+			<vector3 name="Bounding Sphere Offset" visible="true" offset="0x28"/>
+		</reflexive>
+		<uint32 name="Unknown21" visible="true" offset="0xB8"/>
+		<uint32 name="Unknown22" visible="true" offset="0xBC"/>
+		<uint32 name="Unknown23" visible="true" offset="0xC0"/>
+		<reflexive name="Object Placements" visible="true" offset="0xC4" entrySize="0x4">
+			<int16 name="Unknown" visible="true" offset="0x0"/>
+			<int16 name="Unknown2" visible="true" offset="0x2"/>
+		</reflexive>
+		<reflexive name="Unknown25" visible="true" offset="0xD0" entrySize="0x10">
+			<float32 name="Unknown" visible="true" offset="0x0"/>
+			<float32 name="Unknown2" visible="true" offset="0x4"/>
+			<float32 name="Unknown3" visible="true" offset="0x8"/>
+			<int16 name="Unknown4" visible="true" offset="0xC"/>
+			<int16 name="Unknown5" visible="true" offset="0xE"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Materials" visible="true" offset="0xD0" entrySize="0x24">
+		<tagref name="Render Method" visible="true" offset="0x0"/>
+		<reflexive name="Properties" visible="true" offset="0x10" entrySize="0xC">
+			<int32 name="Type" visible="true" offset="0x0"/>
+			<int32 name="Int Value" visible="true" offset="0x4"/>
+			<float32 name="Real Value" visible="true" offset="0x8"/>
+		</reflexive>
+		<int32 name="Unknown" visible="true" offset="0x1C"/>
+		<int8 name="Breakable Surface Index" visible="true" offset="0x20"/>
+		<int8 name="Unknown2" visible="true" offset="0x21"/>
+		<int8 name="Unknown3" visible="true" offset="0x22"/>
+		<int8 name="Unknown4" visible="true" offset="0x23"/>
+	</reflexive>
+	<reflexive name="Sky Owner Cluster" visible="true" offset="0xDC" entrySize="0x2">
+		<int16 name="int16" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Conveyor Surfaces" visible="true" offset="0xE8" entrySize="0x18">
+		<float name="UI" visible="true" offset="0x0"/>
+		<float name="UJ" visible="true" offset="0x4"/>
+		<float name="UK" visible="true" offset="0x8"/>
+		<float name="VI" visible="true" offset="0xC"/>
+		<float name="VJ" visible="true" offset="0x10"/>
+		<float name="VK" visible="true" offset="0x14"/>
+	</reflexive>
+	<reflexive name="Breakable Surfaces" visible="true" offset="0xF4" entrySize="0x20">
+		<uint32 name="Unknown1" visible="true" offset="0x0"/>
+		<uint32 name="Unknown2" visible="true" offset="0x4"/>
+		<uint32 name="Unknown3" visible="true" offset="0x8"/>
+		<uint32 name="Unknown4" visible="true" offset="0xC"/>
+		<uint32 name="Unknown5" visible="true" offset="0x10"/>
+		<uint32 name="Unknown6" visible="true" offset="0x14"/>
+		<uint32 name="Unknown7" visible="true" offset="0x18"/>
+		<uint32 name="Unknown8" visible="true" offset="0x1C"/>
+	</reflexive>
+	<reflexive name="Pathfinding Data" visible="true" offset="0x100" entrySize="0xA0">
+		<reflexive name="Sectors" visible="true" offset="0x0" entrySize="0x8">
+			<bitfield16 name="Pathfinding Sector Flags" visible="true" offset="0x0">
+				<bit name="Sector Walkable" index="0"/>
+				<bit name="Sector Breakable" index="1"/>
+				<bit name="Sector Mobile" index="2"/>
+				<bit name="Sector Bsp Source" index="3"/>
+				<bit name="Floor" index="4"/>
+				<bit name="Ceiling" index="5"/>
+				<bit name="Wall North" index="6"/>
+				<bit name="Wall South" index="7"/>
+				<bit name="Wall East" index="8"/>
+				<bit name="Wall West" index="9"/>
+				<bit name="Crouchable" index="10"/>
+				<bit name="Aligned" index="11"/>
+				<bit name="Sector Step" index="12"/>
+				<bit name="Sector Interior" index="13"/>
+				<bit name="Bit14" index="14"/>
+				<bit name="Bit15" index="15"/>
+			</bitfield16>
+			<int16 name="Hint Index" visible="true" offset="0x2"/>
+			<int32 name="First Link" visible="true" offset="0x4"/>
+		</reflexive>
+		<reflexive name="Links" visible="true" offset="0xC" entrySize="0x10">
+			<int16 name="Vertex1" visible="true" offset="0x0"/>
+			<int16 name="Vertex2" visible="true" offset="0x2"/>
+			<bitfield16 name="Link Flags" visible="true" offset="0x4">
+				<bit name="Sector Link From Collision Edge" index="0"/>
+				<bit name="Sector Intersection Link" index="1"/>
+				<bit name="Sector Link Bsp2d Creation Error" index="2"/>
+				<bit name="Sector Link Topology Error" index="3"/>
+				<bit name="Sector Link Chain Error" index="4"/>
+				<bit name="Sector Link Both Sectors Walkable" index="5"/>
+				<bit name="Sector Link Magic Hanging Link" index="6"/>
+				<bit name="Sector Link Threshold" index="7"/>
+				<bit name="Sector Link Crouchable" index="8"/>
+				<bit name="Sector Link Wall Base" index="9"/>
+				<bit name="Sector Link Ledge" index="10"/>
+				<bit name="Sector Link Leanable" index="11"/>
+				<bit name="Sector Link Start Corner" index="12"/>
+				<bit name="Sector Link End Corner" index="13"/>
+				<bit name="Bit14" index="14"/>
+				<bit name="Bit15" index="15"/>
+			</bitfield16>
+			<int16 name="Hint Index" visible="true" offset="0x6"/>
+			<int16 name="Forward Link" visible="true" offset="0x8"/>
+			<int16 name="Reverse Link" visible="true" offset="0xA"/>
+			<int16 name="Left Sector" visible="true" offset="0xC"/>
+			<int16 name="Right Sector" visible="true" offset="0xE"/>
+		</reflexive>
+		<reflexive name="References" visible="true" offset="0x18" entrySize="0x4">
+			<int32 name="Node Or Sector Index" visible="true" offset="0x0"/>
+		</reflexive>
+		<reflexive name="Bsp2d Nodes" visible="true" offset="0x24" entrySize="0x14">
+			<float name="Plane I" visible="true" offset="0x0"/>
+			<float name="Plane J" visible="true" offset="0x4"/>
+			<float name="Plane Distance" visible="true" offset="0x8"/>
+			<int32 name="Left Child" visible="true" offset="0xC"/>
+			<int32 name="Right Child" visible="true" offset="0x10"/>
+		</reflexive>
+		<reflexive name="Vertices" visible="true" offset="0x30" entrySize="0xC">
+			<vector3 name="Position" visible="true" offset="0x0"/>
+		</reflexive>
+		<reflexive name="Object References" visible="true" offset="0x3C" entrySize="0x18">
+			<int32 name="Unknown" visible="true" offset="0x0"/>
+			<reflexive name="Unknown2" visible="true" offset="0x4" entrySize="0x18">
+				<int32 name="Unknown1" visible="true" offset="0x0"/>
+				<int32 name="Unknown2" visible="true" offset="0x4"/>
+				<reflexive name="Unknown3" visible="true" offset="0x8" entrySize="0x4">
+					<int32 name="Unknown" visible="true" offset="0x0"/>
+				</reflexive>
+				<int32 name="Unknown4" visible="true" offset="0x14"/>
+			</reflexive>
+			<int32 name="Unknown3" visible="true" offset="0x10"/>
+			<int16 name="Unknown4" visible="true" offset="0x14"/>
+			<int16 name="Unknown5" visible="true" offset="0x16"/>
+		</reflexive>
+		<reflexive name="Pathfinding Hints" visible="true" offset="0x48" entrySize="0x14">
+			<enum16 name="Hint Type" visible="true" offset="0x0">
+				<option name="Jump Link" value="0x0"/>
+				<option name="Climb Link" value="0x1"/>
+				<option name="Vault Link" value="0x2"/>
+				<option name="Mount Link" value="0x3"/>
+				<option name="Hoist Link" value="0x4"/>
+				<option name="Wall Jump Link" value="0x5"/>
+			</enum16>
+			<int16 name="Squad Group Filter" visible="true" offset="0x2"/>
+			<int32 name="Hint Data0" visible="true" offset="0x4"/>
+			<int16 name="Hint Data1" visible="true" offset="0x8"/>
+			<uint8 name="Hint Data3" visible="true" offset="0xA"/>
+			<uint8 name="Unused" visible="true" offset="0xB"/>
+			<bitfield16 name="Flags" visible="true" offset="0xC">
+				<bit name="Bidirectional" index="0"/>
+				<bit name="Closed" index="1"/>
+			</bitfield16>
+			<int16 name="Geometry Index" visible="true" offset="0xE"/>
+			<int16 name="Force Jump Hoist Height" visible="true" offset="0x10"/>
+			<bitfield16 name="Control Flags" visible="true" offset="0x12">
+				<bit name="Magic Lift" index="0"/>
+				<bit name="Vehicle Only" index="1"/>
+				<bit name="Railing" index="2"/>
+				<bit name="Vault" index="3"/>
+				<bit name="Down" index="4"/>
+				<bit name="Phase" index="5"/>
+				<bit name="Stop Autodown" index="6"/>
+				<bit name="Force Walk" index="7"/>
+			</bitfield16>
+		</reflexive>
+		<reflexive name="Instanced Geometry References" visible="true" offset="0x54" entrySize="0x4">
+			<int16 name="Pathfinding Object Index" visible="true" offset="0x0"/>
+			<int16 name="Unknown" visible="true" offset="0x2"/>
+		</reflexive>
+		<int32 name="Structure Checksum" visible="true" offset="0x60"/>
+		<uint32 name="Unknown" visible="true" offset="0x64"/>
+		<uint32 name="Unknown2" visible="true" offset="0x68"/>
+		<uint32 name="Unknown3" visible="true" offset="0x6C"/>
+		<reflexive name="Unknown1s" visible="true" offset="0x70" entrySize="0x4">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+		</reflexive>
+		<reflexive name="Unknown2s" visible="true" offset="0x7C" entrySize="0xC">
+			<reflexive name="Unknown" visible="true" offset="0x0" entrySize="0x4">
+				<int32 name="Unknown" visible="true" offset="0x0"/>
+			</reflexive>
+		</reflexive>
+		<reflexive name="Unknown3s" visible="true" offset="0x88" entrySize="0x14">
+			<int16 name="Unknown1" visible="true" offset="0x0"/>
+			<int16 name="Unknown2" visible="true" offset="0x2"/>
+			<float32 name="Unknown3" visible="true" offset="0x4"/>
+			<reflexive name="Unknown4" visible="true" offset="0x8" entrySize="0x4">
+				<int16 name="Unknown" visible="true" offset="0x0"/>
+				<int16 name="Unknown2" visible="true" offset="0x2"/>
+			</reflexive>
+		</reflexive>
+		<reflexive name="Unknown4s" visible="true" offset="0x94" entrySize="0x4">
+			<int16 name="Unknown" visible="true" offset="0x0"/>
+			<int16 name="Unknown2" visible="true" offset="0x2"/>
+		</reflexive>
+	</reflexive>
+	<uint32 name="Unknown30" visible="true" offset="0x10C"/>
+	<uint32 name="Unknown31" visible="true" offset="0x110"/>
+	<uint32 name="Unknown32" visible="true" offset="0x114"/>
+	<reflexive name="Background Sound Environment Palette" visible="true" offset="0x118" entrySize="0x58">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<tagref name="Sound Environment" visible="true" offset="0x4"/>
+		<float32 name="Cutoff Range Min" visible="true" offset="0x14"/>
+		<float32 name="Cutoff Range Max" visible="true" offset="0x18"/>
+		<float32 name="Interpolation Speed" visible="true" offset="0x1C"/>
+		<tagref name="Background Sound" visible="true" offset="0x20"/>
+		<tagref name="Inside Cluster Sound" visible="true" offset="0x30"/>
+		<float32 name="Cutoff Distance2" visible="true" offset="0x40"/>
+		<bitfield32 name="Scale Flags" visible="true" offset="0x44">
+			<bit name="Bit0" index="0"/>
+			<bit name="Bit1" index="1"/>
+			<bit name="Bit2" index="2"/>
+			<bit name="Bit3" index="3"/>
+			<bit name="Bit4" index="4"/>
+			<bit name="Bit5" index="5"/>
+			<bit name="Bit6" index="6"/>
+			<bit name="Bit7" index="7"/>
+			<bit name="Bit8" index="8"/>
+			<bit name="Bit9" index="9"/>
+			<bit name="Bit10" index="10"/>
+			<bit name="Bit11" index="11"/>
+			<bit name="Bit12" index="12"/>
+			<bit name="Bit13" index="13"/>
+			<bit name="Bit14" index="14"/>
+			<bit name="Bit15" index="15"/>
+			<bit name="Bit16" index="16"/>
+			<bit name="Bit17" index="17"/>
+			<bit name="Bit18" index="18"/>
+			<bit name="Bit19" index="19"/>
+			<bit name="Bit20" index="20"/>
+			<bit name="Bit21" index="21"/>
+			<bit name="Bit22" index="22"/>
+			<bit name="Bit23" index="23"/>
+			<bit name="Bit24" index="24"/>
+			<bit name="Bit25" index="25"/>
+			<bit name="Bit26" index="26"/>
+			<bit name="Bit27" index="27"/>
+			<bit name="Bit28" index="28"/>
+			<bit name="Bit29" index="29"/>
+			<bit name="Bit30" index="30"/>
+			<bit name="Bit31" index="31"/>
+		</bitfield32>
+		<float32 name="Interior Scale" visible="true" offset="0x48"/>
+		<float32 name="Portal Scale" visible="true" offset="0x4C"/>
+		<float32 name="Exterior Scale" visible="true" offset="0x50"/>
+		<float32 name="Interpolation Speed2" visible="true" offset="0x54"/>
+	</reflexive>
+	<uint32 name="Unknown33" visible="true" offset="0x124"/>
+	<uint32 name="Unknown34" visible="true" offset="0x128"/>
+	<uint32 name="Unknown35" visible="true" offset="0x12C"/>
+	<uint32 name="Unknown36" visible="true" offset="0x130"/>
+	<uint32 name="Unknown37" visible="true" offset="0x134"/>
+	<uint32 name="Unknown38" visible="true" offset="0x138"/>
+	<uint32 name="Unknown39" visible="true" offset="0x13C"/>
+	<uint32 name="Unknown40" visible="true" offset="0x140"/>
+	<uint32 name="Unknown41" visible="true" offset="0x144"/>
+	<uint32 name="Unknown42" visible="true" offset="0x148"/>
+	<uint32 name="Unknown43" visible="true" offset="0x14C"/>
+	<reflexive name="Markers" visible="true" offset="0x150" entrySize="0x3C">
+		<ascii name="Name" visible="true" length="0x20" offset="0x0"/>
+		<float name="Rotation I" visible="true" offset="0x20"/>
+		<float name="Rotation J" visible="true" offset="0x24"/>
+		<float name="Rotation K" visible="true" offset="0x28"/>
+		<float name="Rotation W" visible="true" offset="0x2C"/>
+		<vector3 name="Position" visible="true" offset="0x30"/>
+	</reflexive>
+	<reflexive name="Lights" visible="true" offset="0x15C" entrySize="0x10">
+		<tagref name="tagref" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Unknown44" visible="true" offset="0x168" entrySize="0x2">
+		<int16 name="Unknown" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Runtime Decals" visible="true" offset="0x174" entrySize="0x24">
+		<int16 name="Palette Index" visible="true" offset="0x0"/>
+		<int8 name="Yaw" visible="true" offset="0x2"/>
+		<int8 name="Pitch" visible="true" offset="0x3"/>
+		<float name="Rotation I" visible="true" offset="0x4"/>
+		<float name="Rotation J" visible="true" offset="0x8"/>
+		<float name="Rotation K" visible="true" offset="0xC"/>
+		<float name="Rotation W" visible="true" offset="0x10"/>
+		<vector3 name="Position" visible="true" offset="0x14"/>
+		<float32 name="Scale" visible="true" offset="0x20"/>
+	</reflexive>
+	<reflexive name="Environment Object Palette" visible="true" offset="0x180" entrySize="0x24">
+		<tagref name="Definition" visible="true" offset="0x0"/>
+		<tagref name="Model" visible="true" offset="0x10"/>
+		<bitfield32 name="Object Type" visible="true" offset="0x20">
+			<bit name="Biped" index="0"/>
+			<bit name="Vehicle" index="1"/>
+			<bit name="Weapon" index="2"/>
+			<bit name="Equipment" index="3"/>
+			<bit name="Arg Device" index="4"/>
+			<bit name="Terminal" index="5"/>
+			<bit name="Projectile" index="6"/>
+			<bit name="Scenery" index="7"/>
+			<bit name="Machine" index="8"/>
+			<bit name="Control" index="9"/>
+			<bit name="Sound Scenery" index="10"/>
+			<bit name="Crate" index="11"/>
+			<bit name="Creature" index="12"/>
+			<bit name="Giant" index="13"/>
+			<bit name="Effect Scenery" index="14"/>
+		</bitfield32>
+	</reflexive>
+	<reflexive name="Environment Objects" visible="true" offset="0x18C" entrySize="0x6C">
+		<ascii name="Name" visible="true" length="0x20" offset="0x0"/>
+		<float name="Rotation I" visible="true" offset="0x20"/>
+		<float name="Rotation J" visible="true" offset="0x24"/>
+		<float name="Rotation K" visible="true" offset="0x28"/>
+		<float name="Rotation W" visible="true" offset="0x2C"/>
+		<vector3 name="Position" visible="true" offset="0x30"/>
+		<float32 name="Scale" visible="true" offset="0x3C"/>
+		<int16 name="Palette Index" visible="true" offset="0x40"/>
+		<int16 name="Unknown" visible="true" offset="0x42"/>
+		<int32 name="Unique Id" visible="true" offset="0x44"/>
+		<ascii name="Scenario Object Name" visible="true" length="0x20" offset="0x48"/>
+		<uint32 name="Unknown2" visible="true" offset="0x68"/>
+	</reflexive>
+	<uint32 name="Unknown45" visible="true" offset="0x198"/>
+	<uint32 name="Unknown46" visible="true" offset="0x19C"/>
+	<uint32 name="Unknown47" visible="true" offset="0x1A0"/>
+	<uint32 name="Unknown48" visible="true" offset="0x1A4"/>
+	<uint32 name="Unknown49" visible="true" offset="0x1A8"/>
+	<uint32 name="Unknown50" visible="true" offset="0x1AC"/>
+	<uint32 name="Unknown51" visible="true" offset="0x1B0"/>
+	<uint32 name="Unknown52" visible="true" offset="0x1B4"/>
+	<uint32 name="Unknown53" visible="true" offset="0x1B8"/>
+	<uint32 name="Unknown54" visible="true" offset="0x1BC"/>
+	<reflexive name="Instanced Geometry Instances" visible="true" offset="0x1C0" entrySize="0x74">
+		<float32 name="Scale" visible="true" offset="0x0"/>
+		<float name="Matrix M11" visible="true" offset="0x4"/>
+		<float name="Matrix M12" visible="true" offset="0x8"/>
+		<float name="Matrix M13" visible="true" offset="0xC"/>
+		<float name="Matrix M21" visible="true" offset="0x10"/>
+		<float name="Matrix M22" visible="true" offset="0x14"/>
+		<float name="Matrix M23" visible="true" offset="0x18"/>
+		<float name="Matrix M31" visible="true" offset="0x1C"/>
+		<float name="Matrix M32" visible="true" offset="0x20"/>
+		<float name="Matrix M33" visible="true" offset="0x24"/>
+		<float name="Matrix M41" visible="true" offset="0x28"/>
+		<float name="Matrix M42" visible="true" offset="0x2C"/>
+		<float name="Matrix M43" visible="true" offset="0x30"/>
+		<int16 name="Mesh Index" visible="true" offset="0x34"/>
+		<uint16 name="Flags" visible="true" offset="0x36"/>
+		<int16 name="Unknown Yo Index" visible="true" offset="0x38"/>
+		<int16 name="Unknown" visible="true" offset="0x3A"/>
+		<uint32 name="Unknown2" visible="true" offset="0x3C"/>
+		<vector3 name="Bounding Sphere Offset" visible="true" offset="0x40"/>
+		<float32 name="Bounding Sphere Radius Bounds Min" visible="true" offset="0x4C"/>
+		<float32 name="Bounding Sphere Radius Bounds Max" visible="true" offset="0x50"/>
+		<stringId name="Name" visible="true" offset="0x54"/>
+		<int16 name="Pathfinding Policy" visible="true" offset="0x58"/>
+		<int16 name="Lightmapping Policy" visible="true" offset="0x5A"/>
+		<uint32 name="Unknown3" visible="true" offset="0x5C"/>
+		<reflexive name="Collision Definitions" visible="true" offset="0x60" entrySize="0x80">
+			<int32 name="Unknown" visible="true" offset="0x0"/>
+			<int16 name="Size" visible="true" offset="0x4"/>
+			<int16 name="Count" visible="true" offset="0x6"/>
+			<int32 name="Address" visible="true" offset="0x8"/>
+			<int32 name="Unknown2" visible="true" offset="0xC"/>
+			<uint32 name="Unknown3" visible="true" offset="0x10"/>
+			<uint32 name="Unknown4" visible="true" offset="0x14"/>
+			<uint32 name="Unknown5" visible="true" offset="0x18"/>
+			<uint32 name="Unknown6" visible="true" offset="0x1C"/>
+			<float32 name="Unknown7" visible="true" offset="0x20"/>
+			<float32 name="Unknown8" visible="true" offset="0x24"/>
+			<float32 name="Unknown9" visible="true" offset="0x28"/>
+			<uint32 name="Unknown10" visible="true" offset="0x2C"/>
+			<float32 name="Unknown11" visible="true" offset="0x30"/>
+			<float32 name="Unknown12" visible="true" offset="0x34"/>
+			<float32 name="Unknown13" visible="true" offset="0x38"/>
+			<uint32 name="Unknown14" visible="true" offset="0x3C"/>
+			<int32 name="Unknown15" visible="true" offset="0x40"/>
+			<uint32 name="Unknown16" visible="true" offset="0x44"/>
+			<uint32 name="Unknown17" visible="true" offset="0x48"/>
+			<int8 name="Bsp Index" visible="true" offset="0x4C"/>
+			<int8 name="Unknown18" visible="true" offset="0x4D"/>
+			<int16 name="Instanced Geometry Index" visible="true" offset="0x4E"/>
+			<float32 name="Unknown19" visible="true" offset="0x50"/>
+			<uint32 name="Unknown20" visible="true" offset="0x54"/>
+			<uint32 name="Unknown21" visible="true" offset="0x58"/>
+			<uint32 name="Unknown22" visible="true" offset="0x5C"/>
+			<uint32 name="Unknown23" visible="true" offset="0x60"/>
+			<int16 name="Size2" visible="true" offset="0x64"/>
+			<int16 name="Count2" visible="true" offset="0x66"/>
+			<int32 name="Address2" visible="true" offset="0x68"/>
+			<int32 name="Unknown24" visible="true" offset="0x6C"/>
+			<uint32 name="Unknown25" visible="true" offset="0x70"/>
+			<uint32 name="Unknown26" visible="true" offset="0x74"/>
+			<uint32 name="Unknown27" visible="true" offset="0x78"/>
+			<float32 name="Unknown28" visible="true" offset="0x7C"/>
+		</reflexive>
+		<int16 name="Unknown4" visible="true" offset="0x6C"/>
+		<int16 name="Unknown5" visible="true" offset="0x6E"/>
+		<int16 name="Unknown6" visible="true" offset="0x70"/>
+		<int16 name="Unknown7" visible="true" offset="0x72"/>
+	</reflexive>
+	<reflexive name="Decorators" visible="true" offset="0x1CC" entrySize="0x10">
+		<tagref name="tagref" visible="true" offset="0x0"/>
+	</reflexive>
+	<bitfield32 name="Geometry: Runtime Flags" visible="true" offset="0x1D8">
+		<bit name="Processed" index="0"/>
+		<bit name="Available" index="1"/>
+		<bit name="Has Valid Budgets" index="2"/>
+		<bit name="Manual Resource Calibration" index="3"/>
+		<bit name="Keep Raw Geometry" index="4"/>
+		<bit name="Do Not Use Compressed Vertex Positions" index="5"/>
+		<bit name="Pca Animation Table Sorted" index="6"/>
+		<bit name="Has Dual Quat" index="7"/>
+	</bitfield32>
+	<reflexive name="Geometry: Meshes" visible="true" offset="0x1DC" entrySize="0x4C">
+		<reflexive name="Parts" visible="true" offset="0x0" entrySize="0x10">
+			<int16 name="Material Index" visible="true" offset="0x0"/>
+			<int16 name="Transparent Sorting Index" visible="true" offset="0x2"/>
+			<uint16 name="First Index" visible="true" offset="0x4"/>
+			<uint16 name="Index Count" visible="true" offset="0x6"/>
+			<int16 name="First Sub Part Index" visible="true" offset="0x8"/>
+			<int16 name="Sub Part Count" visible="true" offset="0xA"/>
+			<int8 name="Type" visible="true" offset="0xC"/>
+			<bitfield8 name="Flags" visible="true" offset="0xD">
+				<bit name="Is Water Surface" index="0"/>
+				<bit name="Per Vertex Lightmap Part" index="1"/>
+				<bit name="Render In ZPrepass" index="2"/>
+				<bit name="Can Be Rendered In Draw Bundles" index="3"/>
+				<bit name="Draw Cull Distance Medium" index="4"/>
+				<bit name="Draw Cull Distance Close" index="5"/>
+				<bit name="Draw Cull Rendering Shields" index="6"/>
+				<bit name="Draw Cull Rendering Active Camo" index="7"/>
+			</bitfield8>
+			<uint16 name="Vertex Count" visible="true" offset="0xE"/>
+		</reflexive>
+		<reflexive name="Sub Parts" visible="true" offset="0xC" entrySize="0x8">
+			<uint16 name="First Index" visible="true" offset="0x0"/>
+			<uint16 name="Index Count" visible="true" offset="0x2"/>
+			<int16 name="Part Index" visible="true" offset="0x4"/>
+			<uint16 name="Vertex Count" visible="true" offset="0x6"/>
+		</reflexive>
+		<uint16 name="Vertex Buffers 0" visible="true" offset="0x18"/>
+		<uint16 name="Vertex Buffers 1" visible="true" offset="0x1A"/>
+		<uint16 name="Vertex Buffers 2" visible="true" offset="0x1C"/>
+		<uint16 name="Vertex Buffers 3" visible="true" offset="0x1E"/>
+		<uint16 name="Vertex Buffers 4" visible="true" offset="0x20"/>
+		<uint16 name="Vertex Buffers 5" visible="true" offset="0x22"/>
+		<uint16 name="Vertex Buffers 6" visible="true" offset="0x24"/>
+		<uint16 name="Vertex Buffers 7" visible="true" offset="0x26"/>
+		<uint16 name="Index Buffers 0" visible="true" offset="0x28"/>
+		<uint16 name="Index Buffers 1" visible="true" offset="0x2A"/>
+		<bitfield8 name="Flags" visible="true" offset="0x2C">
+			<bit name="Vertex Colors" index="0"/>
+			<bit name="Unknown1" index="1"/>
+			<bit name="Unknown2" index="2"/>
+			<bit name="Unknown3" index="3"/>
+			<bit name="Unknown4" index="4"/>
+			<bit name="Unknown5" index="5"/>
+			<bit name="Unknown6" index="6"/>
+			<bit name="Unknown7" index="7"/>
+		</bitfield8>
+		<int8 name="Rigid Node Index" visible="true" offset="0x2D"/>
+		<enum8 name="Type" visible="true" offset="0x2E">
+			<option name="World" value="0x0"/>
+			<option name="Rigid" value="0x1"/>
+			<option name="Skinned" value="0x2"/>
+			<option name="Particle Model" value="0x3"/>
+			<option name="Flat World" value="0x4"/>
+			<option name="Flat Rigid" value="0x5"/>
+			<option name="Flat Skinned" value="0x6"/>
+			<option name="Screen" value="0x7"/>
+			<option name="Debug" value="0x8"/>
+			<option name="Transparent" value="0x9"/>
+			<option name="Particle" value="0xA"/>
+			<option name="Contrail" value="0xB"/>
+			<option name="Light Volume" value="0xC"/>
+			<option name="Simple Chud" value="0xD"/>
+			<option name="Fancy Chud" value="0xE"/>
+			<option name="Decorator" value="0xF"/>
+			<option name="Tiny Position" value="0x10"/>
+			<option name="Patchy Fog" value="0x11"/>
+			<option name="Water" value="0x12"/>
+			<option name="Ripple" value="0x13"/>
+			<option name="Implicit" value="0x14"/>
+			<option name="Beam" value="0x15"/>
+			<option name="Dual Quat" value="0x16"/>
+		</enum8>
+		<enum8 name="Prt Type" visible="true" offset="0x2F">
+			<option name="None" value="0x0"/>
+			<option name="Ambient" value="0x1"/>
+			<option name="Linear" value="0x2"/>
+			<option name="Quadratic" value="0x3"/>
+		</enum8>
+		<enum8 name="Index Buffer Type" visible="true" offset="0x30">
+			<option name="Point List" value="0x0"/>
+			<option name="Line List" value="0x1"/>
+			<option name="Line Strip" value="0x2"/>
+			<option name="Triangle List" value="0x3"/>
+			<option name="Triangle Fan" value="0x4"/>
+			<option name="Triangle Strip" value="0x5"/>
+		</enum8>
+		<uint8 name="Unused Padding 0" visible="false" offset="0x31"/>
+		<uint8 name="Unused Padding 1" visible="false" offset="0x32"/>
+		<uint8 name="Unused Padding 2" visible="false" offset="0x33"/>
+		<reflexive name="Instanced Geometry" visible="true" offset="0x34" entrySize="0x10">
+			<int16 name="Section1" visible="true" offset="0x0"/>
+			<int16 name="Section2" visible="true" offset="0x2"/>
+			<reflexive name="Contents" visible="true" offset="0x4" entrySize="0x2">
+				<int16 name="int16" visible="true" offset="0x0"/>
+			</reflexive>
+		</reflexive>
+		<reflexive name="Water" visible="true" offset="0x40" entrySize="0x2">
+			<int16 name="int16" visible="true" offset="0x0"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Geometry: Compression" visible="true" offset="0x1E8" entrySize="0x2C">
+		<bitfield16 name="Flags" visible="true" offset="0x0">
+			<bit name="Compressed Position" index="0"/>
+			<bit name="Compressed Texcoord" index="1"/>
+			<bit name="Compression Optimized" index="2"/>
+		</bitfield16>
+		<uint8 name="Padding Padding 0" visible="false" offset="0x2"/>
+		<uint8 name="Padding Padding 1" visible="false" offset="0x3"/>
+		<float32 name="XMin" visible="true" offset="0x4"/>
+		<float32 name="XMax" visible="true" offset="0x8"/>
+		<float32 name="YMin" visible="true" offset="0xC"/>
+		<float32 name="YMax" visible="true" offset="0x10"/>
+		<float32 name="ZMin" visible="true" offset="0x14"/>
+		<float32 name="ZMax" visible="true" offset="0x18"/>
+		<float32 name="UMin" visible="true" offset="0x1C"/>
+		<float32 name="UMax" visible="true" offset="0x20"/>
+		<float32 name="VMin" visible="true" offset="0x24"/>
+		<float32 name="VMax" visible="true" offset="0x28"/>
+	</reflexive>
+	<reflexive name="Geometry: Bounding Spheres" visible="true" offset="0x1F4" entrySize="0x30">
+		<float name="Plane I" visible="true" offset="0x0"/>
+		<float name="Plane J" visible="true" offset="0x4"/>
+		<float name="Plane K" visible="true" offset="0x8"/>
+		<float name="Plane Distance" visible="true" offset="0xC"/>
+		<vector3 name="Position" visible="true" offset="0x10"/>
+		<float32 name="Radius" visible="true" offset="0x1C"/>
+		<int8 name="Node Indices 0" visible="true" offset="0x20"/>
+		<int8 name="Node Indices 1" visible="true" offset="0x21"/>
+		<int8 name="Node Indices 2" visible="true" offset="0x22"/>
+		<int8 name="Node Indices 3" visible="true" offset="0x23"/>
+		<float32 name="Node Weights 0" visible="true" offset="0x24"/>
+		<float32 name="Node Weights 1" visible="true" offset="0x28"/>
+		<float32 name="Node Weights 2" visible="true" offset="0x2C"/>
+	</reflexive>
+	<reflexive name="Geometry: Unknown2" visible="true" offset="0x200" entrySize="0x18">
+		<uint8 name="Unknown Byte1" visible="true" offset="0x0"/>
+		<uint8 name="Unknown Byte2" visible="true" offset="0x1"/>
+		<int16 name="Unknown2" visible="true" offset="0x2"/>
+		<dataRef name="Unknown3" visible="true" offset="0x4"/>
+	</reflexive>
+	<uint32 name="Geometry: Unknown3" visible="true" offset="0x20C"/>
+	<uint32 name="Geometry: Unknown4" visible="true" offset="0x210"/>
+	<uint32 name="Geometry: Unknown5" visible="true" offset="0x214"/>
+	<reflexive name="Geometry: Unknown Sections" visible="true" offset="0x218" entrySize="0x20">
+		<dataRef name="Unknown" visible="true" offset="0x0"/>
+		<reflexive name="Unknown2" visible="true" offset="0x14" entrySize="0x2">
+			<int16 name="int16" visible="true" offset="0x0"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Geometry: Per Mesh Node Maps" visible="true" offset="0x224" entrySize="0xC">
+		<reflexive name="Node Indices" visible="true" offset="0x0" entrySize="0x1">
+			<uint8 name="uint8" visible="true" offset="0x0"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Geometry: Per Mesh Subpart Visibility" visible="true" offset="0x230" entrySize="0xC">
+		<reflexive name="Bounding Spheres" visible="true" offset="0x0" entrySize="0x30">
+			<float name="Plane I" visible="true" offset="0x0"/>
+			<float name="Plane J" visible="true" offset="0x4"/>
+			<float name="Plane K" visible="true" offset="0x8"/>
+			<float name="Plane Distance" visible="true" offset="0xC"/>
+			<vector3 name="Position" visible="true" offset="0x10"/>
+			<float32 name="Radius" visible="true" offset="0x1C"/>
+			<int8 name="Node Indices 0" visible="true" offset="0x20"/>
+			<int8 name="Node Indices 1" visible="true" offset="0x21"/>
+			<int8 name="Node Indices 2" visible="true" offset="0x22"/>
+			<int8 name="Node Indices 3" visible="true" offset="0x23"/>
+			<float32 name="Node Weights 0" visible="true" offset="0x24"/>
+			<float32 name="Node Weights 1" visible="true" offset="0x28"/>
+			<float32 name="Node Weights 2" visible="true" offset="0x2C"/>
+		</reflexive>
+	</reflexive>
+	<uint32 name="Geometry: Unknown7" visible="true" offset="0x23C"/>
+	<uint32 name="Geometry: Unknown8" visible="true" offset="0x240"/>
+	<uint32 name="Geometry: Unknown9" visible="true" offset="0x244"/>
+	<reflexive name="Geometry: Per Mesh Lod Data" visible="true" offset="0x248" entrySize="0x10">
+		<reflexive name="Indices" visible="true" offset="0x0" entrySize="0x4">
+			<int32 name="int32" visible="true" offset="0x0"/>
+		</reflexive>
+		<int16 name="Vertex Buffer Index" visible="true" offset="0xC"/>
+		<uint8 name="Unused Padding 0" visible="false" offset="0xE"/>
+		<uint8 name="Unused Padding 1" visible="false" offset="0xF"/>
+	</reflexive>
+	<uint32 name="Geometry: Resource" visible="true" offset="0x254"/>
+	<uint8 name="Geometry: Unused Padding 0" visible="false" offset="0x258"/>
+	<uint8 name="Geometry: Unused Padding 1" visible="false" offset="0x259"/>
+	<uint8 name="Geometry: Unused Padding 2" visible="false" offset="0x25A"/>
+	<uint8 name="Geometry: Unused Padding 3" visible="false" offset="0x25B"/>
+	<reflexive name="Unknown Sound Clusters A" visible="true" offset="0x25C" entrySize="0x1C">
+		<int16 name="Background Sound Environment Index" visible="true" offset="0x0"/>
+		<int16 name="Unknown" visible="true" offset="0x2"/>
+		<reflexive name="Portal Designators" visible="true" offset="0x4" entrySize="0x2">
+			<int16 name="Portal Designator" visible="true" offset="0x0"/>
+		</reflexive>
+		<reflexive name="Interior Cluster Indices" visible="true" offset="0x10" entrySize="0x2">
+			<int16 name="Interior Cluster Index" visible="true" offset="0x0"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Unknown Sound Clusters B" visible="true" offset="0x268" entrySize="0x1C">
+		<int16 name="Background Sound Environment Index" visible="true" offset="0x0"/>
+		<int16 name="Unknown" visible="true" offset="0x2"/>
+		<reflexive name="Portal Designators" visible="true" offset="0x4" entrySize="0x2">
+			<int16 name="Portal Designator" visible="true" offset="0x0"/>
+		</reflexive>
+		<reflexive name="Interior Cluster Indices" visible="true" offset="0x10" entrySize="0x2">
+			<int16 name="Interior Cluster Index" visible="true" offset="0x0"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Unknown Sound Clusters C" visible="true" offset="0x274" entrySize="0x1C">
+		<int16 name="Background Sound Environment Index" visible="true" offset="0x0"/>
+		<int16 name="Unknown" visible="true" offset="0x2"/>
+		<reflexive name="Portal Designators" visible="true" offset="0x4" entrySize="0x2">
+			<int16 name="Portal Designator" visible="true" offset="0x0"/>
+		</reflexive>
+		<reflexive name="Interior Cluster Indices" visible="true" offset="0x10" entrySize="0x2">
+			<int16 name="Interior Cluster Index" visible="true" offset="0x0"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Transparent Planes" visible="true" offset="0x280" entrySize="0x14">
+		<int16 name="Mesh Index" visible="true" offset="0x0"/>
+		<int16 name="Part Index" visible="true" offset="0x2"/>
+		<float name="Plane I" visible="true" offset="0x4"/>
+		<float name="Plane J" visible="true" offset="0x8"/>
+		<float name="Plane K" visible="true" offset="0xC"/>
+		<float name="Plane Distance" visible="true" offset="0x10"/>
+	</reflexive>
+	<uint32 name="Unknown64" visible="true" offset="0x28C"/>
+	<uint32 name="Unknown65" visible="true" offset="0x290"/>
+	<uint32 name="Unknown66" visible="true" offset="0x294"/>
+	<reflexive name="Collision Mopp Codes" visible="true" offset="0x298" entrySize="0x40">
+		<int32 name="Unused1" visible="true" offset="0x0"/>
+		<int16 name="Size" visible="true" offset="0x4"/>
+		<int16 name="Count" visible="true" offset="0x6"/>
+		<int32 name="Address" visible="true" offset="0x8"/>
+		<int32 name="Unused2" visible="true" offset="0xC"/>
+		<float name="Offset I" visible="true" offset="0x10"/>
+		<float name="Offset J" visible="true" offset="0x14"/>
+		<float name="Offset K" visible="true" offset="0x18"/>
+		<float name="Offset W" visible="true" offset="0x1C"/>
+		<int32 name="Unused3" visible="true" offset="0x20"/>
+		<int32 name="Data Size" visible="true" offset="0x24"/>
+		<int32 name="Data Capacity And Flags" visible="true" offset="0x28"/>
+		<int8 name="Data Build Type" visible="true" offset="0x2C"/>
+		<int8 name="Unused4" visible="true" offset="0x2D"/>
+		<int16 name="Unused5" visible="true" offset="0x2E"/>
+		<reflexive name="Data" visible="true" offset="0x30" entrySize="0x1">
+			<uint8 name="uint8" visible="true" offset="0x0"/>
+		</reflexive>
+		<int8 name="Mopp Build Type" visible="true" offset="0x3C"/>
+		<uint8 name="Unused6" visible="true" offset="0x3D"/>
+		<int16 name="Unused7" visible="true" offset="0x3E"/>
+	</reflexive>
+	<uint32 name="Unknown67" visible="true" offset="0x2A4"/>
+	<float32 name="Collision World Bounds XMin" visible="true" offset="0x2A8"/>
+	<float32 name="Collision World Bounds XMax" visible="true" offset="0x2AC"/>
+	<float32 name="Collision World Bounds YMin" visible="true" offset="0x2B0"/>
+	<float32 name="Collision World Bounds YMax" visible="true" offset="0x2B4"/>
+	<float32 name="Collision World Bounds ZMin" visible="true" offset="0x2B8"/>
+	<float32 name="Collision World Bounds ZMax" visible="true" offset="0x2BC"/>
+	<reflexive name="Breakable Surface Mopp Codes" visible="true" offset="0x2C0" entrySize="0x40">
+		<int32 name="Unused1" visible="true" offset="0x0"/>
+		<int16 name="Size" visible="true" offset="0x4"/>
+		<int16 name="Count" visible="true" offset="0x6"/>
+		<int32 name="Address" visible="true" offset="0x8"/>
+		<int32 name="Unused2" visible="true" offset="0xC"/>
+		<float name="Offset I" visible="true" offset="0x10"/>
+		<float name="Offset J" visible="true" offset="0x14"/>
+		<float name="Offset K" visible="true" offset="0x18"/>
+		<float name="Offset W" visible="true" offset="0x1C"/>
+		<int32 name="Unused3" visible="true" offset="0x20"/>
+		<int32 name="Data Size" visible="true" offset="0x24"/>
+		<int32 name="Data Capacity And Flags" visible="true" offset="0x28"/>
+		<int8 name="Data Build Type" visible="true" offset="0x2C"/>
+		<int8 name="Unused4" visible="true" offset="0x2D"/>
+		<int16 name="Unused5" visible="true" offset="0x2E"/>
+		<reflexive name="Data" visible="true" offset="0x30" entrySize="0x1">
+			<uint8 name="uint8" visible="true" offset="0x0"/>
+		</reflexive>
+		<int8 name="Mopp Build Type" visible="true" offset="0x3C"/>
+		<uint8 name="Unused6" visible="true" offset="0x3D"/>
+		<int16 name="Unused7" visible="true" offset="0x3E"/>
+	</reflexive>
+	<reflexive name="Breakable Surface Key Table" visible="true" offset="0x2CC" entrySize="0x20">
+		<int16 name="Instanced Geometry Index" visible="true" offset="0x0"/>
+		<int8 name="Breakable Surface Index" visible="true" offset="0x2"/>
+		<uint8 name="Breakable Surface Sub Index" visible="true" offset="0x3"/>
+		<int32 name="Seed Surface Index" visible="true" offset="0x4"/>
+		<float32 name="XMin" visible="true" offset="0x8"/>
+		<float32 name="XMax" visible="true" offset="0xC"/>
+		<float32 name="YMin" visible="true" offset="0x10"/>
+		<float32 name="YMax" visible="true" offset="0x14"/>
+		<float32 name="ZMin" visible="true" offset="0x18"/>
+		<float32 name="ZMax" visible="true" offset="0x1C"/>
+	</reflexive>
+	<uint32 name="Unknown68" visible="true" offset="0x2D8"/>
+	<uint32 name="Unknown69" visible="true" offset="0x2DC"/>
+	<uint32 name="Unknown70" visible="true" offset="0x2E0"/>
+	<uint32 name="Unknown71" visible="true" offset="0x2E4"/>
+	<uint32 name="Unknown72" visible="true" offset="0x2E8"/>
+	<uint32 name="Unknown73" visible="true" offset="0x2EC"/>
+	<bitfield32 name="Geometry2: Runtime Flags" visible="true" offset="0x2F0">
+		<bit name="Processed" index="0"/>
+		<bit name="Available" index="1"/>
+		<bit name="Has Valid Budgets" index="2"/>
+		<bit name="Manual Resource Calibration" index="3"/>
+		<bit name="Keep Raw Geometry" index="4"/>
+		<bit name="Do Not Use Compressed Vertex Positions" index="5"/>
+		<bit name="Pca Animation Table Sorted" index="6"/>
+		<bit name="Has Dual Quat" index="7"/>
+	</bitfield32>
+	<reflexive name="Geometry2: Meshes" visible="true" offset="0x2F4" entrySize="0x4C">
+		<reflexive name="Parts" visible="true" offset="0x0" entrySize="0x10">
+			<int16 name="Material Index" visible="true" offset="0x0"/>
+			<int16 name="Transparent Sorting Index" visible="true" offset="0x2"/>
+			<uint16 name="First Index" visible="true" offset="0x4"/>
+			<uint16 name="Index Count" visible="true" offset="0x6"/>
+			<int16 name="First Sub Part Index" visible="true" offset="0x8"/>
+			<int16 name="Sub Part Count" visible="true" offset="0xA"/>
+			<int8 name="Type" visible="true" offset="0xC"/>
+			<bitfield8 name="Flags" visible="true" offset="0xD">
+				<bit name="Is Water Surface" index="0"/>
+				<bit name="Per Vertex Lightmap Part" index="1"/>
+				<bit name="Render In ZPrepass" index="2"/>
+				<bit name="Can Be Rendered In Draw Bundles" index="3"/>
+				<bit name="Draw Cull Distance Medium" index="4"/>
+				<bit name="Draw Cull Distance Close" index="5"/>
+				<bit name="Draw Cull Rendering Shields" index="6"/>
+				<bit name="Draw Cull Rendering Active Camo" index="7"/>
+			</bitfield8>
+			<uint16 name="Vertex Count" visible="true" offset="0xE"/>
+		</reflexive>
+		<reflexive name="Sub Parts" visible="true" offset="0xC" entrySize="0x8">
+			<uint16 name="First Index" visible="true" offset="0x0"/>
+			<uint16 name="Index Count" visible="true" offset="0x2"/>
+			<int16 name="Part Index" visible="true" offset="0x4"/>
+			<uint16 name="Vertex Count" visible="true" offset="0x6"/>
+		</reflexive>
+		<uint16 name="Vertex Buffers 0" visible="true" offset="0x18"/>
+		<uint16 name="Vertex Buffers 1" visible="true" offset="0x1A"/>
+		<uint16 name="Vertex Buffers 2" visible="true" offset="0x1C"/>
+		<uint16 name="Vertex Buffers 3" visible="true" offset="0x1E"/>
+		<uint16 name="Vertex Buffers 4" visible="true" offset="0x20"/>
+		<uint16 name="Vertex Buffers 5" visible="true" offset="0x22"/>
+		<uint16 name="Vertex Buffers 6" visible="true" offset="0x24"/>
+		<uint16 name="Vertex Buffers 7" visible="true" offset="0x26"/>
+		<uint16 name="Index Buffers 0" visible="true" offset="0x28"/>
+		<uint16 name="Index Buffers 1" visible="true" offset="0x2A"/>
+		<bitfield8 name="Flags" visible="true" offset="0x2C">
+			<bit name="Vertex Colors" index="0"/>
+			<bit name="Unknown1" index="1"/>
+			<bit name="Unknown2" index="2"/>
+			<bit name="Unknown3" index="3"/>
+			<bit name="Unknown4" index="4"/>
+			<bit name="Unknown5" index="5"/>
+			<bit name="Unknown6" index="6"/>
+			<bit name="Unknown7" index="7"/>
+		</bitfield8>
+		<int8 name="Rigid Node Index" visible="true" offset="0x2D"/>
+		<enum8 name="Type" visible="true" offset="0x2E">
+			<option name="World" value="0x0"/>
+			<option name="Rigid" value="0x1"/>
+			<option name="Skinned" value="0x2"/>
+			<option name="Particle Model" value="0x3"/>
+			<option name="Flat World" value="0x4"/>
+			<option name="Flat Rigid" value="0x5"/>
+			<option name="Flat Skinned" value="0x6"/>
+			<option name="Screen" value="0x7"/>
+			<option name="Debug" value="0x8"/>
+			<option name="Transparent" value="0x9"/>
+			<option name="Particle" value="0xA"/>
+			<option name="Contrail" value="0xB"/>
+			<option name="Light Volume" value="0xC"/>
+			<option name="Simple Chud" value="0xD"/>
+			<option name="Fancy Chud" value="0xE"/>
+			<option name="Decorator" value="0xF"/>
+			<option name="Tiny Position" value="0x10"/>
+			<option name="Patchy Fog" value="0x11"/>
+			<option name="Water" value="0x12"/>
+			<option name="Ripple" value="0x13"/>
+			<option name="Implicit" value="0x14"/>
+			<option name="Beam" value="0x15"/>
+			<option name="Dual Quat" value="0x16"/>
+		</enum8>
+		<enum8 name="Prt Type" visible="true" offset="0x2F">
+			<option name="None" value="0x0"/>
+			<option name="Ambient" value="0x1"/>
+			<option name="Linear" value="0x2"/>
+			<option name="Quadratic" value="0x3"/>
+		</enum8>
+		<enum8 name="Index Buffer Type" visible="true" offset="0x30">
+			<option name="Point List" value="0x0"/>
+			<option name="Line List" value="0x1"/>
+			<option name="Line Strip" value="0x2"/>
+			<option name="Triangle List" value="0x3"/>
+			<option name="Triangle Fan" value="0x4"/>
+			<option name="Triangle Strip" value="0x5"/>
+		</enum8>
+		<uint8 name="Unused Padding 0" visible="false" offset="0x31"/>
+		<uint8 name="Unused Padding 1" visible="false" offset="0x32"/>
+		<uint8 name="Unused Padding 2" visible="false" offset="0x33"/>
+		<reflexive name="Instanced Geometry" visible="true" offset="0x34" entrySize="0x10">
+			<int16 name="Section1" visible="true" offset="0x0"/>
+			<int16 name="Section2" visible="true" offset="0x2"/>
+			<reflexive name="Contents" visible="true" offset="0x4" entrySize="0x2">
+				<int16 name="int16" visible="true" offset="0x0"/>
+			</reflexive>
+		</reflexive>
+		<reflexive name="Water" visible="true" offset="0x40" entrySize="0x2">
+			<int16 name="int16" visible="true" offset="0x0"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Geometry2: Compression" visible="true" offset="0x300" entrySize="0x2C">
+		<bitfield16 name="Flags" visible="true" offset="0x0">
+			<bit name="Compressed Position" index="0"/>
+			<bit name="Compressed Texcoord" index="1"/>
+			<bit name="Compression Optimized" index="2"/>
+		</bitfield16>
+		<uint8 name="Padding Padding 0" visible="false" offset="0x2"/>
+		<uint8 name="Padding Padding 1" visible="false" offset="0x3"/>
+		<float32 name="XMin" visible="true" offset="0x4"/>
+		<float32 name="XMax" visible="true" offset="0x8"/>
+		<float32 name="YMin" visible="true" offset="0xC"/>
+		<float32 name="YMax" visible="true" offset="0x10"/>
+		<float32 name="ZMin" visible="true" offset="0x14"/>
+		<float32 name="ZMax" visible="true" offset="0x18"/>
+		<float32 name="UMin" visible="true" offset="0x1C"/>
+		<float32 name="UMax" visible="true" offset="0x20"/>
+		<float32 name="VMin" visible="true" offset="0x24"/>
+		<float32 name="VMax" visible="true" offset="0x28"/>
+	</reflexive>
+	<reflexive name="Geometry2: Bounding Spheres" visible="true" offset="0x30C" entrySize="0x30">
+		<float name="Plane I" visible="true" offset="0x0"/>
+		<float name="Plane J" visible="true" offset="0x4"/>
+		<float name="Plane K" visible="true" offset="0x8"/>
+		<float name="Plane Distance" visible="true" offset="0xC"/>
+		<vector3 name="Position" visible="true" offset="0x10"/>
+		<float32 name="Radius" visible="true" offset="0x1C"/>
+		<int8 name="Node Indices 0" visible="true" offset="0x20"/>
+		<int8 name="Node Indices 1" visible="true" offset="0x21"/>
+		<int8 name="Node Indices 2" visible="true" offset="0x22"/>
+		<int8 name="Node Indices 3" visible="true" offset="0x23"/>
+		<float32 name="Node Weights 0" visible="true" offset="0x24"/>
+		<float32 name="Node Weights 1" visible="true" offset="0x28"/>
+		<float32 name="Node Weights 2" visible="true" offset="0x2C"/>
+	</reflexive>
+	<reflexive name="Geometry2: Unknown2" visible="true" offset="0x318" entrySize="0x18">
+		<uint8 name="Unknown Byte1" visible="true" offset="0x0"/>
+		<uint8 name="Unknown Byte2" visible="true" offset="0x1"/>
+		<int16 name="Unknown2" visible="true" offset="0x2"/>
+		<dataRef name="Unknown3" visible="true" offset="0x4"/>
+	</reflexive>
+	<uint32 name="Geometry2: Unknown3" visible="true" offset="0x324"/>
+	<uint32 name="Geometry2: Unknown4" visible="true" offset="0x328"/>
+	<uint32 name="Geometry2: Unknown5" visible="true" offset="0x32C"/>
+	<reflexive name="Geometry2: Unknown Sections" visible="true" offset="0x330" entrySize="0x20">
+		<dataRef name="Unknown" visible="true" offset="0x0"/>
+		<reflexive name="Unknown2" visible="true" offset="0x14" entrySize="0x2">
+			<int16 name="int16" visible="true" offset="0x0"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Geometry2: Per Mesh Node Maps" visible="true" offset="0x33C" entrySize="0xC">
+		<reflexive name="Node Indices" visible="true" offset="0x0" entrySize="0x1">
+			<uint8 name="uint8" visible="true" offset="0x0"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Geometry2: Per Mesh Subpart Visibility" visible="true" offset="0x348" entrySize="0xC">
+		<reflexive name="Bounding Spheres" visible="true" offset="0x0" entrySize="0x30">
+			<float name="Plane I" visible="true" offset="0x0"/>
+			<float name="Plane J" visible="true" offset="0x4"/>
+			<float name="Plane K" visible="true" offset="0x8"/>
+			<float name="Plane Distance" visible="true" offset="0xC"/>
+			<vector3 name="Position" visible="true" offset="0x10"/>
+			<float32 name="Radius" visible="true" offset="0x1C"/>
+			<int8 name="Node Indices 0" visible="true" offset="0x20"/>
+			<int8 name="Node Indices 1" visible="true" offset="0x21"/>
+			<int8 name="Node Indices 2" visible="true" offset="0x22"/>
+			<int8 name="Node Indices 3" visible="true" offset="0x23"/>
+			<float32 name="Node Weights 0" visible="true" offset="0x24"/>
+			<float32 name="Node Weights 1" visible="true" offset="0x28"/>
+			<float32 name="Node Weights 2" visible="true" offset="0x2C"/>
+		</reflexive>
+	</reflexive>
+	<uint32 name="Geometry2: Unknown7" visible="true" offset="0x354"/>
+	<uint32 name="Geometry2: Unknown8" visible="true" offset="0x358"/>
+	<uint32 name="Geometry2: Unknown9" visible="true" offset="0x35C"/>
+	<reflexive name="Geometry2: Per Mesh Lod Data" visible="true" offset="0x360" entrySize="0x10">
+		<reflexive name="Indices" visible="true" offset="0x0" entrySize="0x4">
+			<int32 name="int32" visible="true" offset="0x0"/>
+		</reflexive>
+		<int16 name="Vertex Buffer Index" visible="true" offset="0xC"/>
+		<uint8 name="Unused Padding 0" visible="false" offset="0xE"/>
+		<uint8 name="Unused Padding 1" visible="false" offset="0xF"/>
+	</reflexive>
+	<uint32 name="Geometry2: Resource" visible="true" offset="0x36C"/>
+	<uint8 name="Geometry2: Unused Padding 0" visible="false" offset="0x370"/>
+	<uint8 name="Geometry2: Unused Padding 1" visible="false" offset="0x371"/>
+	<uint8 name="Geometry2: Unused Padding 2" visible="false" offset="0x372"/>
+	<uint8 name="Geometry2: Unused Padding 3" visible="false" offset="0x373"/>
+	<reflexive name="Leaf Systems" visible="true" offset="0x374" entrySize="0x14">
+		<int16 name="Unknown" visible="true" offset="0x0"/>
+		<int16 name="Unknown2" visible="true" offset="0x2"/>
+		<tagref name="Leaf System2" visible="true" offset="0x4"/>
+	</reflexive>
+	<uint32 name="Unknown83" visible="true" offset="0x380"/>
+	<uint32 name="Unknown84" visible="true" offset="0x384"/>
+	<uint32 name="Unknown85" visible="true" offset="0x388"/>
+	<uint32 name="Collision Bsp Resource" visible="true" offset="0x38C"/>
+	<int32 name="Useless Padding3" visible="true" offset="0x390"/>
+	<uint32 name="Pathfinding Resource" visible="true" offset="0x394"/>
+	<int32 name="Useless Padding4" visible="true" offset="0x398"/>
+	<int32 name="Unknown86" visible="true" offset="0x39C"/>
+	<uint32 name="Unknown87" visible="true" offset="0x3A0"/>
+	<uint32 name="Unknown88" visible="true" offset="0x3A4"/>
+	<uint32 name="Unknown89" visible="true" offset="0x3A8"/>
+</plugin>

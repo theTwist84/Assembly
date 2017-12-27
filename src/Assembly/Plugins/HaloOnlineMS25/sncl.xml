@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x10">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<reflexive name="Classes" visible="true" offset="0x0" entrySize="0xA0">
+		<int16 name="Max Sounds Per Tag" visible="true" offset="0x0"/>
+		<int16 name="Max Sounds Per Object" visible="true" offset="0x2"/>
+		<int32 name="Preemption Time" visible="true" offset="0x4"/>
+		<uint16 name="Internal Flags" visible="true" offset="0x8"/>
+		<uint16 name="Flags" visible="true" offset="0xA"/>
+		<int16 name="Priority" visible="true" offset="0xC"/>
+		<enum8 name="Cache Miss Mode" visible="true" offset="0xE">
+			<option name="Discard" value="0x0"/>
+			<option name="Postpone" value="0x1"/>
+		</enum8>
+		<int8 name="Unknown" visible="true" offset="0xF"/>
+		<int8 name="Unknown2" visible="true" offset="0x10"/>
+		<int8 name="Unknown3" visible="true" offset="0x11"/>
+		<int8 name="Unknown4" visible="true" offset="0x12"/>
+		<int8 name="Unknown5" visible="true" offset="0x13"/>
+		<float32 name="Reverb Gain" visible="true" offset="0x14"/>
+		<uint32 name="Unknown6" visible="true" offset="0x18"/>
+		<uint32 name="Unknown7" visible="true" offset="0x1C"/>
+		<uint32 name="Unknown8" visible="true" offset="0x20"/>
+		<uint32 name="Unknown9" visible="true" offset="0x24"/>
+		<uint32 name="Unknown10" visible="true" offset="0x28"/>
+		<uint32 name="Unknown11" visible="true" offset="0x2C"/>
+		<uint32 name="Unknown12" visible="true" offset="0x30"/>
+		<uint32 name="Unknown13" visible="true" offset="0x34"/>
+		<uint32 name="Unknown14" visible="true" offset="0x38"/>
+		<uint32 name="Unknown15" visible="true" offset="0x3C"/>
+		<float32 name="Distance Bounds Min" visible="true" offset="0x40"/>
+		<float32 name="Distance Bounds Max" visible="true" offset="0x44"/>
+		<float32 name="Gain Bounds Min" visible="true" offset="0x48"/>
+		<float32 name="Gain Bounds Max" visible="true" offset="0x4C"/>
+		<float32 name="Cutscene Ducking" visible="true" offset="0x50"/>
+		<float32 name="Cutscene Ducking Fade In Time" visible="true" offset="0x54"/>
+		<float32 name="Cutscene Ducking Sustain" visible="true" offset="0x58"/>
+		<float32 name="Cutscene Ducking Fade Out Time" visible="true" offset="0x5C"/>
+		<float32 name="Scripted Dialog Ducking" visible="true" offset="0x60"/>
+		<float32 name="Scripted Dialog Ducking Fade In" visible="true" offset="0x64"/>
+		<uint32 name="Unknown16" visible="true" offset="0x68"/>
+		<uint32 name="Unknown17" visible="true" offset="0x6C"/>
+		<uint32 name="Unknown18" visible="true" offset="0x70"/>
+		<uint32 name="Unknown19" visible="true" offset="0x74"/>
+		<uint32 name="Unknown20" visible="true" offset="0x78"/>
+		<uint32 name="Unknown21" visible="true" offset="0x7C"/>
+		<uint32 name="Unknown22" visible="true" offset="0x80"/>
+		<float32 name="Unknown Dopler Factor" visible="true" offset="0x84"/>
+		<enum8 name="Stereo Playback Type" visible="true" offset="0x88">
+			<option name="First Person" value="0x0"/>
+			<option name="Ambient" value="0x1"/>
+		</enum8>
+		<int8 name="Unknown31" visible="true" offset="0x89"/>
+		<int8 name="Unknown32" visible="true" offset="0x8A"/>
+		<int8 name="Unknown33" visible="true" offset="0x8B"/>
+		<float32 name="Transmission Multiplier" visible="true" offset="0x8C"/>
+		<float32 name="Obstruction Max Bend" visible="true" offset="0x90"/>
+		<float32 name="Occlusion Max Bend" visible="true" offset="0x94"/>
+		<int32 name="Unknown34" visible="true" offset="0x98"/>
+		<float32 name="Unknown35" visible="true" offset="0x9C"/>
+	</reflexive>
+	<uint8 name="Unused Padding 0" visible="false" offset="0xC"/>
+	<uint8 name="Unused Padding 1" visible="false" offset="0xD"/>
+	<uint8 name="Unused Padding 2" visible="false" offset="0xE"/>
+	<uint8 name="Unused Padding 3" visible="false" offset="0xF"/>
+</plugin>

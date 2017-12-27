@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x410">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<enum8 name="Object Type: Halo3 ODST" visible="true" offset="0x0">
+		<option name="Biped" value="0x0"/>
+		<option name="Vehicle" value="0x1"/>
+		<option name="Weapon" value="0x2"/>
+		<option name="Equipment" value="0x3"/>
+		<option name="Alternate Reality Device" value="0x4"/>
+		<option name="Terminal" value="0x5"/>
+		<option name="Projectile" value="0x6"/>
+		<option name="Scenery" value="0x7"/>
+		<option name="Machine" value="0x8"/>
+		<option name="Control" value="0x9"/>
+		<option name="Sound Scenery" value="0xA"/>
+		<option name="Crate" value="0xB"/>
+		<option name="Creature" value="0xC"/>
+		<option name="Giant" value="0xD"/>
+		<option name="Effect Scenery" value="0xE"/>
+		<option name="None" value="0xFFFFFFFF"/>
+	</enum8>
+	<uint8 name="Object Type: Unused2 Padding 0" visible="false" offset="0x1"/>
+	<bitfield16 name="Object Flags" visible="true" offset="0x2">
+		<bit name="Does Not Cast Shadow" index="0"/>
+		<bit name="Search Cardinal Direction Maps" index="1"/>
+		<bit name="Bit2" index="2"/>
+		<bit name="Not APathfinding Obstacle" index="3"/>
+		<bit name="Extension Of Parent" index="4"/>
+		<bit name="Does Not Cause Collision Damage" index="5"/>
+		<bit name="Early Mover" index="6"/>
+		<bit name="Early Mover Localized Physics" index="7"/>
+		<bit name="Use Static Massive Lightmap Sample" index="8"/>
+		<bit name="Object Scales Attachments" index="9"/>
+		<bit name="Inherits Players Appearance" index="10"/>
+		<bit name="Dead Bipeds Cant Localize" index="11"/>
+		<bit name="Attach To Clusters By Dynamic Sphere" index="12"/>
+		<bit name="Effects Do Not Spawn Objects In Multiplayer" index="13"/>
+		<bit name="Bit14" index="14"/>
+		<bit name="Bit15" index="15"/>
+	</bitfield16>
+	<float32 name="Bounding Radius" visible="true" offset="0x4"/>
+	<vector3 name="Bounding Offset" visible="true" offset="0x8"/>
+	<float32 name="Acceleration Scale" visible="true" offset="0x14"/>
+	<enum16 name="Lightmap Shadow Mode" visible="true" offset="0x18">
+		<option name="Default" value="0x0"/>
+		<option name="Never" value="0x1"/>
+		<option name="Always" value="0x2"/>
+		<option name="Blur" value="0x3"/>
+	</enum16>
+	<enum8 name="Sweetener Size" visible="true" offset="0x1A">
+		<option name="Small" value="0x0"/>
+		<option name="Medium" value="0x1"/>
+		<option name="Large" value="0x2"/>
+	</enum8>
+	<enum8 name="Water Density" visible="true" offset="0x1B">
+		<option name="Default" value="0x0"/>
+		<option name="Least" value="0x1"/>
+		<option name="Some" value="0x2"/>
+		<option name="Equal" value="0x3"/>
+		<option name="More" value="0x4"/>
+		<option name="More Still" value="0x5"/>
+		<option name="Lots More" value="0x6"/>
+	</enum8>
+	<int32 name="Runtime Flags" visible="true" offset="0x1C"/>
+	<float32 name="Dynamic Light Sphere Radius" visible="true" offset="0x20"/>
+	<vector3 name="Dynamic Light Sphere Offset" visible="true" offset="0x24"/>
+	<stringId name="Default Model Variant" visible="true" offset="0x30"/>
+	<tagref name="Model" visible="true" offset="0x34"/>
+	<tagref name="Crate Object" visible="true" offset="0x44"/>
+	<tagref name="Collision Damage" visible="true" offset="0x54"/>
+	<reflexive name="Early Mover Properties" visible="true" offset="0x64" entrySize="0x28">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<float32 name="XBounds Min" visible="true" offset="0x4"/>
+		<float32 name="XBounds Max" visible="true" offset="0x8"/>
+		<float32 name="YBounds Min" visible="true" offset="0xC"/>
+		<float32 name="YBounds Max" visible="true" offset="0x10"/>
+		<float32 name="ZBounds Min" visible="true" offset="0x14"/>
+		<float32 name="ZBounds Max" visible="true" offset="0x18"/>
+		<float name="Angles Yaw" visible="true" offset="0x1C"/>
+		<float name="Angles Pitch" visible="true" offset="0x20"/>
+		<float name="Angles Roll" visible="true" offset="0x24"/>
+	</reflexive>
+	<tagref name="Creation Effect" visible="true" offset="0x70"/>
+	<tagref name="Material Effects" visible="true" offset="0x80"/>
+	<tagref name="Armor Sounds" visible="true" offset="0x90"/>
+	<tagref name="Melee Impact" visible="true" offset="0xA0"/>
+	<reflexive name="Ai Properties" visible="true" offset="0xB0" entrySize="0xC">
+		<bitfield32 name="Flags" visible="true" offset="0x0">
+			<bit name="Destroyable Cover" index="0"/>
+			<bit name="Pathfinding Ignore When Dead" index="1"/>
+			<bit name="Dynamic Cover" index="2"/>
+		</bitfield32>
+		<stringId name="Ai Type Name" visible="true" offset="0x4"/>
+		<enum16 name="Size" visible="true" offset="0x8">
+			<option name="Default" value="0x0"/>
+			<option name="Tiny" value="0x1"/>
+			<option name="Small" value="0x2"/>
+			<option name="Medium" value="0x3"/>
+			<option name="Large" value="0x4"/>
+			<option name="Huge" value="0x5"/>
+			<option name="Immobile" value="0x6"/>
+		</enum16>
+		<enum16 name="Leap Jump Speed" visible="true" offset="0xA">
+			<option name="None" value="0x0"/>
+			<option name="Down" value="0x1"/>
+			<option name="Step" value="0x2"/>
+			<option name="Crouch" value="0x3"/>
+			<option name="Stand" value="0x4"/>
+			<option name="Storey" value="0x5"/>
+			<option name="Tower" value="0x6"/>
+			<option name="Infinite" value="0x7"/>
+		</enum16>
+	</reflexive>
+	<reflexive name="Functions" visible="true" offset="0xBC" entrySize="0x2C">
+		<bitfield32 name="Flags" visible="true" offset="0x0">
+			<bit name="Invert" index="0"/>
+			<bit name="Mapping Does Not Controls Active" index="1"/>
+			<bit name="Always Active" index="2"/>
+			<bit name="Random Time Offset" index="3"/>
+		</bitfield32>
+		<stringId name="Import Name" visible="true" offset="0x4"/>
+		<stringId name="Export Name" visible="true" offset="0x8"/>
+		<stringId name="Turn Off With" visible="true" offset="0xC"/>
+		<float32 name="Minimum Value" visible="true" offset="0x10"/>
+		<dataRef name="Default Function" visible="true" offset="0x14"/>
+		<stringId name="Scale By" visible="true" offset="0x28"/>
+	</reflexive>
+	<int16 name="Hud Text Message Index" visible="true" offset="0xC8"/>
+	<uint8 name="Unused1 Padding 0" visible="false" offset="0xCA"/>
+	<uint8 name="Unused1 Padding 1" visible="false" offset="0xCB"/>
+	<reflexive name="Attachments" visible="true" offset="0xCC" entrySize="0x24">
+		<bitfield32 name="Atlas Flags" visible="true" offset="0x0">
+			<bit name="Gameplay Vision Mode" index="0"/>
+			<bit name="Theater Vision Mode" index="1"/>
+		</bitfield32>
+		<tagref name="Attachment2" visible="true" offset="0x4"/>
+		<stringId name="Marker" visible="true" offset="0x14"/>
+		<enum16 name="Change Color" visible="true" offset="0x18">
+			<option name="None" value="0x0"/>
+			<option name="Primary" value="0x1"/>
+			<option name="Secondary" value="0x2"/>
+			<option name="Tertiary" value="0x3"/>
+			<option name="Quaternary" value="0x4"/>
+		</enum16>
+		<int16 name="Unknown" visible="true" offset="0x1A"/>
+		<stringId name="Primary Scale" visible="true" offset="0x1C"/>
+		<stringId name="Secondary Scale" visible="true" offset="0x20"/>
+	</reflexive>
+	<reflexive name="Widgets" visible="true" offset="0xD8" entrySize="0x10">
+		<tagref name="tagref" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Change Colors" visible="true" offset="0xE4" entrySize="0x18">
+		<reflexive name="Initial Permutations" visible="true" offset="0x0" entrySize="0xE">
+			<float32 name="Weight" visible="true" offset="0x0"/>
+			<color24 name="Color Lower Bound" visible="true" offset="0x4"/>
+			<color24 name="Color Upper Bound" visible="true" offset="0x7"/>
+			<stringId name="Variant Name" visible="true" offset="0xA"/>
+		</reflexive>
+		<reflexive name="Functions" visible="true" offset="0xC" entrySize="0x12">
+			<bitfield32 name="Scale Flags" visible="true" offset="0x0">
+				<bit name="Blend In Hsv" index="0"/>
+				<bit name="More Colors" index="1"/>
+			</bitfield32>
+			<color24 name="Color Lower Bound" visible="true" offset="0x4"/>
+			<color24 name="Color Upper Bound" visible="true" offset="0x7"/>
+			<stringId name="Darken By" visible="true" offset="0xA"/>
+			<stringId name="Scale By" visible="true" offset="0xE"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Node Maps" visible="true" offset="0xF0" entrySize="0x1">
+		<int8 name="Target Node" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Multiplayer Object Properties" visible="true" offset="0xFC" entrySize="0xC4">
+		<enum16 name="Engine Flags" visible="true" offset="0x0">
+			<option name="None" value="0x0"/>
+			<option name="Capture The Flag" value="0x1"/>
+			<option name="Slayer" value="0x2"/>
+			<option name="Oddball" value="0x4"/>
+			<option name="King Of The Hill" value="0x8"/>
+			<option name="Juggernaut" value="0x10"/>
+			<option name="Territories" value="0x20"/>
+			<option name="Assault" value="0x40"/>
+			<option name="Vip" value="0x80"/>
+			<option name="Infection" value="0x100"/>
+			<option name="Bit9" value="0x200"/>
+		</enum16>
+		<enum8 name="Object Type" visible="true" offset="0x2">
+			<option name="Ordinary" value="0x0"/>
+			<option name="Weapon" value="0x1"/>
+			<option name="Grenade" value="0x2"/>
+			<option name="Projectile" value="0x3"/>
+			<option name="Powerup" value="0x4"/>
+			<option name="Equipment" value="0x5"/>
+			<option name="Light Land Vehicle" value="0x6"/>
+			<option name="Heavy Land Vehicle" value="0x7"/>
+			<option name="Flying Vehicle" value="0x8"/>
+			<option name="Teleporter2way" value="0x9"/>
+			<option name="Teleporter Sender" value="0xA"/>
+			<option name="Teleporter Receiver" value="0xB"/>
+			<option name="Player Spawn Location" value="0xC"/>
+			<option name="Player Respawn Zone" value="0xD"/>
+			<option name="Hold Spawn Objective" value="0xE"/>
+			<option name="Capture Spawn Objective" value="0xF"/>
+			<option name="Hold Destination Objective" value="0x10"/>
+			<option name="Capture Destination Objective" value="0x11"/>
+			<option name="Hill Objective" value="0x12"/>
+			<option name="Infection Haven Objective" value="0x13"/>
+			<option name="Territory Objective" value="0x14"/>
+			<option name="Vip Boundary Objective" value="0x15"/>
+			<option name="Vip Destination Objective" value="0x16"/>
+			<option name="Juggernaut Destination Objective" value="0x17"/>
+		</enum8>
+		<uint8 name="Teleporter Flags" visible="true" offset="0x3"/>
+		<int8 name="Unknown" visible="true" offset="0x4"/>
+		<uint8 name="Flags" visible="true" offset="0x5"/>
+		<enum8 name="Shape" visible="true" offset="0x6">
+			<option name="None" value="0x0"/>
+			<option name="Sphere" value="0x1"/>
+			<option name="Cylinder" value="0x2"/>
+			<option name="Box" value="0x3"/>
+		</enum8>
+		<enum8 name="Spawn Timer Mode" visible="true" offset="0x7">
+			<option name="Default One" value="0x0"/>
+			<option name="Multiple" value="0x1"/>
+		</enum8>
+		<int16 name="Spawn Time" visible="true" offset="0x8"/>
+		<int16 name="Unknown Spawn Time" visible="true" offset="0xA"/>
+		<float32 name="Radius Width" visible="true" offset="0xC"/>
+		<float32 name="Length" visible="true" offset="0x10"/>
+		<float32 name="Top" visible="true" offset="0x14"/>
+		<float32 name="Bottom" visible="true" offset="0x18"/>
+		<uint32 name="Unknown2" visible="true" offset="0x1C"/>
+		<uint32 name="Unknown3" visible="true" offset="0x20"/>
+		<uint32 name="Unknown4" visible="true" offset="0x24"/>
+		<int32 name="Unknown5" visible="true" offset="0x28"/>
+		<int32 name="Unknown6" visible="true" offset="0x2C"/>
+		<tagref name="Child Object" visible="true" offset="0x30"/>
+		<int32 name="Unknown7" visible="true" offset="0x40"/>
+		<tagref name="Shape Shader" visible="true" offset="0x44"/>
+		<tagref name="Unknown Shader" visible="true" offset="0x54"/>
+		<tagref name="Unknown8" visible="true" offset="0x64"/>
+		<tagref name="Unknown9" visible="true" offset="0x74"/>
+		<tagref name="Unknown10" visible="true" offset="0x84"/>
+		<tagref name="Unknown11" visible="true" offset="0x94"/>
+		<tagref name="Unknown12" visible="true" offset="0xA4"/>
+		<tagref name="Unknown13" visible="true" offset="0xB4"/>
+	</reflexive>
+	<reflexive name="Reviving Equipment" visible="true" offset="0x108" entrySize="0x10">
+		<tagref name="tagref" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Model Object Data" visible="true" offset="0x114" entrySize="0x14">
+		<enum16 name="Type" visible="true" offset="0x0">
+			<option name="Not Set" value="0x0"/>
+			<option name="User Defined" value="0x1"/>
+			<option name="Auto Generated" value="0x2"/>
+		</enum16>
+		<int16 name="Unknown" visible="true" offset="0x2"/>
+		<vector3 name="Offset" visible="true" offset="0x4"/>
+		<float32 name="Radius" visible="true" offset="0x10"/>
+	</reflexive>
+	<uint32 name="Flags Warning Halo4 Values" visible="true" offset="0x120"/>
+	<enum16 name="Default Team" visible="true" offset="0x124">
+		<option name="Default" value="0x0"/>
+		<option name="Player" value="0x1"/>
+		<option name="Human" value="0x2"/>
+		<option name="Covenant" value="0x3"/>
+		<option name="Flood" value="0x4"/>
+		<option name="Sentinel" value="0x5"/>
+		<option name="Heretic" value="0x6"/>
+		<option name="Prophet" value="0x7"/>
+		<option name="Guilty" value="0x8"/>
+		<option name="Unused9" value="0x9"/>
+		<option name="Unused10" value="0xA"/>
+		<option name="Unused11" value="0xB"/>
+		<option name="Unused12" value="0xC"/>
+		<option name="Unused13" value="0xD"/>
+		<option name="Unused14" value="0xE"/>
+		<option name="Unused15" value="0xF"/>
+	</enum16>
+	<enum16 name="Constant Sound Volume" visible="true" offset="0x126">
+		<option name="Silent" value="0x0"/>
+		<option name="Medium" value="0x1"/>
+		<option name="Loud" value="0x2"/>
+		<option name="Shout" value="0x3"/>
+		<option name="Quiet" value="0x4"/>
+	</enum16>
+	<tagref name="Hologram Unit" visible="true" offset="0x128"/>
+	<reflexive name="Metagame Properties" visible="true" offset="0x138" entrySize="0x8">
+		<uint8 name="Flags" visible="true" offset="0x0"/>
+		<enum8 name="Unit" visible="true" offset="0x1">
+			<option name="Brute" value="0x0"/>
+			<option name="Grunt" value="0x1"/>
+			<option name="Jackal" value="0x2"/>
+			<option name="Marine" value="0x3"/>
+			<option name="Bugger" value="0x4"/>
+			<option name="Hunter" value="0x5"/>
+			<option name="Flood Infection" value="0x6"/>
+			<option name="Flood Carrier" value="0x7"/>
+			<option name="Flood Combat" value="0x8"/>
+			<option name="Flood Pureform" value="0x9"/>
+			<option name="Sentinel" value="0xA"/>
+			<option name="Elite" value="0xB"/>
+			<option name="Turret" value="0xC"/>
+			<option name="Mongoose" value="0xD"/>
+			<option name="Warthog" value="0xE"/>
+			<option name="Scorpion" value="0xF"/>
+			<option name="Hornet" value="0x10"/>
+			<option name="Pelican" value="0x11"/>
+			<option name="Shade" value="0x12"/>
+			<option name="Watchtower" value="0x13"/>
+			<option name="Ghost" value="0x14"/>
+			<option name="Chopper" value="0x15"/>
+			<option name="Mauler" value="0x16"/>
+			<option name="Wraith" value="0x17"/>
+			<option name="Banshee" value="0x18"/>
+			<option name="Phantom" value="0x19"/>
+			<option name="Scarab" value="0x1A"/>
+			<option name="Guntower" value="0x1B"/>
+			<option name="Engineer" value="0x1C"/>
+			<option name="Engineer Recharge Station" value="0x1D"/>
+		</enum8>
+		<enum8 name="Classification" visible="true" offset="0x2">
+			<option name="Infantry" value="0x0"/>
+			<option name="Leader" value="0x1"/>
+			<option name="Hero" value="0x2"/>
+			<option name="Specialist" value="0x3"/>
+			<option name="Light Vehicle" value="0x4"/>
+			<option name="Heavy Vehicle" value="0x5"/>
+			<option name="Giant Vehicle" value="0x6"/>
+			<option name="Standard Vehicle" value="0x7"/>
+		</enum8>
+		<int8 name="Unknown" visible="true" offset="0x3"/>
+		<int16 name="Points" visible="true" offset="0x4"/>
+		<int16 name="Unknown2" visible="true" offset="0x6"/>
+	</reflexive>
+	<tagref name="Integrated Light Toggle" visible="true" offset="0x144"/>
+	<degree name="Camera Field Of View" visible="true" offset="0x154"/>
+	<float32 name="Camera Stiffness" visible="true" offset="0x158"/>
+	<int16 name="Flags2" visible="true" offset="0x15C"/>
+	<int16 name="Unknown6" visible="true" offset="0x15E"/>
+	<stringId name="Camera Marker Name" visible="true" offset="0x160"/>
+	<stringId name="Camera Submerged Marker Name" visible="true" offset="0x164"/>
+	<degree name="Pitch Auto Level" visible="true" offset="0x168"/>
+	<degree name="Pitch Range Min" visible="true" offset="0x16C"/>
+	<degree name="Pitch Range Max" visible="true" offset="0x170"/>
+	<reflexive name="Camera Tracks" visible="true" offset="0x174" entrySize="0x10">
+		<tagref name="Camera Track" visible="true" offset="0x0"/>
+	</reflexive>
+	<degree name="Unknown7" visible="true" offset="0x180"/>
+	<degree name="Unknown8" visible="true" offset="0x184"/>
+	<degree name="Unknown9" visible="true" offset="0x188"/>
+	<reflexive name="Unknown10" visible="true" offset="0x18C" entrySize="0x4C">
+		<uint32 name="Unknown" visible="true" offset="0x0"/>
+		<uint32 name="Unknown2" visible="true" offset="0x4"/>
+		<uint32 name="Unknown3" visible="true" offset="0x8"/>
+		<uint32 name="Unknown4" visible="true" offset="0xC"/>
+		<uint32 name="Unknown5" visible="true" offset="0x10"/>
+		<uint32 name="Unknown6" visible="true" offset="0x14"/>
+		<uint32 name="Unknown7" visible="true" offset="0x18"/>
+		<uint32 name="Unknown8" visible="true" offset="0x1C"/>
+		<uint32 name="Unknown9" visible="true" offset="0x20"/>
+		<uint32 name="Unknown10" visible="true" offset="0x24"/>
+		<uint32 name="Unknown11" visible="true" offset="0x28"/>
+		<uint32 name="Unknown12" visible="true" offset="0x2C"/>
+		<uint32 name="Unknown13" visible="true" offset="0x30"/>
+		<uint32 name="Unknown14" visible="true" offset="0x34"/>
+		<uint32 name="Unknown15" visible="true" offset="0x38"/>
+		<uint32 name="Unknown16" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown17" visible="true" offset="0x40"/>
+		<uint32 name="Unknown18" visible="true" offset="0x44"/>
+		<uint32 name="Unknown19" visible="true" offset="0x48"/>
+	</reflexive>
+	<int16 name="Flags3" visible="true" offset="0x198"/>
+	<int16 name="Unknown11" visible="true" offset="0x19A"/>
+	<stringId name="Camera Marker Name2" visible="true" offset="0x19C"/>
+	<stringId name="Camera Submerged Marker Name2" visible="true" offset="0x1A0"/>
+	<degree name="Pitch Auto Level2" visible="true" offset="0x1A4"/>
+	<degree name="Pitch Range Min2" visible="true" offset="0x1A8"/>
+	<degree name="Pitch Range Max2" visible="true" offset="0x1AC"/>
+	<reflexive name="Camera Tracks2" visible="true" offset="0x1B0" entrySize="0x10">
+		<tagref name="Camera Track" visible="true" offset="0x0"/>
+	</reflexive>
+	<degree name="Unknown12" visible="true" offset="0x1BC"/>
+	<degree name="Unknown13" visible="true" offset="0x1C0"/>
+	<degree name="Unknown14" visible="true" offset="0x1C4"/>
+	<reflexive name="Unknown15" visible="true" offset="0x1C8" entrySize="0x4C">
+		<uint32 name="Unknown" visible="true" offset="0x0"/>
+		<uint32 name="Unknown2" visible="true" offset="0x4"/>
+		<uint32 name="Unknown3" visible="true" offset="0x8"/>
+		<uint32 name="Unknown4" visible="true" offset="0xC"/>
+		<uint32 name="Unknown5" visible="true" offset="0x10"/>
+		<uint32 name="Unknown6" visible="true" offset="0x14"/>
+		<uint32 name="Unknown7" visible="true" offset="0x18"/>
+		<uint32 name="Unknown8" visible="true" offset="0x1C"/>
+		<uint32 name="Unknown9" visible="true" offset="0x20"/>
+		<uint32 name="Unknown10" visible="true" offset="0x24"/>
+		<uint32 name="Unknown11" visible="true" offset="0x28"/>
+		<uint32 name="Unknown12" visible="true" offset="0x2C"/>
+		<uint32 name="Unknown13" visible="true" offset="0x30"/>
+		<uint32 name="Unknown14" visible="true" offset="0x34"/>
+		<uint32 name="Unknown15" visible="true" offset="0x38"/>
+		<uint32 name="Unknown16" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown17" visible="true" offset="0x40"/>
+		<uint32 name="Unknown18" visible="true" offset="0x44"/>
+		<uint32 name="Unknown19" visible="true" offset="0x48"/>
+	</reflexive>
+	<tagref name="Assassination Response" visible="true" offset="0x1D4"/>
+	<tagref name="Assassination Weapon" visible="true" offset="0x1E4"/>
+	<stringId name="Assasination Tool Stow Anchor" visible="true" offset="0x1F4"/>
+	<stringId name="Assasination Tool Hand Marker" visible="true" offset="0x1F8"/>
+	<stringId name="Assasination Tool Marker" visible="true" offset="0x1FC"/>
+	<float name="Acceleration Range I" visible="true" offset="0x200"/>
+	<float name="Acceleration Range J" visible="true" offset="0x204"/>
+	<float name="Acceleration Range K" visible="true" offset="0x208"/>
+	<float32 name="Acceleration Action Scale" visible="true" offset="0x20C"/>
+	<float32 name="Acceleration Attach Scale" visible="true" offset="0x210"/>
+	<float32 name="Soft Ping Threshold" visible="true" offset="0x214"/>
+	<float32 name="Soft Ping Interrupt Time" visible="true" offset="0x218"/>
+	<float32 name="Hard Ping Threshold" visible="true" offset="0x21C"/>
+	<float32 name="Hard Ping Interrupt Time" visible="true" offset="0x220"/>
+	<float32 name="Feign Death Threshold" visible="true" offset="0x224"/>
+	<float32 name="Feign Death Time" visible="true" offset="0x228"/>
+	<float32 name="Distance Of Evade Animation" visible="true" offset="0x22C"/>
+	<float32 name="Distance Of Dive Animation" visible="true" offset="0x230"/>
+	<float32 name="Stunned Movement Threshold" visible="true" offset="0x234"/>
+	<float32 name="Feign Death Chance" visible="true" offset="0x238"/>
+	<float32 name="Feign Repeat Chance" visible="true" offset="0x23C"/>
+	<tagref name="Spawned Turret Character" visible="true" offset="0x240"/>
+	<int16 name="Spawned Actor Count Min" visible="true" offset="0x250"/>
+	<int16 name="Spawned Actor Count Max" visible="true" offset="0x252"/>
+	<float32 name="Spawned Velocity" visible="true" offset="0x254"/>
+	<degree name="Aiming Velocity Maximum" visible="true" offset="0x258"/>
+	<degree name="Aiming Acceleration Maximum" visible="true" offset="0x25C"/>
+	<float32 name="Casual Aiming Modifier" visible="true" offset="0x260"/>
+	<degree name="Looking Velocity Maximum" visible="true" offset="0x264"/>
+	<degree name="Looking Acceleration Maximum" visible="true" offset="0x268"/>
+	<stringId name="Right Hand Node" visible="true" offset="0x26C"/>
+	<stringId name="Left Hand Node" visible="true" offset="0x270"/>
+	<stringId name="Preferred Gun Node" visible="true" offset="0x274"/>
+	<tagref name="Melee Damage" visible="true" offset="0x278"/>
+	<tagref name="Boarding Melee Damage" visible="true" offset="0x288"/>
+	<tagref name="Boarding Melee Response" visible="true" offset="0x298"/>
+	<tagref name="Ejection Melee Damage" visible="true" offset="0x2A8"/>
+	<tagref name="Ejection Melee Response" visible="true" offset="0x2B8"/>
+	<tagref name="Landing Melee Damage" visible="true" offset="0x2C8"/>
+	<tagref name="Flurry Melee Damage" visible="true" offset="0x2D8"/>
+	<tagref name="Obstacle Smash Melee Damage" visible="true" offset="0x2E8"/>
+	<tagref name="Shield Pop Damage" visible="true" offset="0x2F8"/>
+	<tagref name="Assassination Damage" visible="true" offset="0x308"/>
+	<enum16 name="Motion Sensor Blip Size" visible="true" offset="0x318">
+		<option name="Medium" value="0x0"/>
+		<option name="Small" value="0x1"/>
+		<option name="Large" value="0x2"/>
+	</enum16>
+	<enum16 name="Item Scale" visible="true" offset="0x31A">
+		<option name="Small" value="0x0"/>
+		<option name="Medium" value="0x1"/>
+		<option name="Large" value="0x2"/>
+		<option name="Huge" value="0x3"/>
+	</enum16>
+	<reflexive name="Postures" visible="true" offset="0x31C" entrySize="0x10">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<float name="Pill Offset I" visible="true" offset="0x4"/>
+		<float name="Pill Offset J" visible="true" offset="0x8"/>
+		<float name="Pill Offset K" visible="true" offset="0xC"/>
+	</reflexive>
+	<reflexive name="Hud Interfaces" visible="true" offset="0x328" entrySize="0x10">
+		<tagref name="Unit Hud Interface" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Dialogue Variants" visible="true" offset="0x334" entrySize="0x14">
+		<int16 name="Variant Number" visible="true" offset="0x0"/>
+		<int16 name="Unknown" visible="true" offset="0x2"/>
+		<tagref name="Dialogue" visible="true" offset="0x4"/>
+	</reflexive>
+	<uint32 name="Unknown16" visible="true" offset="0x340"/>
+	<uint32 name="Unknown17" visible="true" offset="0x344"/>
+	<uint32 name="Unknown18" visible="true" offset="0x348"/>
+	<uint32 name="Unknown19" visible="true" offset="0x34C"/>
+	<float32 name="Grenade Velocity" visible="true" offset="0x350"/>
+	<enum16 name="Grenade Type" visible="true" offset="0x354">
+		<option name="Human Fragmentation" value="0x0"/>
+		<option name="Covenant Plasma" value="0x1"/>
+		<option name="Brute Spike" value="0x2"/>
+		<option name="Firebomb" value="0x3"/>
+	</enum16>
+	<int16 name="Grenade Count" visible="true" offset="0x356"/>
+	<reflexive name="Powered Seats" visible="true" offset="0x358" entrySize="0x8">
+		<float32 name="Driver Powerup Time" visible="true" offset="0x0"/>
+		<float32 name="Driver Powerdown Time" visible="true" offset="0x4"/>
+	</reflexive>
+	<reflexive name="Weapons" visible="true" offset="0x364" entrySize="0x10">
+		<tagref name="Weapon2" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Target Tracking" visible="true" offset="0x370" entrySize="0x38">
+		<reflexive name="Tracking Types" visible="true" offset="0x0" entrySize="0x4">
+			<stringId name="Tracking Type2" visible="true" offset="0x0"/>
+		</reflexive>
+		<float32 name="Acquire Time" visible="true" offset="0xC"/>
+		<float32 name="Grace Time" visible="true" offset="0x10"/>
+		<float32 name="Decay Time" visible="true" offset="0x14"/>
+		<tagref name="Tracking Sound" visible="true" offset="0x18"/>
+		<tagref name="Locked Sound" visible="true" offset="0x28"/>
+	</reflexive>
+	<reflexive name="Seats" visible="true" offset="0x37C" entrySize="0xE4">
+		<uint32 name="Flags" visible="true" offset="0x0"/>
+		<stringId name="Seat Animation" visible="true" offset="0x4"/>
+		<stringId name="Seat Marker Name" visible="true" offset="0x8"/>
+		<stringId name="Entry Marker SName" visible="true" offset="0xC"/>
+		<stringId name="Boarding Grenade Marker" visible="true" offset="0x10"/>
+		<stringId name="Boarding Grenade String" visible="true" offset="0x14"/>
+		<stringId name="Boarding Melee String" visible="true" offset="0x18"/>
+		<stringId name="Detach Weapon String" visible="true" offset="0x1C"/>
+		<float32 name="Ping Scale" visible="true" offset="0x20"/>
+		<float32 name="Turnover Time" visible="true" offset="0x24"/>
+		<float name="Acceleration Range I" visible="true" offset="0x28"/>
+		<float name="Acceleration Range J" visible="true" offset="0x2C"/>
+		<float name="Acceleration Range K" visible="true" offset="0x30"/>
+		<float32 name="Acceleration Action Scale" visible="true" offset="0x34"/>
+		<float32 name="Acceleration Attach Scale" visible="true" offset="0x38"/>
+		<float32 name="Ai Scariness" visible="true" offset="0x3C"/>
+		<enum16 name="Ai Seat Type" visible="true" offset="0x40">
+			<option name="None" value="0x0"/>
+			<option name="Passenger" value="0x1"/>
+			<option name="Gunner" value="0x2"/>
+			<option name="Small Cargo" value="0x3"/>
+			<option name="Large Cargo" value="0x4"/>
+			<option name="Driver" value="0x5"/>
+		</enum16>
+		<int16 name="Boarding Seat" visible="true" offset="0x42"/>
+		<float32 name="Listener Interpolation Factor" visible="true" offset="0x44"/>
+		<float32 name="Yaw Rate Bounds Min" visible="true" offset="0x48"/>
+		<float32 name="Yaw Rate Bounds Max" visible="true" offset="0x4C"/>
+		<float32 name="Pitch Rate Bounds Min" visible="true" offset="0x50"/>
+		<float32 name="Pitch Rate Bounds Max" visible="true" offset="0x54"/>
+		<float32 name="Pitch Interpolation Time" visible="true" offset="0x58"/>
+		<float32 name="Min Speed Reference" visible="true" offset="0x5C"/>
+		<float32 name="Max Speed Reference" visible="true" offset="0x60"/>
+		<float32 name="Speed Exponent" visible="true" offset="0x64"/>
+		<bitfield16 name="Camera Flags" visible="true" offset="0x68">
+			<bit name="Pitch Bounds Absolute Space" index="0"/>
+			<bit name="Only Collides With Environment" index="1"/>
+			<bit name="Hides Player Unit From Camera" index="2"/>
+			<bit name="Use Aiming Vector Instead Of Marker Forward" index="3"/>
+		</bitfield16>
+		<uint8 name="Unused Padding 0" visible="false" offset="0x6A"/>
+		<uint8 name="Unused Padding 1" visible="false" offset="0x6B"/>
+		<stringId name="Camera Marker Name" visible="true" offset="0x6C"/>
+		<stringId name="Camera Submerged Marker Name" visible="true" offset="0x70"/>
+		<degree name="Pitch Auto Level" visible="true" offset="0x74"/>
+		<degree name="Pitch Range Min" visible="true" offset="0x78"/>
+		<degree name="Pitch Range Max" visible="true" offset="0x7C"/>
+		<reflexive name="Camera Tracks" visible="true" offset="0x80" entrySize="0x10">
+			<tagref name="Camera Track" visible="true" offset="0x0"/>
+		</reflexive>
+		<degree name="Pitch Spring Bounds Min" visible="true" offset="0x8C"/>
+		<degree name="Pitch Spring Bounds Max" visible="true" offset="0x90"/>
+		<degree name="Spring Velocity" visible="true" offset="0x94"/>
+		<reflexive name="Unknown7" visible="true" offset="0x98" entrySize="0x4C">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+			<uint32 name="Unknown6" visible="true" offset="0x14"/>
+			<uint32 name="Unknown7" visible="true" offset="0x18"/>
+			<uint32 name="Unknown8" visible="true" offset="0x1C"/>
+			<uint32 name="Unknown9" visible="true" offset="0x20"/>
+			<uint32 name="Unknown10" visible="true" offset="0x24"/>
+			<uint32 name="Unknown11" visible="true" offset="0x28"/>
+			<uint32 name="Unknown12" visible="true" offset="0x2C"/>
+			<uint32 name="Unknown13" visible="true" offset="0x30"/>
+			<uint32 name="Unknown14" visible="true" offset="0x34"/>
+			<uint32 name="Unknown15" visible="true" offset="0x38"/>
+			<uint32 name="Unknown16" visible="true" offset="0x3C"/>
+			<uint32 name="Unknown17" visible="true" offset="0x40"/>
+			<uint32 name="Unknown18" visible="true" offset="0x44"/>
+			<uint32 name="Unknown19" visible="true" offset="0x48"/>
+		</reflexive>
+		<reflexive name="Unit Hud Interface" visible="true" offset="0xA4" entrySize="0x10">
+			<tagref name="Unit Hud Interface" visible="true" offset="0x0"/>
+		</reflexive>
+		<stringId name="Enter Seat String" visible="true" offset="0xB0"/>
+		<degree name="Yaw Range Min" visible="true" offset="0xB4"/>
+		<degree name="Yaw Range Max" visible="true" offset="0xB8"/>
+		<tagref name="Built In Gunner" visible="true" offset="0xBC"/>
+		<float32 name="Entry Radius" visible="true" offset="0xCC"/>
+		<degree name="Entry Marker Cone Angle" visible="true" offset="0xD0"/>
+		<degree name="Entry Marker Facing Angle" visible="true" offset="0xD4"/>
+		<float32 name="Maximum Relative Velocity" visible="true" offset="0xD8"/>
+		<stringId name="Invisible Seat Region" visible="true" offset="0xDC"/>
+		<int32 name="Runtime Invisible Seat Region Index" visible="true" offset="0xE0"/>
+	</reflexive>
+	<float32 name="Emp Radius" visible="true" offset="0x388"/>
+	<tagref name="Emp Effect" visible="true" offset="0x38C"/>
+	<tagref name="Boost Collision Damage" visible="true" offset="0x39C"/>
+	<float32 name="Boost Peak Power" visible="true" offset="0x3AC"/>
+	<float32 name="Boost Rise Power" visible="true" offset="0x3B0"/>
+	<float32 name="Boost Peak Time" visible="true" offset="0x3B4"/>
+	<float32 name="Boost Fall Power" visible="true" offset="0x3B8"/>
+	<float32 name="Boost Dead Time" visible="true" offset="0x3BC"/>
+	<float32 name="Lipsync Attack Weight" visible="true" offset="0x3C0"/>
+	<float32 name="Lipsync Decay Weight" visible="true" offset="0x3C4"/>
+	<tagref name="Detach Damage" visible="true" offset="0x3C8"/>
+	<tagref name="Detached Weapon" visible="true" offset="0x3D8"/>
+	<bitfield32 name="Giant Flags" visible="true" offset="0x3E8"/>
+	<float32 name="Acceleration Time" visible="true" offset="0x3EC"/>
+	<float32 name="Deceleration Time" visible="true" offset="0x3F0"/>
+	<float32 name="Speed Scale" visible="true" offset="0x3F4"/>
+	<float32 name="Elevation Change Rate" visible="true" offset="0x3F8"/>
+	<float32 name="Foot Target Radius" visible="true" offset="0x3FC"/>
+	<reflexive name="Buckle Settings" visible="true" offset="0x400" entrySize="0x5C">
+		<float32 name="Lower Time" visible="true" offset="0x0"/>
+		<enum32 name="Lower Curve" visible="true" offset="0x4">
+			<option name="Linear" value="0x0"/>
+			<option name="Light Ease In" value="0x1"/>
+			<option name="Full Ease In" value="0x2"/>
+			<option name="Light Ease Out" value="0x3"/>
+			<option name="Full Ease Out" value="0x4"/>
+			<option name="Light Ease In And Out" value="0x5"/>
+			<option name="Full Ease In And Out" value="0x6"/>
+		</enum32>
+		<float32 name="Raise Time" visible="true" offset="0x8"/>
+		<enum32 name="Raise Curve" visible="true" offset="0xC">
+			<option name="Linear" value="0x0"/>
+			<option name="Light Ease In" value="0x1"/>
+			<option name="Full Ease In" value="0x2"/>
+			<option name="Light Ease Out" value="0x3"/>
+			<option name="Full Ease Out" value="0x4"/>
+			<option name="Light Ease In And Out" value="0x5"/>
+			<option name="Full Ease In And Out" value="0x6"/>
+		</enum32>
+		<float32 name="Pause Time Easy" visible="true" offset="0x10"/>
+		<float32 name="Pause Time Normal" visible="true" offset="0x14"/>
+		<float32 name="Pause Time Heroic" visible="true" offset="0x18"/>
+		<float32 name="Pause Time Legendary" visible="true" offset="0x1C"/>
+		<float32 name="Buckle Gravity Scale" visible="true" offset="0x20"/>
+		<stringId name="Buckling Marker" visible="true" offset="0x24"/>
+		<float32 name="Forward Rear Scan" visible="true" offset="0x28"/>
+		<float32 name="Left Right Scan" visible="true" offset="0x2C"/>
+		<int32 name="Forward Rear Steps" visible="true" offset="0x30"/>
+		<int32 name="Left Right Steps" visible="true" offset="0x34"/>
+		<degree name="Pitch Bounds Min" visible="true" offset="0x38"/>
+		<degree name="Pitch Bounds Max" visible="true" offset="0x3C"/>
+		<degree name="Roll Bounds Min" visible="true" offset="0x40"/>
+		<degree name="Roll Bounds Max" visible="true" offset="0x44"/>
+		<stringId name="Buckle Animation" visible="true" offset="0x48"/>
+		<stringId name="Descent Overlay" visible="true" offset="0x4C"/>
+		<stringId name="Pause Overlay" visible="true" offset="0x50"/>
+		<float32 name="Descent Overlay Scale" visible="true" offset="0x54"/>
+		<float32 name="Paused Overlay Scale" visible="true" offset="0x58"/>
+	</reflexive>
+	<float32 name="Ankle Ik Scale" visible="true" offset="0x40C"/>
+</plugin>

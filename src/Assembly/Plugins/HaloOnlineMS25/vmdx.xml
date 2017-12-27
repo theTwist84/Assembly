@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x1A0">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<int8 name="Unknown" visible="true" offset="0x0"/>
+	<int8 name="Unknown2" visible="true" offset="0x1"/>
+	<int8 name="Unknown3" visible="true" offset="0x2"/>
+	<int8 name="Unknown4" visible="true" offset="0x3"/>
+	<float32 name="Unknown5" visible="true" offset="0x4"/>
+	<float32 name="Unknown6" visible="true" offset="0x8"/>
+	<float32 name="Unknown7" visible="true" offset="0xC"/>
+	<float32 name="Unknown8" visible="true" offset="0x10"/>
+	<float32 name="Unknown9" visible="true" offset="0x14"/>
+	<float32 name="Unknown10" visible="true" offset="0x18"/>
+	<float32 name="Unknown11" visible="true" offset="0x1C"/>
+	<float32 name="Unknown12" visible="true" offset="0x20"/>
+	<float32 name="Unknown13" visible="true" offset="0x24"/>
+	<float32 name="Unknown14" visible="true" offset="0x28"/>
+	<float32 name="Unknown15" visible="true" offset="0x2C"/>
+	<float32 name="Unknown16" visible="true" offset="0x30"/>
+	<float32 name="Unknown17" visible="true" offset="0x34"/>
+	<float32 name="Unknown18" visible="true" offset="0x38"/>
+	<float32 name="Unknown19" visible="true" offset="0x3C"/>
+	<float32 name="Unknown20" visible="true" offset="0x40"/>
+	<float32 name="Unknown21" visible="true" offset="0x44"/>
+	<float32 name="Unknown22" visible="true" offset="0x48"/>
+	<tagref name="Unknown23" visible="true" offset="0x4C"/>
+	<dataRef name="Unknown24" visible="true" offset="0x5C"/>
+	<dataRef name="Unknown25" visible="true" offset="0x70"/>
+	<float32 name="Unknown26" visible="true" offset="0x84"/>
+	<float32 name="Unknown27" visible="true" offset="0x88"/>
+	<float32 name="Unknown28" visible="true" offset="0x8C"/>
+	<float32 name="Unknown29" visible="true" offset="0x90"/>
+	<dataRef name="Unknown30" visible="true" offset="0x94"/>
+	<dataRef name="Unknown31" visible="true" offset="0xA8"/>
+	<float32 name="Unknown32" visible="true" offset="0xBC"/>
+	<float32 name="Unknown33" visible="true" offset="0xC0"/>
+	<float32 name="Unknown34" visible="true" offset="0xC4"/>
+	<float32 name="Unknown35" visible="true" offset="0xC8"/>
+	<dataRef name="Unknown36" visible="true" offset="0xCC"/>
+	<dataRef name="Unknown37" visible="true" offset="0xE0"/>
+	<float32 name="Unknown38" visible="true" offset="0xF4"/>
+	<float32 name="Unknown39" visible="true" offset="0xF8"/>
+	<float32 name="Unknown40" visible="true" offset="0xFC"/>
+	<float32 name="Unknown41" visible="true" offset="0x100"/>
+	<dataRef name="Unknown42" visible="true" offset="0x104"/>
+	<dataRef name="Unknown43" visible="true" offset="0x118"/>
+	<float32 name="Unknown44" visible="true" offset="0x12C"/>
+	<float32 name="Unknown45" visible="true" offset="0x130"/>
+	<float32 name="Unknown46" visible="true" offset="0x134"/>
+	<float32 name="Unknown47" visible="true" offset="0x138"/>
+	<dataRef name="Unknown48" visible="true" offset="0x13C"/>
+	<dataRef name="Unknown49" visible="true" offset="0x150"/>
+	<float32 name="Unknown50" visible="true" offset="0x164"/>
+	<float32 name="Unknown51" visible="true" offset="0x168"/>
+	<float32 name="Unknown52" visible="true" offset="0x16C"/>
+	<float32 name="Unknown53" visible="true" offset="0x170"/>
+	<tagref name="Unknown54" visible="true" offset="0x174"/>
+	<tagref name="Unknown55" visible="true" offset="0x184"/>
+	<uint8 name="Unused Padding 0" visible="false" offset="0x194"/>
+	<uint8 name="Unused Padding 1" visible="false" offset="0x195"/>
+	<uint8 name="Unused Padding 2" visible="false" offset="0x196"/>
+	<uint8 name="Unused Padding 3" visible="false" offset="0x197"/>
+	<uint8 name="Unused Padding 4" visible="false" offset="0x198"/>
+	<uint8 name="Unused Padding 5" visible="false" offset="0x199"/>
+	<uint8 name="Unused Padding 6" visible="false" offset="0x19A"/>
+	<uint8 name="Unused Padding 7" visible="false" offset="0x19B"/>
+	<uint8 name="Unused Padding 8" visible="false" offset="0x19C"/>
+	<uint8 name="Unused Padding 9" visible="false" offset="0x19D"/>
+	<uint8 name="Unused Padding 10" visible="false" offset="0x19E"/>
+	<uint8 name="Unused Padding 11" visible="false" offset="0x19F"/>
+</plugin>

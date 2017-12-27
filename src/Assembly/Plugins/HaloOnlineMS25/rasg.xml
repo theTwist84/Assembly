@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0xBC">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<reflexive name="Default Bitmaps" visible="true" offset="0x0" entrySize="0x14">
+		<int32 name="Unknown" visible="true" offset="0x0"/>
+		<tagref name="Bitmap" visible="true" offset="0x4"/>
+	</reflexive>
+	<reflexive name="Default Rasterizer Bitmaps" visible="true" offset="0xC" entrySize="0x10">
+		<tagref name="Bitmap" visible="true" offset="0x0"/>
+	</reflexive>
+	<tagref name="Vertex Shader Simple" visible="true" offset="0x18"/>
+	<tagref name="Pixel Shader Simple" visible="true" offset="0x28"/>
+	<reflexive name="Default Shaders" visible="true" offset="0x38" entrySize="0x20">
+		<tagref name="Vertex Shader" visible="true" offset="0x0"/>
+		<tagref name="Pixel Shader" visible="true" offset="0x10"/>
+	</reflexive>
+	<uint32 name="Unknown" visible="true" offset="0x44"/>
+	<uint32 name="Unknown2" visible="true" offset="0x48"/>
+	<uint32 name="Unknown3" visible="true" offset="0x4C"/>
+	<int32 name="Unknown4" visible="true" offset="0x50"/>
+	<int32 name="Unknown5" visible="true" offset="0x54"/>
+	<tagref name="Active Camo Distortion" visible="true" offset="0x58"/>
+	<tagref name="Default Performance Template" visible="true" offset="0x68"/>
+	<tagref name="Default Shield Impact" visible="true" offset="0x78"/>
+	<tagref name="Default Vision Mode" visible="true" offset="0x88"/>
+	<int32 name="Unknown6 HO" visible="true" offset="0x98"/>
+	<float32 name="Unknown7" visible="true" offset="0x9C"/>
+	<float32 name="Unknown8" visible="true" offset="0xA0"/>
+	<float32 name="Unknown9" visible="true" offset="0xA4"/>
+	<float32 name="Unknown10" visible="true" offset="0xA8"/>
+	<float32 name="Unknown11" visible="true" offset="0xAC"/>
+	<float32 name="Unknown12" visible="true" offset="0xB0"/>
+	<uint8 name="Unused Padding 0" visible="false" offset="0xB4"/>
+	<uint8 name="Unused Padding 1" visible="false" offset="0xB5"/>
+	<uint8 name="Unused Padding 2" visible="false" offset="0xB6"/>
+	<uint8 name="Unused Padding 3" visible="false" offset="0xB7"/>
+	<uint8 name="Unused Padding 4" visible="false" offset="0xB8"/>
+	<uint8 name="Unused Padding 5" visible="false" offset="0xB9"/>
+	<uint8 name="Unused Padding 6" visible="false" offset="0xBA"/>
+	<uint8 name="Unused Padding 7" visible="false" offset="0xBB"/>
+</plugin>

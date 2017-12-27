@@ -1,0 +1,2353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x1BE">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<enum8 name="Map Type Halo3 Odst" visible="true" offset="0x0">
+		<option name="Single Player" value="0x0"/>
+		<option name="Multiplayer" value="0x1"/>
+		<option name="Main Menu" value="0x2"/>
+	</enum8>
+	<enum8 name="Map Sub Type Halo3 Odst" visible="true" offset="0x1">
+		<option name="None" value="0x0"/>
+		<option name="Hub" value="0x1"/>
+		<option name="Level" value="0x2"/>
+		<option name="Scene" value="0x3"/>
+		<option name="Cinematic" value="0x4"/>
+	</enum8>
+	<reflexive name="Tag Resources" visible="true" offset="0x2" entrySize="0x50">
+		<tagref name="Parent Tag" visible="true" offset="0x0"/>
+		<uint16 name="Salt" visible="true" offset="0x10"/>
+		<enum8 name="Type" visible="true" offset="0x12">
+			<option name="Collision" value="0x0"/>
+			<option name="Bitmap" value="0x1"/>
+			<option name="Bitmap Interleaved" value="0x2"/>
+			<option name="Sound" value="0x3"/>
+			<option name="Animation" value="0x4"/>
+			<option name="Render Geometry" value="0x5"/>
+			<option name="Bink" value="0x6"/>
+			<option name="Pathfinding" value="0x7"/>
+		</enum8>
+		<uint8 name="Flags" visible="true" offset="0x13"/>
+		<dataRef name="Definition Data" visible="true" offset="0x14"/>
+		<uint32 name="Definition Address:< Value>k__ Backing Field" visible="true" offset="0x28"/>
+		<int32 name="Definition Address: Type Shift" visible="true" offset="0x2C"/>
+		<uint32 name="Definition Address: Offset Mask" visible="true" offset="0x30"/>
+		<reflexive name="Resource Fixups" visible="true" offset="0x34" entrySize="0x10">
+			<uint32 name="Block Offset" visible="true" offset="0x0"/>
+			<uint32 name="Address:< Value>k__ Backing Field" visible="true" offset="0x4"/>
+			<int32 name="Address: Type Shift" visible="true" offset="0x8"/>
+			<uint32 name="Address: Offset Mask" visible="true" offset="0xC"/>
+		</reflexive>
+		<reflexive name="Resource Definition Fixups" visible="true" offset="0x40" entrySize="0x10">
+			<uint32 name="Address:< Value>k__ Backing Field" visible="true" offset="0x0"/>
+			<int32 name="Address: Type Shift" visible="true" offset="0x4"/>
+			<uint32 name="Address: Offset Mask" visible="true" offset="0x8"/>
+			<int32 name="Resource Structure Type Index" visible="true" offset="0xC"/>
+		</reflexive>
+		<int32 name="Unknown2" visible="true" offset="0x4C"/>
+	</reflexive>
+	<reflexive name="Designer Zonesets" visible="true" offset="0xE" entrySize="0x78">
+		<reflexive name="Required Raw Pool" visible="true" offset="0x0" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown" visible="true" offset="0xC"/>
+		<uint32 name="Unknown2" visible="true" offset="0x10"/>
+		<uint32 name="Unknown3" visible="true" offset="0x14"/>
+		<reflexive name="Optional Raw Pool" visible="true" offset="0x18" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Raw Pool2" visible="true" offset="0x24" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown4" visible="true" offset="0x30"/>
+		<uint32 name="Unknown5" visible="true" offset="0x34"/>
+		<uint32 name="Unknown6" visible="true" offset="0x38"/>
+		<uint32 name="Unknown7" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown8" visible="true" offset="0x40"/>
+		<stringId name="Set Name" visible="true" offset="0x44"/>
+		<reflexive name="Resource Types" visible="true" offset="0x48" entrySize="0x14">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+		</reflexive>
+		<reflexive name="Required Tag Pool" visible="true" offset="0x54" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Tag Pool" visible="true" offset="0x60" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown9" visible="true" offset="0x6C"/>
+		<uint32 name="Unknown10" visible="true" offset="0x70"/>
+		<uint32 name="Unknown11" visible="true" offset="0x74"/>
+	</reflexive>
+	<reflexive name="Global Zoneset" visible="true" offset="0x1A" entrySize="0x78">
+		<reflexive name="Required Raw Pool" visible="true" offset="0x0" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown" visible="true" offset="0xC"/>
+		<uint32 name="Unknown2" visible="true" offset="0x10"/>
+		<uint32 name="Unknown3" visible="true" offset="0x14"/>
+		<reflexive name="Optional Raw Pool" visible="true" offset="0x18" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Raw Pool2" visible="true" offset="0x24" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown4" visible="true" offset="0x30"/>
+		<uint32 name="Unknown5" visible="true" offset="0x34"/>
+		<uint32 name="Unknown6" visible="true" offset="0x38"/>
+		<uint32 name="Unknown7" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown8" visible="true" offset="0x40"/>
+		<stringId name="Set Name" visible="true" offset="0x44"/>
+		<reflexive name="Resource Types" visible="true" offset="0x48" entrySize="0x14">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+		</reflexive>
+		<reflexive name="Required Tag Pool" visible="true" offset="0x54" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Tag Pool" visible="true" offset="0x60" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown9" visible="true" offset="0x6C"/>
+		<uint32 name="Unknown10" visible="true" offset="0x70"/>
+		<uint32 name="Unknown11" visible="true" offset="0x74"/>
+	</reflexive>
+	<uint32 name="Unknown" visible="true" offset="0x26"/>
+	<uint32 name="Unknown2" visible="true" offset="0x2A"/>
+	<uint32 name="Unknown3" visible="true" offset="0x2E"/>
+	<reflexive name="Unattached Zoneset" visible="true" offset="0x32" entrySize="0x78">
+		<reflexive name="Required Raw Pool" visible="true" offset="0x0" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown" visible="true" offset="0xC"/>
+		<uint32 name="Unknown2" visible="true" offset="0x10"/>
+		<uint32 name="Unknown3" visible="true" offset="0x14"/>
+		<reflexive name="Optional Raw Pool" visible="true" offset="0x18" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Raw Pool2" visible="true" offset="0x24" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown4" visible="true" offset="0x30"/>
+		<uint32 name="Unknown5" visible="true" offset="0x34"/>
+		<uint32 name="Unknown6" visible="true" offset="0x38"/>
+		<uint32 name="Unknown7" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown8" visible="true" offset="0x40"/>
+		<stringId name="Set Name" visible="true" offset="0x44"/>
+		<reflexive name="Resource Types" visible="true" offset="0x48" entrySize="0x14">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+		</reflexive>
+		<reflexive name="Required Tag Pool" visible="true" offset="0x54" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Tag Pool" visible="true" offset="0x60" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown9" visible="true" offset="0x6C"/>
+		<uint32 name="Unknown10" visible="true" offset="0x70"/>
+		<uint32 name="Unknown11" visible="true" offset="0x74"/>
+	</reflexive>
+	<reflexive name="Disc Forbidden Zoneset" visible="true" offset="0x3E" entrySize="0x78">
+		<reflexive name="Required Raw Pool" visible="true" offset="0x0" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown" visible="true" offset="0xC"/>
+		<uint32 name="Unknown2" visible="true" offset="0x10"/>
+		<uint32 name="Unknown3" visible="true" offset="0x14"/>
+		<reflexive name="Optional Raw Pool" visible="true" offset="0x18" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Raw Pool2" visible="true" offset="0x24" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown4" visible="true" offset="0x30"/>
+		<uint32 name="Unknown5" visible="true" offset="0x34"/>
+		<uint32 name="Unknown6" visible="true" offset="0x38"/>
+		<uint32 name="Unknown7" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown8" visible="true" offset="0x40"/>
+		<stringId name="Set Name" visible="true" offset="0x44"/>
+		<reflexive name="Resource Types" visible="true" offset="0x48" entrySize="0x14">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+		</reflexive>
+		<reflexive name="Required Tag Pool" visible="true" offset="0x54" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Tag Pool" visible="true" offset="0x60" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown9" visible="true" offset="0x6C"/>
+		<uint32 name="Unknown10" visible="true" offset="0x70"/>
+		<uint32 name="Unknown11" visible="true" offset="0x74"/>
+	</reflexive>
+	<reflexive name="Disc Always Streaming Zoneset" visible="true" offset="0x4A" entrySize="0x78">
+		<reflexive name="Required Raw Pool" visible="true" offset="0x0" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown" visible="true" offset="0xC"/>
+		<uint32 name="Unknown2" visible="true" offset="0x10"/>
+		<uint32 name="Unknown3" visible="true" offset="0x14"/>
+		<reflexive name="Optional Raw Pool" visible="true" offset="0x18" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Raw Pool2" visible="true" offset="0x24" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown4" visible="true" offset="0x30"/>
+		<uint32 name="Unknown5" visible="true" offset="0x34"/>
+		<uint32 name="Unknown6" visible="true" offset="0x38"/>
+		<uint32 name="Unknown7" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown8" visible="true" offset="0x40"/>
+		<stringId name="Set Name" visible="true" offset="0x44"/>
+		<reflexive name="Resource Types" visible="true" offset="0x48" entrySize="0x14">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+		</reflexive>
+		<reflexive name="Required Tag Pool" visible="true" offset="0x54" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Tag Pool" visible="true" offset="0x60" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown9" visible="true" offset="0x6C"/>
+		<uint32 name="Unknown10" visible="true" offset="0x70"/>
+		<uint32 name="Unknown11" visible="true" offset="0x74"/>
+	</reflexive>
+	<reflexive name="Bsp Zonesets1" visible="true" offset="0x56" entrySize="0x78">
+		<reflexive name="Required Raw Pool" visible="true" offset="0x0" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown" visible="true" offset="0xC"/>
+		<uint32 name="Unknown2" visible="true" offset="0x10"/>
+		<uint32 name="Unknown3" visible="true" offset="0x14"/>
+		<reflexive name="Optional Raw Pool" visible="true" offset="0x18" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Raw Pool2" visible="true" offset="0x24" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown4" visible="true" offset="0x30"/>
+		<uint32 name="Unknown5" visible="true" offset="0x34"/>
+		<uint32 name="Unknown6" visible="true" offset="0x38"/>
+		<uint32 name="Unknown7" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown8" visible="true" offset="0x40"/>
+		<stringId name="Set Name" visible="true" offset="0x44"/>
+		<reflexive name="Resource Types" visible="true" offset="0x48" entrySize="0x14">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+		</reflexive>
+		<reflexive name="Required Tag Pool" visible="true" offset="0x54" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Tag Pool" visible="true" offset="0x60" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown9" visible="true" offset="0x6C"/>
+		<uint32 name="Unknown10" visible="true" offset="0x70"/>
+		<uint32 name="Unknown11" visible="true" offset="0x74"/>
+	</reflexive>
+	<reflexive name="Bsp Zonesets2" visible="true" offset="0x62" entrySize="0x78">
+		<reflexive name="Required Raw Pool" visible="true" offset="0x0" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown" visible="true" offset="0xC"/>
+		<uint32 name="Unknown2" visible="true" offset="0x10"/>
+		<uint32 name="Unknown3" visible="true" offset="0x14"/>
+		<reflexive name="Optional Raw Pool" visible="true" offset="0x18" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Raw Pool2" visible="true" offset="0x24" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown4" visible="true" offset="0x30"/>
+		<uint32 name="Unknown5" visible="true" offset="0x34"/>
+		<uint32 name="Unknown6" visible="true" offset="0x38"/>
+		<uint32 name="Unknown7" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown8" visible="true" offset="0x40"/>
+		<stringId name="Set Name" visible="true" offset="0x44"/>
+		<reflexive name="Resource Types" visible="true" offset="0x48" entrySize="0x14">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+		</reflexive>
+		<reflexive name="Required Tag Pool" visible="true" offset="0x54" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Tag Pool" visible="true" offset="0x60" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown9" visible="true" offset="0x6C"/>
+		<uint32 name="Unknown10" visible="true" offset="0x70"/>
+		<uint32 name="Unknown11" visible="true" offset="0x74"/>
+	</reflexive>
+	<reflexive name="Bsp Zonesets3" visible="true" offset="0x6E" entrySize="0x78">
+		<reflexive name="Required Raw Pool" visible="true" offset="0x0" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown" visible="true" offset="0xC"/>
+		<uint32 name="Unknown2" visible="true" offset="0x10"/>
+		<uint32 name="Unknown3" visible="true" offset="0x14"/>
+		<reflexive name="Optional Raw Pool" visible="true" offset="0x18" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Raw Pool2" visible="true" offset="0x24" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown4" visible="true" offset="0x30"/>
+		<uint32 name="Unknown5" visible="true" offset="0x34"/>
+		<uint32 name="Unknown6" visible="true" offset="0x38"/>
+		<uint32 name="Unknown7" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown8" visible="true" offset="0x40"/>
+		<stringId name="Set Name" visible="true" offset="0x44"/>
+		<reflexive name="Resource Types" visible="true" offset="0x48" entrySize="0x14">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+		</reflexive>
+		<reflexive name="Required Tag Pool" visible="true" offset="0x54" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Tag Pool" visible="true" offset="0x60" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown9" visible="true" offset="0x6C"/>
+		<uint32 name="Unknown10" visible="true" offset="0x70"/>
+		<uint32 name="Unknown11" visible="true" offset="0x74"/>
+	</reflexive>
+	<reflexive name="Cinematic Zonesets" visible="true" offset="0x7A" entrySize="0x78">
+		<reflexive name="Required Raw Pool" visible="true" offset="0x0" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown" visible="true" offset="0xC"/>
+		<uint32 name="Unknown2" visible="true" offset="0x10"/>
+		<uint32 name="Unknown3" visible="true" offset="0x14"/>
+		<reflexive name="Optional Raw Pool" visible="true" offset="0x18" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Raw Pool2" visible="true" offset="0x24" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown4" visible="true" offset="0x30"/>
+		<uint32 name="Unknown5" visible="true" offset="0x34"/>
+		<uint32 name="Unknown6" visible="true" offset="0x38"/>
+		<uint32 name="Unknown7" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown8" visible="true" offset="0x40"/>
+		<stringId name="Set Name" visible="true" offset="0x44"/>
+		<reflexive name="Resource Types" visible="true" offset="0x48" entrySize="0x14">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+		</reflexive>
+		<reflexive name="Required Tag Pool" visible="true" offset="0x54" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Tag Pool" visible="true" offset="0x60" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown9" visible="true" offset="0x6C"/>
+		<uint32 name="Unknown10" visible="true" offset="0x70"/>
+		<uint32 name="Unknown11" visible="true" offset="0x74"/>
+	</reflexive>
+	<reflexive name="Scenario Zonesets" visible="true" offset="0x86" entrySize="0x78">
+		<reflexive name="Required Raw Pool" visible="true" offset="0x0" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown" visible="true" offset="0xC"/>
+		<uint32 name="Unknown2" visible="true" offset="0x10"/>
+		<uint32 name="Unknown3" visible="true" offset="0x14"/>
+		<reflexive name="Optional Raw Pool" visible="true" offset="0x18" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Raw Pool2" visible="true" offset="0x24" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown4" visible="true" offset="0x30"/>
+		<uint32 name="Unknown5" visible="true" offset="0x34"/>
+		<uint32 name="Unknown6" visible="true" offset="0x38"/>
+		<uint32 name="Unknown7" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown8" visible="true" offset="0x40"/>
+		<stringId name="Set Name" visible="true" offset="0x44"/>
+		<reflexive name="Resource Types" visible="true" offset="0x48" entrySize="0x14">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+		</reflexive>
+		<reflexive name="Required Tag Pool" visible="true" offset="0x54" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<reflexive name="Optional Tag Pool" visible="true" offset="0x60" entrySize="0x4">
+			<bitfield32 name="Active Members" visible="true" offset="0x0">
+				<bit name="Member0" index="0"/>
+				<bit name="Member1" index="1"/>
+				<bit name="Member2" index="2"/>
+				<bit name="Member3" index="3"/>
+				<bit name="Member4" index="4"/>
+				<bit name="Member5" index="5"/>
+				<bit name="Member6" index="6"/>
+				<bit name="Member7" index="7"/>
+				<bit name="Member8" index="8"/>
+				<bit name="Member9" index="9"/>
+				<bit name="Member10" index="10"/>
+				<bit name="Member11" index="11"/>
+				<bit name="Member12" index="12"/>
+				<bit name="Member13" index="13"/>
+				<bit name="Member14" index="14"/>
+				<bit name="Member15" index="15"/>
+				<bit name="Member16" index="16"/>
+				<bit name="Member17" index="17"/>
+				<bit name="Member18" index="18"/>
+				<bit name="Member19" index="19"/>
+				<bit name="Member20" index="20"/>
+				<bit name="Member21" index="21"/>
+				<bit name="Member22" index="22"/>
+				<bit name="Member23" index="23"/>
+				<bit name="Member24" index="24"/>
+				<bit name="Member25" index="25"/>
+				<bit name="Member26" index="26"/>
+				<bit name="Member27" index="27"/>
+				<bit name="Member28" index="28"/>
+				<bit name="Member29" index="29"/>
+				<bit name="Member30" index="30"/>
+				<bit name="Member31" index="31"/>
+			</bitfield32>
+		</reflexive>
+		<uint32 name="Unknown9" visible="true" offset="0x6C"/>
+		<uint32 name="Unknown10" visible="true" offset="0x70"/>
+		<uint32 name="Unknown11" visible="true" offset="0x74"/>
+	</reflexive>
+	<uint32 name="Unknown4" visible="true" offset="0x92"/>
+	<uint32 name="Unknown5" visible="true" offset="0x96"/>
+	<uint32 name="Unknown6" visible="true" offset="0x9A"/>
+	<uint32 name="Unknown7" visible="true" offset="0x9E"/>
+	<uint32 name="Unknown8" visible="true" offset="0xA2"/>
+	<uint32 name="Unknown9" visible="true" offset="0xA6"/>
+	<reflexive name="Scenario Zoneset Groups" visible="true" offset="0xAA" entrySize="0x24">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<int32 name="Bsp Group Index" visible="true" offset="0x4"/>
+		<bitfield32 name="Import Loaded Bsps" visible="true" offset="0x8">
+			<bit name="Bsp0" index="0"/>
+			<bit name="Bsp1" index="1"/>
+			<bit name="Bsp2" index="2"/>
+			<bit name="Bsp3" index="3"/>
+			<bit name="Bsp4" index="4"/>
+			<bit name="Bsp5" index="5"/>
+			<bit name="Bsp6" index="6"/>
+			<bit name="Bsp7" index="7"/>
+			<bit name="Bsp8" index="8"/>
+			<bit name="Bsp9" index="9"/>
+			<bit name="Bsp10" index="10"/>
+			<bit name="Bsp11" index="11"/>
+			<bit name="Bsp12" index="12"/>
+			<bit name="Bsp13" index="13"/>
+			<bit name="Bsp14" index="14"/>
+			<bit name="Bsp15" index="15"/>
+			<bit name="Bsp16" index="16"/>
+			<bit name="Bsp17" index="17"/>
+			<bit name="Bsp18" index="18"/>
+			<bit name="Bsp19" index="19"/>
+			<bit name="Bsp20" index="20"/>
+			<bit name="Bsp21" index="21"/>
+			<bit name="Bsp22" index="22"/>
+			<bit name="Bsp23" index="23"/>
+			<bit name="Bsp24" index="24"/>
+			<bit name="Bsp25" index="25"/>
+			<bit name="Bsp26" index="26"/>
+			<bit name="Bsp27" index="27"/>
+			<bit name="Bsp28" index="28"/>
+			<bit name="Bsp29" index="29"/>
+			<bit name="Bsp30" index="30"/>
+			<bit name="Bsp31" index="31"/>
+		</bitfield32>
+		<bitfield32 name="Loaded Bsps" visible="true" offset="0xC">
+			<bit name="Bsp0" index="0"/>
+			<bit name="Bsp1" index="1"/>
+			<bit name="Bsp2" index="2"/>
+			<bit name="Bsp3" index="3"/>
+			<bit name="Bsp4" index="4"/>
+			<bit name="Bsp5" index="5"/>
+			<bit name="Bsp6" index="6"/>
+			<bit name="Bsp7" index="7"/>
+			<bit name="Bsp8" index="8"/>
+			<bit name="Bsp9" index="9"/>
+			<bit name="Bsp10" index="10"/>
+			<bit name="Bsp11" index="11"/>
+			<bit name="Bsp12" index="12"/>
+			<bit name="Bsp13" index="13"/>
+			<bit name="Bsp14" index="14"/>
+			<bit name="Bsp15" index="15"/>
+			<bit name="Bsp16" index="16"/>
+			<bit name="Bsp17" index="17"/>
+			<bit name="Bsp18" index="18"/>
+			<bit name="Bsp19" index="19"/>
+			<bit name="Bsp20" index="20"/>
+			<bit name="Bsp21" index="21"/>
+			<bit name="Bsp22" index="22"/>
+			<bit name="Bsp23" index="23"/>
+			<bit name="Bsp24" index="24"/>
+			<bit name="Bsp25" index="25"/>
+			<bit name="Bsp26" index="26"/>
+			<bit name="Bsp27" index="27"/>
+			<bit name="Bsp28" index="28"/>
+			<bit name="Bsp29" index="29"/>
+			<bit name="Bsp30" index="30"/>
+			<bit name="Bsp31" index="31"/>
+		</bitfield32>
+		<bitfield32 name="Loaded Designer Zonesets" visible="true" offset="0x10">
+			<bit name="Set0" index="0"/>
+			<bit name="Set1" index="1"/>
+			<bit name="Set2" index="2"/>
+			<bit name="Set3" index="3"/>
+			<bit name="Set4" index="4"/>
+			<bit name="Set5" index="5"/>
+			<bit name="Set6" index="6"/>
+			<bit name="Set7" index="7"/>
+			<bit name="Set8" index="8"/>
+			<bit name="Set9" index="9"/>
+			<bit name="Set10" index="10"/>
+			<bit name="Set11" index="11"/>
+			<bit name="Set12" index="12"/>
+			<bit name="Set13" index="13"/>
+			<bit name="Set14" index="14"/>
+			<bit name="Set15" index="15"/>
+			<bit name="Set16" index="16"/>
+			<bit name="Set17" index="17"/>
+			<bit name="Set18" index="18"/>
+			<bit name="Set19" index="19"/>
+			<bit name="Set20" index="20"/>
+			<bit name="Set21" index="21"/>
+			<bit name="Set22" index="22"/>
+			<bit name="Set23" index="23"/>
+			<bit name="Set24" index="24"/>
+			<bit name="Set25" index="25"/>
+			<bit name="Set26" index="26"/>
+			<bit name="Set27" index="27"/>
+			<bit name="Set28" index="28"/>
+			<bit name="Set29" index="29"/>
+			<bit name="Set30" index="30"/>
+			<bit name="Set31" index="31"/>
+		</bitfield32>
+		<bitfield32 name="Unknown Loaded Designer Zonesets" visible="true" offset="0x14">
+			<bit name="Set0" index="0"/>
+			<bit name="Set1" index="1"/>
+			<bit name="Set2" index="2"/>
+			<bit name="Set3" index="3"/>
+			<bit name="Set4" index="4"/>
+			<bit name="Set5" index="5"/>
+			<bit name="Set6" index="6"/>
+			<bit name="Set7" index="7"/>
+			<bit name="Set8" index="8"/>
+			<bit name="Set9" index="9"/>
+			<bit name="Set10" index="10"/>
+			<bit name="Set11" index="11"/>
+			<bit name="Set12" index="12"/>
+			<bit name="Set13" index="13"/>
+			<bit name="Set14" index="14"/>
+			<bit name="Set15" index="15"/>
+			<bit name="Set16" index="16"/>
+			<bit name="Set17" index="17"/>
+			<bit name="Set18" index="18"/>
+			<bit name="Set19" index="19"/>
+			<bit name="Set20" index="20"/>
+			<bit name="Set21" index="21"/>
+			<bit name="Set22" index="22"/>
+			<bit name="Set23" index="23"/>
+			<bit name="Set24" index="24"/>
+			<bit name="Set25" index="25"/>
+			<bit name="Set26" index="26"/>
+			<bit name="Set27" index="27"/>
+			<bit name="Set28" index="28"/>
+			<bit name="Set29" index="29"/>
+			<bit name="Set30" index="30"/>
+			<bit name="Set31" index="31"/>
+		</bitfield32>
+		<bitfield32 name="Unloaded Designer Zonesets" visible="true" offset="0x18">
+			<bit name="Set0" index="0"/>
+			<bit name="Set1" index="1"/>
+			<bit name="Set2" index="2"/>
+			<bit name="Set3" index="3"/>
+			<bit name="Set4" index="4"/>
+			<bit name="Set5" index="5"/>
+			<bit name="Set6" index="6"/>
+			<bit name="Set7" index="7"/>
+			<bit name="Set8" index="8"/>
+			<bit name="Set9" index="9"/>
+			<bit name="Set10" index="10"/>
+			<bit name="Set11" index="11"/>
+			<bit name="Set12" index="12"/>
+			<bit name="Set13" index="13"/>
+			<bit name="Set14" index="14"/>
+			<bit name="Set15" index="15"/>
+			<bit name="Set16" index="16"/>
+			<bit name="Set17" index="17"/>
+			<bit name="Set18" index="18"/>
+			<bit name="Set19" index="19"/>
+			<bit name="Set20" index="20"/>
+			<bit name="Set21" index="21"/>
+			<bit name="Set22" index="22"/>
+			<bit name="Set23" index="23"/>
+			<bit name="Set24" index="24"/>
+			<bit name="Set25" index="25"/>
+			<bit name="Set26" index="26"/>
+			<bit name="Set27" index="27"/>
+			<bit name="Set28" index="28"/>
+			<bit name="Set29" index="29"/>
+			<bit name="Set30" index="30"/>
+			<bit name="Set31" index="31"/>
+		</bitfield32>
+		<bitfield32 name="Loaded Cinematic Zonesets" visible="true" offset="0x1C">
+			<bit name="Set0" index="0"/>
+			<bit name="Set1" index="1"/>
+			<bit name="Set2" index="2"/>
+			<bit name="Set3" index="3"/>
+			<bit name="Set4" index="4"/>
+			<bit name="Set5" index="5"/>
+			<bit name="Set6" index="6"/>
+			<bit name="Set7" index="7"/>
+			<bit name="Set8" index="8"/>
+			<bit name="Set9" index="9"/>
+			<bit name="Set10" index="10"/>
+			<bit name="Set11" index="11"/>
+			<bit name="Set12" index="12"/>
+			<bit name="Set13" index="13"/>
+			<bit name="Set14" index="14"/>
+			<bit name="Set15" index="15"/>
+			<bit name="Set16" index="16"/>
+			<bit name="Set17" index="17"/>
+			<bit name="Set18" index="18"/>
+			<bit name="Set19" index="19"/>
+			<bit name="Set20" index="20"/>
+			<bit name="Set21" index="21"/>
+			<bit name="Set22" index="22"/>
+			<bit name="Set23" index="23"/>
+			<bit name="Set24" index="24"/>
+			<bit name="Set25" index="25"/>
+			<bit name="Set26" index="26"/>
+			<bit name="Set27" index="27"/>
+			<bit name="Set28" index="28"/>
+			<bit name="Set29" index="29"/>
+			<bit name="Set30" index="30"/>
+			<bit name="Set31" index="31"/>
+		</bitfield32>
+		<int32 name="Bsp Atlas Index" visible="true" offset="0x20"/>
+	</reflexive>
+	<reflexive name="Scenario Bsps" visible="true" offset="0xB6" entrySize="0x10">
+		<tagref name="tagref" visible="true" offset="0x0"/>
+	</reflexive>
+	<uint32 name="Unknown10" visible="true" offset="0xC2"/>
+	<uint32 name="Unknown11" visible="true" offset="0xC6"/>
+	<uint32 name="Unknown12" visible="true" offset="0xCA"/>
+	<uint32 name="Unknown13" visible="true" offset="0xCE"/>
+	<uint32 name="Unknown14" visible="true" offset="0xD2"/>
+	<uint32 name="Unknown15" visible="true" offset="0xD6"/>
+	<uint32 name="Unknown16" visible="true" offset="0xDA"/>
+	<uint32 name="Unknown17" visible="true" offset="0xDE"/>
+	<uint32 name="Unknown18" visible="true" offset="0xE2"/>
+	<dataRef name="Fixup Information" visible="true" offset="0xE6"/>
+	<uint32 name="Unknown19" visible="true" offset="0xFA"/>
+	<uint32 name="Unknown20" visible="true" offset="0xFE"/>
+	<uint32 name="Unknown21" visible="true" offset="0x102"/>
+	<uint32 name="Unknown22" visible="true" offset="0x106"/>
+	<uint32 name="Unknown23" visible="true" offset="0x10A"/>
+	<reflexive name="Unknown24" visible="true" offset="0x10E" entrySize="0x14">
+		<uint32 name="Unknown" visible="true" offset="0x0"/>
+		<uint32 name="Unknown2" visible="true" offset="0x4"/>
+		<uint32 name="Unknown3" visible="true" offset="0x8"/>
+		<uint32 name="Unknown4" visible="true" offset="0xC"/>
+		<uint32 name="Unknown5" visible="true" offset="0x10"/>
+	</reflexive>
+	<uint32 name="Unknown25" visible="true" offset="0x11A"/>
+	<uint32 name="Unknown26" visible="true" offset="0x11E"/>
+	<uint32 name="Unknown27" visible="true" offset="0x122"/>
+	<uint32 name="Unknown28" visible="true" offset="0x126"/>
+	<uint32 name="Unknown29" visible="true" offset="0x12A"/>
+	<uint32 name="Unknown30" visible="true" offset="0x12E"/>
+	<uint32 name="Unknown31" visible="true" offset="0x132"/>
+	<uint32 name="Unknown32" visible="true" offset="0x136"/>
+	<uint32 name="Unknown33" visible="true" offset="0x13A"/>
+	<uint32 name="Unknown34" visible="true" offset="0x13E"/>
+	<uint32 name="Unknown35" visible="true" offset="0x142"/>
+	<uint32 name="Unknown36" visible="true" offset="0x146"/>
+	<uint32 name="Unknown37" visible="true" offset="0x14A"/>
+	<uint32 name="Unknown38" visible="true" offset="0x14E"/>
+	<uint32 name="Unknown39" visible="true" offset="0x152"/>
+	<uint32 name="Unknown40" visible="true" offset="0x156"/>
+	<uint32 name="Unknown41" visible="true" offset="0x15A"/>
+	<uint32 name="Unknown42" visible="true" offset="0x15E"/>
+	<uint32 name="Unknown43" visible="true" offset="0x162"/>
+	<uint32 name="Unknown44" visible="true" offset="0x166"/>
+	<uint32 name="Unknown45" visible="true" offset="0x16A"/>
+	<uint32 name="Unknown46" visible="true" offset="0x16E"/>
+	<uint32 name="Unknown47" visible="true" offset="0x172"/>
+	<uint32 name="Unknown48" visible="true" offset="0x176"/>
+	<reflexive name="Prediction A" visible="true" offset="0x17A" entrySize="0x4">
+		<uint32 name="Key" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Prediction B" visible="true" offset="0x186" entrySize="0x8">
+		<int16 name="Overall Index" visible="true" offset="0x0"/>
+		<int16 name="ACount" visible="true" offset="0x2"/>
+		<int32 name="AIndex" visible="true" offset="0x4"/>
+	</reflexive>
+	<reflexive name="Prediction C" visible="true" offset="0x192" entrySize="0x4">
+		<int16 name="Overall Index" visible="true" offset="0x0"/>
+		<int16 name="BIndex" visible="true" offset="0x2"/>
+	</reflexive>
+	<reflexive name="Prediction DTags" visible="true" offset="0x19E" entrySize="0x8">
+		<int16 name="CCount" visible="true" offset="0x0"/>
+		<int16 name="CIndex" visible="true" offset="0x2"/>
+		<int16 name="ACount" visible="true" offset="0x4"/>
+		<int16 name="AIndex" visible="true" offset="0x6"/>
+	</reflexive>
+	<reflexive name="Prediction D2 Tags" visible="true" offset="0x1AA" entrySize="0x18">
+		<tagref name="Tag" visible="true" offset="0x0"/>
+		<int32 name="First Value" visible="true" offset="0x10"/>
+		<int32 name="Second Value" visible="true" offset="0x14"/>
+	</reflexive>
+	<int32 name="Campaign Id" visible="true" offset="0x1B6"/>
+	<int32 name="Map Id" visible="true" offset="0x1BA"/>
+</plugin>

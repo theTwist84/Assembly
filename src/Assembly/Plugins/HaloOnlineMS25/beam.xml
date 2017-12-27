@@ -1,0 +1,1152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x18">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<reflexive name="Beam" visible="true" offset="0x0" entrySize="0x208">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<tagref name="Render Method: Base Render Method" visible="true" offset="0x4"/>
+		<reflexive name="Render Method: Unknown" visible="true" offset="0x14" entrySize="0x2">
+			<int16 name="Unknown" visible="true" offset="0x0"/>
+		</reflexive>
+		<reflexive name="Render Method: Import Data" visible="true" offset="0x20" entrySize="0x3C">
+			<stringId name="Material Type" visible="true" offset="0x0"/>
+			<int32 name="Unknown" visible="true" offset="0x4"/>
+			<tagref name="Bitmap" visible="true" offset="0x8"/>
+			<uint32 name="Unknown2" visible="true" offset="0x18"/>
+			<int32 name="Unknown3" visible="true" offset="0x1C"/>
+			<int16 name="Unknown4" visible="true" offset="0x20"/>
+			<int16 name="Unknown5" visible="true" offset="0x22"/>
+			<int16 name="Unknown6" visible="true" offset="0x24"/>
+			<int16 name="Unknown7" visible="true" offset="0x26"/>
+			<int16 name="Unknown8" visible="true" offset="0x28"/>
+			<int16 name="Unknown9" visible="true" offset="0x2A"/>
+			<uint32 name="Unknown10" visible="true" offset="0x2C"/>
+			<reflexive name="Functions" visible="true" offset="0x30" entrySize="0x24">
+				<int32 name="Unknown" visible="true" offset="0x0"/>
+				<stringId name="Name" visible="true" offset="0x4"/>
+				<uint32 name="Unknown2" visible="true" offset="0x8"/>
+				<uint32 name="Unknown3" visible="true" offset="0xC"/>
+				<dataRef name="Function" visible="true" offset="0x10"/>
+			</reflexive>
+		</reflexive>
+		<reflexive name="Render Method: Shader Properties" visible="true" offset="0x2C" entrySize="0x84">
+			<tagref name="Template" visible="true" offset="0x0"/>
+			<reflexive name="Shader Maps" visible="true" offset="0x10" entrySize="0x18">
+				<tagref name="Bitmap" visible="true" offset="0x0"/>
+				<int8 name="Unknown" visible="true" offset="0x10"/>
+				<int8 name="Bitmap Index" visible="true" offset="0x11"/>
+				<int8 name="Unknown2" visible="true" offset="0x12"/>
+				<uint8 name="Bitmap Flags" visible="true" offset="0x13"/>
+				<int8 name="Unknown Bitmap Index Enable" visible="true" offset="0x14"/>
+				<int8 name="Uv Argument Index" visible="true" offset="0x15"/>
+				<int8 name="Unknown3" visible="true" offset="0x16"/>
+				<int8 name="Unknown4" visible="true" offset="0x17"/>
+			</reflexive>
+			<reflexive name="Arguments" visible="true" offset="0x1C" entrySize="0x10">
+				<float32 name="Arg1" visible="true" offset="0x0"/>
+				<float32 name="Arg2" visible="true" offset="0x4"/>
+				<float32 name="Arg3" visible="true" offset="0x8"/>
+				<float32 name="Arg4" visible="true" offset="0xC"/>
+			</reflexive>
+			<reflexive name="Unknown" visible="true" offset="0x28" entrySize="0x4">
+				<uint32 name="Unknown" visible="true" offset="0x0"/>
+			</reflexive>
+			<uint32 name="Unknown2" visible="true" offset="0x34"/>
+			<reflexive name="Draw Modes" visible="true" offset="0x38" entrySize="0x2">
+				<int16 name="Unknown" visible="true" offset="0x0"/>
+			</reflexive>
+			<reflexive name="Unknown4" visible="true" offset="0x44" entrySize="0x6">
+				<uint32 name="Unknown" visible="true" offset="0x0"/>
+				<int8 name="Unknown2" visible="true" offset="0x4"/>
+				<int8 name="Unknown3" visible="true" offset="0x5"/>
+			</reflexive>
+			<reflexive name="Unknown5" visible="true" offset="0x50" entrySize="0x4">
+				<int16 name="Unknown" visible="true" offset="0x0"/>
+				<int16 name="Unknown2" visible="true" offset="0x2"/>
+			</reflexive>
+			<reflexive name="Functions" visible="true" offset="0x5C" entrySize="0x24">
+				<int32 name="Unknown" visible="true" offset="0x0"/>
+				<stringId name="Name" visible="true" offset="0x4"/>
+				<uint32 name="Unknown2" visible="true" offset="0x8"/>
+				<uint32 name="Unknown3" visible="true" offset="0xC"/>
+				<dataRef name="Function" visible="true" offset="0x10"/>
+			</reflexive>
+			<int32 name="Bitmap Transparency" visible="true" offset="0x68"/>
+			<int32 name="Unknown7" visible="true" offset="0x6C"/>
+			<uint32 name="Unknown8" visible="true" offset="0x70"/>
+			<int16 name="Unknown9" visible="true" offset="0x74"/>
+			<int16 name="Unknown10" visible="true" offset="0x76"/>
+			<int16 name="Unknown11" visible="true" offset="0x78"/>
+			<int16 name="Unknown12" visible="true" offset="0x7A"/>
+			<int16 name="Unknown13" visible="true" offset="0x7C"/>
+			<int16 name="Unknown14" visible="true" offset="0x7E"/>
+			<int16 name="Unknown15" visible="true" offset="0x80"/>
+			<int16 name="Unknown16" visible="true" offset="0x82"/>
+		</reflexive>
+		<enum8 name="Render Method: Input Variable" visible="true" offset="0x38">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Render Method: Range Variable" visible="true" offset="0x39">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Render Method: Output Modifier" visible="true" offset="0x3A">
+			<option name="None" value="0x0"/>
+			<option name="Plus" value="0x1"/>
+			<option name="Times" value="0x2"/>
+		</enum8>
+		<enum8 name="Render Method: Output Modifier Input" visible="true" offset="0x3B">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<float32 name="Render Method: Runtime MConstant Value" visible="true" offset="0x3C"/>
+		<uint16 name="Render Method: Runtime MFlags" visible="true" offset="0x40"/>
+		<bitfield8 name="Render Method: Force Flags" visible="true" offset="0x42">
+			<bit name="Force Constant" index="0"/>
+		</bitfield8>
+		<uint8 name="Render Method: Unused Padding 0" visible="false" offset="0x43"/>
+		<uint32 name="Unknown1" visible="true" offset="0x44"/>
+		<uint32 name="Unknown2" visible="true" offset="0x48"/>
+		<uint32 name="Unknown3" visible="true" offset="0x4C"/>
+		<uint32 name="Unknown4" visible="true" offset="0x50"/>
+		<uint32 name="Unknown5" visible="true" offset="0x54"/>
+		<uint32 name="Unknown6" visible="true" offset="0x58"/>
+		<uint32 name="Unknown7" visible="true" offset="0x5C"/>
+		<uint32 name="Unknown8" visible="true" offset="0x60"/>
+		<uint32 name="Unknown9" visible="true" offset="0x64"/>
+		<enum8 name="Shader Function1: Input Variable" visible="true" offset="0x68">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function1: Range Variable" visible="true" offset="0x69">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function1: Output Modifier" visible="true" offset="0x6A">
+			<option name="None" value="0x0"/>
+			<option name="Plus" value="0x1"/>
+			<option name="Times" value="0x2"/>
+		</enum8>
+		<enum8 name="Shader Function1: Output Modifier Input" visible="true" offset="0x6B">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<dataRef name="Shader Function1: Function" visible="true" offset="0x6C"/>
+		<float32 name="Shader Function1: Runtime MConstant Value" visible="true" offset="0x80"/>
+		<uint16 name="Shader Function1: Runtime MFlags" visible="true" offset="0x84"/>
+		<bitfield8 name="Shader Function1: Force Flags" visible="true" offset="0x86">
+			<bit name="Force Constant" index="0"/>
+		</bitfield8>
+		<uint8 name="Shader Function1: Unused Padding 0" visible="false" offset="0x87"/>
+		<enum8 name="Shader Function2: Input Variable" visible="true" offset="0x88">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function2: Range Variable" visible="true" offset="0x89">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function2: Output Modifier" visible="true" offset="0x8A">
+			<option name="None" value="0x0"/>
+			<option name="Plus" value="0x1"/>
+			<option name="Times" value="0x2"/>
+		</enum8>
+		<enum8 name="Shader Function2: Output Modifier Input" visible="true" offset="0x8B">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<dataRef name="Shader Function2: Function" visible="true" offset="0x8C"/>
+		<float32 name="Shader Function2: Runtime MConstant Value" visible="true" offset="0xA0"/>
+		<uint16 name="Shader Function2: Runtime MFlags" visible="true" offset="0xA4"/>
+		<bitfield8 name="Shader Function2: Force Flags" visible="true" offset="0xA6">
+			<bit name="Force Constant" index="0"/>
+		</bitfield8>
+		<uint8 name="Shader Function2: Unused Padding 0" visible="false" offset="0xA7"/>
+		<enum8 name="Shader Function3: Input Variable" visible="true" offset="0xA8">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function3: Range Variable" visible="true" offset="0xA9">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function3: Output Modifier" visible="true" offset="0xAA">
+			<option name="None" value="0x0"/>
+			<option name="Plus" value="0x1"/>
+			<option name="Times" value="0x2"/>
+		</enum8>
+		<enum8 name="Shader Function3: Output Modifier Input" visible="true" offset="0xAB">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<dataRef name="Shader Function3: Function" visible="true" offset="0xAC"/>
+		<float32 name="Shader Function3: Runtime MConstant Value" visible="true" offset="0xC0"/>
+		<uint16 name="Shader Function3: Runtime MFlags" visible="true" offset="0xC4"/>
+		<bitfield8 name="Shader Function3: Force Flags" visible="true" offset="0xC6">
+			<bit name="Force Constant" index="0"/>
+		</bitfield8>
+		<uint8 name="Shader Function3: Unused Padding 0" visible="false" offset="0xC7"/>
+		<enum8 name="Shader Function4: Input Variable" visible="true" offset="0xC8">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function4: Range Variable" visible="true" offset="0xC9">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function4: Output Modifier" visible="true" offset="0xCA">
+			<option name="None" value="0x0"/>
+			<option name="Plus" value="0x1"/>
+			<option name="Times" value="0x2"/>
+		</enum8>
+		<enum8 name="Shader Function4: Output Modifier Input" visible="true" offset="0xCB">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<dataRef name="Shader Function4: Function" visible="true" offset="0xCC"/>
+		<float32 name="Shader Function4: Runtime MConstant Value" visible="true" offset="0xE0"/>
+		<uint16 name="Shader Function4: Runtime MFlags" visible="true" offset="0xE4"/>
+		<bitfield8 name="Shader Function4: Force Flags" visible="true" offset="0xE6">
+			<bit name="Force Constant" index="0"/>
+		</bitfield8>
+		<uint8 name="Shader Function4: Unused Padding 0" visible="false" offset="0xE7"/>
+		<uint32 name="Unknown10" visible="true" offset="0xE8"/>
+		<uint32 name="Unknown11" visible="true" offset="0xEC"/>
+		<uint32 name="Unknown12" visible="true" offset="0xF0"/>
+		<uint32 name="Unknown13" visible="true" offset="0xF4"/>
+		<enum8 name="Shader Function5: Input Variable" visible="true" offset="0xF8">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function5: Range Variable" visible="true" offset="0xF9">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function5: Output Modifier" visible="true" offset="0xFA">
+			<option name="None" value="0x0"/>
+			<option name="Plus" value="0x1"/>
+			<option name="Times" value="0x2"/>
+		</enum8>
+		<enum8 name="Shader Function5: Output Modifier Input" visible="true" offset="0xFB">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<dataRef name="Shader Function5: Function" visible="true" offset="0xFC"/>
+		<float32 name="Shader Function5: Runtime MConstant Value" visible="true" offset="0x110"/>
+		<uint16 name="Shader Function5: Runtime MFlags" visible="true" offset="0x114"/>
+		<bitfield8 name="Shader Function5: Force Flags" visible="true" offset="0x116">
+			<bit name="Force Constant" index="0"/>
+		</bitfield8>
+		<uint8 name="Shader Function5: Unused Padding 0" visible="false" offset="0x117"/>
+		<enum8 name="Shader Function6: Input Variable" visible="true" offset="0x118">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function6: Range Variable" visible="true" offset="0x119">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function6: Output Modifier" visible="true" offset="0x11A">
+			<option name="None" value="0x0"/>
+			<option name="Plus" value="0x1"/>
+			<option name="Times" value="0x2"/>
+		</enum8>
+		<enum8 name="Shader Function6: Output Modifier Input" visible="true" offset="0x11B">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<dataRef name="Shader Function6: Function" visible="true" offset="0x11C"/>
+		<float32 name="Shader Function6: Runtime MConstant Value" visible="true" offset="0x130"/>
+		<uint16 name="Shader Function6: Runtime MFlags" visible="true" offset="0x134"/>
+		<bitfield8 name="Shader Function6: Force Flags" visible="true" offset="0x136">
+			<bit name="Force Constant" index="0"/>
+		</bitfield8>
+		<uint8 name="Shader Function6: Unused Padding 0" visible="false" offset="0x137"/>
+		<enum8 name="Shader Function7: Input Variable" visible="true" offset="0x138">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function7: Range Variable" visible="true" offset="0x139">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function7: Output Modifier" visible="true" offset="0x13A">
+			<option name="None" value="0x0"/>
+			<option name="Plus" value="0x1"/>
+			<option name="Times" value="0x2"/>
+		</enum8>
+		<enum8 name="Shader Function7: Output Modifier Input" visible="true" offset="0x13B">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<dataRef name="Shader Function7: Function" visible="true" offset="0x13C"/>
+		<float32 name="Shader Function7: Runtime MConstant Value" visible="true" offset="0x150"/>
+		<uint16 name="Shader Function7: Runtime MFlags" visible="true" offset="0x154"/>
+		<bitfield8 name="Shader Function7: Force Flags" visible="true" offset="0x156">
+			<bit name="Force Constant" index="0"/>
+		</bitfield8>
+		<uint8 name="Shader Function7: Unused Padding 0" visible="false" offset="0x157"/>
+		<enum8 name="Shader Function8: Input Variable" visible="true" offset="0x158">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function8: Range Variable" visible="true" offset="0x159">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function8: Output Modifier" visible="true" offset="0x15A">
+			<option name="None" value="0x0"/>
+			<option name="Plus" value="0x1"/>
+			<option name="Times" value="0x2"/>
+		</enum8>
+		<enum8 name="Shader Function8: Output Modifier Input" visible="true" offset="0x15B">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<dataRef name="Shader Function8: Function" visible="true" offset="0x15C"/>
+		<float32 name="Shader Function8: Runtime MConstant Value" visible="true" offset="0x170"/>
+		<uint16 name="Shader Function8: Runtime MFlags" visible="true" offset="0x174"/>
+		<bitfield8 name="Shader Function8: Force Flags" visible="true" offset="0x176">
+			<bit name="Force Constant" index="0"/>
+		</bitfield8>
+		<uint8 name="Shader Function8: Unused Padding 0" visible="false" offset="0x177"/>
+		<enum8 name="Shader Function9: Input Variable" visible="true" offset="0x178">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function9: Range Variable" visible="true" offset="0x179">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function9: Output Modifier" visible="true" offset="0x17A">
+			<option name="None" value="0x0"/>
+			<option name="Plus" value="0x1"/>
+			<option name="Times" value="0x2"/>
+		</enum8>
+		<enum8 name="Shader Function9: Output Modifier Input" visible="true" offset="0x17B">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<dataRef name="Shader Function9: Function" visible="true" offset="0x17C"/>
+		<float32 name="Shader Function9: Runtime MConstant Value" visible="true" offset="0x190"/>
+		<uint16 name="Shader Function9: Runtime MFlags" visible="true" offset="0x194"/>
+		<bitfield8 name="Shader Function9: Force Flags" visible="true" offset="0x196">
+			<bit name="Force Constant" index="0"/>
+		</bitfield8>
+		<uint8 name="Shader Function9: Unused Padding 0" visible="false" offset="0x197"/>
+		<enum8 name="Shader Function10: Input Variable" visible="true" offset="0x198">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function10: Range Variable" visible="true" offset="0x199">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function10: Output Modifier" visible="true" offset="0x19A">
+			<option name="None" value="0x0"/>
+			<option name="Plus" value="0x1"/>
+			<option name="Times" value="0x2"/>
+		</enum8>
+		<enum8 name="Shader Function10: Output Modifier Input" visible="true" offset="0x19B">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<dataRef name="Shader Function10: Function" visible="true" offset="0x19C"/>
+		<float32 name="Shader Function10: Runtime MConstant Value" visible="true" offset="0x1B0"/>
+		<uint16 name="Shader Function10: Runtime MFlags" visible="true" offset="0x1B4"/>
+		<bitfield8 name="Shader Function10: Force Flags" visible="true" offset="0x1B6">
+			<bit name="Force Constant" index="0"/>
+		</bitfield8>
+		<uint8 name="Shader Function10: Unused Padding 0" visible="false" offset="0x1B7"/>
+		<enum8 name="Shader Function11: Input Variable" visible="true" offset="0x1B8">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function11: Range Variable" visible="true" offset="0x1B9">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<enum8 name="Shader Function11: Output Modifier" visible="true" offset="0x1BA">
+			<option name="None" value="0x0"/>
+			<option name="Plus" value="0x1"/>
+			<option name="Times" value="0x2"/>
+		</enum8>
+		<enum8 name="Shader Function11: Output Modifier Input" visible="true" offset="0x1BB">
+			<option name="Particle Age" value="0x0"/>
+			<option name="Emitter Age" value="0x1"/>
+			<option name="Particle Random" value="0x2"/>
+			<option name="Emitter Random" value="0x3"/>
+			<option name="Particle Random1" value="0x4"/>
+			<option name="Particle Random2" value="0x5"/>
+			<option name="Particle Random3" value="0x6"/>
+			<option name="Particle Random4" value="0x7"/>
+			<option name="Emitter Random1" value="0x8"/>
+			<option name="Emitter Random2" value="0x9"/>
+			<option name="Emitter Time" value="0xA"/>
+			<option name="System Lod" value="0xB"/>
+			<option name="Game Time" value="0xC"/>
+			<option name="Effect AScale" value="0xD"/>
+			<option name="Effect BScale" value="0xE"/>
+			<option name="Physics Rotation" value="0xF"/>
+			<option name="Location Random" value="0x10"/>
+			<option name="Distance From Emitter" value="0x11"/>
+			<option name="Particle Simulation A" value="0x12"/>
+			<option name="Particle Simulation B" value="0x13"/>
+			<option name="Particle Velocity" value="0x14"/>
+			<option name="Invalid" value="0x15"/>
+		</enum8>
+		<dataRef name="Shader Function11: Function" visible="true" offset="0x1BC"/>
+		<float32 name="Shader Function11: Runtime MConstant Value" visible="true" offset="0x1D0"/>
+		<uint16 name="Shader Function11: Runtime MFlags" visible="true" offset="0x1D4"/>
+		<bitfield8 name="Shader Function11: Force Flags" visible="true" offset="0x1D6">
+			<bit name="Force Constant" index="0"/>
+		</bitfield8>
+		<uint8 name="Shader Function11: Unused Padding 0" visible="false" offset="0x1D7"/>
+		<int32 name="Unknown14" visible="true" offset="0x1D8"/>
+		<int32 name="Unknown15" visible="true" offset="0x1DC"/>
+		<int32 name="Unknown16" visible="true" offset="0x1E0"/>
+		<reflexive name="Unknown17" visible="true" offset="0x1E4" entrySize="0x10">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+		</reflexive>
+		<reflexive name="Compiled Functions" visible="true" offset="0x1F0" entrySize="0x40">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+			<uint32 name="Unknown5" visible="true" offset="0x10"/>
+			<uint32 name="Unknown6" visible="true" offset="0x14"/>
+			<uint32 name="Unknown7" visible="true" offset="0x18"/>
+			<uint32 name="Unknown8" visible="true" offset="0x1C"/>
+			<uint32 name="Unknown9" visible="true" offset="0x20"/>
+			<uint32 name="Unknown10" visible="true" offset="0x24"/>
+			<uint32 name="Unknown11" visible="true" offset="0x28"/>
+			<uint32 name="Unknown12" visible="true" offset="0x2C"/>
+			<uint32 name="Unknown13" visible="true" offset="0x30"/>
+			<uint32 name="Unknown14" visible="true" offset="0x34"/>
+			<uint32 name="Unknown15" visible="true" offset="0x38"/>
+			<uint32 name="Unknown16" visible="true" offset="0x3C"/>
+		</reflexive>
+		<reflexive name="Compiled Color Functions" visible="true" offset="0x1FC" entrySize="0x7">
+			<color24 name="Color" visible="true" offset="0x0"/>
+			<float32 name="Magnitude" visible="true" offset="0x3"/>
+		</reflexive>
+	</reflexive>
+	<uint8 name="Unused1 Padding 0" visible="false" offset="0xC"/>
+	<uint8 name="Unused1 Padding 1" visible="false" offset="0xD"/>
+	<uint8 name="Unused1 Padding 2" visible="false" offset="0xE"/>
+	<uint8 name="Unused1 Padding 3" visible="false" offset="0xF"/>
+	<uint8 name="Unused1 Padding 4" visible="false" offset="0x10"/>
+	<uint8 name="Unused1 Padding 5" visible="false" offset="0x11"/>
+	<uint8 name="Unused1 Padding 6" visible="false" offset="0x12"/>
+	<uint8 name="Unused1 Padding 7" visible="false" offset="0x13"/>
+	<uint8 name="Unused1 Padding 8" visible="false" offset="0x14"/>
+	<uint8 name="Unused1 Padding 9" visible="false" offset="0x15"/>
+	<uint8 name="Unused1 Padding 10" visible="false" offset="0x16"/>
+	<uint8 name="Unused1 Padding 11" visible="false" offset="0x17"/>
+</plugin>

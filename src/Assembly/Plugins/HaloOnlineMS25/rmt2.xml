@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x90">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<tagref name="Vertex Shader" visible="true" offset="0x0"/>
+	<tagref name="Pixel Shader" visible="true" offset="0x10"/>
+	<uint32 name="Draw Mode Bitmask" visible="true" offset="0x20"/>
+	<reflexive name="Draw Modes" visible="true" offset="0x24" entrySize="0x2">
+		<uint16 name="Unknown Block2 Pointer" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Unknown3" visible="true" offset="0x30" entrySize="0x1C">
+		<int16 name="Unknown1" visible="true" offset="0x0"/>
+		<int16 name="Unknown2" visible="true" offset="0x2"/>
+		<int16 name="Unknown3" visible="true" offset="0x4"/>
+		<int16 name="Unknown4" visible="true" offset="0x6"/>
+		<int16 name="Unknown5" visible="true" offset="0x8"/>
+		<int16 name="Unknown6" visible="true" offset="0xA"/>
+		<int16 name="Unknown7" visible="true" offset="0xC"/>
+		<int16 name="Unknown8" visible="true" offset="0xE"/>
+		<int16 name="Unknown9" visible="true" offset="0x10"/>
+		<int16 name="Unknown10" visible="true" offset="0x12"/>
+		<int16 name="Unknown11" visible="true" offset="0x14"/>
+		<int16 name="Unknown12" visible="true" offset="0x16"/>
+		<int16 name="Unknown13" visible="true" offset="0x18"/>
+		<int16 name="Unknown14" visible="true" offset="0x1A"/>
+	</reflexive>
+	<reflexive name="Argument Mappings" visible="true" offset="0x3C" entrySize="0x4">
+		<uint16 name="Register Index" visible="true" offset="0x0"/>
+		<uint8 name="Argument Index" visible="true" offset="0x2"/>
+		<uint8 name="Unknown" visible="true" offset="0x3"/>
+	</reflexive>
+	<reflexive name="Arguments" visible="true" offset="0x48" entrySize="0x4">
+		<stringId name="Name" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Unknown5" visible="true" offset="0x54" entrySize="0x4">
+		<stringId name="Unknown" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Unknown6" visible="true" offset="0x60" entrySize="0x4">
+		<stringId name="Unknown" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Shader Maps" visible="true" offset="0x6C" entrySize="0x4">
+		<stringId name="Name" visible="true" offset="0x0"/>
+	</reflexive>
+	<uint32 name="Unknown7" visible="true" offset="0x78"/>
+	<uint32 name="Unknown8" visible="true" offset="0x7C"/>
+	<uint32 name="Unknown9" visible="true" offset="0x80"/>
+	<uint8 name="Unused Padding 0" visible="false" offset="0x84"/>
+	<uint8 name="Unused Padding 1" visible="false" offset="0x85"/>
+	<uint8 name="Unused Padding 2" visible="false" offset="0x86"/>
+	<uint8 name="Unused Padding 3" visible="false" offset="0x87"/>
+	<uint8 name="Unused Padding 4" visible="false" offset="0x88"/>
+	<uint8 name="Unused Padding 5" visible="false" offset="0x89"/>
+	<uint8 name="Unused Padding 6" visible="false" offset="0x8A"/>
+	<uint8 name="Unused Padding 7" visible="false" offset="0x8B"/>
+	<uint8 name="Unused Padding 8" visible="false" offset="0x8C"/>
+	<uint8 name="Unused Padding 9" visible="false" offset="0x8D"/>
+	<uint8 name="Unused Padding 10" visible="false" offset="0x8E"/>
+	<uint8 name="Unused Padding 11" visible="false" offset="0x8F"/>
+</plugin>

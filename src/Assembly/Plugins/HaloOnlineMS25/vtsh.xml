@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x20">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<uint32 name="Unknown" visible="true" offset="0x0"/>
+	<reflexive name="Unknown2" visible="true" offset="0x4" entrySize="0xC">
+		<reflexive name="Draw Modes" visible="true" offset="0x0" entrySize="0x2">
+			<int16 name="Unknown" visible="true" offset="0x0"/>
+		</reflexive>
+	</reflexive>
+	<uint32 name="Unknown3" visible="true" offset="0x10"/>
+	<reflexive name="Shaders" visible="true" offset="0x14" entrySize="0x50">
+		<dataRef name="Unknown" visible="true" offset="0x0"/>
+		<dataRef name="Byte Code" visible="true" offset="0x14"/>
+		<uint32 name="Unknown3" visible="true" offset="0x28"/>
+		<uint32 name="Unknown4" visible="true" offset="0x2C"/>
+		<uint32 name="Unknown5" visible="true" offset="0x30"/>
+		<uint32 name="Unknown6" visible="true" offset="0x34"/>
+		<reflexive name="Parameters" visible="true" offset="0x38" entrySize="0x8">
+			<stringId name="Parameter Name" visible="true" offset="0x0"/>
+			<int16 name="Register Index" visible="true" offset="0x4"/>
+			<uint8 name="Register Count" visible="true" offset="0x6"/>
+			<enum8 name="Register Type" visible="true" offset="0x7">
+				<option name="Boolean" value="0x0"/>
+				<option name="Integer" value="0x1"/>
+				<option name="Float" value="0x2"/>
+				<option name="Sampler" value="0x3"/>
+			</enum8>
+		</reflexive>
+		<uint32 name="Unknown8" visible="true" offset="0x44"/>
+		<uint32 name="Unknown9" visible="true" offset="0x48"/>
+		<uint32 name="Shader Reference" visible="true" offset="0x4C"/>
+	</reflexive>
+</plugin>

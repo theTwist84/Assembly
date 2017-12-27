@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x30">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<tagref name="Global Dialogue Info" visible="true" offset="0x0"/>
+	<uint32 name="Flags" visible="true" offset="0x10"/>
+	<reflexive name="Vocalizations" visible="true" offset="0x14" entrySize="0x18">
+		<uint16 name="Flags" visible="true" offset="0x0"/>
+		<int16 name="Unknown" visible="true" offset="0x2"/>
+		<stringId name="Name" visible="true" offset="0x4"/>
+		<tagref name="Sound" visible="true" offset="0x8"/>
+	</reflexive>
+	<stringId name="Mission Dialogue Designator" visible="true" offset="0x20"/>
+	<uint8 name="Unused Padding 0" visible="false" offset="0x24"/>
+	<uint8 name="Unused Padding 1" visible="false" offset="0x25"/>
+	<uint8 name="Unused Padding 2" visible="false" offset="0x26"/>
+	<uint8 name="Unused Padding 3" visible="false" offset="0x27"/>
+	<uint8 name="Unused Padding 4" visible="false" offset="0x28"/>
+	<uint8 name="Unused Padding 5" visible="false" offset="0x29"/>
+	<uint8 name="Unused Padding 6" visible="false" offset="0x2A"/>
+	<uint8 name="Unused Padding 7" visible="false" offset="0x2B"/>
+	<uint8 name="Unused Padding 8" visible="false" offset="0x2C"/>
+	<uint8 name="Unused Padding 9" visible="false" offset="0x2D"/>
+	<uint8 name="Unused Padding 10" visible="false" offset="0x2E"/>
+	<uint8 name="Unused Padding 11" visible="false" offset="0x2F"/>
+</plugin>

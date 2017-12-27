@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x10">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<reflexive name="Unknown" visible="true" offset="0x0" entrySize="0x14">
+		<uint32 name="Unknown" visible="true" offset="0x0"/>
+		<uint32 name="Unknown2" visible="true" offset="0x4"/>
+		<reflexive name="Unknown3" visible="true" offset="0x8" entrySize="0x10">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<uint32 name="Unknown2" visible="true" offset="0x4"/>
+			<uint32 name="Unknown3" visible="true" offset="0x8"/>
+			<uint32 name="Unknown4" visible="true" offset="0xC"/>
+		</reflexive>
+	</reflexive>
+	<uint8 name="Unused1 Padding 0" visible="false" offset="0xC"/>
+	<uint8 name="Unused1 Padding 1" visible="false" offset="0xD"/>
+	<uint8 name="Unused1 Padding 2" visible="false" offset="0xE"/>
+	<uint8 name="Unused1 Padding 3" visible="false" offset="0xF"/>
+</plugin>

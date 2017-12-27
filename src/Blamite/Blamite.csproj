@@ -466,6 +466,15 @@
     <Content Include="Formats\Halo4\Layouts\H4_Layouts_Shaders.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Formats\HaloOnlineMS25\Layouts\HO_Layouts_Core.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Formats\HaloOnlineMS25\Layouts\HO_Layouts_Scenario.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Formats\HaloOnlineMS25\Layouts\HO_Layouts_Shaders.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Formats\HaloOnlineZBT70\HO_Scripting.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

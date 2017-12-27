@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x90">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<uint32 name="Flags" visible="true" offset="0x0"/>
+	<stringId name="Name" visible="true" offset="0x4"/>
+	<int16 name="Unknown" visible="true" offset="0x8"/>
+	<int16 name="Layer" visible="true" offset="0xA"/>
+	<int16 name="Widescreen YBounds Min" visible="true" offset="0xC"/>
+	<int16 name="Widescreen XBounds Min" visible="true" offset="0xE"/>
+	<int16 name="Widescreen YBounds Max" visible="true" offset="0x10"/>
+	<int16 name="Widescreen XBounds Max" visible="true" offset="0x12"/>
+	<int16 name="Standard YBounds Min" visible="true" offset="0x14"/>
+	<int16 name="Standard XBounds Min" visible="true" offset="0x16"/>
+	<int16 name="Standard YBounds Max" visible="true" offset="0x18"/>
+	<int16 name="Standard XBounds Max" visible="true" offset="0x1A"/>
+	<tagref name="Animation" visible="true" offset="0x1C"/>
+	<reflexive name="Bipeds" visible="true" offset="0x2C" entrySize="0xA0">
+		<stringId name="Biped2" visible="true" offset="0x0"/>
+		<uint32 name="Unknown" visible="true" offset="0x4"/>
+		<uint32 name="Unknown2" visible="true" offset="0x8"/>
+		<uint32 name="Unknown3" visible="true" offset="0xC"/>
+		<uint32 name="Unknown4" visible="true" offset="0x10"/>
+		<uint32 name="Unknown5" visible="true" offset="0x14"/>
+		<uint32 name="Unknown6" visible="true" offset="0x18"/>
+		<uint32 name="Unknown7" visible="true" offset="0x1C"/>
+		<uint32 name="Unknown8" visible="true" offset="0x20"/>
+		<uint32 name="Unknown9" visible="true" offset="0x24"/>
+		<uint32 name="Unknown10" visible="true" offset="0x28"/>
+		<uint32 name="Unknown11" visible="true" offset="0x2C"/>
+		<uint32 name="Unknown12" visible="true" offset="0x30"/>
+		<uint32 name="Unknown13" visible="true" offset="0x34"/>
+		<uint32 name="Unknown14" visible="true" offset="0x38"/>
+		<uint32 name="Unknown15" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown16" visible="true" offset="0x40"/>
+		<uint32 name="Unknown17" visible="true" offset="0x44"/>
+		<uint32 name="Unknown18" visible="true" offset="0x48"/>
+		<uint32 name="Unknown19" visible="true" offset="0x4C"/>
+		<uint32 name="Unknown20" visible="true" offset="0x50"/>
+		<uint32 name="Unknown21" visible="true" offset="0x54"/>
+		<uint32 name="Unknown22" visible="true" offset="0x58"/>
+		<uint32 name="Unknown23" visible="true" offset="0x5C"/>
+		<uint32 name="Unknown24" visible="true" offset="0x60"/>
+		<reflexive name="Unknown25" visible="true" offset="0x64" entrySize="0x14">
+			<dataRef name="Unknown" visible="true" offset="0x0"/>
+		</reflexive>
+		<uint32 name="Unknown26" visible="true" offset="0x70"/>
+		<uint32 name="Unknown27" visible="true" offset="0x74"/>
+		<degree name="Unknown28" visible="true" offset="0x78"/>
+		<uint32 name="Unknown29" visible="true" offset="0x7C"/>
+		<degree name="Unknown30" visible="true" offset="0x80"/>
+		<uint32 name="Unknown31" visible="true" offset="0x84"/>
+		<uint32 name="Unknown32" visible="true" offset="0x88"/>
+		<tagref name="Unknown33" visible="true" offset="0x8C"/>
+		<uint32 name="Unknown34" visible="true" offset="0x9C"/>
+	</reflexive>
+	<uint32 name="Unknown2" visible="true" offset="0x38"/>
+	<uint32 name="Unknown3" visible="true" offset="0x3C"/>
+	<uint32 name="Unknown4" visible="true" offset="0x40"/>
+	<uint32 name="Unknown5" visible="true" offset="0x44"/>
+	<uint32 name="Unknown6" visible="true" offset="0x48"/>
+	<uint32 name="Unknown7" visible="true" offset="0x4C"/>
+	<uint32 name="Unknown8" visible="true" offset="0x50"/>
+	<reflexive name="Unknown9" visible="true" offset="0x54" entrySize="0x14">
+		<dataRef name="Unknown" visible="true" offset="0x0"/>
+	</reflexive>
+	<uint32 name="Unknown10" visible="true" offset="0x60"/>
+	<uint32 name="Unknown11" visible="true" offset="0x64"/>
+	<uint32 name="Unknown12" visible="true" offset="0x68"/>
+	<uint32 name="Unknown13" visible="true" offset="0x6C"/>
+	<uint32 name="Unknown14" visible="true" offset="0x70"/>
+	<uint32 name="Unknown15" visible="true" offset="0x74"/>
+	<reflexive name="Unknown16" visible="true" offset="0x78" entrySize="0x14">
+		<stringId name="Unknown" visible="true" offset="0x0"/>
+		<uint32 name="Unknown2" visible="true" offset="0x4"/>
+		<uint32 name="Unknown3" visible="true" offset="0x8"/>
+		<uint32 name="Unknown4" visible="true" offset="0xC"/>
+		<uint32 name="Unknown5" visible="true" offset="0x10"/>
+	</reflexive>
+	<uint32 name="Unknown17" visible="true" offset="0x84"/>
+	<uint32 name="Unknown18" visible="true" offset="0x88"/>
+	<uint32 name="Unknown19" visible="true" offset="0x8C"/>
+</plugin>

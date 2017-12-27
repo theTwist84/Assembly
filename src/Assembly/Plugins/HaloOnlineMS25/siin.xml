@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0xF4">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<uint32 name="Unknown" visible="true" offset="0x0"/>
+	<uint32 name="Unknown2" visible="true" offset="0x4"/>
+	<uint32 name="Unknown3" visible="true" offset="0x8"/>
+	<uint32 name="Unknown4" visible="true" offset="0xC"/>
+	<uint32 name="Unknown5" visible="true" offset="0x10"/>
+	<uint32 name="Unknown6" visible="true" offset="0x14"/>
+	<uint32 name="Unknown7" visible="true" offset="0x18"/>
+	<uint32 name="Unknown8" visible="true" offset="0x1C"/>
+	<uint32 name="Unknown9" visible="true" offset="0x20"/>
+	<uint32 name="Unknown10" visible="true" offset="0x24"/>
+	<uint32 name="Unknown11" visible="true" offset="0x28"/>
+	<uint32 name="Unknown12" visible="true" offset="0x2C"/>
+	<uint32 name="Unknown13" visible="true" offset="0x30"/>
+	<uint32 name="Unknown14" visible="true" offset="0x34"/>
+	<uint32 name="Unknown15" visible="true" offset="0x38"/>
+	<uint32 name="Unknown16" visible="true" offset="0x3C"/>
+	<uint32 name="Unknown17" visible="true" offset="0x40"/>
+	<uint32 name="Unknown18" visible="true" offset="0x44"/>
+	<uint32 name="Unknown19" visible="true" offset="0x48"/>
+	<uint32 name="Unknown20" visible="true" offset="0x4C"/>
+	<uint32 name="Unknown21" visible="true" offset="0x50"/>
+	<uint32 name="Unknown22" visible="true" offset="0x54"/>
+	<uint32 name="Unknown23" visible="true" offset="0x58"/>
+	<uint32 name="Unknown24" visible="true" offset="0x5C"/>
+	<uint32 name="Unknown25" visible="true" offset="0x60"/>
+	<uint32 name="Unknown26" visible="true" offset="0x64"/>
+	<uint32 name="Unknown27" visible="true" offset="0x68"/>
+	<uint32 name="Unknown28" visible="true" offset="0x6C"/>
+	<uint32 name="Unknown29" visible="true" offset="0x70"/>
+	<uint32 name="Unknown30" visible="true" offset="0x74"/>
+	<uint32 name="Unknown31" visible="true" offset="0x78"/>
+	<uint32 name="Unknown32" visible="true" offset="0x7C"/>
+	<uint32 name="Unknown33" visible="true" offset="0x80"/>
+	<uint32 name="Unknown34" visible="true" offset="0x84"/>
+	<uint32 name="Unknown35" visible="true" offset="0x88"/>
+	<uint32 name="Unknown36" visible="true" offset="0x8C"/>
+	<uint32 name="Unknown37" visible="true" offset="0x90"/>
+	<uint32 name="Unknown38" visible="true" offset="0x94"/>
+	<uint32 name="Unknown39" visible="true" offset="0x98"/>
+	<uint32 name="Unknown40" visible="true" offset="0x9C"/>
+	<uint32 name="Unknown41" visible="true" offset="0xA0"/>
+	<uint32 name="Unknown42" visible="true" offset="0xA4"/>
+	<uint32 name="Unknown43" visible="true" offset="0xA8"/>
+	<uint32 name="Unknown44" visible="true" offset="0xAC"/>
+	<uint32 name="Unknown45" visible="true" offset="0xB0"/>
+	<uint32 name="Unknown46" visible="true" offset="0xB4"/>
+	<uint32 name="Unknown47" visible="true" offset="0xB8"/>
+	<uint32 name="Unknown48" visible="true" offset="0xBC"/>
+	<uint32 name="Unknown49" visible="true" offset="0xC0"/>
+	<uint32 name="Unknown50" visible="true" offset="0xC4"/>
+	<uint32 name="Unknown51" visible="true" offset="0xC8"/>
+	<uint32 name="Unknown52" visible="true" offset="0xCC"/>
+	<uint32 name="Unknown53" visible="true" offset="0xD0"/>
+	<uint32 name="Unknown54" visible="true" offset="0xD4"/>
+	<uint32 name="Unknown55" visible="true" offset="0xD8"/>
+	<uint32 name="Unknown56" visible="true" offset="0xDC"/>
+	<uint32 name="Unknown57" visible="true" offset="0xE0"/>
+	<uint32 name="Unknown58" visible="true" offset="0xE4"/>
+	<uint32 name="Unknown59" visible="true" offset="0xE8"/>
+	<uint32 name="Unknown60" visible="true" offset="0xEC"/>
+	<uint32 name="Unknown61" visible="true" offset="0xF0"/>
+</plugin>

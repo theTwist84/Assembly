@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x50">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<uint32 name="Unknown" visible="true" offset="0x0"/>
+	<reflexive name="Lightmap Data References" visible="true" offset="0x4" entrySize="0x10">
+		<tagref name="Lightmap Data" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Unknown2" visible="true" offset="0x10" entrySize="0x10">
+		<tagref name="Unknown" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Airprobes" visible="true" offset="0x1C" entrySize="0x5A">
+		<float32 name="Unknown1" visible="true" offset="0x0"/>
+		<float32 name="Unknown2" visible="true" offset="0x4"/>
+		<float32 name="Unknown3" visible="true" offset="0x8"/>
+		<stringId name="Unknown4" visible="true" offset="0xC"/>
+		<bitfield16 name="Flags" visible="true" offset="0x10">
+			<bit name="Bit0" index="0"/>
+			<bit name="Bit1" index="1"/>
+			<bit name="Bit2" index="2"/>
+			<bit name="Bit3" index="3"/>
+			<bit name="Bit4" index="4"/>
+			<bit name="Bit5" index="5"/>
+			<bit name="Bit6" index="6"/>
+			<bit name="Bit7" index="7"/>
+			<bit name="Bit8" index="8"/>
+			<bit name="Bit9" index="9"/>
+			<bit name="Bit10" index="10"/>
+			<bit name="Bit11" index="11"/>
+			<bit name="Bit12" index="12"/>
+			<bit name="Bit13" index="13"/>
+			<bit name="Bit14" index="14"/>
+			<bit name="Bit15" index="15"/>
+		</bitfield16>
+		<int16 name="Unknown6" visible="true" offset="0x12"/>
+		<int16 name="Unknown7" visible="true" offset="0x14"/>
+		<int16 name="Unknown8" visible="true" offset="0x16"/>
+		<int16 name="Unknown9" visible="true" offset="0x18"/>
+		<int16 name="Unknown10" visible="true" offset="0x1A"/>
+		<int16 name="Unknown11" visible="true" offset="0x1C"/>
+		<int16 name="Unknown12" visible="true" offset="0x1E"/>
+		<int16 name="Unknown13" visible="true" offset="0x20"/>
+		<int16 name="Unknown14" visible="true" offset="0x22"/>
+		<int16 name="Unknown15" visible="true" offset="0x24"/>
+		<int16 name="Unknown16" visible="true" offset="0x26"/>
+		<int16 name="Unknown17" visible="true" offset="0x28"/>
+		<int16 name="Unknown18" visible="true" offset="0x2A"/>
+		<int16 name="Unknown19" visible="true" offset="0x2C"/>
+		<int16 name="Unknown20" visible="true" offset="0x2E"/>
+		<int16 name="Unknown21" visible="true" offset="0x30"/>
+		<int16 name="Unknown22" visible="true" offset="0x32"/>
+		<int16 name="Unknown23" visible="true" offset="0x34"/>
+		<int16 name="Unknown24" visible="true" offset="0x36"/>
+		<int16 name="Unknown25" visible="true" offset="0x38"/>
+		<int16 name="Unknown26" visible="true" offset="0x3A"/>
+		<int16 name="Unknown27" visible="true" offset="0x3C"/>
+		<int16 name="Unknown28" visible="true" offset="0x3E"/>
+		<int16 name="Unknown29" visible="true" offset="0x40"/>
+		<int16 name="Unknown30" visible="true" offset="0x42"/>
+		<int16 name="Unknown31" visible="true" offset="0x44"/>
+		<int16 name="Unknown32" visible="true" offset="0x46"/>
+		<int16 name="Unknown33" visible="true" offset="0x48"/>
+		<int16 name="Unknown34" visible="true" offset="0x4A"/>
+		<int16 name="Unknown35" visible="true" offset="0x4C"/>
+		<int16 name="Unknown36" visible="true" offset="0x4E"/>
+		<int16 name="Unknown37" visible="true" offset="0x50"/>
+		<int16 name="Unknown38" visible="true" offset="0x52"/>
+		<int16 name="Unknown39" visible="true" offset="0x54"/>
+		<int16 name="Unknown40" visible="true" offset="0x56"/>
+		<int16 name="Unknown41" visible="true" offset="0x58"/>
+	</reflexive>
+	<reflexive name="Unknown3" visible="true" offset="0x28" entrySize="0x50">
+		<uint32 name="Unknown" visible="true" offset="0x0"/>
+		<int16 name="Unknown2" visible="true" offset="0x4"/>
+		<uint8 name="Unknown3" visible="true" offset="0x6"/>
+		<uint8 name="Unknown4" visible="true" offset="0x7"/>
+		<int16 name="Unknown5" visible="true" offset="0x8"/>
+		<int16 name="Unknown6" visible="true" offset="0xA"/>
+		<int16 name="Unknown7" visible="true" offset="0xC"/>
+		<int16 name="Unknown8" visible="true" offset="0xE"/>
+		<int16 name="Unknown9" visible="true" offset="0x10"/>
+		<int16 name="Unknown10" visible="true" offset="0x12"/>
+		<int16 name="Unknown11" visible="true" offset="0x14"/>
+		<int16 name="Unknown12" visible="true" offset="0x16"/>
+		<int16 name="Unknown13" visible="true" offset="0x18"/>
+		<int16 name="Unknown14" visible="true" offset="0x1A"/>
+		<int16 name="Unknown15" visible="true" offset="0x1C"/>
+		<int16 name="Unknown16" visible="true" offset="0x1E"/>
+		<int16 name="Unknown17" visible="true" offset="0x20"/>
+		<int16 name="Unknown18" visible="true" offset="0x22"/>
+		<int16 name="Unknown19" visible="true" offset="0x24"/>
+		<int16 name="Unknown20" visible="true" offset="0x26"/>
+		<int16 name="Unknown21" visible="true" offset="0x28"/>
+		<int16 name="Unknown22" visible="true" offset="0x2A"/>
+		<int16 name="Unknown23" visible="true" offset="0x2C"/>
+		<int16 name="Unknown24" visible="true" offset="0x2E"/>
+		<int16 name="Unknown25" visible="true" offset="0x30"/>
+		<int16 name="Unknown26" visible="true" offset="0x32"/>
+		<int16 name="Unknown27" visible="true" offset="0x34"/>
+		<int16 name="Unknown28" visible="true" offset="0x36"/>
+		<int16 name="Unknown29" visible="true" offset="0x38"/>
+		<int16 name="Unknown30" visible="true" offset="0x3A"/>
+		<int16 name="Unknown31" visible="true" offset="0x3C"/>
+		<int16 name="Unknown32" visible="true" offset="0x3E"/>
+		<int16 name="Unknown33" visible="true" offset="0x40"/>
+		<int16 name="Unknown34" visible="true" offset="0x42"/>
+		<int16 name="Unknown35" visible="true" offset="0x44"/>
+		<int16 name="Unknown36" visible="true" offset="0x46"/>
+		<int16 name="Unknown37" visible="true" offset="0x48"/>
+		<int16 name="Unknown38" visible="true" offset="0x4A"/>
+		<int16 name="Unknown39" visible="true" offset="0x4C"/>
+		<int16 name="Unknown40" visible="true" offset="0x4E"/>
+	</reflexive>
+	<reflexive name="Unknown4" visible="true" offset="0x34" entrySize="0x2C">
+		<uint32 name="Unknown" visible="true" offset="0x0"/>
+		<int16 name="Unknown2" visible="true" offset="0x4"/>
+		<int16 name="Unknown3" visible="true" offset="0x6"/>
+		<float32 name="Unknown4" visible="true" offset="0x8"/>
+		<float32 name="Unknown5" visible="true" offset="0xC"/>
+		<float32 name="Unknown6" visible="true" offset="0x10"/>
+		<float32 name="Unknown7" visible="true" offset="0x14"/>
+		<float32 name="Unknown8" visible="true" offset="0x18"/>
+		<float32 name="Unknown9" visible="true" offset="0x1C"/>
+		<reflexive name="Unknown10" visible="true" offset="0x20" entrySize="0x54">
+			<float32 name="Unknown" visible="true" offset="0x0"/>
+			<float32 name="Unknown2" visible="true" offset="0x4"/>
+			<float32 name="Unknown3" visible="true" offset="0x8"/>
+			<int16 name="Unknown4" visible="true" offset="0xC"/>
+			<int16 name="Unknown5" visible="true" offset="0xE"/>
+			<int16 name="Unknown6" visible="true" offset="0x10"/>
+			<int16 name="Unknown7" visible="true" offset="0x12"/>
+			<int16 name="Unknown8" visible="true" offset="0x14"/>
+			<int16 name="Unknown9" visible="true" offset="0x16"/>
+			<int16 name="Unknown10" visible="true" offset="0x18"/>
+			<int16 name="Unknown11" visible="true" offset="0x1A"/>
+			<int16 name="Unknown12" visible="true" offset="0x1C"/>
+			<int16 name="Unknown13" visible="true" offset="0x1E"/>
+			<int16 name="Unknown14" visible="true" offset="0x20"/>
+			<int16 name="Unknown15" visible="true" offset="0x22"/>
+			<int16 name="Unknown16" visible="true" offset="0x24"/>
+			<int16 name="Unknown17" visible="true" offset="0x26"/>
+			<int16 name="Unknown18" visible="true" offset="0x28"/>
+			<int16 name="Unknown19" visible="true" offset="0x2A"/>
+			<int16 name="Unknown20" visible="true" offset="0x2C"/>
+			<int16 name="Unknown21" visible="true" offset="0x2E"/>
+			<int16 name="Unknown22" visible="true" offset="0x30"/>
+			<int16 name="Unknown23" visible="true" offset="0x32"/>
+			<int16 name="Unknown24" visible="true" offset="0x34"/>
+			<int16 name="Unknown25" visible="true" offset="0x36"/>
+			<int16 name="Unknown26" visible="true" offset="0x38"/>
+			<int16 name="Unknown27" visible="true" offset="0x3A"/>
+			<int16 name="Unknown28" visible="true" offset="0x3C"/>
+			<int16 name="Unknown29" visible="true" offset="0x3E"/>
+			<int16 name="Unknown30" visible="true" offset="0x40"/>
+			<int16 name="Unknown31" visible="true" offset="0x42"/>
+			<int16 name="Unknown32" visible="true" offset="0x44"/>
+			<int16 name="Unknown33" visible="true" offset="0x46"/>
+			<int16 name="Unknown34" visible="true" offset="0x48"/>
+			<int16 name="Unknown35" visible="true" offset="0x4A"/>
+			<int16 name="Unknown36" visible="true" offset="0x4C"/>
+			<int16 name="Unknown37" visible="true" offset="0x4E"/>
+			<int16 name="Unknown38" visible="true" offset="0x50"/>
+			<int16 name="Unknown39" visible="true" offset="0x52"/>
+		</reflexive>
+	</reflexive>
+	<uint32 name="Unknown5" visible="true" offset="0x40"/>
+	<uint32 name="Unknown6" visible="true" offset="0x44"/>
+	<uint32 name="Unknown7" visible="true" offset="0x48"/>
+	<uint32 name="Unknown8" visible="true" offset="0x4C"/>
+</plugin>

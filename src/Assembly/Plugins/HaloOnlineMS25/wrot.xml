@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x2C">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<uint32 name="Animation Flags" visible="true" offset="0x0"/>
+	<reflexive name="Animation Definition" visible="true" offset="0x4" entrySize="0x20">
+		<uint32 name="Frame" visible="true" offset="0x0"/>
+		<enum16 name="Anchor" visible="true" offset="0x4">
+			<option name="Custom" value="0x0"/>
+			<option name="Center" value="0x1"/>
+			<option name="Top Center" value="0x2"/>
+			<option name="Bottom Center" value="0x3"/>
+			<option name="Left Center" value="0x4"/>
+			<option name="Right Center" value="0x5"/>
+			<option name="Top Left" value="0x6"/>
+			<option name="Top Right" value="0x7"/>
+			<option name="Bottom Right" value="0x8"/>
+			<option name="Bottom Left" value="0x9"/>
+		</enum16>
+		<int16 name="Unknown" visible="true" offset="0x6"/>
+		<float32 name="Custom Anchor X" visible="true" offset="0x8"/>
+		<float32 name="Custom Anchor Y" visible="true" offset="0xC"/>
+		<float32 name="Rotation Amount" visible="true" offset="0x10"/>
+		<uint32 name="Unknown2" visible="true" offset="0x14"/>
+		<uint32 name="Unknown3" visible="true" offset="0x18"/>
+		<uint32 name="Unknown4" visible="true" offset="0x1C"/>
+	</reflexive>
+	<dataRef name="Date" visible="true" offset="0x10"/>
+	<uint32 name="Unknown" visible="true" offset="0x24"/>
+	<uint32 name="Unknown2" visible="true" offset="0x28"/>
+</plugin>

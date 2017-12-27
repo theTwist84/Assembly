@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x70">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<uint32 name="Flags" visible="true" offset="0x0"/>
+	<stringId name="Name" visible="true" offset="0x4"/>
+	<int16 name="Unknown" visible="true" offset="0x8"/>
+	<int16 name="Layer" visible="true" offset="0xA"/>
+	<int16 name="Widescreen YOffset" visible="true" offset="0xC"/>
+	<int16 name="Widescreen XOffset" visible="true" offset="0xE"/>
+	<int16 name="Widescreen YUnknown" visible="true" offset="0x10"/>
+	<int16 name="Widescreen XUnknown" visible="true" offset="0x12"/>
+	<int16 name="Standard YOffset" visible="true" offset="0x14"/>
+	<int16 name="Standard XOffset" visible="true" offset="0x16"/>
+	<int16 name="Standard YUnknown" visible="true" offset="0x18"/>
+	<int16 name="Standard XUnknown" visible="true" offset="0x1A"/>
+	<tagref name="Animation" visible="true" offset="0x1C"/>
+	<stringId name="Data Source Name" visible="true" offset="0x2C"/>
+	<tagref name="Skin" visible="true" offset="0x30"/>
+	<int32 name="Row Count" visible="true" offset="0x40"/>
+	<reflexive name="List Widget Items" visible="true" offset="0x44" entrySize="0x30">
+		<uint32 name="Flags" visible="true" offset="0x0"/>
+		<stringId name="Name" visible="true" offset="0x4"/>
+		<int16 name="Unknown" visible="true" offset="0x8"/>
+		<int16 name="Layer" visible="true" offset="0xA"/>
+		<int16 name="Widescreen YOffset" visible="true" offset="0xC"/>
+		<int16 name="Widescreen XOffset" visible="true" offset="0xE"/>
+		<int16 name="Widescreen YUnknown" visible="true" offset="0x10"/>
+		<int16 name="Widescreen XUnknown" visible="true" offset="0x12"/>
+		<int16 name="Standard YOffset" visible="true" offset="0x14"/>
+		<int16 name="Standard XOffset" visible="true" offset="0x16"/>
+		<int16 name="Standard YUnknown" visible="true" offset="0x18"/>
+		<int16 name="Standard XUnknown" visible="true" offset="0x1A"/>
+		<tagref name="Animation" visible="true" offset="0x1C"/>
+		<stringId name="Target" visible="true" offset="0x2C"/>
+	</reflexive>
+	<tagref name="Up Arrow Bitmap" visible="true" offset="0x50"/>
+	<tagref name="Down Arrow Bitmap" visible="true" offset="0x60"/>
+</plugin>

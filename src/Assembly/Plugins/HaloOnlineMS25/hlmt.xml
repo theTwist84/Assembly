@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x1B4">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<tagref name="Render Model" visible="true" offset="0x0"/>
+	<tagref name="Collision Model" visible="true" offset="0x10"/>
+	<tagref name="Animation" visible="true" offset="0x20"/>
+	<tagref name="Physics Model" visible="true" offset="0x30"/>
+	<float32 name="Reduce To L1 Super Low" visible="true" offset="0x40"/>
+	<float32 name="Reduce To L2 Low" visible="true" offset="0x44"/>
+	<float32 name="Reduce To L3 Medium" visible="true" offset="0x48"/>
+	<float32 name="Reduce To L4 High" visible="true" offset="0x4C"/>
+	<float32 name="Reduce To L5 Super High" visible="true" offset="0x50"/>
+	<tagref name="Lod Model" visible="true" offset="0x54"/>
+	<reflexive name="Variants" visible="true" offset="0x64" entrySize="0x50">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<tagref name="Variant Dialogue" visible="true" offset="0x4"/>
+		<stringId name="Default Dialog Effect" visible="true" offset="0x14"/>
+		<int8 name="Unknown" visible="true" offset="0x18"/>
+		<int8 name="Unknown2" visible="true" offset="0x19"/>
+		<int8 name="Unknown3" visible="true" offset="0x1A"/>
+		<int8 name="Unknown4" visible="true" offset="0x1B"/>
+		<int8 name="Model Region Indices 0" visible="true" offset="0x1C"/>
+		<int8 name="Model Region Indices 1" visible="true" offset="0x1D"/>
+		<int8 name="Model Region Indices 2" visible="true" offset="0x1E"/>
+		<int8 name="Model Region Indices 3" visible="true" offset="0x1F"/>
+		<int8 name="Model Region Indices 4" visible="true" offset="0x20"/>
+		<int8 name="Model Region Indices 5" visible="true" offset="0x21"/>
+		<int8 name="Model Region Indices 6" visible="true" offset="0x22"/>
+		<int8 name="Model Region Indices 7" visible="true" offset="0x23"/>
+		<int8 name="Model Region Indices 8" visible="true" offset="0x24"/>
+		<int8 name="Model Region Indices 9" visible="true" offset="0x25"/>
+		<int8 name="Model Region Indices 10" visible="true" offset="0x26"/>
+		<int8 name="Model Region Indices 11" visible="true" offset="0x27"/>
+		<int8 name="Model Region Indices 12" visible="true" offset="0x28"/>
+		<int8 name="Model Region Indices 13" visible="true" offset="0x29"/>
+		<int8 name="Model Region Indices 14" visible="true" offset="0x2A"/>
+		<int8 name="Model Region Indices 15" visible="true" offset="0x2B"/>
+		<reflexive name="Regions" visible="true" offset="0x2C" entrySize="0x18">
+			<stringId name="Name" visible="true" offset="0x0"/>
+			<int8 name="Render Model Region Index" visible="true" offset="0x4"/>
+			<int8 name="Unknown" visible="true" offset="0x5"/>
+			<int8 name="Unknown2" visible="true" offset="0x6"/>
+			<int8 name="Unknown3" visible="true" offset="0x7"/>
+			<reflexive name="Permutations" visible="true" offset="0x8" entrySize="0x24">
+				<stringId name="Name" visible="true" offset="0x0"/>
+				<int8 name="Render Model Permutation Index" visible="true" offset="0x4"/>
+				<int8 name="Unknown" visible="true" offset="0x5"/>
+				<int8 name="Unknown2" visible="true" offset="0x6"/>
+				<bitfield8 name="Flags" visible="true" offset="0x7">
+					<bit name="Copy States To All Permutations" index="0"/>
+				</bitfield8>
+				<float32 name="Probability" visible="true" offset="0x8"/>
+				<reflexive name="States" visible="true" offset="0xC" entrySize="0x20">
+					<stringId name="Name" visible="true" offset="0x0"/>
+					<int8 name="Unknown" visible="true" offset="0x4"/>
+					<bitfield8 name="Property Flags" visible="true" offset="0x5">
+						<bit name="Blurred" index="0"/>
+						<bit name="Hella Blurred" index="1"/>
+						<bit name="Shielded" index="2"/>
+						<bit name="Bit3" index="3"/>
+						<bit name="Bit4" index="4"/>
+						<bit name="Bit5" index="5"/>
+						<bit name="Bit6" index="6"/>
+						<bit name="Bit7" index="7"/>
+					</bitfield8>
+					<enum16 name="State2" visible="true" offset="0x6">
+						<option name="Default" value="0x0"/>
+						<option name="Minor Damage" value="0x1"/>
+						<option name="Medium Damage" value="0x2"/>
+						<option name="Major Damage" value="0x3"/>
+						<option name="Destroyed" value="0x4"/>
+					</enum16>
+					<tagref name="Looping Effect" visible="true" offset="0x8"/>
+					<stringId name="Looping Effect Marker Name" visible="true" offset="0x18"/>
+					<float32 name="Initial Probability" visible="true" offset="0x1C"/>
+				</reflexive>
+				<uint32 name="Unknown3" visible="true" offset="0x18"/>
+				<uint32 name="Unknown4" visible="true" offset="0x1C"/>
+				<uint32 name="Unknown5" visible="true" offset="0x20"/>
+			</reflexive>
+			<enum32 name="Sort Order" visible="true" offset="0x14">
+				<option name="No Sorting" value="0x0"/>
+				<option name="_5 Closest" value="0x1"/>
+				<option name="_4" value="0x2"/>
+				<option name="_3" value="0x3"/>
+				<option name="_2" value="0x4"/>
+				<option name="_1" value="0x5"/>
+				<option name="_0 Same As Model" value="0x6"/>
+				<option name="_1_2" value="0x7"/>
+				<option name="_2_2" value="0x8"/>
+				<option name="_3_2" value="0x9"/>
+				<option name="_4_2" value="0xA"/>
+				<option name="_5 Farthest" value="0xB"/>
+			</enum32>
+		</reflexive>
+		<reflexive name="Objects" visible="true" offset="0x38" entrySize="0x1C">
+			<stringId name="Parent Marker" visible="true" offset="0x0"/>
+			<stringId name="Child Marker" visible="true" offset="0x4"/>
+			<stringId name="Child Variant" visible="true" offset="0x8"/>
+			<tagref name="Child Object" visible="true" offset="0xC"/>
+		</reflexive>
+		<int32 name="Instance Group Index" visible="true" offset="0x44"/>
+		<uint32 name="Unknown6" visible="true" offset="0x48"/>
+		<uint32 name="Unknown7" visible="true" offset="0x4C"/>
+	</reflexive>
+	<reflexive name="Unknown" visible="true" offset="0x70" entrySize="0x4">
+		<uint32 name="Unknown" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Instance Groups" visible="true" offset="0x7C" entrySize="0x18">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<int32 name="Unknown" visible="true" offset="0x4"/>
+		<reflexive name="Instance Members" visible="true" offset="0x8" entrySize="0x1C">
+			<int32 name="Unknown" visible="true" offset="0x0"/>
+			<stringId name="Instance Name" visible="true" offset="0x4"/>
+			<float32 name="Probability" visible="true" offset="0x8"/>
+			<enum32 name="Instance Flags1" visible="true" offset="0xC">
+				<option name="None" value="0x0"/>
+				<option name="Instance0" value="0x1"/>
+				<option name="Instance1" value="0x2"/>
+				<option name="Instance2" value="0x4"/>
+				<option name="Instance3" value="0x8"/>
+				<option name="Instance4" value="0x10"/>
+				<option name="Instance5" value="0x20"/>
+				<option name="Instance6" value="0x40"/>
+				<option name="Instance7" value="0x80"/>
+				<option name="Instance8" value="0x100"/>
+				<option name="Instance9" value="0x200"/>
+				<option name="Instance10" value="0x400"/>
+				<option name="Instance11" value="0x800"/>
+				<option name="Instance12" value="0x1000"/>
+				<option name="Instance13" value="0x2000"/>
+				<option name="Instance14" value="0x4000"/>
+				<option name="Instance15" value="0x8000"/>
+				<option name="Instance16" value="0x10000"/>
+				<option name="Instance17" value="0x20000"/>
+				<option name="Instance18" value="0x40000"/>
+				<option name="Instance19" value="0x80000"/>
+				<option name="Instance20" value="0x100000"/>
+				<option name="Instance21" value="0x200000"/>
+				<option name="Instance22" value="0x400000"/>
+				<option name="Instance23" value="0x800000"/>
+				<option name="Instance24" value="0x1000000"/>
+				<option name="Instance25" value="0x2000000"/>
+				<option name="Instance26" value="0x4000000"/>
+				<option name="Instance27" value="0x8000000"/>
+				<option name="Instance28" value="0x10000000"/>
+				<option name="Instance29" value="0x20000000"/>
+				<option name="Instance30" value="0x40000000"/>
+				<option name="Instance31" value="0x80000000"/>
+			</enum32>
+			<enum32 name="Instance Flags2" visible="true" offset="0x10">
+				<option name="None" value="0x0"/>
+				<option name="Instance32" value="0x1"/>
+				<option name="Instance33" value="0x2"/>
+				<option name="Instance34" value="0x4"/>
+				<option name="Instance35" value="0x8"/>
+				<option name="Instance36" value="0x10"/>
+				<option name="Instance37" value="0x20"/>
+				<option name="Instance38" value="0x40"/>
+				<option name="Instance39" value="0x80"/>
+				<option name="Instance40" value="0x100"/>
+				<option name="Instance41" value="0x200"/>
+				<option name="Instance42" value="0x400"/>
+				<option name="Instance43" value="0x800"/>
+				<option name="Instance44" value="0x1000"/>
+				<option name="Instance45" value="0x2000"/>
+				<option name="Instance46" value="0x4000"/>
+				<option name="Instance47" value="0x8000"/>
+				<option name="Instance48" value="0x10000"/>
+				<option name="Instance49" value="0x20000"/>
+				<option name="Instance50" value="0x40000"/>
+				<option name="Instance51" value="0x80000"/>
+				<option name="Instance52" value="0x100000"/>
+				<option name="Instance53" value="0x200000"/>
+				<option name="Instance54" value="0x400000"/>
+				<option name="Instance55" value="0x800000"/>
+				<option name="Instance56" value="0x1000000"/>
+				<option name="Instance57" value="0x2000000"/>
+				<option name="Instance58" value="0x4000000"/>
+				<option name="Instance59" value="0x8000000"/>
+				<option name="Instance60" value="0x10000000"/>
+				<option name="Instance61" value="0x20000000"/>
+				<option name="Instance62" value="0x40000000"/>
+				<option name="Instance63" value="0x80000000"/>
+			</enum32>
+			<uint32 name="Unknown4" visible="true" offset="0x14"/>
+			<uint32 name="Unknown5" visible="true" offset="0x18"/>
+		</reflexive>
+		<float32 name="Probability" visible="true" offset="0x14"/>
+	</reflexive>
+	<reflexive name="Materials" visible="true" offset="0x88" entrySize="0x14">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<int16 name="Unknown" visible="true" offset="0x4"/>
+		<int16 name="Damage Section Index" visible="true" offset="0x6"/>
+		<int16 name="Unknown2" visible="true" offset="0x8"/>
+		<int16 name="Unknown3" visible="true" offset="0xA"/>
+		<stringId name="Material Name" visible="true" offset="0xC"/>
+		<int16 name="Global Material Index" visible="true" offset="0x10"/>
+		<int16 name="Unknown4" visible="true" offset="0x12"/>
+	</reflexive>
+	<reflexive name="New Damage Info" visible="true" offset="0x94" entrySize="0x100">
+		<enum32 name="Flags" visible="true" offset="0x0">
+			<option name="None" value="0x0"/>
+			<option name="Takes Shield Damage For Children" value="0x1"/>
+			<option name="Takes Body Damage For Children" value="0x2"/>
+			<option name="Always Shields Friendly Damage" value="0x4"/>
+			<option name="Passes Area Damage To Children" value="0x8"/>
+			<option name="Parent Never Takes Body Damage For Children" value="0x10"/>
+			<option name="Only Damaged By Explosives" value="0x20"/>
+			<option name="Parent Never Takes Shield Damage For Children" value="0x40"/>
+			<option name="Cannot Die From Damage" value="0x80"/>
+			<option name="Passes Attached Damage To Riders" value="0x100"/>
+			<option name="Bit9" value="0x200"/>
+			<option name="Bit10" value="0x400"/>
+			<option name="Only Damaged By Player" value="0x800"/>
+			<option name="Bit12" value="0x1000"/>
+			<option name="Bit13" value="0x2000"/>
+			<option name="Bit14" value="0x4000"/>
+			<option name="Bit15" value="0x8000"/>
+			<option name="Bit16" value="0x10000"/>
+			<option name="Bit17" value="0x20000"/>
+			<option name="Bit18" value="0x40000"/>
+			<option name="Bit19" value="0x80000"/>
+			<option name="Bit20" value="0x100000"/>
+			<option name="Bit21" value="0x200000"/>
+			<option name="Bit22" value="0x400000"/>
+			<option name="Bit23" value="0x800000"/>
+			<option name="Bit24" value="0x1000000"/>
+			<option name="Bit25" value="0x2000000"/>
+			<option name="Bit26" value="0x4000000"/>
+			<option name="Bit27" value="0x8000000"/>
+			<option name="Bit28" value="0x10000000"/>
+			<option name="Bit29" value="0x20000000"/>
+			<option name="Bit30" value="0x40000000"/>
+			<option name="Bit31" value="0x80000000"/>
+		</enum32>
+		<stringId name="Global Indirect Material Name" visible="true" offset="0x4"/>
+		<int16 name="Indirect Damage Section" visible="true" offset="0x8"/>
+		<int16 name="Unknown" visible="true" offset="0xA"/>
+		<uint32 name="Unknown2" visible="true" offset="0xC"/>
+		<enum8 name="Collision Damage Reporting Type" visible="true" offset="0x10">
+			<option name="Guardians Unknown" value="0x0"/>
+			<option name="Guardians" value="0x1"/>
+			<option name="Falling Damage" value="0x2"/>
+			<option name="Generic Collision" value="0x3"/>
+			<option name="Armor Lock Crush" value="0x4"/>
+			<option name="Generic Melee" value="0x5"/>
+			<option name="Generic Explosion" value="0x6"/>
+			<option name="Magnum" value="0x7"/>
+			<option name="Plasma Pistol" value="0x8"/>
+			<option name="Needler" value="0x9"/>
+			<option name="Mauler" value="0xA"/>
+			<option name="Smg" value="0xB"/>
+			<option name="Plasma Rifle" value="0xC"/>
+			<option name="Battle Rifle" value="0xD"/>
+			<option name="Carbine" value="0xE"/>
+			<option name="Shotgun" value="0xF"/>
+			<option name="Sniper Rifle" value="0x10"/>
+			<option name="Beam Rifle" value="0x11"/>
+			<option name="Assault Rifle" value="0x12"/>
+			<option name="Spiker" value="0x13"/>
+			<option name="Fuel Rod Cannon" value="0x14"/>
+			<option name="Missile Pod" value="0x15"/>
+			<option name="Rocket Launcher" value="0x16"/>
+			<option name="Spartan Laser" value="0x17"/>
+			<option name="Brute Shot" value="0x18"/>
+			<option name="Flamethrower" value="0x19"/>
+			<option name="Sentinel Gun" value="0x1A"/>
+			<option name="Energy Sword" value="0x1B"/>
+			<option name="Gravity Hammer" value="0x1C"/>
+			<option name="Frag Grenade" value="0x1D"/>
+			<option name="Plasma Grenade" value="0x1E"/>
+			<option name="Spike Grenade" value="0x1F"/>
+			<option name="Firebomb Grenade" value="0x20"/>
+			<option name="Flag" value="0x21"/>
+			<option name="Bomb" value="0x22"/>
+			<option name="Bomb Explosion" value="0x23"/>
+			<option name="Ball" value="0x24"/>
+			<option name="Machinegun Turret" value="0x25"/>
+			<option name="Plasma Cannon" value="0x26"/>
+			<option name="Plasma Mortar" value="0x27"/>
+			<option name="Plasma Turret" value="0x28"/>
+			<option name="Shade Turret" value="0x29"/>
+			<option name="Banshee" value="0x2A"/>
+			<option name="Ghost" value="0x2B"/>
+			<option name="Mongoose" value="0x2C"/>
+			<option name="Scorpion" value="0x2D"/>
+			<option name="Scorpion Gunner" value="0x2E"/>
+			<option name="Spectre" value="0x2F"/>
+			<option name="Spectre Gunner" value="0x30"/>
+			<option name="Warthog" value="0x31"/>
+			<option name="Warthog Gunner" value="0x32"/>
+			<option name="Warthog Gauss Turret" value="0x33"/>
+			<option name="Wraith" value="0x34"/>
+			<option name="Wraith Gunner" value="0x35"/>
+			<option name="Tank" value="0x36"/>
+			<option name="Chopper" value="0x37"/>
+			<option name="Hornet" value="0x38"/>
+			<option name="Mantis" value="0x39"/>
+			<option name="Prowler" value="0x3A"/>
+			<option name="Sentinel Beam" value="0x3B"/>
+			<option name="Sentinel Rpg" value="0x3C"/>
+			<option name="Teleporter" value="0x3D"/>
+			<option name="Tripmine" value="0x3E"/>
+			<option name="Dmr" value="0x3F"/>
+		</enum8>
+		<enum8 name="Response Damage Reporting Type" visible="true" offset="0x11">
+			<option name="Guardians Unknown" value="0x0"/>
+			<option name="Guardians" value="0x1"/>
+			<option name="Falling Damage" value="0x2"/>
+			<option name="Generic Collision" value="0x3"/>
+			<option name="Armor Lock Crush" value="0x4"/>
+			<option name="Generic Melee" value="0x5"/>
+			<option name="Generic Explosion" value="0x6"/>
+			<option name="Magnum" value="0x7"/>
+			<option name="Plasma Pistol" value="0x8"/>
+			<option name="Needler" value="0x9"/>
+			<option name="Mauler" value="0xA"/>
+			<option name="Smg" value="0xB"/>
+			<option name="Plasma Rifle" value="0xC"/>
+			<option name="Battle Rifle" value="0xD"/>
+			<option name="Carbine" value="0xE"/>
+			<option name="Shotgun" value="0xF"/>
+			<option name="Sniper Rifle" value="0x10"/>
+			<option name="Beam Rifle" value="0x11"/>
+			<option name="Assault Rifle" value="0x12"/>
+			<option name="Spiker" value="0x13"/>
+			<option name="Fuel Rod Cannon" value="0x14"/>
+			<option name="Missile Pod" value="0x15"/>
+			<option name="Rocket Launcher" value="0x16"/>
+			<option name="Spartan Laser" value="0x17"/>
+			<option name="Brute Shot" value="0x18"/>
+			<option name="Flamethrower" value="0x19"/>
+			<option name="Sentinel Gun" value="0x1A"/>
+			<option name="Energy Sword" value="0x1B"/>
+			<option name="Gravity Hammer" value="0x1C"/>
+			<option name="Frag Grenade" value="0x1D"/>
+			<option name="Plasma Grenade" value="0x1E"/>
+			<option name="Spike Grenade" value="0x1F"/>
+			<option name="Firebomb Grenade" value="0x20"/>
+			<option name="Flag" value="0x21"/>
+			<option name="Bomb" value="0x22"/>
+			<option name="Bomb Explosion" value="0x23"/>
+			<option name="Ball" value="0x24"/>
+			<option name="Machinegun Turret" value="0x25"/>
+			<option name="Plasma Cannon" value="0x26"/>
+			<option name="Plasma Mortar" value="0x27"/>
+			<option name="Plasma Turret" value="0x28"/>
+			<option name="Shade Turret" value="0x29"/>
+			<option name="Banshee" value="0x2A"/>
+			<option name="Ghost" value="0x2B"/>
+			<option name="Mongoose" value="0x2C"/>
+			<option name="Scorpion" value="0x2D"/>
+			<option name="Scorpion Gunner" value="0x2E"/>
+			<option name="Spectre" value="0x2F"/>
+			<option name="Spectre Gunner" value="0x30"/>
+			<option name="Warthog" value="0x31"/>
+			<option name="Warthog Gunner" value="0x32"/>
+			<option name="Warthog Gauss Turret" value="0x33"/>
+			<option name="Wraith" value="0x34"/>
+			<option name="Wraith Gunner" value="0x35"/>
+			<option name="Tank" value="0x36"/>
+			<option name="Chopper" value="0x37"/>
+			<option name="Hornet" value="0x38"/>
+			<option name="Mantis" value="0x39"/>
+			<option name="Prowler" value="0x3A"/>
+			<option name="Sentinel Beam" value="0x3B"/>
+			<option name="Sentinel Rpg" value="0x3C"/>
+			<option name="Teleporter" value="0x3D"/>
+			<option name="Tripmine" value="0x3E"/>
+			<option name="Dmr" value="0x3F"/>
+		</enum8>
+		<int16 name="Unknown3" visible="true" offset="0x12"/>
+		<uint32 name="Unknown4" visible="true" offset="0x14"/>
+		<uint32 name="Unknown5" visible="true" offset="0x18"/>
+		<uint32 name="Unknown6" visible="true" offset="0x1C"/>
+		<uint32 name="Unknown7" visible="true" offset="0x20"/>
+		<uint32 name="Unknown8" visible="true" offset="0x24"/>
+		<float32 name="Max Vitality" visible="true" offset="0x28"/>
+		<float32 name="Min Stun Damage" visible="true" offset="0x2C"/>
+		<float32 name="Stun Time" visible="true" offset="0x30"/>
+		<float32 name="Recharge Time" visible="true" offset="0x34"/>
+		<float32 name="Recharge Fraction" visible="true" offset="0x38"/>
+		<uint32 name="Unknown9" visible="true" offset="0x3C"/>
+		<uint32 name="Unknown10" visible="true" offset="0x40"/>
+		<uint32 name="Unknown11" visible="true" offset="0x44"/>
+		<uint32 name="Unknown12" visible="true" offset="0x48"/>
+		<uint32 name="Unknown13" visible="true" offset="0x4C"/>
+		<uint32 name="Unknown14" visible="true" offset="0x50"/>
+		<uint32 name="Unknown15" visible="true" offset="0x54"/>
+		<uint32 name="Unknown16" visible="true" offset="0x58"/>
+		<uint32 name="Unknown17" visible="true" offset="0x5C"/>
+		<uint32 name="Unknown18" visible="true" offset="0x60"/>
+		<uint32 name="Unknown19" visible="true" offset="0x64"/>
+		<uint32 name="Unknown20" visible="true" offset="0x68"/>
+		<uint32 name="Unknown21" visible="true" offset="0x6C"/>
+		<uint32 name="Unknown22" visible="true" offset="0x70"/>
+		<uint32 name="Unknown23" visible="true" offset="0x74"/>
+		<uint32 name="Unknown24" visible="true" offset="0x78"/>
+		<float32 name="Max Shield Vitality" visible="true" offset="0x7C"/>
+		<stringId name="Global Shield Material Name" visible="true" offset="0x80"/>
+		<float32 name="Min Stun Damage2" visible="true" offset="0x84"/>
+		<float32 name="Stun Time2" visible="true" offset="0x88"/>
+		<float32 name="Shield Recharge Time" visible="true" offset="0x8C"/>
+		<float32 name="Shield Damaged Threshold" visible="true" offset="0x90"/>
+		<tagref name="Shield Damaged Effect" visible="true" offset="0x94"/>
+		<tagref name="Shield Depleted Effect" visible="true" offset="0xA4"/>
+		<tagref name="Shield Recharging Effect" visible="true" offset="0xB4"/>
+		<reflexive name="Damage Sections" visible="true" offset="0xC4" entrySize="0x44">
+			<stringId name="Name" visible="true" offset="0x0"/>
+			<bitfield32 name="Flags" visible="true" offset="0x4">
+				<bit name="Absorbs Body Damage" index="0"/>
+				<bit name="Takes Full Damage When Object Dies" index="1"/>
+				<bit name="Cannot Die With Riders" index="2"/>
+				<bit name="Takes Full Damage When Object Destroyed" index="3"/>
+				<bit name="Restored On Ressurection" index="4"/>
+				<bit name="Bit5" index="5"/>
+				<bit name="Bit6" index="6"/>
+				<bit name="Headshotable" index="7"/>
+				<bit name="Ignores Shields" index="8"/>
+				<bit name="Bit9" index="9"/>
+				<bit name="Bit10" index="10"/>
+				<bit name="Bit11" index="11"/>
+				<bit name="Bit12" index="12"/>
+				<bit name="Bit13" index="13"/>
+				<bit name="Bit14" index="14"/>
+				<bit name="Bit15" index="15"/>
+				<bit name="Bit16" index="16"/>
+				<bit name="Bit17" index="17"/>
+				<bit name="Bit18" index="18"/>
+				<bit name="Bit19" index="19"/>
+				<bit name="Bit20" index="20"/>
+				<bit name="Bit21" index="21"/>
+				<bit name="Bit22" index="22"/>
+				<bit name="Bit23" index="23"/>
+				<bit name="Bit24" index="24"/>
+				<bit name="Bit25" index="25"/>
+				<bit name="Bit26" index="26"/>
+				<bit name="Bit27" index="27"/>
+				<bit name="Bit28" index="28"/>
+				<bit name="Bit29" index="29"/>
+				<bit name="Bit30" index="30"/>
+				<bit name="Bit31" index="31"/>
+			</bitfield32>
+			<float32 name="Vitality Percentage" visible="true" offset="0x8"/>
+			<reflexive name="Instant Responses" visible="true" offset="0xC" entrySize="0x88">
+				<enum16 name="Response Type" visible="true" offset="0x0">
+					<option name="Recieves All Damage" value="0x0"/>
+					<option name="Recieves Area Effect Damage" value="0x1"/>
+					<option name="Recieves Local Damage" value="0x2"/>
+				</enum16>
+				<enum16 name="Constraint Damage Type" visible="true" offset="0x2">
+					<option name="None" value="0x0"/>
+					<option name="Destroy One Of Group" value="0x1"/>
+					<option name="Destroy Entire Group" value="0x2"/>
+					<option name="Loosen One Of Group" value="0x3"/>
+					<option name="Loosen Entire Group" value="0x4"/>
+				</enum16>
+				<stringId name="Trigger" visible="true" offset="0x4"/>
+				<bitfield32 name="Flags" visible="true" offset="0x8">
+					<bit name="Kills Object" index="0"/>
+					<bit name="Inhibits Melee Attack" index="1"/>
+					<bit name="Inhibits Weapon Attack" index="2"/>
+					<bit name="Inhibits Walking" index="3"/>
+					<bit name="Forces Drop Weapon" index="4"/>
+					<bit name="Kills Weapon Primary Trigger" index="5"/>
+					<bit name="Kills Weapon Secondary Trigger" index="6"/>
+					<bit name="Destroys Object" index="7"/>
+					<bit name="Damages Weapon Primary Trigger" index="8"/>
+					<bit name="Damages Weapon Secondary Trigger" index="9"/>
+					<bit name="Light Damage Left Turn" index="10"/>
+					<bit name="Major Damage Left Turn" index="11"/>
+					<bit name="Light Damage Right Turn" index="12"/>
+					<bit name="Major Damage Right Turn" index="13"/>
+					<bit name="Light Damage Engine" index="14"/>
+					<bit name="Major Damage Engine" index="15"/>
+					<bit name="Kills Object No Player Solo" index="16"/>
+					<bit name="Causes Detonation" index="17"/>
+					<bit name="Destroy All Group Constraints" index="18"/>
+					<bit name="Kills Variant Objects" index="19"/>
+					<bit name="Force Unattached Effects" index="20"/>
+					<bit name="Fires Under Threshold" index="21"/>
+					<bit name="Triggers Special Death" index="22"/>
+					<bit name="Only On Special Death" index="23"/>
+					<bit name="Only Not On Special Death" index="24"/>
+					<bit name="Bit25" index="25"/>
+					<bit name="Causes Detonation In Single Player" index="26"/>
+					<bit name="Bit27" index="27"/>
+					<bit name="Bit28" index="28"/>
+					<bit name="Bit29" index="29"/>
+					<bit name="Bit30" index="30"/>
+					<bit name="Bit31" index="31"/>
+				</bitfield32>
+				<float32 name="Damage Threshold" visible="true" offset="0xC"/>
+				<tagref name="Primary Transition Effect" visible="true" offset="0x10"/>
+				<tagref name="Secondary Transition Effect" visible="true" offset="0x20"/>
+				<tagref name="Transition Damage Effect" visible="true" offset="0x30"/>
+				<stringId name="Region" visible="true" offset="0x40"/>
+				<enum16 name="New State" visible="true" offset="0x44">
+					<option name="Default" value="0x0"/>
+					<option name="Minor Damage" value="0x1"/>
+					<option name="Medium Damage" value="0x2"/>
+					<option name="Major Damage" value="0x3"/>
+					<option name="Destroyed" value="0x4"/>
+				</enum16>
+				<int16 name="Runtime Region Index" visible="true" offset="0x46"/>
+				<stringId name="Secondary Region" visible="true" offset="0x48"/>
+				<enum16 name="Secondary New State" visible="true" offset="0x4C">
+					<option name="Default" value="0x0"/>
+					<option name="Minor Damage" value="0x1"/>
+					<option name="Medium Damage" value="0x2"/>
+					<option name="Major Damage" value="0x3"/>
+					<option name="Destroyed" value="0x4"/>
+				</enum16>
+				<int16 name="Secondary Runtime Region Index" visible="true" offset="0x4E"/>
+				<int16 name="Unknown" visible="true" offset="0x50"/>
+				<enum16 name="Unknown Special Damage" visible="true" offset="0x52">
+					<option name="None" value="0x0"/>
+					<option name="_1" value="0x1"/>
+					<option name="_2" value="0x2"/>
+					<option name="_3" value="0x3"/>
+				</enum16>
+				<stringId name="Special Damage Case" visible="true" offset="0x54"/>
+				<stringId name="Effect Marker Name" visible="true" offset="0x58"/>
+				<stringId name="Damage Effect Marker Name" visible="true" offset="0x5C"/>
+				<float32 name="Response Delay" visible="true" offset="0x60"/>
+				<tagref name="Delay Effect" visible="true" offset="0x64"/>
+				<stringId name="Delay Effect Marker Name" visible="true" offset="0x74"/>
+				<stringId name="Ejecting Seat Label" visible="true" offset="0x78"/>
+				<float32 name="Skip Fraction" visible="true" offset="0x7C"/>
+				<stringId name="Destroyed Child Object Marker Name" visible="true" offset="0x80"/>
+				<float32 name="Total Damage Threshold" visible="true" offset="0x84"/>
+			</reflexive>
+			<uint32 name="Unknown" visible="true" offset="0x18"/>
+			<uint32 name="Unknown2" visible="true" offset="0x1C"/>
+			<uint32 name="Unknown3" visible="true" offset="0x20"/>
+			<uint32 name="Unknown4" visible="true" offset="0x24"/>
+			<uint32 name="Unknown5" visible="true" offset="0x28"/>
+			<uint32 name="Unknown6" visible="true" offset="0x2C"/>
+			<float32 name="Stun Time" visible="true" offset="0x30"/>
+			<float32 name="Recharge Time" visible="true" offset="0x34"/>
+			<uint32 name="Unknown7" visible="true" offset="0x38"/>
+			<stringId name="Resurrection Region Name" visible="true" offset="0x3C"/>
+			<int16 name="Ressurection Region Runtime Index" visible="true" offset="0x40"/>
+			<int16 name="Unknown8" visible="true" offset="0x42"/>
+		</reflexive>
+		<reflexive name="Nodes" visible="true" offset="0xD0" entrySize="0x10">
+			<int16 name="Unknown" visible="true" offset="0x0"/>
+			<int16 name="Unknown2" visible="true" offset="0x2"/>
+			<uint32 name="Unknown3" visible="true" offset="0x4"/>
+			<uint32 name="Unknown4" visible="true" offset="0x8"/>
+			<uint32 name="Unknown5" visible="true" offset="0xC"/>
+		</reflexive>
+		<int16 name="Global Shield Material Index" visible="true" offset="0xDC"/>
+		<int16 name="Global Indirect Material Index" visible="true" offset="0xDE"/>
+		<uint32 name="Unknown25" visible="true" offset="0xE0"/>
+		<uint32 name="Unknown26" visible="true" offset="0xE4"/>
+		<reflexive name="Damage Seats" visible="true" offset="0xE8" entrySize="0x20">
+			<stringId name="Seat Label" visible="true" offset="0x0"/>
+			<float32 name="Direct Damage Scale" visible="true" offset="0x4"/>
+			<float32 name="Damage Transfer Fall Off Radius" visible="true" offset="0x8"/>
+			<float32 name="Maximum Transfer Damage Scale" visible="true" offset="0xC"/>
+			<float32 name="Minimum Transfer Damage Scale" visible="true" offset="0x10"/>
+			<reflexive name="Unknown" visible="true" offset="0x14" entrySize="0x2C">
+				<stringId name="Node" visible="true" offset="0x0"/>
+				<uint32 name="Unknown" visible="true" offset="0x4"/>
+				<uint32 name="Unknown2" visible="true" offset="0x8"/>
+				<uint32 name="Unknown3" visible="true" offset="0xC"/>
+				<uint32 name="Unknown4" visible="true" offset="0x10"/>
+				<uint32 name="Unknown5" visible="true" offset="0x14"/>
+				<uint32 name="Unknown6" visible="true" offset="0x18"/>
+				<uint32 name="Unknown7" visible="true" offset="0x1C"/>
+				<uint32 name="Unknown8" visible="true" offset="0x20"/>
+				<uint32 name="Unknown9" visible="true" offset="0x24"/>
+				<uint32 name="Unknown10" visible="true" offset="0x28"/>
+			</reflexive>
+		</reflexive>
+		<reflexive name="Damage Constraints" visible="true" offset="0xF4" entrySize="0x14">
+			<stringId name="Physics Model Constraint Name" visible="true" offset="0x0"/>
+			<stringId name="Damage Constraint Name" visible="true" offset="0x4"/>
+			<stringId name="Damage Constraint Group Name" visible="true" offset="0x8"/>
+			<float32 name="Group Probability Scale" visible="true" offset="0xC"/>
+			<enum16 name="Type" visible="true" offset="0x10">
+				<option name="Hinge" value="0x0"/>
+				<option name="Limited Hinge" value="0x1"/>
+				<option name="Ragdoll" value="0x2"/>
+				<option name="Stiff Spring" value="0x3"/>
+				<option name="Ball And Socket" value="0x4"/>
+				<option name="Prismatic" value="0x5"/>
+			</enum16>
+			<int16 name="Index" visible="true" offset="0x12"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Targets" visible="true" offset="0xA0" entrySize="0x28">
+		<uint32 name="Unknown" visible="true" offset="0x0"/>
+		<stringId name="Marker Name" visible="true" offset="0x4"/>
+		<float32 name="Size" visible="true" offset="0x8"/>
+		<degree name="Cone Angle" visible="true" offset="0xC"/>
+		<int16 name="Damage Section" visible="true" offset="0x10"/>
+		<int16 name="Variant" visible="true" offset="0x12"/>
+		<float32 name="Targeting Relevance" visible="true" offset="0x14"/>
+		<uint32 name="Unknown2" visible="true" offset="0x18"/>
+		<bitfield32 name="Flags" visible="true" offset="0x1C">
+			<bit name="Locked By Human Tracking" index="0"/>
+			<bit name="Locked By Plasma Tracking" index="1"/>
+			<bit name="Headshot" index="2"/>
+			<bit name="Bit3" index="3"/>
+			<bit name="Vulnerable" index="4"/>
+			<bit name="Bit5" index="5"/>
+			<bit name="Always Locked By Plasma Tracking" index="6"/>
+			<bit name="Bit7" index="7"/>
+			<bit name="Bit8" index="8"/>
+			<bit name="Bit9" index="9"/>
+			<bit name="Bit10" index="10"/>
+			<bit name="Bit11" index="11"/>
+			<bit name="Bit12" index="12"/>
+			<bit name="Bit13" index="13"/>
+			<bit name="Bit14" index="14"/>
+			<bit name="Bit15" index="15"/>
+			<bit name="Bit16" index="16"/>
+			<bit name="Bit17" index="17"/>
+			<bit name="Bit18" index="18"/>
+			<bit name="Bit19" index="19"/>
+			<bit name="Bit20" index="20"/>
+			<bit name="Bit21" index="21"/>
+			<bit name="Bit22" index="22"/>
+			<bit name="Bit23" index="23"/>
+			<bit name="Bit24" index="24"/>
+			<bit name="Bit25" index="25"/>
+			<bit name="Bit26" index="26"/>
+			<bit name="Bit27" index="27"/>
+			<bit name="Bit28" index="28"/>
+			<bit name="Bit29" index="29"/>
+			<bit name="Bit30" index="30"/>
+			<bit name="Bit31" index="31"/>
+		</bitfield32>
+		<float32 name="Lock On Distance" visible="true" offset="0x20"/>
+		<stringId name="Target Filter" visible="true" offset="0x24"/>
+	</reflexive>
+	<reflexive name="Collision Regions" visible="true" offset="0xAC" entrySize="0x14">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<int8 name="Collision Region Index" visible="true" offset="0x4"/>
+		<int8 name="Physics Region Index" visible="true" offset="0x5"/>
+		<int8 name="Unknown" visible="true" offset="0x6"/>
+		<int8 name="Unknown2" visible="true" offset="0x7"/>
+		<reflexive name="Permutations" visible="true" offset="0x8" entrySize="0x8">
+			<stringId name="Name" visible="true" offset="0x0"/>
+			<bitfield8 name="Flags" visible="true" offset="0x4">
+				<bit name="Cannot Be Chosen Randomly" index="0"/>
+				<bit name="Bit1" index="1"/>
+				<bit name="Bit2" index="2"/>
+				<bit name="Bit3" index="3"/>
+				<bit name="Bit4" index="4"/>
+				<bit name="Bit5" index="5"/>
+				<bit name="Bit6" index="6"/>
+				<bit name="Bit7" index="7"/>
+			</bitfield8>
+			<int8 name="Collision Permutation Index" visible="true" offset="0x5"/>
+			<int8 name="Physics Permutation Index" visible="true" offset="0x6"/>
+			<int8 name="Unknown" visible="true" offset="0x7"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Nodes" visible="true" offset="0xB8" entrySize="0x5C">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<int16 name="Parent Node" visible="true" offset="0x4"/>
+		<int16 name="First Child Node" visible="true" offset="0x6"/>
+		<int16 name="Next Sibling Node" visible="true" offset="0x8"/>
+		<int16 name="Import Node Index" visible="true" offset="0xA"/>
+		<vector3 name="Default Translation" visible="true" offset="0xC"/>
+		<float name="Default Rotation I" visible="true" offset="0x18"/>
+		<float name="Default Rotation J" visible="true" offset="0x1C"/>
+		<float name="Default Rotation K" visible="true" offset="0x20"/>
+		<float name="Default Rotation W" visible="true" offset="0x24"/>
+		<float32 name="Default Scale" visible="true" offset="0x28"/>
+		<float name="Inverse M11" visible="true" offset="0x2C"/>
+		<float name="Inverse M12" visible="true" offset="0x30"/>
+		<float name="Inverse M13" visible="true" offset="0x34"/>
+		<float name="Inverse M21" visible="true" offset="0x38"/>
+		<float name="Inverse M22" visible="true" offset="0x3C"/>
+		<float name="Inverse M23" visible="true" offset="0x40"/>
+		<float name="Inverse M31" visible="true" offset="0x44"/>
+		<float name="Inverse M32" visible="true" offset="0x48"/>
+		<float name="Inverse M33" visible="true" offset="0x4C"/>
+		<float name="Inverse M41" visible="true" offset="0x50"/>
+		<float name="Inverse M42" visible="true" offset="0x54"/>
+		<float name="Inverse M43" visible="true" offset="0x58"/>
+	</reflexive>
+	<uint32 name="Unknown2" visible="true" offset="0xC4"/>
+	<reflexive name="Model Object Data" visible="true" offset="0xC8" entrySize="0x14">
+		<enum16 name="Type" visible="true" offset="0x0">
+			<option name="Not Set" value="0x0"/>
+			<option name="User Defined" value="0x1"/>
+			<option name="Auto Generated" value="0x2"/>
+		</enum16>
+		<int16 name="Unknown" visible="true" offset="0x2"/>
+		<vector3 name="Offset" visible="true" offset="0x4"/>
+		<float32 name="Radius" visible="true" offset="0x10"/>
+	</reflexive>
+	<tagref name="Primary Dialogue" visible="true" offset="0xD4"/>
+	<tagref name="Secondary Dialogue" visible="true" offset="0xE4"/>
+	<enum32 name="Flags" visible="true" offset="0xF4">
+		<option name="None" value="0x0"/>
+		<option name="Active Camo Always On" value="0x1"/>
+		<option name="Active Camo Always Merge" value="0x2"/>
+		<option name="Active Camo Never Merge" value="0x4"/>
+		<option name="Bit3" value="0x8"/>
+		<option name="Bit4" value="0x10"/>
+		<option name="Bit5" value="0x20"/>
+		<option name="Bit6" value="0x40"/>
+		<option name="Bit7" value="0x80"/>
+		<option name="Bit8" value="0x100"/>
+		<option name="Bit9" value="0x200"/>
+		<option name="Bit10" value="0x400"/>
+		<option name="Bit11" value="0x800"/>
+		<option name="Bit12" value="0x1000"/>
+		<option name="Bit13" value="0x2000"/>
+		<option name="Bit14" value="0x4000"/>
+		<option name="Bit15" value="0x8000"/>
+		<option name="Bit16" value="0x10000"/>
+		<option name="Bit17" value="0x20000"/>
+		<option name="Bit18" value="0x40000"/>
+		<option name="Bit19" value="0x80000"/>
+		<option name="Bit20" value="0x100000"/>
+		<option name="Bit21" value="0x200000"/>
+		<option name="Bit22" value="0x400000"/>
+		<option name="Bit23" value="0x800000"/>
+		<option name="Bit24" value="0x1000000"/>
+		<option name="Bit25" value="0x2000000"/>
+		<option name="Bit26" value="0x4000000"/>
+		<option name="Bit27" value="0x8000000"/>
+		<option name="Bit28" value="0x10000000"/>
+		<option name="Bit29" value="0x20000000"/>
+		<option name="Bit30" value="0x40000000"/>
+		<option name="Bit31" value="0x80000000"/>
+	</enum32>
+	<stringId name="Default Dialogue Effect" visible="true" offset="0xF8"/>
+	<enum32 name="Render Only Node Flags1" visible="true" offset="0xFC">
+		<option name="None" value="0x0"/>
+		<option name="Node0" value="0x1"/>
+		<option name="Node1" value="0x2"/>
+		<option name="Node2" value="0x4"/>
+		<option name="Node3" value="0x8"/>
+		<option name="Node4" value="0x10"/>
+		<option name="Node5" value="0x20"/>
+		<option name="Node6" value="0x40"/>
+		<option name="Node7" value="0x80"/>
+		<option name="Node8" value="0x100"/>
+		<option name="Node9" value="0x200"/>
+		<option name="Node10" value="0x400"/>
+		<option name="Node11" value="0x800"/>
+		<option name="Node12" value="0x1000"/>
+		<option name="Node13" value="0x2000"/>
+		<option name="Node14" value="0x4000"/>
+		<option name="Node15" value="0x8000"/>
+		<option name="Node16" value="0x10000"/>
+		<option name="Node17" value="0x20000"/>
+		<option name="Node18" value="0x40000"/>
+		<option name="Node19" value="0x80000"/>
+		<option name="Node20" value="0x100000"/>
+		<option name="Node21" value="0x200000"/>
+		<option name="Node22" value="0x400000"/>
+		<option name="Node23" value="0x800000"/>
+		<option name="Node24" value="0x1000000"/>
+		<option name="Node25" value="0x2000000"/>
+		<option name="Node26" value="0x4000000"/>
+		<option name="Node27" value="0x8000000"/>
+		<option name="Node28" value="0x10000000"/>
+		<option name="Node29" value="0x20000000"/>
+		<option name="Node30" value="0x40000000"/>
+		<option name="Node31" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Node Flags2" visible="true" offset="0x100">
+		<option name="None" value="0x0"/>
+		<option name="Node32" value="0x1"/>
+		<option name="Node33" value="0x2"/>
+		<option name="Node34" value="0x4"/>
+		<option name="Node35" value="0x8"/>
+		<option name="Node36" value="0x10"/>
+		<option name="Node37" value="0x20"/>
+		<option name="Node38" value="0x40"/>
+		<option name="Node39" value="0x80"/>
+		<option name="Node40" value="0x100"/>
+		<option name="Node41" value="0x200"/>
+		<option name="Node42" value="0x400"/>
+		<option name="Node43" value="0x800"/>
+		<option name="Node44" value="0x1000"/>
+		<option name="Node45" value="0x2000"/>
+		<option name="Node46" value="0x4000"/>
+		<option name="Node47" value="0x8000"/>
+		<option name="Node48" value="0x10000"/>
+		<option name="Node49" value="0x20000"/>
+		<option name="Node50" value="0x40000"/>
+		<option name="Node51" value="0x80000"/>
+		<option name="Node52" value="0x100000"/>
+		<option name="Node53" value="0x200000"/>
+		<option name="Node54" value="0x400000"/>
+		<option name="Node55" value="0x800000"/>
+		<option name="Node56" value="0x1000000"/>
+		<option name="Node57" value="0x2000000"/>
+		<option name="Node58" value="0x4000000"/>
+		<option name="Node59" value="0x8000000"/>
+		<option name="Node60" value="0x10000000"/>
+		<option name="Node61" value="0x20000000"/>
+		<option name="Node62" value="0x40000000"/>
+		<option name="Node63" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Node Flags3" visible="true" offset="0x104">
+		<option name="None" value="0x0"/>
+		<option name="Node64" value="0x1"/>
+		<option name="Node65" value="0x2"/>
+		<option name="Node66" value="0x4"/>
+		<option name="Node67" value="0x8"/>
+		<option name="Node68" value="0x10"/>
+		<option name="Node69" value="0x20"/>
+		<option name="Node70" value="0x40"/>
+		<option name="Node71" value="0x80"/>
+		<option name="Node72" value="0x100"/>
+		<option name="Node73" value="0x200"/>
+		<option name="Node74" value="0x400"/>
+		<option name="Node75" value="0x800"/>
+		<option name="Node76" value="0x1000"/>
+		<option name="Node77" value="0x2000"/>
+		<option name="Node78" value="0x4000"/>
+		<option name="Node79" value="0x8000"/>
+		<option name="Node80" value="0x10000"/>
+		<option name="Node81" value="0x20000"/>
+		<option name="Node82" value="0x40000"/>
+		<option name="Node83" value="0x80000"/>
+		<option name="Node84" value="0x100000"/>
+		<option name="Node85" value="0x200000"/>
+		<option name="Node86" value="0x400000"/>
+		<option name="Node87" value="0x800000"/>
+		<option name="Node88" value="0x1000000"/>
+		<option name="Node89" value="0x2000000"/>
+		<option name="Node90" value="0x4000000"/>
+		<option name="Node91" value="0x8000000"/>
+		<option name="Node92" value="0x10000000"/>
+		<option name="Node93" value="0x20000000"/>
+		<option name="Node94" value="0x40000000"/>
+		<option name="Node95" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Node Flags4" visible="true" offset="0x108">
+		<option name="None" value="0x0"/>
+		<option name="Node96" value="0x1"/>
+		<option name="Node97" value="0x2"/>
+		<option name="Node98" value="0x4"/>
+		<option name="Node99" value="0x8"/>
+		<option name="Node100" value="0x10"/>
+		<option name="Node101" value="0x20"/>
+		<option name="Node102" value="0x40"/>
+		<option name="Node103" value="0x80"/>
+		<option name="Node104" value="0x100"/>
+		<option name="Node105" value="0x200"/>
+		<option name="Node106" value="0x400"/>
+		<option name="Node107" value="0x800"/>
+		<option name="Node108" value="0x1000"/>
+		<option name="Node109" value="0x2000"/>
+		<option name="Node110" value="0x4000"/>
+		<option name="Node111" value="0x8000"/>
+		<option name="Node112" value="0x10000"/>
+		<option name="Node113" value="0x20000"/>
+		<option name="Node114" value="0x40000"/>
+		<option name="Node115" value="0x80000"/>
+		<option name="Node116" value="0x100000"/>
+		<option name="Node117" value="0x200000"/>
+		<option name="Node118" value="0x400000"/>
+		<option name="Node119" value="0x800000"/>
+		<option name="Node120" value="0x1000000"/>
+		<option name="Node121" value="0x2000000"/>
+		<option name="Node122" value="0x4000000"/>
+		<option name="Node123" value="0x8000000"/>
+		<option name="Node124" value="0x10000000"/>
+		<option name="Node125" value="0x20000000"/>
+		<option name="Node126" value="0x40000000"/>
+		<option name="Node127" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Node Flags5" visible="true" offset="0x10C">
+		<option name="None" value="0x0"/>
+		<option name="Node128" value="0x1"/>
+		<option name="Node129" value="0x2"/>
+		<option name="Node130" value="0x4"/>
+		<option name="Node131" value="0x8"/>
+		<option name="Node132" value="0x10"/>
+		<option name="Node133" value="0x20"/>
+		<option name="Node134" value="0x40"/>
+		<option name="Node135" value="0x80"/>
+		<option name="Node136" value="0x100"/>
+		<option name="Node137" value="0x200"/>
+		<option name="Node138" value="0x400"/>
+		<option name="Node139" value="0x800"/>
+		<option name="Node140" value="0x1000"/>
+		<option name="Node141" value="0x2000"/>
+		<option name="Node142" value="0x4000"/>
+		<option name="Node143" value="0x8000"/>
+		<option name="Node144" value="0x10000"/>
+		<option name="Node145" value="0x20000"/>
+		<option name="Node146" value="0x40000"/>
+		<option name="Node147" value="0x80000"/>
+		<option name="Node148" value="0x100000"/>
+		<option name="Node149" value="0x200000"/>
+		<option name="Node150" value="0x400000"/>
+		<option name="Node151" value="0x800000"/>
+		<option name="Node152" value="0x1000000"/>
+		<option name="Node153" value="0x2000000"/>
+		<option name="Node154" value="0x4000000"/>
+		<option name="Node155" value="0x8000000"/>
+		<option name="Node156" value="0x10000000"/>
+		<option name="Node157" value="0x20000000"/>
+		<option name="Node158" value="0x40000000"/>
+		<option name="Node159" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Node Flags6" visible="true" offset="0x110">
+		<option name="None" value="0x0"/>
+		<option name="Node160" value="0x1"/>
+		<option name="Node161" value="0x2"/>
+		<option name="Node162" value="0x4"/>
+		<option name="Node163" value="0x8"/>
+		<option name="Node164" value="0x10"/>
+		<option name="Node165" value="0x20"/>
+		<option name="Node166" value="0x40"/>
+		<option name="Node167" value="0x80"/>
+		<option name="Node168" value="0x100"/>
+		<option name="Node169" value="0x200"/>
+		<option name="Node170" value="0x400"/>
+		<option name="Node171" value="0x800"/>
+		<option name="Node172" value="0x1000"/>
+		<option name="Node173" value="0x2000"/>
+		<option name="Node174" value="0x4000"/>
+		<option name="Node175" value="0x8000"/>
+		<option name="Node176" value="0x10000"/>
+		<option name="Node177" value="0x20000"/>
+		<option name="Node178" value="0x40000"/>
+		<option name="Node179" value="0x80000"/>
+		<option name="Node180" value="0x100000"/>
+		<option name="Node181" value="0x200000"/>
+		<option name="Node182" value="0x400000"/>
+		<option name="Node183" value="0x800000"/>
+		<option name="Node184" value="0x1000000"/>
+		<option name="Node185" value="0x2000000"/>
+		<option name="Node186" value="0x4000000"/>
+		<option name="Node187" value="0x8000000"/>
+		<option name="Node188" value="0x10000000"/>
+		<option name="Node189" value="0x20000000"/>
+		<option name="Node190" value="0x40000000"/>
+		<option name="Node191" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Node Flags7" visible="true" offset="0x114">
+		<option name="None" value="0x0"/>
+		<option name="Node192" value="0x1"/>
+		<option name="Node193" value="0x2"/>
+		<option name="Node194" value="0x4"/>
+		<option name="Node195" value="0x8"/>
+		<option name="Node196" value="0x10"/>
+		<option name="Node197" value="0x20"/>
+		<option name="Node198" value="0x40"/>
+		<option name="Node199" value="0x80"/>
+		<option name="Node200" value="0x100"/>
+		<option name="Node201" value="0x200"/>
+		<option name="Node202" value="0x400"/>
+		<option name="Node203" value="0x800"/>
+		<option name="Node204" value="0x1000"/>
+		<option name="Node205" value="0x2000"/>
+		<option name="Node206" value="0x4000"/>
+		<option name="Node207" value="0x8000"/>
+		<option name="Node208" value="0x10000"/>
+		<option name="Node209" value="0x20000"/>
+		<option name="Node210" value="0x40000"/>
+		<option name="Node211" value="0x80000"/>
+		<option name="Node212" value="0x100000"/>
+		<option name="Node213" value="0x200000"/>
+		<option name="Node214" value="0x400000"/>
+		<option name="Node215" value="0x800000"/>
+		<option name="Node216" value="0x1000000"/>
+		<option name="Node217" value="0x2000000"/>
+		<option name="Node218" value="0x4000000"/>
+		<option name="Node219" value="0x8000000"/>
+		<option name="Node220" value="0x10000000"/>
+		<option name="Node221" value="0x20000000"/>
+		<option name="Node222" value="0x40000000"/>
+		<option name="Node223" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Node Flags8" visible="true" offset="0x118">
+		<option name="None" value="0x0"/>
+		<option name="Node224" value="0x1"/>
+		<option name="Node225" value="0x2"/>
+		<option name="Node226" value="0x4"/>
+		<option name="Node227" value="0x8"/>
+		<option name="Node228" value="0x10"/>
+		<option name="Node229" value="0x20"/>
+		<option name="Node230" value="0x40"/>
+		<option name="Node231" value="0x80"/>
+		<option name="Node232" value="0x100"/>
+		<option name="Node233" value="0x200"/>
+		<option name="Node234" value="0x400"/>
+		<option name="Node235" value="0x800"/>
+		<option name="Node236" value="0x1000"/>
+		<option name="Node237" value="0x2000"/>
+		<option name="Node238" value="0x4000"/>
+		<option name="Node239" value="0x8000"/>
+		<option name="Node240" value="0x10000"/>
+		<option name="Node241" value="0x20000"/>
+		<option name="Node242" value="0x40000"/>
+		<option name="Node243" value="0x80000"/>
+		<option name="Node244" value="0x100000"/>
+		<option name="Node245" value="0x200000"/>
+		<option name="Node246" value="0x400000"/>
+		<option name="Node247" value="0x800000"/>
+		<option name="Node248" value="0x1000000"/>
+		<option name="Node249" value="0x2000000"/>
+		<option name="Node250" value="0x4000000"/>
+		<option name="Node251" value="0x8000000"/>
+		<option name="Node252" value="0x10000000"/>
+		<option name="Node253" value="0x20000000"/>
+		<option name="Node254" value="0x40000000"/>
+		<option name="Node255" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Section Flags1" visible="true" offset="0x11C">
+		<option name="None" value="0x0"/>
+		<option name="Section0" value="0x1"/>
+		<option name="Section1" value="0x2"/>
+		<option name="Section2" value="0x4"/>
+		<option name="Section3" value="0x8"/>
+		<option name="Section4" value="0x10"/>
+		<option name="Section5" value="0x20"/>
+		<option name="Section6" value="0x40"/>
+		<option name="Section7" value="0x80"/>
+		<option name="Section8" value="0x100"/>
+		<option name="Section9" value="0x200"/>
+		<option name="Section10" value="0x400"/>
+		<option name="Section11" value="0x800"/>
+		<option name="Section12" value="0x1000"/>
+		<option name="Section13" value="0x2000"/>
+		<option name="Section14" value="0x4000"/>
+		<option name="Section15" value="0x8000"/>
+		<option name="Section16" value="0x10000"/>
+		<option name="Section17" value="0x20000"/>
+		<option name="Section18" value="0x40000"/>
+		<option name="Section19" value="0x80000"/>
+		<option name="Section20" value="0x100000"/>
+		<option name="Section21" value="0x200000"/>
+		<option name="Section22" value="0x400000"/>
+		<option name="Section23" value="0x800000"/>
+		<option name="Section24" value="0x1000000"/>
+		<option name="Section25" value="0x2000000"/>
+		<option name="Section26" value="0x4000000"/>
+		<option name="Section27" value="0x8000000"/>
+		<option name="Section28" value="0x10000000"/>
+		<option name="Section29" value="0x20000000"/>
+		<option name="Section30" value="0x40000000"/>
+		<option name="Section31" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Section Flags2" visible="true" offset="0x120">
+		<option name="None" value="0x0"/>
+		<option name="Section32" value="0x1"/>
+		<option name="Section33" value="0x2"/>
+		<option name="Section34" value="0x4"/>
+		<option name="Section35" value="0x8"/>
+		<option name="Section36" value="0x10"/>
+		<option name="Section37" value="0x20"/>
+		<option name="Section38" value="0x40"/>
+		<option name="Section39" value="0x80"/>
+		<option name="Section40" value="0x100"/>
+		<option name="Section41" value="0x200"/>
+		<option name="Section42" value="0x400"/>
+		<option name="Section43" value="0x800"/>
+		<option name="Section44" value="0x1000"/>
+		<option name="Section45" value="0x2000"/>
+		<option name="Section46" value="0x4000"/>
+		<option name="Section47" value="0x8000"/>
+		<option name="Section48" value="0x10000"/>
+		<option name="Section49" value="0x20000"/>
+		<option name="Section50" value="0x40000"/>
+		<option name="Section51" value="0x80000"/>
+		<option name="Section52" value="0x100000"/>
+		<option name="Section53" value="0x200000"/>
+		<option name="Section54" value="0x400000"/>
+		<option name="Section55" value="0x800000"/>
+		<option name="Section56" value="0x1000000"/>
+		<option name="Section57" value="0x2000000"/>
+		<option name="Section58" value="0x4000000"/>
+		<option name="Section59" value="0x8000000"/>
+		<option name="Section60" value="0x10000000"/>
+		<option name="Section61" value="0x20000000"/>
+		<option name="Section62" value="0x40000000"/>
+		<option name="Section63" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Section Flags3" visible="true" offset="0x124">
+		<option name="None" value="0x0"/>
+		<option name="Section64" value="0x1"/>
+		<option name="Section65" value="0x2"/>
+		<option name="Section66" value="0x4"/>
+		<option name="Section67" value="0x8"/>
+		<option name="Section68" value="0x10"/>
+		<option name="Section69" value="0x20"/>
+		<option name="Section70" value="0x40"/>
+		<option name="Section71" value="0x80"/>
+		<option name="Section72" value="0x100"/>
+		<option name="Section73" value="0x200"/>
+		<option name="Section74" value="0x400"/>
+		<option name="Section75" value="0x800"/>
+		<option name="Section76" value="0x1000"/>
+		<option name="Section77" value="0x2000"/>
+		<option name="Section78" value="0x4000"/>
+		<option name="Section79" value="0x8000"/>
+		<option name="Section80" value="0x10000"/>
+		<option name="Section81" value="0x20000"/>
+		<option name="Section82" value="0x40000"/>
+		<option name="Section83" value="0x80000"/>
+		<option name="Section84" value="0x100000"/>
+		<option name="Section85" value="0x200000"/>
+		<option name="Section86" value="0x400000"/>
+		<option name="Section87" value="0x800000"/>
+		<option name="Section88" value="0x1000000"/>
+		<option name="Section89" value="0x2000000"/>
+		<option name="Section90" value="0x4000000"/>
+		<option name="Section91" value="0x8000000"/>
+		<option name="Section92" value="0x10000000"/>
+		<option name="Section93" value="0x20000000"/>
+		<option name="Section94" value="0x40000000"/>
+		<option name="Section95" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Section Flags4" visible="true" offset="0x128">
+		<option name="None" value="0x0"/>
+		<option name="Section96" value="0x1"/>
+		<option name="Section97" value="0x2"/>
+		<option name="Section98" value="0x4"/>
+		<option name="Section99" value="0x8"/>
+		<option name="Section100" value="0x10"/>
+		<option name="Section101" value="0x20"/>
+		<option name="Section102" value="0x40"/>
+		<option name="Section103" value="0x80"/>
+		<option name="Section104" value="0x100"/>
+		<option name="Section105" value="0x200"/>
+		<option name="Section106" value="0x400"/>
+		<option name="Section107" value="0x800"/>
+		<option name="Section108" value="0x1000"/>
+		<option name="Section109" value="0x2000"/>
+		<option name="Section110" value="0x4000"/>
+		<option name="Section111" value="0x8000"/>
+		<option name="Section112" value="0x10000"/>
+		<option name="Section113" value="0x20000"/>
+		<option name="Section114" value="0x40000"/>
+		<option name="Section115" value="0x80000"/>
+		<option name="Section116" value="0x100000"/>
+		<option name="Section117" value="0x200000"/>
+		<option name="Section118" value="0x400000"/>
+		<option name="Section119" value="0x800000"/>
+		<option name="Section120" value="0x1000000"/>
+		<option name="Section121" value="0x2000000"/>
+		<option name="Section122" value="0x4000000"/>
+		<option name="Section123" value="0x8000000"/>
+		<option name="Section124" value="0x10000000"/>
+		<option name="Section125" value="0x20000000"/>
+		<option name="Section126" value="0x40000000"/>
+		<option name="Section127" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Section Flags5" visible="true" offset="0x12C">
+		<option name="None" value="0x0"/>
+		<option name="Section128" value="0x1"/>
+		<option name="Section129" value="0x2"/>
+		<option name="Section130" value="0x4"/>
+		<option name="Section131" value="0x8"/>
+		<option name="Section132" value="0x10"/>
+		<option name="Section133" value="0x20"/>
+		<option name="Section134" value="0x40"/>
+		<option name="Section135" value="0x80"/>
+		<option name="Section136" value="0x100"/>
+		<option name="Section137" value="0x200"/>
+		<option name="Section138" value="0x400"/>
+		<option name="Section139" value="0x800"/>
+		<option name="Section140" value="0x1000"/>
+		<option name="Section141" value="0x2000"/>
+		<option name="Section142" value="0x4000"/>
+		<option name="Section143" value="0x8000"/>
+		<option name="Section144" value="0x10000"/>
+		<option name="Section145" value="0x20000"/>
+		<option name="Section146" value="0x40000"/>
+		<option name="Section147" value="0x80000"/>
+		<option name="Section148" value="0x100000"/>
+		<option name="Section149" value="0x200000"/>
+		<option name="Section150" value="0x400000"/>
+		<option name="Section151" value="0x800000"/>
+		<option name="Section152" value="0x1000000"/>
+		<option name="Section153" value="0x2000000"/>
+		<option name="Section154" value="0x4000000"/>
+		<option name="Section155" value="0x8000000"/>
+		<option name="Section156" value="0x10000000"/>
+		<option name="Section157" value="0x20000000"/>
+		<option name="Section158" value="0x40000000"/>
+		<option name="Section159" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Section Flags6" visible="true" offset="0x130">
+		<option name="None" value="0x0"/>
+		<option name="Section160" value="0x1"/>
+		<option name="Section161" value="0x2"/>
+		<option name="Section162" value="0x4"/>
+		<option name="Section163" value="0x8"/>
+		<option name="Section164" value="0x10"/>
+		<option name="Section165" value="0x20"/>
+		<option name="Section166" value="0x40"/>
+		<option name="Section167" value="0x80"/>
+		<option name="Section168" value="0x100"/>
+		<option name="Section169" value="0x200"/>
+		<option name="Section170" value="0x400"/>
+		<option name="Section171" value="0x800"/>
+		<option name="Section172" value="0x1000"/>
+		<option name="Section173" value="0x2000"/>
+		<option name="Section174" value="0x4000"/>
+		<option name="Section175" value="0x8000"/>
+		<option name="Section176" value="0x10000"/>
+		<option name="Section177" value="0x20000"/>
+		<option name="Section178" value="0x40000"/>
+		<option name="Section179" value="0x80000"/>
+		<option name="Section180" value="0x100000"/>
+		<option name="Section181" value="0x200000"/>
+		<option name="Section182" value="0x400000"/>
+		<option name="Section183" value="0x800000"/>
+		<option name="Section184" value="0x1000000"/>
+		<option name="Section185" value="0x2000000"/>
+		<option name="Section186" value="0x4000000"/>
+		<option name="Section187" value="0x8000000"/>
+		<option name="Section188" value="0x10000000"/>
+		<option name="Section189" value="0x20000000"/>
+		<option name="Section190" value="0x40000000"/>
+		<option name="Section191" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Section Flags7" visible="true" offset="0x134">
+		<option name="None" value="0x0"/>
+		<option name="Section192" value="0x1"/>
+		<option name="Section193" value="0x2"/>
+		<option name="Section194" value="0x4"/>
+		<option name="Section195" value="0x8"/>
+		<option name="Section196" value="0x10"/>
+		<option name="Section197" value="0x20"/>
+		<option name="Section198" value="0x40"/>
+		<option name="Section199" value="0x80"/>
+		<option name="Section200" value="0x100"/>
+		<option name="Section201" value="0x200"/>
+		<option name="Section202" value="0x400"/>
+		<option name="Section203" value="0x800"/>
+		<option name="Section204" value="0x1000"/>
+		<option name="Section205" value="0x2000"/>
+		<option name="Section206" value="0x4000"/>
+		<option name="Section207" value="0x8000"/>
+		<option name="Section208" value="0x10000"/>
+		<option name="Section209" value="0x20000"/>
+		<option name="Section210" value="0x40000"/>
+		<option name="Section211" value="0x80000"/>
+		<option name="Section212" value="0x100000"/>
+		<option name="Section213" value="0x200000"/>
+		<option name="Section214" value="0x400000"/>
+		<option name="Section215" value="0x800000"/>
+		<option name="Section216" value="0x1000000"/>
+		<option name="Section217" value="0x2000000"/>
+		<option name="Section218" value="0x4000000"/>
+		<option name="Section219" value="0x8000000"/>
+		<option name="Section220" value="0x10000000"/>
+		<option name="Section221" value="0x20000000"/>
+		<option name="Section222" value="0x40000000"/>
+		<option name="Section223" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Render Only Section Flags8" visible="true" offset="0x138">
+		<option name="None" value="0x0"/>
+		<option name="Section224" value="0x1"/>
+		<option name="Section225" value="0x2"/>
+		<option name="Section226" value="0x4"/>
+		<option name="Section227" value="0x8"/>
+		<option name="Section228" value="0x10"/>
+		<option name="Section229" value="0x20"/>
+		<option name="Section230" value="0x40"/>
+		<option name="Section231" value="0x80"/>
+		<option name="Section232" value="0x100"/>
+		<option name="Section233" value="0x200"/>
+		<option name="Section234" value="0x400"/>
+		<option name="Section235" value="0x800"/>
+		<option name="Section236" value="0x1000"/>
+		<option name="Section237" value="0x2000"/>
+		<option name="Section238" value="0x4000"/>
+		<option name="Section239" value="0x8000"/>
+		<option name="Section240" value="0x10000"/>
+		<option name="Section241" value="0x20000"/>
+		<option name="Section242" value="0x40000"/>
+		<option name="Section243" value="0x80000"/>
+		<option name="Section244" value="0x100000"/>
+		<option name="Section245" value="0x200000"/>
+		<option name="Section246" value="0x400000"/>
+		<option name="Section247" value="0x800000"/>
+		<option name="Section248" value="0x1000000"/>
+		<option name="Section249" value="0x2000000"/>
+		<option name="Section250" value="0x4000000"/>
+		<option name="Section251" value="0x8000000"/>
+		<option name="Section252" value="0x10000000"/>
+		<option name="Section253" value="0x20000000"/>
+		<option name="Section254" value="0x40000000"/>
+		<option name="Section255" value="0x80000000"/>
+	</enum32>
+	<enum32 name="Runtime Flags" visible="true" offset="0x13C">
+		<option name="None" value="0x0"/>
+		<option name="Contains Runtime Nodes" value="0x1"/>
+		<option name="Bit1" value="0x2"/>
+		<option name="Bit2" value="0x4"/>
+		<option name="Bit3" value="0x8"/>
+		<option name="Bit4" value="0x10"/>
+		<option name="Bit5" value="0x20"/>
+		<option name="Bit6" value="0x40"/>
+		<option name="Bit7" value="0x80"/>
+		<option name="Bit8" value="0x100"/>
+		<option name="Bit9" value="0x200"/>
+		<option name="Bit10" value="0x400"/>
+		<option name="Bit11" value="0x800"/>
+		<option name="Bit12" value="0x1000"/>
+		<option name="Bit13" value="0x2000"/>
+		<option name="Bit14" value="0x4000"/>
+		<option name="Bit15" value="0x8000"/>
+		<option name="Bit16" value="0x10000"/>
+		<option name="Bit17" value="0x20000"/>
+		<option name="Bit18" value="0x40000"/>
+		<option name="Bit19" value="0x80000"/>
+		<option name="Bit20" value="0x100000"/>
+		<option name="Bit21" value="0x200000"/>
+		<option name="Bit22" value="0x400000"/>
+		<option name="Bit23" value="0x800000"/>
+		<option name="Bit24" value="0x1000000"/>
+		<option name="Bit25" value="0x2000000"/>
+		<option name="Bit26" value="0x4000000"/>
+		<option name="Bit27" value="0x8000000"/>
+		<option name="Bit28" value="0x10000000"/>
+		<option name="Bit29" value="0x20000000"/>
+		<option name="Bit30" value="0x40000000"/>
+		<option name="Bit31" value="0x80000000"/>
+	</enum32>
+	<float32 name="Scenario Load Parameters Block" visible="true" offset="0x140"/>
+	<float32 name="Scenario Load Parameters Block2" visible="true" offset="0x144"/>
+	<float32 name="Scenario Load Parameters Block3" visible="true" offset="0x148"/>
+	<int16 name="Unknown4" visible="true" offset="0x14C"/>
+	<int16 name="Unknown5" visible="true" offset="0x14E"/>
+	<reflexive name="Unknown6" visible="true" offset="0x150" entrySize="0x8">
+		<stringId name="Region" visible="true" offset="0x0"/>
+		<stringId name="Permutation" visible="true" offset="0x4"/>
+	</reflexive>
+	<reflexive name="Unknown7" visible="true" offset="0x15C" entrySize="0x8">
+		<stringId name="Unknown" visible="true" offset="0x0"/>
+		<uint32 name="Unknown2" visible="true" offset="0x4"/>
+	</reflexive>
+	<reflexive name="Unknown8" visible="true" offset="0x168" entrySize="0x14">
+		<stringId name="Marker" visible="true" offset="0x0"/>
+		<uint32 name="Unknown" visible="true" offset="0x4"/>
+		<stringId name="Marker2" visible="true" offset="0x8"/>
+		<uint32 name="Unknown2" visible="true" offset="0xC"/>
+		<uint32 name="Unknown3" visible="true" offset="0x10"/>
+	</reflexive>
+	<tagref name="Shield Impact Third Person" visible="true" offset="0x174"/>
+	<tagref name="Shield Impact First Person" visible="true" offset="0x184"/>
+	<tagref name="Overshield Third Person" visible="true" offset="0x194"/>
+	<tagref name="Overshield First Person" visible="true" offset="0x1A4"/>
+</plugin>

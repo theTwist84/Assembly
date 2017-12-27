@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x44">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<int32 name="Collision Model Checksum" visible="true" offset="0x0"/>
+	<uint8 name="Unused Errors Block Padding 0" visible="false" offset="0x4"/>
+	<uint8 name="Unused Errors Block Padding 1" visible="false" offset="0x5"/>
+	<uint8 name="Unused Errors Block Padding 2" visible="false" offset="0x6"/>
+	<uint8 name="Unused Errors Block Padding 3" visible="false" offset="0x7"/>
+	<uint8 name="Unused Errors Block Padding 4" visible="false" offset="0x8"/>
+	<uint8 name="Unused Errors Block Padding 5" visible="false" offset="0x9"/>
+	<uint8 name="Unused Errors Block Padding 6" visible="false" offset="0xA"/>
+	<uint8 name="Unused Errors Block Padding 7" visible="false" offset="0xB"/>
+	<uint8 name="Unused Errors Block Padding 8" visible="false" offset="0xC"/>
+	<uint8 name="Unused Errors Block Padding 9" visible="false" offset="0xD"/>
+	<uint8 name="Unused Errors Block Padding 10" visible="false" offset="0xE"/>
+	<uint8 name="Unused Errors Block Padding 11" visible="false" offset="0xF"/>
+	<bitfield32 name="Flags" visible="true" offset="0x10">
+		<bit name="Contains Open Edges" index="0"/>
+		<bit name="Physics Built" index="1"/>
+		<bit name="Physics In Use" index="2"/>
+		<bit name="Processed" index="3"/>
+		<bit name="Has Two Sided Surfaces" index="4"/>
+	</bitfield32>
+	<reflexive name="Materials" visible="true" offset="0x14" entrySize="0x4">
+		<stringId name="Name" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Regions" visible="true" offset="0x20" entrySize="0x10">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<reflexive name="Permutations" visible="true" offset="0x4" entrySize="0x28">
+			<stringId name="Name" visible="true" offset="0x0"/>
+			<reflexive name="Bsps" visible="true" offset="0x4" entrySize="0x64">
+				<int16 name="Node Index" visible="true" offset="0x0"/>
+				<int16 name="Padding" visible="true" offset="0x2"/>
+				<reflexive name="Geometry: Bsp3d Nodes" visible="true" offset="0x4" entrySize="0x8">
+					<int16 name="Plane" visible="true" offset="0x0"/>
+					<uint8 name="Front Child Lower" visible="true" offset="0x2"/>
+					<uint8 name="Front Child Mid" visible="true" offset="0x3"/>
+					<uint8 name="Front Child Upper" visible="true" offset="0x4"/>
+					<uint8 name="Back Child Lower" visible="true" offset="0x5"/>
+					<uint8 name="Back Child Mid" visible="true" offset="0x6"/>
+					<uint8 name="Back Child Upper" visible="true" offset="0x7"/>
+				</reflexive>
+				<reflexive name="Geometry: Planes" visible="true" offset="0x10" entrySize="0x10">
+					<float name="Value I" visible="true" offset="0x0"/>
+					<float name="Value J" visible="true" offset="0x4"/>
+					<float name="Value K" visible="true" offset="0x8"/>
+					<float name="Value Distance" visible="true" offset="0xC"/>
+				</reflexive>
+				<reflexive name="Geometry: Leaves" visible="true" offset="0x1C" entrySize="0x8">
+					<bitfield8 name="Flags" visible="true" offset="0x0">
+						<bit name="Contains Double Sided Surfaces" index="0"/>
+					</bitfield8>
+					<bitfield8 name="Flags2" visible="true" offset="0x1">
+						<bit name="Contains Double Sided Surfaces" index="0"/>
+					</bitfield8>
+					<int16 name="Bsp2d Reference Count" visible="true" offset="0x2"/>
+					<int32 name="First Bsp2d Reference" visible="true" offset="0x4"/>
+				</reflexive>
+				<reflexive name="Geometry: Bsp2d References" visible="true" offset="0x28" entrySize="0x4">
+					<int16 name="Plane Index" visible="true" offset="0x0"/>
+					<int16 name="Bsp2d Node Index" visible="true" offset="0x2"/>
+				</reflexive>
+				<reflexive name="Geometry: Bsp2d Nodes" visible="true" offset="0x34" entrySize="0x10">
+					<float name="Plane I" visible="true" offset="0x0"/>
+					<float name="Plane J" visible="true" offset="0x4"/>
+					<float name="Plane Distance" visible="true" offset="0x8"/>
+					<int16 name="Left Child" visible="true" offset="0xC"/>
+					<int16 name="Right Child" visible="true" offset="0xE"/>
+				</reflexive>
+				<reflexive name="Geometry: Surfaces" visible="true" offset="0x40" entrySize="0xC">
+					<int16 name="Plane" visible="true" offset="0x0"/>
+					<int16 name="First Edge" visible="true" offset="0x2"/>
+					<int16 name="Material Index" visible="true" offset="0x4"/>
+					<int16 name="Unknown" visible="true" offset="0x6"/>
+					<int16 name="Breakable Surface Index" visible="true" offset="0x8"/>
+					<bitfield8 name="Flags" visible="true" offset="0xA">
+						<bit name="Two Sided" index="0"/>
+						<bit name="Invisible" index="1"/>
+						<bit name="Climbable" index="2"/>
+						<bit name="Invalid" index="3"/>
+						<bit name="Conveyor" index="4"/>
+						<bit name="Slip" index="5"/>
+						<bit name="Plane Negated" index="6"/>
+					</bitfield8>
+					<uint8 name="Best Plane Calculation Vertex" visible="true" offset="0xB"/>
+				</reflexive>
+				<reflexive name="Geometry: Edges" visible="true" offset="0x4C" entrySize="0xC">
+					<int16 name="Start Vertex" visible="true" offset="0x0"/>
+					<int16 name="End Vertex" visible="true" offset="0x2"/>
+					<int16 name="Forward Edge" visible="true" offset="0x4"/>
+					<int16 name="Reverse Edge" visible="true" offset="0x6"/>
+					<int16 name="Left Surface" visible="true" offset="0x8"/>
+					<int16 name="Right Surface" visible="true" offset="0xA"/>
+				</reflexive>
+				<reflexive name="Geometry: Vertices" visible="true" offset="0x58" entrySize="0x10">
+					<vector3 name="Point" visible="true" offset="0x0"/>
+					<int16 name="First Edge" visible="true" offset="0xC"/>
+					<int16 name="Sink" visible="true" offset="0xE"/>
+				</reflexive>
+			</reflexive>
+			<reflexive name="Bsp Physics" visible="true" offset="0x10" entrySize="0x88">
+				<int32 name="Unknown" visible="true" offset="0x0"/>
+				<int16 name="Size" visible="true" offset="0x4"/>
+				<int16 name="Count" visible="true" offset="0x6"/>
+				<int32 name="Offset" visible="true" offset="0x8"/>
+				<int32 name="Unknown2" visible="true" offset="0xC"/>
+				<uint32 name="Unknown3" visible="true" offset="0x10"/>
+				<uint32 name="Unknown4" visible="true" offset="0x14"/>
+				<uint32 name="Unknown5" visible="true" offset="0x18"/>
+				<uint32 name="Unknown6" visible="true" offset="0x1C"/>
+				<float32 name="Unknown7" visible="true" offset="0x20"/>
+				<float32 name="Unknown8" visible="true" offset="0x24"/>
+				<float32 name="Unknown9" visible="true" offset="0x28"/>
+				<uint32 name="Unknown10" visible="true" offset="0x2C"/>
+				<float32 name="Unknown11" visible="true" offset="0x30"/>
+				<float32 name="Unknown12" visible="true" offset="0x34"/>
+				<float32 name="Unknown13" visible="true" offset="0x38"/>
+				<uint32 name="Unknown14" visible="true" offset="0x3C"/>
+				<tagref name="Model" visible="true" offset="0x40"/>
+				<uint32 name="Unknown15" visible="true" offset="0x50"/>
+				<uint32 name="Unknown16" visible="true" offset="0x54"/>
+				<int16 name="Unknown17" visible="true" offset="0x58"/>
+				<int16 name="Unknown18" visible="true" offset="0x5A"/>
+				<uint32 name="Unknown19" visible="true" offset="0x5C"/>
+				<uint32 name="Unknown20" visible="true" offset="0x60"/>
+				<uint32 name="Unknown21" visible="true" offset="0x64"/>
+				<uint32 name="Unknown22" visible="true" offset="0x68"/>
+				<uint32 name="Unknown23" visible="true" offset="0x6C"/>
+				<uint32 name="Unknown24" visible="true" offset="0x70"/>
+				<uint32 name="Unknown25" visible="true" offset="0x74"/>
+				<uint32 name="Unknown26" visible="true" offset="0x78"/>
+				<int16 name="Size2" visible="true" offset="0x7C"/>
+				<int16 name="Count2" visible="true" offset="0x7E"/>
+				<int32 name="Offset2" visible="true" offset="0x80"/>
+				<int32 name="Unknown27" visible="true" offset="0x84"/>
+			</reflexive>
+			<reflexive name="Bsp Mopp Codes" visible="true" offset="0x1C" entrySize="0x40">
+				<int32 name="Unused1" visible="true" offset="0x0"/>
+				<int16 name="Size" visible="true" offset="0x4"/>
+				<int16 name="Count" visible="true" offset="0x6"/>
+				<int32 name="Address" visible="true" offset="0x8"/>
+				<int32 name="Unused2" visible="true" offset="0xC"/>
+				<float name="Offset I" visible="true" offset="0x10"/>
+				<float name="Offset J" visible="true" offset="0x14"/>
+				<float name="Offset K" visible="true" offset="0x18"/>
+				<float name="Offset W" visible="true" offset="0x1C"/>
+				<int32 name="Unused3" visible="true" offset="0x20"/>
+				<int32 name="Data Size" visible="true" offset="0x24"/>
+				<int32 name="Data Capacity And Flags" visible="true" offset="0x28"/>
+				<int8 name="Data Build Type" visible="true" offset="0x2C"/>
+				<int8 name="Unused4" visible="true" offset="0x2D"/>
+				<int16 name="Unused5" visible="true" offset="0x2E"/>
+				<reflexive name="Data" visible="true" offset="0x30" entrySize="0x1">
+					<uint8 name="uint8" visible="true" offset="0x0"/>
+				</reflexive>
+				<int8 name="Mopp Build Type" visible="true" offset="0x3C"/>
+				<uint8 name="Unused6" visible="true" offset="0x3D"/>
+				<int16 name="Unused7" visible="true" offset="0x3E"/>
+			</reflexive>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Pathfinding Spheres" visible="true" offset="0x2C" entrySize="0x14">
+		<int16 name="Node" visible="true" offset="0x0"/>
+		<bitfield16 name="Flags" visible="true" offset="0x2">
+			<bit name="Remains When Open" index="0"/>
+			<bit name="Vehicle Only" index="1"/>
+			<bit name="With Sectors" index="2"/>
+		</bitfield16>
+		<vector3 name="Center" visible="true" offset="0x4"/>
+		<float32 name="Radius" visible="true" offset="0x10"/>
+	</reflexive>
+	<reflexive name="Nodes" visible="true" offset="0x38" entrySize="0xC">
+		<stringId name="Name" visible="true" offset="0x0"/>
+		<bitfield16 name="Flags" visible="true" offset="0x4">
+			<bit name="Generate Nav Mesh" index="0"/>
+		</bitfield16>
+		<int16 name="Parent Node" visible="true" offset="0x6"/>
+		<int16 name="Next Sibling Node" visible="true" offset="0x8"/>
+		<int16 name="First Child Node" visible="true" offset="0xA"/>
+	</reflexive>
+</plugin>

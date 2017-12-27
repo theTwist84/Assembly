@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x94">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<uint32 name="Flags" visible="true" offset="0x0"/>
+	<enum16 name="Type" visible="true" offset="0x4">
+		<option name="Sphere" value="0x0"/>
+		<option name="Projective" value="0x1"/>
+	</enum16>
+	<int16 name="Unknown" visible="true" offset="0x6"/>
+	<float32 name="Light Range" visible="true" offset="0x8"/>
+	<float32 name="Near Width" visible="true" offset="0xC"/>
+	<float32 name="Height Stretch" visible="true" offset="0x10"/>
+	<degree name="Field Of View" visible="true" offset="0x14"/>
+	<stringId name="Function Name1" visible="true" offset="0x18"/>
+	<stringId name="Function Name2" visible="true" offset="0x1C"/>
+	<int16 name="Unknown2" visible="true" offset="0x20"/>
+	<int16 name="Unknown3" visible="true" offset="0x22"/>
+	<uint32 name="Unknown4" visible="true" offset="0x24"/>
+	<dataRef name="Function1" visible="true" offset="0x28"/>
+	<stringId name="Function Name3" visible="true" offset="0x3C"/>
+	<stringId name="Function Name4" visible="true" offset="0x40"/>
+	<int16 name="Unknown5" visible="true" offset="0x44"/>
+	<int16 name="Unknown6" visible="true" offset="0x46"/>
+	<uint32 name="Unknown7" visible="true" offset="0x48"/>
+	<dataRef name="Function2" visible="true" offset="0x4C"/>
+	<tagref name="Gel Map" visible="true" offset="0x60"/>
+	<uint32 name="Unknown8" visible="true" offset="0x70"/>
+	<uint32 name="Unknown9" visible="true" offset="0x74"/>
+	<uint32 name="Unknown10" visible="true" offset="0x78"/>
+	<uint32 name="Unknown11" visible="true" offset="0x7C"/>
+	<int8 name="Unknown12" visible="true" offset="0x80"/>
+	<int8 name="Unknown13" visible="true" offset="0x81"/>
+	<int8 name="Unknown14" visible="true" offset="0x82"/>
+	<int8 name="Unknown15" visible="true" offset="0x83"/>
+	<tagref name="Lens Flare" visible="true" offset="0x84"/>
+</plugin>

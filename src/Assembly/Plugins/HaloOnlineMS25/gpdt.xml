@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x44">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<reflexive name="Unknown" visible="true" offset="0x0" entrySize="0x4">
+		<stringId name="Unknown" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Unknown2" visible="true" offset="0xC" entrySize="0x4">
+		<stringId name="Unknown" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Unknown3" visible="true" offset="0x18" entrySize="0x4">
+		<int16 name="Unknown" visible="true" offset="0x0"/>
+		<int16 name="Unknown2" visible="true" offset="0x2"/>
+	</reflexive>
+	<reflexive name="Unknown4" visible="true" offset="0x24" entrySize="0x4">
+		<int16 name="Unknown" visible="true" offset="0x0"/>
+		<int16 name="Unknown2" visible="true" offset="0x2"/>
+	</reflexive>
+	<reflexive name="Unknown5" visible="true" offset="0x30" entrySize="0x124">
+		<stringId name="Map Name" visible="true" offset="0x0"/>
+		<int32 name="Unknown" visible="true" offset="0x4"/>
+		<int32 name="Unknown2" visible="true" offset="0x8"/>
+		<tagref name="Unknown3" visible="true" offset="0xC"/>
+		<int32 name="Map Id" visible="true" offset="0x1C"/>
+		<int32 name="Unknown4" visible="true" offset="0x20"/>
+		<ascii name="Map Scenario Path" visible="true" length="0x100" offset="0x24"/>
+	</reflexive>
+	<uint32 name="Unknown6" visible="true" offset="0x3C"/>
+	<uint32 name="Unknown7" visible="true" offset="0x40"/>
+</plugin>

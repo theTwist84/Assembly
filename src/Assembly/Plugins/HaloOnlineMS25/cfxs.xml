@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x170">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<uint16 name="Flags" visible="true" offset="0x0"/>
+	<int16 name="Unknown" visible="true" offset="0x2"/>
+	<float32 name="Overexposure Amount" visible="true" offset="0x4"/>
+	<float32 name="Overexposure Unknown" visible="true" offset="0x8"/>
+	<float32 name="Overexposure Unknown2" visible="true" offset="0xC"/>
+	<float32 name="Brightness Amount" visible="true" offset="0x10"/>
+	<float32 name="Brightness Unknown" visible="true" offset="0x14"/>
+	<float32 name="Brightness Unknown2" visible="true" offset="0x18"/>
+	<float32 name="Brightness Unknown3" visible="true" offset="0x1C"/>
+	<uint16 name="Flags2" visible="true" offset="0x20"/>
+	<int16 name="Unknown2" visible="true" offset="0x22"/>
+	<float32 name="Unknown3" visible="true" offset="0x24"/>
+	<uint16 name="Flags3" visible="true" offset="0x28"/>
+	<int16 name="Unknown4" visible="true" offset="0x2A"/>
+	<float32 name="Unknown5" visible="true" offset="0x2C"/>
+	<uint16 name="Flags4" visible="true" offset="0x30"/>
+	<int16 name="Unknown6" visible="true" offset="0x32"/>
+	<float32 name="Base" visible="true" offset="0x34"/>
+	<float32 name="Min" visible="true" offset="0x38"/>
+	<float32 name="Max" visible="true" offset="0x3C"/>
+	<uint16 name="Flags5" visible="true" offset="0x40"/>
+	<int16 name="Unknown7" visible="true" offset="0x42"/>
+	<float32 name="Base2" visible="true" offset="0x44"/>
+	<float32 name="Min2" visible="true" offset="0x48"/>
+	<float32 name="Max2" visible="true" offset="0x4C"/>
+	<uint16 name="Flags6" visible="true" offset="0x50"/>
+	<int16 name="Unknown8" visible="true" offset="0x52"/>
+	<float32 name="Base3" visible="true" offset="0x54"/>
+	<float32 name="Min3" visible="true" offset="0x58"/>
+	<float32 name="Max3" visible="true" offset="0x5C"/>
+	<uint16 name="Flags7" visible="true" offset="0x60"/>
+	<int16 name="Unknown9" visible="true" offset="0x62"/>
+	<float32 name="Red" visible="true" offset="0x64"/>
+	<float32 name="Green" visible="true" offset="0x68"/>
+	<float32 name="Blue" visible="true" offset="0x6C"/>
+	<uint16 name="Flags8" visible="true" offset="0x70"/>
+	<int16 name="Unknown10" visible="true" offset="0x72"/>
+	<float32 name="Red2" visible="true" offset="0x74"/>
+	<float32 name="Green2" visible="true" offset="0x78"/>
+	<float32 name="Blue2" visible="true" offset="0x7C"/>
+	<uint16 name="Flags9" visible="true" offset="0x80"/>
+	<int16 name="Unknown11" visible="true" offset="0x82"/>
+	<float32 name="Red3" visible="true" offset="0x84"/>
+	<float32 name="Green3" visible="true" offset="0x88"/>
+	<float32 name="Blue3" visible="true" offset="0x8C"/>
+	<uint16 name="Flags10" visible="true" offset="0x90"/>
+	<int16 name="Unknown12" visible="true" offset="0x92"/>
+	<float32 name="Unknown13" visible="true" offset="0x94"/>
+	<float32 name="Unknown14" visible="true" offset="0x98"/>
+	<float32 name="Unknown15" visible="true" offset="0x9C"/>
+	<uint16 name="Flags11" visible="true" offset="0xA0"/>
+	<int16 name="Unknown16" visible="true" offset="0xA2"/>
+	<float32 name="Unknown17" visible="true" offset="0xA4"/>
+	<float32 name="Unknown18" visible="true" offset="0xA8"/>
+	<float32 name="Unknown19" visible="true" offset="0xAC"/>
+	<uint16 name="Flags12" visible="true" offset="0xB0"/>
+	<int16 name="Unknown20" visible="true" offset="0xB2"/>
+	<float32 name="Unknown21" visible="true" offset="0xB4"/>
+	<float32 name="Unknown22" visible="true" offset="0xB8"/>
+	<float32 name="Unknown23" visible="true" offset="0xBC"/>
+	<int32 name="Unknown24" visible="true" offset="0xC0"/>
+	<uint16 name="Flags13" visible="true" offset="0xC4"/>
+	<int16 name="Unknown25" visible="true" offset="0xC6"/>
+	<float32 name="Base4" visible="true" offset="0xC8"/>
+	<float32 name="Min4" visible="true" offset="0xCC"/>
+	<float32 name="Max4" visible="true" offset="0xD0"/>
+	<uint16 name="Flags14" visible="true" offset="0xD4"/>
+	<int16 name="Unknown26" visible="true" offset="0xD6"/>
+	<float32 name="Base5" visible="true" offset="0xD8"/>
+	<float32 name="Min5" visible="true" offset="0xDC"/>
+	<float32 name="Max5" visible="true" offset="0xE0"/>
+	<uint16 name="Flags15" visible="true" offset="0xE4"/>
+	<int16 name="Unknown27" visible="true" offset="0xE6"/>
+	<float32 name="Unknown28" visible="true" offset="0xE8"/>
+	<float32 name="Unknown29" visible="true" offset="0xEC"/>
+	<float32 name="Unknown30" visible="true" offset="0xF0"/>
+	<uint16 name="Flags16" visible="true" offset="0xF4"/>
+	<int16 name="Unknown31" visible="true" offset="0xF6"/>
+	<float32 name="Unknown32" visible="true" offset="0xF8"/>
+	<reflexive name="Unknown33" visible="true" offset="0xFC" entrySize="0x58">
+		<float32 name="Unknown" visible="true" offset="0x0"/>
+		<int32 name="Unknown2" visible="true" offset="0x4"/>
+		<dataRef name="Unknown3" visible="true" offset="0x8"/>
+		<dataRef name="Unknown4" visible="true" offset="0x1C"/>
+		<dataRef name="Unknown5" visible="true" offset="0x30"/>
+		<dataRef name="Unknown6" visible="true" offset="0x44"/>
+	</reflexive>
+	<reflexive name="Unknown34" visible="true" offset="0x108" entrySize="0xC">
+		<int32 name="Unknown" visible="true" offset="0x0"/>
+		<float32 name="Unknown2" visible="true" offset="0x4"/>
+		<float32 name="Unknown3" visible="true" offset="0x8"/>
+	</reflexive>
+	<reflexive name="Unknown35" visible="true" offset="0x114" entrySize="0x14">
+		<float32 name="Unknown" visible="true" offset="0x0"/>
+		<float32 name="Unknown2" visible="true" offset="0x4"/>
+		<float32 name="Unknown3" visible="true" offset="0x8"/>
+		<float32 name="Unknown4" visible="true" offset="0xC"/>
+		<float32 name="Unknown5" visible="true" offset="0x10"/>
+	</reflexive>
+	<reflexive name="Unknown36" visible="true" offset="0x120" entrySize="0x14">
+		<float32 name="Unknown" visible="true" offset="0x0"/>
+		<float32 name="Unknown2" visible="true" offset="0x4"/>
+		<float32 name="Unknown3" visible="true" offset="0x8"/>
+		<float32 name="Unknown4" visible="true" offset="0xC"/>
+		<float32 name="Unknown5" visible="true" offset="0x10"/>
+	</reflexive>
+	<reflexive name="Unknown37" visible="true" offset="0x12C" entrySize="0x94">
+		<int32 name="Unknown" visible="true" offset="0x0"/>
+		<float32 name="Unknown2" visible="true" offset="0x4"/>
+		<float32 name="Unknown3" visible="true" offset="0x8"/>
+		<float32 name="Unknown4" visible="true" offset="0xC"/>
+		<float32 name="Unknown5" visible="true" offset="0x10"/>
+		<float32 name="Unknown6" visible="true" offset="0x14"/>
+		<float32 name="Unknown7" visible="true" offset="0x18"/>
+		<float32 name="Unknown8" visible="true" offset="0x1C"/>
+		<float32 name="Unknown9" visible="true" offset="0x20"/>
+		<float32 name="Unknown10" visible="true" offset="0x24"/>
+		<float32 name="Unknown11" visible="true" offset="0x28"/>
+		<float32 name="Unknown12" visible="true" offset="0x2C"/>
+		<float32 name="Unknown13" visible="true" offset="0x30"/>
+		<float32 name="Unknown14" visible="true" offset="0x34"/>
+		<float32 name="Unknown15" visible="true" offset="0x38"/>
+		<float32 name="Unknown16" visible="true" offset="0x3C"/>
+		<float32 name="Unknown17" visible="true" offset="0x40"/>
+		<float32 name="Unknown18" visible="true" offset="0x44"/>
+		<float32 name="Unknown19" visible="true" offset="0x48"/>
+		<float32 name="Unknown20" visible="true" offset="0x4C"/>
+		<float32 name="Unknown21" visible="true" offset="0x50"/>
+		<float32 name="Unknown22" visible="true" offset="0x54"/>
+		<float32 name="Unknown23" visible="true" offset="0x58"/>
+		<float32 name="Unknown24" visible="true" offset="0x5C"/>
+		<float32 name="Unknown25" visible="true" offset="0x60"/>
+		<float32 name="Unknown26" visible="true" offset="0x64"/>
+		<float32 name="Unknown27" visible="true" offset="0x68"/>
+		<float32 name="Unknown28" visible="true" offset="0x6C"/>
+		<float32 name="Unknown29" visible="true" offset="0x70"/>
+		<float32 name="Unknown30" visible="true" offset="0x74"/>
+		<float32 name="Unknown31" visible="true" offset="0x78"/>
+		<float32 name="Unknown32" visible="true" offset="0x7C"/>
+		<float32 name="Unknown33" visible="true" offset="0x80"/>
+		<float32 name="Unknown34" visible="true" offset="0x84"/>
+		<float32 name="Unknown35" visible="true" offset="0x88"/>
+		<float32 name="Unknown36" visible="true" offset="0x8C"/>
+		<float32 name="Unknown37" visible="true" offset="0x90"/>
+	</reflexive>
+	<reflexive name="Unknown38" visible="true" offset="0x138" entrySize="0x28">
+		<int32 name="Unknown" visible="true" offset="0x0"/>
+		<float32 name="Unknown2" visible="true" offset="0x4"/>
+		<float32 name="Unknown3" visible="true" offset="0x8"/>
+		<float32 name="Unknown4" visible="true" offset="0xC"/>
+		<float32 name="Unknown5" visible="true" offset="0x10"/>
+		<float32 name="Unknown6" visible="true" offset="0x14"/>
+		<float32 name="Unknown7" visible="true" offset="0x18"/>
+		<float32 name="Unknown8" visible="true" offset="0x1C"/>
+		<float32 name="Unknown9" visible="true" offset="0x20"/>
+		<float32 name="Unknown10" visible="true" offset="0x24"/>
+	</reflexive>
+	<uint16 name="Flags17" visible="true" offset="0x144"/>
+	<int16 name="Unknown39" visible="true" offset="0x146"/>
+	<float32 name="Unknown40" visible="true" offset="0x148"/>
+	<float32 name="Unknown41" visible="true" offset="0x14C"/>
+	<float32 name="Color R" visible="true" offset="0x150"/>
+	<float32 name="Color G" visible="true" offset="0x154"/>
+	<float32 name="Color B" visible="true" offset="0x158"/>
+	<float32 name="Unknown42" visible="true" offset="0x15C"/>
+	<float32 name="Unknown43" visible="true" offset="0x160"/>
+	<float32 name="Unknown44" visible="true" offset="0x164"/>
+	<float32 name="Unknown45" visible="true" offset="0x168"/>
+	<float32 name="Unknown46" visible="true" offset="0x16C"/>
+</plugin>

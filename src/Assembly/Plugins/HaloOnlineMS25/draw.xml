@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x10">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<uint32 name="Unknown" visible="true" offset="0x0"/>
+	<uint32 name="Unknown2" visible="true" offset="0x4"/>
+	<uint32 name="Unknown3" visible="true" offset="0x8"/>
+	<uint32 name="Unknown4" visible="true" offset="0xC"/>
+</plugin>

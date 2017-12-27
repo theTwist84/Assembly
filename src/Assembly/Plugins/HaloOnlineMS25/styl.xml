@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x5C">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<ascii name="Name" visible="true" length="0x20" offset="0x0"/>
+	<enum16 name="Combat Status Decay Options" visible="true" offset="0x20">
+		<option name="Latch At Idle" value="0x0"/>
+		<option name="Latch At Alert" value="0x1"/>
+		<option name="Latch At Combat" value="0x2"/>
+	</enum16>
+	<int16 name="Unknown" visible="true" offset="0x22"/>
+	<uint32 name="Style Control" visible="true" offset="0x24"/>
+	<uint32 name="Behaviors1" visible="true" offset="0x28"/>
+	<uint32 name="Behaviors2" visible="true" offset="0x2C"/>
+	<uint32 name="Behaviors3" visible="true" offset="0x30"/>
+	<uint32 name="Behaviors4" visible="true" offset="0x34"/>
+	<uint32 name="Behaviors5" visible="true" offset="0x38"/>
+	<uint32 name="Behaviors6" visible="true" offset="0x3C"/>
+	<uint32 name="Behaviors7" visible="true" offset="0x40"/>
+	<reflexive name="Special Movement" visible="true" offset="0x44" entrySize="0x4">
+		<uint32 name="Special Movement1" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Behavior List" visible="true" offset="0x50" entrySize="0x20">
+		<ascii name="Behavior Name" visible="true" length="0x20" offset="0x0"/>
+	</reflexive>
+</plugin>

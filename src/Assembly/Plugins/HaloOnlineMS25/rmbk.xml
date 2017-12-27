@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin game="HaloOnlineMS25" baseSize="0x44">
+	<!-- Automatically generated plugin -->
+	<revisions>
+		<revision author="TagTool" version="1">Generated plugin from BlamCore definitions.</revision>
+	</revisions>
+	<tagref name="Base Render Method" visible="true" offset="0x0"/>
+	<reflexive name="Unknown" visible="true" offset="0x10" entrySize="0x2">
+		<int16 name="Unknown" visible="true" offset="0x0"/>
+	</reflexive>
+	<reflexive name="Import Data" visible="true" offset="0x1C" entrySize="0x3C">
+		<stringId name="Material Type" visible="true" offset="0x0"/>
+		<int32 name="Unknown" visible="true" offset="0x4"/>
+		<tagref name="Bitmap" visible="true" offset="0x8"/>
+		<uint32 name="Unknown2" visible="true" offset="0x18"/>
+		<int32 name="Unknown3" visible="true" offset="0x1C"/>
+		<int16 name="Unknown4" visible="true" offset="0x20"/>
+		<int16 name="Unknown5" visible="true" offset="0x22"/>
+		<int16 name="Unknown6" visible="true" offset="0x24"/>
+		<int16 name="Unknown7" visible="true" offset="0x26"/>
+		<int16 name="Unknown8" visible="true" offset="0x28"/>
+		<int16 name="Unknown9" visible="true" offset="0x2A"/>
+		<uint32 name="Unknown10" visible="true" offset="0x2C"/>
+		<reflexive name="Functions" visible="true" offset="0x30" entrySize="0x24">
+			<int32 name="Unknown" visible="true" offset="0x0"/>
+			<stringId name="Name" visible="true" offset="0x4"/>
+			<uint32 name="Unknown2" visible="true" offset="0x8"/>
+			<uint32 name="Unknown3" visible="true" offset="0xC"/>
+			<dataRef name="Function" visible="true" offset="0x10"/>
+		</reflexive>
+	</reflexive>
+	<reflexive name="Shader Properties" visible="true" offset="0x28" entrySize="0x84">
+		<tagref name="Template" visible="true" offset="0x0"/>
+		<reflexive name="Shader Maps" visible="true" offset="0x10" entrySize="0x18">
+			<tagref name="Bitmap" visible="true" offset="0x0"/>
+			<int8 name="Unknown" visible="true" offset="0x10"/>
+			<int8 name="Bitmap Index" visible="true" offset="0x11"/>
+			<int8 name="Unknown2" visible="true" offset="0x12"/>
+			<uint8 name="Bitmap Flags" visible="true" offset="0x13"/>
+			<int8 name="Unknown Bitmap Index Enable" visible="true" offset="0x14"/>
+			<int8 name="Uv Argument Index" visible="true" offset="0x15"/>
+			<int8 name="Unknown3" visible="true" offset="0x16"/>
+			<int8 name="Unknown4" visible="true" offset="0x17"/>
+		</reflexive>
+		<reflexive name="Arguments" visible="true" offset="0x1C" entrySize="0x10">
+			<float32 name="Arg1" visible="true" offset="0x0"/>
+			<float32 name="Arg2" visible="true" offset="0x4"/>
+			<float32 name="Arg3" visible="true" offset="0x8"/>
+			<float32 name="Arg4" visible="true" offset="0xC"/>
+		</reflexive>
+		<reflexive name="Unknown" visible="true" offset="0x28" entrySize="0x4">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+		</reflexive>
+		<uint32 name="Unknown2" visible="true" offset="0x34"/>
+		<reflexive name="Draw Modes" visible="true" offset="0x38" entrySize="0x2">
+			<int16 name="Unknown" visible="true" offset="0x0"/>
+		</reflexive>
+		<reflexive name="Unknown4" visible="true" offset="0x44" entrySize="0x6">
+			<uint32 name="Unknown" visible="true" offset="0x0"/>
+			<int8 name="Unknown2" visible="true" offset="0x4"/>
+			<int8 name="Unknown3" visible="true" offset="0x5"/>
+		</reflexive>
+		<reflexive name="Unknown5" visible="true" offset="0x50" entrySize="0x4">
+			<int16 name="Unknown" visible="true" offset="0x0"/>
+			<int16 name="Unknown2" visible="true" offset="0x2"/>
+		</reflexive>
+		<reflexive name="Functions" visible="true" offset="0x5C" entrySize="0x24">
+			<int32 name="Unknown" visible="true" offset="0x0"/>
+			<stringId name="Name" visible="true" offset="0x4"/>
+			<uint32 name="Unknown2" visible="true" offset="0x8"/>
+			<uint32 name="Unknown3" visible="true" offset="0xC"/>
+			<dataRef name="Function" visible="true" offset="0x10"/>
+		</reflexive>
+		<int32 name="Bitmap Transparency" visible="true" offset="0x68"/>
+		<int32 name="Unknown7" visible="true" offset="0x6C"/>
+		<uint32 name="Unknown8" visible="true" offset="0x70"/>
+		<int16 name="Unknown9" visible="true" offset="0x74"/>
+		<int16 name="Unknown10" visible="true" offset="0x76"/>
+		<int16 name="Unknown11" visible="true" offset="0x78"/>
+		<int16 name="Unknown12" visible="true" offset="0x7A"/>
+		<int16 name="Unknown13" visible="true" offset="0x7C"/>
+		<int16 name="Unknown14" visible="true" offset="0x7E"/>
+		<int16 name="Unknown15" visible="true" offset="0x80"/>
+		<int16 name="Unknown16" visible="true" offset="0x82"/>
+	</reflexive>
+	<enum8 name="Input Variable" visible="true" offset="0x34">
+		<option name="Particle Age" value="0x0"/>
+		<option name="Emitter Age" value="0x1"/>
+		<option name="Particle Random" value="0x2"/>
+		<option name="Emitter Random" value="0x3"/>
+		<option name="Particle Random1" value="0x4"/>
+		<option name="Particle Random2" value="0x5"/>
+		<option name="Particle Random3" value="0x6"/>
+		<option name="Particle Random4" value="0x7"/>
+		<option name="Emitter Random1" value="0x8"/>
+		<option name="Emitter Random2" value="0x9"/>
+		<option name="Emitter Time" value="0xA"/>
+		<option name="System Lod" value="0xB"/>
+		<option name="Game Time" value="0xC"/>
+		<option name="Effect AScale" value="0xD"/>
+		<option name="Effect BScale" value="0xE"/>
+		<option name="Physics Rotation" value="0xF"/>
+		<option name="Location Random" value="0x10"/>
+		<option name="Distance From Emitter" value="0x11"/>
+		<option name="Particle Simulation A" value="0x12"/>
+		<option name="Particle Simulation B" value="0x13"/>
+		<option name="Particle Velocity" value="0x14"/>
+		<option name="Invalid" value="0x15"/>
+	</enum8>
+	<enum8 name="Range Variable" visible="true" offset="0x35">
+		<option name="Particle Age" value="0x0"/>
+		<option name="Emitter Age" value="0x1"/>
+		<option name="Particle Random" value="0x2"/>
+		<option name="Emitter Random" value="0x3"/>
+		<option name="Particle Random1" value="0x4"/>
+		<option name="Particle Random2" value="0x5"/>
+		<option name="Particle Random3" value="0x6"/>
+		<option name="Particle Random4" value="0x7"/>
+		<option name="Emitter Random1" value="0x8"/>
+		<option name="Emitter Random2" value="0x9"/>
+		<option name="Emitter Time" value="0xA"/>
+		<option name="System Lod" value="0xB"/>
+		<option name="Game Time" value="0xC"/>
+		<option name="Effect AScale" value="0xD"/>
+		<option name="Effect BScale" value="0xE"/>
+		<option name="Physics Rotation" value="0xF"/>
+		<option name="Location Random" value="0x10"/>
+		<option name="Distance From Emitter" value="0x11"/>
+		<option name="Particle Simulation A" value="0x12"/>
+		<option name="Particle Simulation B" value="0x13"/>
+		<option name="Particle Velocity" value="0x14"/>
+		<option name="Invalid" value="0x15"/>
+	</enum8>
+	<enum8 name="Output Modifier" visible="true" offset="0x36">
+		<option name="None" value="0x0"/>
+		<option name="Plus" value="0x1"/>
+		<option name="Times" value="0x2"/>
+	</enum8>
+	<enum8 name="Output Modifier Input" visible="true" offset="0x37">
+		<option name="Particle Age" value="0x0"/>
+		<option name="Emitter Age" value="0x1"/>
+		<option name="Particle Random" value="0x2"/>
+		<option name="Emitter Random" value="0x3"/>
+		<option name="Particle Random1" value="0x4"/>
+		<option name="Particle Random2" value="0x5"/>
+		<option name="Particle Random3" value="0x6"/>
+		<option name="Particle Random4" value="0x7"/>
+		<option name="Emitter Random1" value="0x8"/>
+		<option name="Emitter Random2" value="0x9"/>
+		<option name="Emitter Time" value="0xA"/>
+		<option name="System Lod" value="0xB"/>
+		<option name="Game Time" value="0xC"/>
+		<option name="Effect AScale" value="0xD"/>
+		<option name="Effect BScale" value="0xE"/>
+		<option name="Physics Rotation" value="0xF"/>
+		<option name="Location Random" value="0x10"/>
+		<option name="Distance From Emitter" value="0x11"/>
+		<option name="Particle Simulation A" value="0x12"/>
+		<option name="Particle Simulation B" value="0x13"/>
+		<option name="Particle Velocity" value="0x14"/>
+		<option name="Invalid" value="0x15"/>
+	</enum8>
+	<float32 name="Runtime MConstant Value" visible="true" offset="0x38"/>
+	<uint16 name="Runtime MFlags" visible="true" offset="0x3C"/>
+	<bitfield8 name="Force Flags" visible="true" offset="0x3E">
+		<bit name="Force Constant" index="0"/>
+	</bitfield8>
+	<uint8 name="Unused Padding 0" visible="false" offset="0x3F"/>
+	<uint32 name="Unknown1" visible="true" offset="0x40"/>
+</plugin>
