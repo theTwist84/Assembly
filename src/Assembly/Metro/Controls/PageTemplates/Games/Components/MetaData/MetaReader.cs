@@ -154,12 +154,15 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 		{
 			SeekToOffset(field.Offset);
 
-			byte[] colorArray = new byte[field.Format.Length];
-			for (int i = 0; i < field.Format.Length; i++)
+			byte[] colorArray = new byte[4];
+			for (int i = 0; i < 4; i++)
 				colorArray[i] = _reader.ReadByte();
 
-			if (_cache.Engine == EngineType.FourthGeneration)
+			if (_reader.Endianness == Endian.LittleEndian)
 				Array.Reverse(colorArray);
+
+			if (field.Format.Length == 3)
+				colorArray[0] = 0xFF;
 
 			string colorValue = String.Concat(Array.ConvertAll(colorArray, x => x.ToString("X2")));
 			field.Value = "#" + colorValue;

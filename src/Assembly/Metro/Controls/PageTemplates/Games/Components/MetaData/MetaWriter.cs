@@ -138,7 +138,8 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 		{
 			SeekToOffset(field.Offset);
 
-			bool eldorado = _cache.Engine == EngineType.FourthGeneration;
+			byte[] colorArray = new byte[4];
+
 			if (field.Value.Length == 7)
 				field.Value = field.Value.Insert(1, "FF");
 
@@ -147,26 +148,37 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 				switch (formatChar)
 				{
 					case 'a':
-						byte alpha = byte.Parse(field.Value.Replace("#", "").Remove(2), NumberStyles.HexNumber);
-						_writer.WriteByte(alpha);
+						colorArray[0] = byte.Parse(field.Value.Replace("#", "").Remove(2), NumberStyles.HexNumber);
 						break;
 					case 'r':
-						byte red = !eldorado ? byte.Parse(field.Value.Replace("#", "").Remove(0, 2).Remove(2), NumberStyles.HexNumber)
-							: byte.Parse(field.Value.Replace("#", "").Remove(0, 6), NumberStyles.HexNumber);
-						_writer.WriteByte(red);
+						colorArray[1] = byte.Parse(field.Value.Replace("#", "").Remove(0, 2).Remove(2), NumberStyles.HexNumber);
 						break;
 					case 'g':
-						byte green = !eldorado ? byte.Parse(field.Value.Replace("#", "").Remove(0, 4).Remove(2), NumberStyles.HexNumber)
-							: byte.Parse(field.Value.Replace("#", "").Remove(0, 4).Remove(2), NumberStyles.HexNumber);
-						_writer.WriteByte(green);
+						colorArray[2] = byte.Parse(field.Value.Replace("#", "").Remove(0, 4).Remove(2), NumberStyles.HexNumber);
 						break;
 					case 'b':
-						byte blue = !eldorado ? byte.Parse(field.Value.Replace("#", "").Remove(0, 6), NumberStyles.HexNumber)
-							: byte.Parse(field.Value.Replace("#", "").Remove(0, 2).Remove(2), NumberStyles.HexNumber);
-						_writer.WriteByte(blue);
+						colorArray[3] = byte.Parse(field.Value.Replace("#", "").Remove(0, 6), NumberStyles.HexNumber);
 						break;
 				}
 			}
+
+			int offset = 1;
+
+			if (_writer.Endianness == Endian.LittleEndian)
+			{
+				Array.Reverse(colorArray);
+				offset = 0;
+			}
+
+			if (field.Format.Length == 3)
+			{
+				_writer.BaseStream.Position += offset;
+				_writer.WriteBlock(colorArray, offset, 3);
+			}
+			else
+				_writer.WriteBlock(colorArray);
+			
+			
 		}
 
 		public void VisitColourFloat(ColourData field)
