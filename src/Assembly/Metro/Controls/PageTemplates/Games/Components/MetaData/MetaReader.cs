@@ -154,8 +154,12 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 		{
 			SeekToOffset(field.Offset);
 
+			int offset = 0;
+			if (_reader.Endianness == Endian.BigEndian && field.Format.Length == 3)
+				offset = 1;
+
 			byte[] colorArray = new byte[4];
-			for (int i = 0; i < 4; i++)
+			for (int i = offset; i < 4; i++)
 				colorArray[i] = _reader.ReadByte();
 
 			if (_reader.Endianness == Endian.LittleEndian)

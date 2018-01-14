@@ -172,7 +172,6 @@ namespace Assembly.Metro.Controls.PageTemplates.Games.Components.MetaData
 
 			if (field.Format.Length == 3)
 			{
-				_writer.BaseStream.Position += offset;
 				_writer.WriteBlock(colorArray, offset, 3);
 			}
 			else
