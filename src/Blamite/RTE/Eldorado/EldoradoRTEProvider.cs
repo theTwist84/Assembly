@@ -110,6 +110,16 @@ namespace Blamite.RTE.Eldorado
 		}
 	}
 
+	public class MS25RTEProvider : EldoradoRTEProvider
+	{
+		public MS25RTEProvider(string exeName) : base(exeName)
+		{
+			MaxTagCountAddress = 0x40D44A8;
+			TagIndexArrayPointerAddress = 0x40D449C;
+			TagAddressArrayPointerAddress = 0x40D4498;
+		}
+	}
+
 	public class ZBTRTEProvider : EldoradoRTEProvider
 	{
 		public ZBTRTEProvider(string exeName) : base(exeName)

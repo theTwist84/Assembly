@@ -249,6 +249,9 @@ namespace Assembly.Metro.Controls.PageTemplates.Games
 							case "1.106708 cert_ms23":
 								_rteProvider = new EldoradoRTEProvider("eldorado.exe");
 								break;
+							case "1.235640 cert_ms25":
+								_rteProvider = new MS25RTEProvider("darkloaded.exe");
+								break;
 							case "11.1.498295 Live":
 								_rteProvider = new ZBTRTEProvider("darkloaded.exe");
 								break;
