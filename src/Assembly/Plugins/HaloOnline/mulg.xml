@@ -37,7 +37,7 @@
 		<reflexive name="Equipment" offset="0x38" visible="true" entrySize="0x18">
 			<stringid name="Name" offset="0x0" visible="true" />
 			<tagRef name="Equipment" offset="0x4" visible="true" />
-			<int16 name="Unknown" offset="0x14" visible="false" />
+			<int16 name="Icon Index" offset="0x14" visible="true" />
 			<int16 name="Unknown" offset="0x16" visible="false" />
 		</reflexive>
 		<reflexive name="Unknown" offset="0x44" visible="false" entrySize="0x8">

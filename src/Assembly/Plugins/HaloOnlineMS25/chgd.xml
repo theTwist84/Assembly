@@ -280,60 +280,62 @@
 		<uint32 name="Unknown15" visible="true" offset="0x38"/>
 		<uint32 name="Unknown16" visible="true" offset="0x3C"/>
 	</reflexive>
-	<reflexive name="Unknown2" visible="true" offset="0x24" entrySize="0x10">
-		<uint32 name="Unknown" visible="true" offset="0x0"/>
-		<reflexive name="Unknown2" visible="true" offset="0x4" entrySize="0xE4">
-			<uint32 name="Unknown" visible="true" offset="0x0"/>
-			<uint32 name="Unknown2" visible="true" offset="0x4"/>
-			<uint32 name="Unknown3" visible="true" offset="0x8"/>
-			<uint32 name="Unknown4" visible="true" offset="0xC"/>
-			<uint32 name="Unknown5" visible="true" offset="0x10"/>
-			<uint32 name="Unknown6" visible="true" offset="0x14"/>
-			<uint32 name="Unknown7" visible="true" offset="0x18"/>
-			<uint32 name="Unknown8" visible="true" offset="0x1C"/>
-			<uint32 name="Unknown9" visible="true" offset="0x20"/>
-			<uint32 name="Unknown10" visible="true" offset="0x24"/>
-			<uint32 name="Unknown11" visible="true" offset="0x28"/>
-			<uint32 name="Unknown12" visible="true" offset="0x2C"/>
-			<uint32 name="Unknown13" visible="true" offset="0x30"/>
-			<uint32 name="Unknown14" visible="true" offset="0x34"/>
-			<uint32 name="Unknown15" visible="true" offset="0x38"/>
-			<uint32 name="Unknown16" visible="true" offset="0x3C"/>
-			<uint32 name="Unknown17" visible="true" offset="0x40"/>
-			<uint32 name="Unknown18" visible="true" offset="0x44"/>
-			<uint32 name="Unknown19" visible="true" offset="0x48"/>
-			<uint32 name="Unknown20" visible="true" offset="0x4C"/>
-			<uint32 name="Unknown21" visible="true" offset="0x50"/>
-			<uint32 name="Unknown22" visible="true" offset="0x54"/>
-			<uint32 name="Unknown23" visible="true" offset="0x58"/>
-			<uint32 name="Unknown24" visible="true" offset="0x5C"/>
-			<uint32 name="Unknown25" visible="true" offset="0x60"/>
-			<tagref name="Sound" visible="true" offset="0x64"/>
-			<uint32 name="Unknown26" visible="true" offset="0x74"/>
-			<uint32 name="Unknown27" visible="true" offset="0x78"/>
-			<uint32 name="Unknown28" visible="true" offset="0x7C"/>
-			<uint32 name="Unknown29" visible="true" offset="0x80"/>
-			<uint32 name="Unknown30" visible="true" offset="0x84"/>
-			<uint32 name="Unknown31" visible="true" offset="0x88"/>
-			<uint32 name="Unknown32" visible="true" offset="0x8C"/>
-			<uint32 name="Unknown33" visible="true" offset="0x90"/>
-			<uint32 name="Unknown34" visible="true" offset="0x94"/>
-			<uint32 name="Unknown35" visible="true" offset="0x98"/>
-			<uint32 name="Unknown36" visible="true" offset="0x9C"/>
-			<uint32 name="Unknown37" visible="true" offset="0xA0"/>
-			<uint32 name="Unknown38" visible="true" offset="0xA4"/>
-			<uint32 name="Unknown39" visible="true" offset="0xA8"/>
-			<uint32 name="Unknown40" visible="true" offset="0xAC"/>
-			<uint32 name="Unknown41" visible="true" offset="0xB0"/>
-			<uint32 name="Unknown42" visible="true" offset="0xB4"/>
-			<uint32 name="Unknown43" visible="true" offset="0xB8"/>
-			<uint32 name="Unknown44" visible="true" offset="0xBC"/>
-			<uint32 name="Unknown45" visible="true" offset="0xC0"/>
-			<uint32 name="Unknown46" visible="true" offset="0xC4"/>
-			<uint32 name="Unknown47" visible="true" offset="0xC8"/>
-			<uint32 name="Unknown48" visible="true" offset="0xCC"/>
-			<uint32 name="Unknown49" visible="true" offset="0xD0"/>
-			<tagref name="Sound2" visible="true" offset="0xD4"/>
+	<reflexive name="Cortana Suck" offset="0x24" visible="true" entrySize="0x10">
+		<undefined name="Unknown" offset="0x0" visible="true" />
+		<reflexive name="Levels" offset="0x4" visible="true" entrySize="0xE4">
+			<float32 name="Scale" offset="0x0" visible="true" />
+			<comment title="A" />
+			<float32 name="Noise a Velocity min" offset="0x4" visible="true" />
+			<float32 name="Noise a Velocity max" offset="0x8" visible="true" />
+			<float32 name="Noise a Scale x min" offset="0xC" visible="true" />
+			<float32 name="Noise a Scale x max" offset="0x10" visible="true" />
+			<float32 name="Noise a Scale y min" offset="0x14" visible="true" />
+			<float32 name="Noise a Scale y max" offset="0x18" visible="true" />
+			<float32 name="Noise b Velocity min" offset="0x1C" visible="true" />
+			<float32 name="Noise b Velocity max" offset="0x20" visible="true" />
+			<float32 name="Noise b Scale x min" offset="0x24" visible="true" />
+			<float32 name="Noise b Scale x max" offset="0x28" visible="true" />
+			<float32 name="Noise b Scale y min" offset="0x2C" visible="true" />
+			<float32 name="Noise b Scale y max" offset="0x30" visible="true" />
+			<float32 name="Noise Pixel Threshold min" offset="0x34" visible="true" />
+			<float32 name="Noise Pixel Threshold max" offset="0x38" visible="true" />
+			<float32 name="Noise Pixel Persistence min" offset="0x3C" visible="true" />
+			<float32 name="Noise Pixel Persistence max" offset="0x40" visible="true" />
+			<float32 name="Noise Pixel Velocity min" offset="0x44" visible="true" />
+			<float32 name="Noise Pixel Velocity max" offset="0x48" visible="true" />
+			<float32 name="Noise Pixel Turbulence min" offset="0x4C" visible="true" />
+			<float32 name="Noise Pixel Turbulence max" offset="0x50" visible="true" />
+			<float32 name="Noise Translation Scale x min" offset="0x54" visible="true" />
+			<float32 name="Noise Translation Scale x max" offset="0x58" visible="true" />
+			<float32 name="Noise Translation Scale y min" offset="0x5C" visible="true" />
+			<float32 name="Noise Translation Scale y max" offset="0x60" visible="true" />
+			<tagRef name="Message" offset="0x64" visible="true" />
+			<comment title="B" />
+			<float32 name="Noise a Velocity min" offset="0x74" visible="true" />
+			<float32 name="Noise a Velocity max" offset="0x78" visible="true" />
+			<float32 name="Noise a Scale x min" offset="0x7C" visible="true" />
+			<float32 name="Noise a Scale x max" offset="0x80" visible="true" />
+			<float32 name="Noise a Scale y min" offset="0x84" visible="true" />
+			<float32 name="Noise a Scale y max" offset="0x88" visible="true" />
+			<float32 name="Noise b Velocity min" offset="0x8C" visible="true" />
+			<float32 name="Noise b Velocity max" offset="0x90" visible="true" />
+			<float32 name="Noise b Scale x min" offset="0x94" visible="true" />
+			<float32 name="Noise b Scale x max" offset="0x98" visible="true" />
+			<float32 name="Noise b Scale y min" offset="0x9C" visible="true" />
+			<float32 name="Noise b Scale y max" offset="0xA0" visible="true" />
+			<float32 name="Noise Pixel Threshold min" offset="0xA4" visible="true" />
+			<float32 name="Noise Pixel Threshold max" offset="0xA8" visible="true" />
+			<float32 name="Noise Pixel Persistence min" offset="0xAC" visible="true" />
+			<float32 name="Noise Pixel Persistence max" offset="0xB0" visible="true" />
+			<float32 name="Noise Pixel Velocity min" offset="0xB4" visible="true" />
+			<float32 name="Noise Pixel Velocity max" offset="0xB8" visible="true" />
+			<float32 name="Noise Pixel Turbulence min" offset="0xBC" visible="true" />
+			<float32 name="Noise Pixel Turbulence max" offset="0xC0" visible="true" />
+			<float32 name="Noise Translation Scale x min" offset="0xC4" visible="true" />
+			<float32 name="Noise Translation Scale x max" offset="0xC8" visible="true" />
+			<float32 name="Noise Translation Scale y min" offset="0xCC" visible="true" />
+			<float32 name="Noise Translation Scale y max" offset="0xD0" visible="true" />
+			<tagRef name="Message" offset="0xD4" visible="true" />
 		</reflexive>
 	</reflexive>
 	<reflexive name="Player Training Data" visible="true" offset="0x30" entrySize="0x14">
