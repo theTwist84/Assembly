@@ -153,21 +153,22 @@
 		<tagref name="tagref" visible="true" offset="0x0"/>
 	</reflexive>
 	<reflexive name="Change Colors" visible="true" offset="0xE4" entrySize="0x18">
-		<reflexive name="Initial Permutations" visible="true" offset="0x0" entrySize="0xE">
+		<reflexive name="Initial Permutations" visible="true" offset="0x0" entrySize="0x20">
 			<float32 name="Weight" visible="true" offset="0x0"/>
-			<color24 name="Color Lower Bound" visible="true" offset="0x4"/>
-			<color24 name="Color Upper Bound" visible="true" offset="0x7"/>
-			<stringId name="Variant Name" visible="true" offset="0xA"/>
+			<colorf name="Color Lower Bound" format="rgb" visible="true" offset="0x4"/>
+			<colorf name="Color Upper Bound" format="rgb" visible="true" offset="0x10"/>
+			<stringId name="Variant Name" visible="true" offset="0x1C"/>
 		</reflexive>
-		<reflexive name="Functions" visible="true" offset="0xC" entrySize="0x12">
-			<bitfield32 name="Scale Flags" visible="true" offset="0x0">
+		<reflexive name="Functions" visible="true" offset="0xC" entrySize="0x28">
+			<uint32 name="Unused" visible="true" offset="0x0"/>
+			<bitfield32 name="Scale Flags" visible="true" offset="0x4">
 				<bit name="Blend In Hsv" index="0"/>
 				<bit name="More Colors" index="1"/>
 			</bitfield32>
-			<color24 name="Color Lower Bound" visible="true" offset="0x4"/>
-			<color24 name="Color Upper Bound" visible="true" offset="0x7"/>
-			<stringId name="Darken By" visible="true" offset="0xA"/>
-			<stringId name="Scale By" visible="true" offset="0xE"/>
+			<colorf name="Color Lower Bound" format="rgb" visible="true" offset="0x8"/>
+			<colorf name="Color Upper Bound" format="rgb" visible="true" offset="0x14"/>
+			<stringId name="Darken By" visible="true" offset="0x20"/>
+			<stringId name="Scale By" visible="true" offset="0x24"/>
 		</reflexive>
 	</reflexive>
 	<reflexive name="Node Maps" visible="true" offset="0xF0" entrySize="0x1">
