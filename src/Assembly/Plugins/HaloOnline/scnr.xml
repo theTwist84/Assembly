@@ -5002,8 +5002,8 @@ DO NOT USE THE BLOCK REALLOCATOR ON THE [READABLE] BLOCKS!</comment>
 			<option name="looping_sound_budget_reference" value="0x52" />
 			<option name="sound_budget_reference" value="0x53" />
 		</enum16>
-		<uint16 name="Root Expression Salt" offset="0x24" visible="true" />
-		<uint16 name="Root Expression Index" offset="0x26" visible="true" />
+		<uint16 name="Root Expression Index" offset="0x24" visible="true" />
+		<uint16 name="Root Expression Salt" offset="0x26" visible="true" />
 		<reflexive name="Parameters" offset="0x28" visible="true" entrySize="0x24">
 			<ascii name="Name" offset="0x0" visible="true" length="0x20" />
 			<enum16 name="Type" offset="0x20" visible="true">
@@ -6362,89 +6362,85 @@ DO NOT USE THE BLOCK REALLOCATOR ON THE [READABLE] BLOCKS!</comment>
 		<int16 name="Unknown" offset="0xC" visible="false" />
 		<int16 name="Unknown" offset="0xE" visible="false" />
 	</reflexive>
-	<reflexive name="AI Objectives" offset="0x75C" visible="true" entrySize="0x14">
+	<reflexive name="AI Objectives" offset="0x75C" visible="true" entrySize="0x24">
 		<stringid name="Name" offset="0x0" visible="true" />
-		<int16 name="Zone" offset="0x4" visible="true" />
-		<int16 name="Unknown" offset="0x6" visible="false" />
-		<reflexive name="Roles" offset="0x8" visible="true" entrySize="0xCC">
+		<undefined name="Unknown" offset="0x4" visible="false" />
+		<undefined name="Unknown" offset="0x8" visible="false" />
+		<undefined name="Unknown" offset="0xC" visible="false" />
+		<int16 name="Unknown" offset="0x10" visible="false" />
+		<int16 name="Zone" offset="0x12" visible="true" />
+		<int16 name="Unknown" offset="0x14" visible="false" />
+		<int16 name="Editor Folder Index" offset="0x16" visible="true" />
+		<reflexive name="Roles" offset="0x18" visible="true" entrySize="0xE8">
 			<int16 name="Unknown" offset="0x0" visible="false" />
 			<int16 name="Unknown" offset="0x2" visible="false" />
-			<int16 name="Unknown" offset="0x4" visible="false" />
-			<int16 name="Unknown" offset="0x6" visible="false" />
-			<int16 name="Unknown" offset="0x8" visible="false" />
-			<int16 name="Unknown" offset="0xA" visible="false" />
-			<undefined name="Unknown" offset="0xC" visible="false" />
-			<ascii name="Command Script Name 1" offset="0x10" length="0x20" visible="true" />
-			<ascii name="Command Script Name 2" offset="0x30" length="0x20" visible="true" />
-			<ascii name="Command Script Name 3" offset="0x50" length="0x20" visible="true" />
-			<int16 name="Command Script Index 1" offset="0x70" visible="true" />
-			<int16 name="Command Script Index 2" offset="0x72" visible="true" />
-			<int16 name="Command Script Index 3" offset="0x74" visible="true" />
-			<int16 name="Unknown" offset="0x76" visible="false" />
-			<int16 name="Unknown" offset="0x78" visible="false" />
-			<int16 name="Unknown" offset="0x7A" visible="false" />
-			<reflexive name="Unknown 84" offset="0x7C" visible="false" entrySize="0x8">
-				<undefined name="Unknown" offset="0x0" visible="false" />
-				<undefined name="Unknown" offset="0x4" visible="false" />
-			</reflexive>
-			<stringid name="Task" offset="0x88" visible="true" />
-			<int16 name="Hierarchy Level (From 100)" offset="0x8C" visible="true" />
-			<int16 name="Previous Role" offset="0x8E" visible="true" />
-			<int16 name="Next Role" offset="0x90" visible="true" />
-			<int16 name="Parent Role" offset="0x92" visible="true" />
-			<reflexive name="Conditions" offset="0x94" visible="true" entrySize="0x124">
+			<undefined name="Unknown" offset="0x4" visible="false" />
+			<undefined name="Unknown" offset="0x8" visible="false" />
+			<int16 name="Unknown" offset="0xC" visible="false" />
+			<int16 name="Unknown" offset="0xE" visible="false" />
+			<int16 name="Unknown" offset="0x10" visible="false" />
+			<int16 name="Unknown" offset="0x12" visible="false" />
+			<float32 name="Unknown" offset="0x14" visible="false" />
+			<undefined name="Unknown" offset="0x18" visible="false" />
+			<undefined name="Unknown" offset="0x1C" visible="false" />
+			<undefined name="Unknown" offset="0x20" visible="false" />
+			<undefined name="Unknown" offset="0x24" visible="false" />
+			<ascii name="Command Script Name 1" offset="0x28" length="0x20" visible="true" />
+			<ascii name="Command Script Name 2" offset="0x48" length="0x20" visible="true" />
+			<ascii name="Command Script Name 3" offset="0x68" length="0x20" visible="true" />
+			<int16 name="Command Script Index 1" offset="0x88" visible="true" />
+			<int16 name="Command Script Index 2" offset="0x8A" visible="true" />
+			<int16 name="Command Script Index 3" offset="0x8C" visible="true" />
+			<int16 name="Unknown" offset="0x8E" visible="false" />
+			<int16 name="Unknown" offset="0x90" visible="false" />
+			<int16 name="Unknown" offset="0x92" visible="false" />
+			<undefined name="Unknown" offset="0x94" visible="false" />
+			<undefined name="Unknown" offset="0x98" visible="false" />
+			<undefined name="Unknown" offset="0x9C" visible="false" />
+			<int16 name="Unknown" offset="0xA0" visible="false" />
+			<int16 name="Unknown" offset="0xA2" visible="false" />
+			<stringid name="Task" offset="0xA4" visible="true" />
+			<int16 name="Hierarchy Level (From 100)" offset="0xA8" visible="true" />
+			<int16 name="Previous Role" offset="0x8A" visible="true" />
+			<int16 name="Next Role" offset="0xAC" visible="true" />
+			<int16 name="Parent Role" offset="0xAE" visible="true" />
+			<reflexive name="Conditions" offset="0xB0" visible="true" entrySize="0x124">
 				<ascii name="Name" offset="0x0" length="0x20" visible="true" />
 				<ascii name="Condition" offset="0x20" length="0x100" visible="true" />
 				<int16 name="Unknown" offset="0x120" visible="false" />
 				<int16 name="Unknown" offset="0x122" visible="false" />
 			</reflexive>
-			<int16 name="Script Index" offset="0xA0" visible="true" />
-			<int16 name="Unknown" offset="0xA2" visible="false" />
-			<int16 name="Unknown" offset="0xA4" visible="false" />
-			<enum16 name="Filter" offset="0xA6" visible="true">
+			<int16 name="Script Index" offset="0xBC" visible="true" />
+			<int16 name="Unknown" offset="0xBE" visible="false" />
+			<int16 name="Unknown" offset="0xC0" visible="false" />
+			<enum16 name="Filter" offset="0xC2" visible="true">
 				<option name="None" value="0x0" />
 				<option name="Leader" value="0x1" />
-				<option name="Arbiter" value="0x3" />
-				<option name="Player" value="0x4" />
-				<option name="Infantry" value="0x7" />
-				<option name="Flood" value="0x10" />
-				<option name="Sentinel" value="0x11" />
-				<option name="Jackal" value="0x15" />
-				<option name="Grunt" value="0x16" />
-				<option name="Marine" value="0x18" />
-				<option name="Flood Combat" value="0x19" />
-				<option name="Flood Carrier" value="0x1A" />
-				<option name="Brute" value="0x1C" />
-				<option name="Drone" value="0x1E" />
-				<option name="Flood Pureform" value="0x1F" />
-				<option name="Warthog" value="0x22" />
-				<option name="Wraith" value="0x27" />
-				<option name="Phantom" value="0x28" />
-				<option name="Brute Chopper" value="0x2C" />
+				<option name="Phantom" value="0x2D" />
 			</enum16>
-			<int16 name="Min" offset="0xA8" visible="true" />
-			<int16 name="Max" offset="0xAA" visible="true" />
-			<int16 name="Bodies" offset="0xAC" visible="true" />
-			<int16 name="Unknown" offset="0xAE" visible="false" />
-			<undefined name="Unknown" offset="0xB0" visible="false" />
-			<reflexive name="Unknown" offset="0xB4" visible="false" entrySize="0xA">
+			<int16 name="Min" offset="0xC4" visible="true" />
+			<int16 name="Max" offset="0xC6" visible="true" />
+			<int16 name="Bodies" offset="0xC8" visible="true" />
+			<int16 name="Unknown" offset="0xCA" visible="false" />
+			<undefined name="Unknown" offset="0xCC" visible="false" />
+			<reflexive name="Unknown" offset="0xD0" visible="false" entrySize="0x10">
 				<int16 name="Unknown" offset="0x0" visible="false" />
 				<int16 name="Unknown" offset="0x2" visible="false" />
 				<int16 name="Unknown" offset="0x4" visible="false" />
 				<int16 name="Unknown" offset="0x6" visible="false" />
 				<int16 name="Unknown" offset="0x8" visible="false" />
-			</reflexive>
-			<reflexive name="Point Geometry" offset="0xC0" visible="true" entrySize="0x20">
-				<float32 name="Point 0 X" offset="0x0" visible="true" />
-				<float32 name="Point 0 Y" offset="0x4" visible="true" />
-				<float32 name="Point 0 Z" offset="0x8" visible="true" />
-				<int16 name="Reference Frame" offset="0xC" visible="true" />
+				<int16 name="Unknown" offset="0xA" visible="false" />
+				<int16 name="Unknown" offset="0xC" visible="false" />
 				<int16 name="Unknown" offset="0xE" visible="false" />
-				<float32 name="Point 1 X" offset="0x10" visible="true" />
-				<float32 name="Point 1 Y" offset="0x14" visible="true" />
-				<float32 name="Point 1 Z" offset="0x18" visible="true" />
-				<int16 name="Reference Frame" offset="0x1C" visible="true" />
-				<int16 name="Unknown" offset="0x1E" visible="false" />
+			</reflexive>
+			<reflexive name="Point Geometry" offset="0xDC" visible="true" entrySize="0x4">
+				<reflexive name="Points" offset="0x0" visible="true" entrySize="0x10">
+					<float32 name="Point X" offset="0x0" visible="true" />
+					<float32 name="Point Y" offset="0x4" visible="true" />
+					<float32 name="Point Z" offset="0x8" visible="true" />
+					<int16 name="Reference Frame" offset="0xC" visible="true" />
+					<int16 name="Unknown" offset="0xE" visible="false" />
+				</reflexive>
 			</reflexive>
 		</reflexive>
 	</reflexive>
