@@ -1247,7 +1247,7 @@
 			<arg type="unit" />
 			<arg type="object_definition" />
 		</function>
-		<function opcode="0x12B" name="" returnType="boolean" argc="1">
+		<function opcode="0x12B" name="unit_has_any_equipment" returnType="boolean" argc="1">
 			<arg type="unit" />
 		</function>
 		<function opcode="0x12C" name="unit_has_equipment" returnType="boolean" argc="2">
@@ -1757,7 +1757,7 @@
 		<function opcode="0x1B5" name="" returnType="boolean" argc="1">
 			<arg type="ai" />
 		</function>
-		<function opcode="0x1B6" name="" returnType="boolean" argc="1">
+		<function opcode="0x1B6" name="ai_leadership_all" returnType="boolean" argc="1">
 			<arg type="ai" />
 		</function>
 		<function opcode="0x1B7" name="ai_task_count" returnType="short" argc="1">
@@ -2069,10 +2069,10 @@
 			<arg type="ai" />
 			<arg type="short" />
 		</function>
-		<function opcode="0x20A" name="" returnType="void" argc="1">
+		<function opcode="0x20A" name="cs_abort_on_vehicle_exit" returnType="void" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x20B" name="" returnType="void" argc="2">
+		<function opcode="0x20B" name="vs_abort_on_vehicle_exit" returnType="void" argc="2">
 			<arg type="ai" />
 			<arg type="boolean" />
 		</function>
@@ -2856,10 +2856,10 @@
 			<arg type="boolean" />
 			<arg type="long" />
 		</function>
-		<function opcode="0x2C4" name="" returnType="void" flags="1" argc="1">
+		<function opcode="0x2C4" name="cs_melee_direction" returnType="void" flags="1" argc="1">
 			<arg type="long" />
 		</function>
-		<function opcode="0x2C5" name="" returnType="void" argc="3">
+		<function opcode="0x2C5" name="vs_melee_direction" returnType="void" argc="3">
 			<arg type="ai" />
 			<arg type="boolean" />
 			<arg type="long" />
@@ -3135,8 +3135,8 @@
 		<function opcode="0x32A" name="unit_action_test_right_shoulder" returnType="boolean" argc="1">
 			<arg type="unit" />
 		</function>
-		<function opcode="0x32B" name="player_action_test_unknown_float1" returnType="boolean" />
-		<function opcode="0x32C" name="player_action_test_unknown_float2" returnType="boolean" />
+		<function opcode="0x32B" name="player0_looking_up" returnType="boolean" />
+		<function opcode="0x32C" name="player0_looking_down" returnType="boolean" />
 		<function opcode="0x32D" name="player0_set_pitch" returnType="void" argc="2">
 			<arg type="real" />
 			<arg type="long" />
@@ -3153,8 +3153,8 @@
 			<arg type="real" />
 			<arg type="long" />
 		</function>
-		<function opcode="0x331" name="" returnType="boolean" />
-		<function opcode="0x332" name="" returnType="boolean" />
+		<function opcode="0x331" name="player_action_test_lookstick_forward" returnType="boolean" />
+		<function opcode="0x332" name="player_action_test_lookstick_backward" returnType="boolean" />
 		<function opcode="0x333" name="debug_teleport_player" returnType="void" null="true" argc="2">
 			<arg type="long" />
 			<arg type="long" />
@@ -4567,7 +4567,7 @@
 		<function opcode="0x4E7" name="" returnType="void" null="true" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x4E8" name="" returnType="void" argc="1">
+		<function opcode="0x4E8" name="play_bink_movie" returnType="void" argc="1">
 			<arg type="string" />
 		</function>
 		<function opcode="0x4E9" name="" returnType="void" argc="1">
@@ -5425,7 +5425,7 @@
 		<function opcode="0x602" name="terminal_was_completed" returnType="boolean" argc="1">
 			<arg type="object" />
 		</function>
-		<function opcode="0x603" name="" returnType="weapon" argc="1">
+		<function opcode="0x603" name="unit_get_primary_weapon" returnType="weapon" argc="1">
 			<arg type="unit" />
 		</function>
 		<function opcode="0x604" name="" returnType="void" null="true" />
