@@ -777,25 +777,25 @@
 			<arg type="string_id" />
 			<arg type="real" />
 		</function>
-		<function opcode="0x0B2" name="" returnType="void" argc="3">
+		<function opcode="0x0B2" name="texture_camera_set_position" returnType="void" argc="3">
 			<arg type="real" />
 			<arg type="real" />
 			<arg type="real" />
 		</function>
-		<function opcode="0x0B3" name="" returnType="void" argc="3">
+		<function opcode="0x0B3" name="texture_camera_set_target" returnType="void" argc="3">
 			<arg type="real" />
 			<arg type="real" />
 			<arg type="real" />
 		</function>
-		<function opcode="0x0B4" name="" returnType="void" argc="2">
+		<function opcode="0x0B4" name="texture_camera_attach_to_object" returnType="void" argc="2">
 			<arg type="object" />
 			<arg type="string_id" />
 		</function>
-		<function opcode="0x0B5" name="" returnType="void" argc="2">
+		<function opcode="0x0B5" name="texture_camera_target_object" returnType="void" argc="2">
 			<arg type="object" />
 			<arg type="string_id" />
 		</function>
-		<function opcode="0x0B6" name="" returnType="void" argc="3">
+		<function opcode="0x0B6" name="texture_camera_position_world_offset" returnType="void" argc="3">
 			<arg type="real" />
 			<arg type="real" />
 			<arg type="real" />
@@ -809,13 +809,13 @@
 			<arg type="long" />
 			<arg type="long" />
 		</function>
-		<function opcode="0x0BB" name="" returnType="void" argc="1">
+		<function opcode="0x0BB" name="texture_camera_render_mode" returnType="void" argc="1">
 			<arg type="long" />
 		</function>
-		<function opcode="0x0BC" name="" returnType="void" argc="1">
+		<function opcode="0x0BC" name="texture_camera_set_fov" returnType="void" argc="1">
 			<arg type="object" />
 		</function>
-		<function opcode="0x0BD" name="" returnType="void" argc="1">
+		<function opcode="0x0BD" name="texture_camera_set_fov_frame_target" returnType="void" argc="1">
 			<arg type="real" />
 		</function>
 		<function opcode="0x0BE" name="" returnType="void" argc="1">
@@ -824,39 +824,39 @@
 		<function opcode="0x0BF" name="texture_camera_enable_dynamic_lights" returnType="void" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x0C0" name="" returnType="void" argc="1">
+		<function opcode="0x0C0" name="hud_camera_on" returnType="void" argc="1">
 			<arg type="long" />
 		</function>
-		<function opcode="0x0C1" name="" returnType="void" argc="1">
+		<function opcode="0x0C1" name="hud_camera_off" returnType="void" argc="1">
 			<arg type="long" />
 		</function>
-		<function opcode="0x0C2" name="" returnType="void" argc="4">
-			<arg type="long" />
-			<arg type="real" />
-			<arg type="real" />
-			<arg type="real" />
-		</function>
-		<function opcode="0x0C3" name="" returnType="void" argc="4">
+		<function opcode="0x0C2" name="hud_camera_set_position" returnType="void" argc="4">
 			<arg type="long" />
 			<arg type="real" />
 			<arg type="real" />
 			<arg type="real" />
 		</function>
-		<function opcode="0x0C4" name="" returnType="void" argc="3">
+		<function opcode="0x0C3" name="hud_camera_set_target" returnType="void" argc="4">
+			<arg type="long" />
+			<arg type="real" />
+			<arg type="real" />
+			<arg type="real" />
+		</function>
+		<function opcode="0x0C4" name="hud_camera_attach_to_object" returnType="void" argc="3">
 			<arg type="long" />
 			<arg type="object" />
 			<arg type="string_id" />
 		</function>
-		<function opcode="0x0C5" name="" returnType="void" argc="3">
+		<function opcode="0x0C5" name="hud_camera_target_object" returnType="void" argc="3">
 			<arg type="long" />
 			<arg type="object" />
 			<arg type="string_id" />
 		</function>
-		<function opcode="0x0C6" name="" returnType="void" argc="2">
+		<function opcode="0x0C6" name="hud_camera_structure" returnType="void" argc="2">
 			<arg type="long" />
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x0C7" name="" returnType="void" argc="6">
+		<function opcode="0x0C7" name="hud_camera_highlight_object" returnType="void" argc="6">
 			<arg type="long" />
 			<arg type="object" />
 			<arg type="real" />
@@ -864,43 +864,43 @@
 			<arg type="real" />
 			<arg type="real" />
 		</function>
-		<function opcode="0x0C8" name="" returnType="void" argc="1">
+		<function opcode="0x0C8" name="hud_camera_clear_objects" returnType="void" argc="1">
 			<arg type="long" />
 		</function>
-		<function opcode="0x0C9" name="" returnType="void" argc="2">
+		<function opcode="0x0C9" name="hud_camera_spin_around" returnType="void" argc="2">
 			<arg type="long" />
 			<arg type="object" />
 		</function>
-		<function opcode="0x0CA" name="" returnType="void" argc="1">
+		<function opcode="0x0CA" name="hud_camera_from_player_view" returnType="void" argc="1">
 			<arg type="long" />
 		</function>
-		<function opcode="0x0CB" name="" returnType="void" argc="5">
+		<function opcode="0x0CB" name="hud_camera_window" returnType="void" argc="5">
 			<arg type="long" />
 			<arg type="real" />
 			<arg type="real" />
 			<arg type="real" />
 			<arg type="real" />
 		</function>
-		<function opcode="0x0CC" name="" returnType="void" null="true" argc="1">
+		<function opcode="0x0CC" name="render_debug_texture_camera" returnType="void" null="true" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x0CD" name="" returnType="void" null="true" argc="2">
+		<function opcode="0x0CD" name="debug_structure_cluster" returnType="void" null="true" argc="2">
 			<arg type="long" />
 			<arg type="long" />
 		</function>
-		<function opcode="0x0CE" name="" returnType="void" null="true" argc="1">
+		<function opcode="0x0CE" name="render_debug_structure_cluster_visibility" returnType="void" null="true" argc="1">
 			<arg type="long" />
 		</function>
-		<function opcode="0x0CF" name="" returnType="void" null="true" argc="1">
+		<function opcode="0x0CF" name="render_debug_structure_fog_plane" returnType="void" null="true" argc="1">
 			<arg type="long" />
 		</function>
-		<function opcode="0x0D0" name="" returnType="void" null="true" argc="1">
+		<function opcode="0x0D0" name="render_debug_structure_fog_plane_infinite_extent" returnType="void" null="true" argc="1">
 			<arg type="long" />
 		</function>
-		<function opcode="0x0D1" name="" returnType="void" null="true" argc="1">
+		<function opcode="0x0D1" name="render_debug_structure_fog_zone" returnType="void" null="true" argc="1">
 			<arg type="long" />
 		</function>
-		<function opcode="0x0D2" name="" returnType="void" null="true" argc="1">
+		<function opcode="0x0D2" name="render_debug_structure_fog_zone_floodfill" returnType="void" null="true" argc="1">
 			<arg type="long" />
 		</function>
 		<function opcode="0x0D3" name="render_debug_structure_all_fog_planes" returnType="void" null="true" argc="1">
@@ -927,23 +927,23 @@
 			<arg type="real" />
 			<arg type="real" />
 		</function>
-		<function opcode="0x0D8" name="" returnType="void" null="true" argc="1">
+		<function opcode="0x0D8" name="render_debug_structure_non_occluded_fog_planes" returnType="void" null="true" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x0D9" name="" returnType="void" null="true" />
-		<function opcode="0x0DA" name="" returnType="void" null="true" />
-		<function opcode="0x0DB" name="" returnType="void" null="true" />
-		<function opcode="0x0DC" name="" returnType="void" null="true" />
-		<function opcode="0x0DD" name="" returnType="void" null="true" argc="1">
+		<function opcode="0x0D9" name="render_debug_structure_lightmaps_use_pervertex" returnType="void" null="true" />
+		<function opcode="0x0DA" name="render_debug_structure_lightmaps_use_reset" returnType="void" null="true" />
+		<function opcode="0x0DB" name="render_debug_structure_lightmaps_sample_enable" returnType="void" null="true" />
+		<function opcode="0x0DC" name="render_debug_structure_lightmaps_sample_disable" returnType="void" null="true" />
+		<function opcode="0x0DD" name="render_debug_query_object_bitmaps" returnType="void" null="true" argc="1">
 			<arg type="string" />
 		</function>
-		<function opcode="0x0DE" name="" returnType="void" null="true" argc="2">
+		<function opcode="0x0DE" name="render_debug_query_bsp_resources" returnType="void" null="true" argc="2">
 			<arg type="long" />
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x0DF" name="" returnType="void" null="true" />
-		<function opcode="0x0E0" name="" returnType="void" null="true" />
-		<function opcode="0x0E1" name="" returnType="void" null="true" argc="1">
+		<function opcode="0x0DF" name="render_debug_query_all_object_resources" returnType="void" null="true" />
+		<function opcode="0x0E0" name="render_debug_object_list" returnType="void" null="true" />
+		<function opcode="0x0E1" name="render_debug_text_using_simple_font" returnType="void" null="true" argc="1">
 			<arg type="boolean" />
 		</function>
 		<function opcode="0x0E2" name="render_postprocess_color_tweaking_reset" returnType="void" />
@@ -1057,7 +1057,7 @@
 			<arg type="boolean" />
 			<arg type="short" />
 		</function>
-		<function opcode="0x0FA" name="" returnType="boolean" argc="6">
+		<function opcode="0x0FA" name="unit_custom_animation_relative_at_frame" returnType="boolean" argc="6">
 			<arg type="unit" />
 			<arg type="animation_graph" />
 			<arg type="string_id" />
@@ -1074,11 +1074,11 @@
 		<function opcode="0x0FD" name="object_set_custom_animations_prevent_lipsync_head_movement" returnType="void" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x0FE" name="" returnType="boolean" argc="2">
+		<function opcode="0x0FE" name="preferred_animation_list_add" returnType="boolean" argc="2">
 			<arg type="object" />
 			<arg type="string_id" />
 		</function>
-		<function opcode="0x0FF" name="" returnType="void" />
+		<function opcode="0x0FF" name="preferred_animation_list_clear" returnType="void" />
 		<function opcode="0x100" name="unit_set_actively_controlled" returnType="void" argc="2">
 			<arg type="unit" />
 			<arg type="boolean" />
@@ -1094,7 +1094,7 @@
 			<arg type="unit" />
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x104" name="" returnType="void" argc="3"><!-- eldorado -->
+		<function opcode="0x104" name="unit_set_seat_enterable_by_player" returnType="void" argc="3"><!-- eldorado -->
 			<arg type="unit" />
 			<arg type="unit_seat_mapping" />
 			<arg type="boolean" />
@@ -1119,7 +1119,7 @@
 			<arg type="unit" />
 			<arg type="long" />
 		</function>
-		<function opcode="0x10A" name="" returnType="short" argc="1">
+		<function opcode="0x10A" name="object_get_turret_count" returnType="short" argc="1">
 			<arg type="object" />
 		</function>
 		<function opcode="0x10B" name="object_get_turret" returnType="vehicle" argc="2">
@@ -1150,7 +1150,7 @@
 			<arg type="unit" />
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x111" name="" returnType="void" argc="2">
+		<function opcode="0x111" name="unit_realtime_dialogue_swap?" returnType="void" argc="2">
 			<arg type="unit" />
 			<arg type="any_tag" />
 		</function>
@@ -1264,13 +1264,13 @@
 		<function opcode="0x12E" name="unit_drop_support_weapon" returnType="void" argc="1">
 			<arg type="unit" />
 		</function>
-		<function opcode="0x12F" name="" returnType="void" argc="1">
+		<function opcode="0x12F" name="unit_spew_action" returnType="void" argc="1">
 			<arg type="unit" />
 		</function>
-		<function opcode="0x130" name="" returnType="void" argc="1">
+		<function opcode="0x130" name="unit_force_reload" returnType="void" argc="1">
 			<arg type="unit" />
 		</function>
-		<function opcode="0x131" name="" returnType="void" null="true" />
+		<function opcode="0x131" name="animation_stats_dump" returnType="void" null="true" />
 		<function opcode="0x132" name="unit_animation_forced_seat" returnType="void" null="true" argc="1">
 			<arg type="string_id" />
 		</function>
@@ -1337,7 +1337,7 @@
 			<arg type="device" />
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x143" name="" returnType="void" argc="2">
+		<function opcode="0x143" name="device_ignore_player_set" returnType="void" argc="2">
 			<arg type="device" />
 			<arg type="boolean" />
 		</function>
@@ -1389,13 +1389,13 @@
 			<arg type="boolean" />
 		</function>
 		<function opcode="0x151" name="cheats_load" returnType="void" null="true" />
-		<function opcode="0x152" name="" returnType="void" null="true" argc="1">
+		<function opcode="0x152" name="drop_safe" returnType="void" null="true" argc="1">
 			<arg type="any_tag" />
 		</function>
 		<function opcode="0x153" name="drop" returnType="void" null="true" argc="1">
 			<arg type="string" />
 		</function>
-		<function opcode="0x154" name="" returnType="void" null="true" argc="2">
+		<function opcode="0x154" name="drop_variant" returnType="void" null="true" argc="2">
 			<arg type="string" />
 			<arg type="string" />
 		</function>
@@ -1412,7 +1412,7 @@
 		<function opcode="0x159" name="ai_player_dialogue_enable" returnType="void" argc="1">
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x15A" name="" returnType="void" argc="1">
+		<function opcode="0x15A" name="ai_infection_suppress" returnType="void" argc="1">
 			<arg type="long" />
 		</function>
 		<function opcode="0x15B" name="ai_fast_and_dumb" returnType="void" argc="1">
@@ -1527,7 +1527,7 @@
 			<arg type="ai" />
 			<arg type="boolean" />
 		</function>
-		<function opcode="0x17C" name="" returnType="void" argc="1">
+		<function opcode="0x17C" name="ai_engineer_explode" returnType="void" argc="1">
 			<arg type="ai" />
 		</function>
 		<function opcode="0x17D" name="ai_grunt_kamikaze" returnType="void" argc="1">
